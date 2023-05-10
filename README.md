@@ -21,9 +21,9 @@ Python &gt;&#x3D;3.7
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/0xRy4n/intercom-pyhton-api.git
+pip install git+https://github.com/0xRy4n/intercom-python-api.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/0xRy4n/intercom-pyhton-api.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/0xRy4n/intercom-python-api.git`)
 
 Then import the package:
 ```python
