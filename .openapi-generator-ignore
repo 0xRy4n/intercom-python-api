@@ -21,3 +21,9 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+
+intercom_python_api/client.py
+intercom_python_api/configuration.py
+intercom_python_api/api_client.py
+intercom_python_api/__init__.py
