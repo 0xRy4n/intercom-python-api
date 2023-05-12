@@ -29,69 +29,61 @@ You can attach a company to a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-    }
-    try:
-        # Attach a Contact to a Company
-        api_response = api_instance.attach_contact_to_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->attach_contact_to_a_company: %s\n" % e)
+```python
+path_params = {
+    'id': "id_example",
+}
+header_params = {
+}
+try:
+    # Attach a Contact to a Company
+    api_response = intercom.CompaniesApi.attach_contact_to_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->attach_contact_to_a_company: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "id_example",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = dict(
         id="58a430d35458202d41b1e65b",
     )
-    try:
-        # Attach a Contact to a Company
-        api_response = api_instance.attach_contact_to_a_company(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->attach_contact_to_a_company: %s\n" % e)
+try:
+    # Attach a Contact to a Company
+    api_response = intercom.CompaniesApi.attach_contact_to_a_company(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->attach_contact_to_a_company: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -213,39 +205,27 @@ You can create or update a company.  > 📘 Companies with no users > > Companie
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.create_or_update_company_request import CreateOrUpdateCompanyRequest
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+```
 
-    # example passing only optional values
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateOrUpdateCompanyRequest(
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = CreateOrUpdateCompanyRequest(
         name="Intercom",
         company_id="625e90fc55ab113b6d92175f",
         plan="Enterprise",
@@ -258,15 +238,16 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         remote_created_at=1394531169,
         monthly_spend=1000,
     )
-    try:
-        # Create or Update a company
-        api_response = api_instance.create_or_update_company(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->create_or_update_company: %s\n" % e)
+try:
+    # Create or Update a company
+    api_response = intercom.CompaniesApi.create_or_update_company(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->create_or_update_company: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -366,65 +347,57 @@ You can delete a single company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.deleted_company_object import DeletedCompanyObject
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # Delete a company
-        api_response = api_instance.delete_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_company: %s\n" % e)
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+}
+try:
+    # Delete a company
+    api_response = intercom.CompaniesApi.delete_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->delete_company: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete a company
-        api_response = api_instance.delete_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->delete_company: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Delete a company
+    api_response = intercom.CompaniesApi.delete_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->delete_company: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -529,67 +502,59 @@ You can detach a company from a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'contact_id': "58a430d35458202d41b1e65b",
-        'id': "58a430d35458202d41b1e65b",
-    }
-    header_params = {
-    }
-    try:
-        # Detach a contact from a company
-        api_response = api_instance.dettach_contact_from_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->dettach_contact_from_a_company: %s\n" % e)
+```python
+path_params = {
+    'contact_id': "58a430d35458202d41b1e65b",
+    'id': "58a430d35458202d41b1e65b",
+}
+header_params = {
+}
+try:
+    # Detach a contact from a company
+    api_response = intercom.CompaniesApi.dettach_contact_from_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->dettach_contact_from_a_company: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'contact_id': "58a430d35458202d41b1e65b",
-        'id': "58a430d35458202d41b1e65b",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Detach a contact from a company
-        api_response = api_instance.dettach_contact_from_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->dettach_contact_from_a_company: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'contact_id': "58a430d35458202d41b1e65b",
+    'id': "58a430d35458202d41b1e65b",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Detach a contact from a company
+    api_response = intercom.CompaniesApi.dettach_contact_from_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->dettach_contact_from_a_company: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -702,68 +667,60 @@ You can list companies. The company list is sorted by the `last_request_at` fiel
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company_list import CompanyList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    query_params = {
-        'filter': dict(),
-    }
-    header_params = {
-    }
-    try:
-        # List all companies
-        api_response = api_instance.list_all_companies(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_all_companies: %s\n" % e)
+```python
+query_params = {
+    'filter': dict(),
+}
+header_params = {
+}
+try:
+    # List all companies
+    api_response = intercom.CompaniesApi.list_all_companies(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_all_companies: %s\n" % e)
 
-    # example passing only optional values
-    query_params = {
-        'page': "first page",
-        'per_page': "15",
-        'order': "desc",
-        'filter': dict(),
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all companies
-        api_response = api_instance.list_all_companies(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_all_companies: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+query_params = {
+    'page': "first page",
+    'per_page': "15",
+    'order': "desc",
+    'filter': dict(),
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List all companies
+    api_response = intercom.CompaniesApi.list_all_companies(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_all_companies: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -914,65 +871,57 @@ You can fetch a list of all contacts that belong to a company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.company_attached_contacts import CompanyAttachedContacts
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # List attached contacts
-        api_response = api_instance.list_attached_contacts(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_attached_contacts: %s\n" % e)
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+}
+try:
+    # List attached contacts
+    api_response = intercom.CompaniesApi.list_attached_contacts(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_attached_contacts: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached contacts
-        api_response = api_instance.list_attached_contacts(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_attached_contacts: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List attached contacts
+    api_response = intercom.CompaniesApi.list_attached_contacts(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_attached_contacts: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1077,65 +1026,57 @@ You can fetch a list of all segments that belong to a company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company_attached_segments import CompanyAttachedSegments
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # List attached segments for companies
-        api_response = api_instance.list_attached_segments_for_companies(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_attached_segments_for_companies: %s\n" % e)
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+}
+try:
+    # List attached segments for companies
+    api_response = intercom.CompaniesApi.list_attached_segments_for_companies(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_attached_segments_for_companies: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached segments for companies
-        api_response = api_instance.list_attached_segments_for_companies(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_attached_segments_for_companies: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List attached segments for companies
+    api_response = intercom.CompaniesApi.list_attached_segments_for_companies(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_attached_segments_for_companies: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1240,65 +1181,57 @@ You can fetch a list of companies that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.contact_attached_companies import ContactAttachedCompanies
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List attached companies for contact
-        api_response = api_instance.list_companies_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_companies_for_a_contact: %s\n" % e)
+```python
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+header_params = {
+}
+try:
+    # List attached companies for contact
+    api_response = intercom.CompaniesApi.list_companies_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_companies_for_a_contact: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached companies for contact
-        api_response = api_instance.list_companies_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->list_companies_for_a_contact: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List attached companies for contact
+    api_response = intercom.CompaniesApi.list_companies_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->list_companies_for_a_contact: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1403,65 +1336,57 @@ You can fetch a single company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a company by ID
-        api_response = api_instance.retrieve_a_company_by_id(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->retrieve_a_company_by_id: %s\n" % e)
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+}
+try:
+    # Retrieve a company by ID
+    api_response = intercom.CompaniesApi.retrieve_a_company_by_id(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->retrieve_a_company_by_id: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a company by ID
-        api_response = api_instance.retrieve_a_company_by_id(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->retrieve_a_company_by_id: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Retrieve a company by ID
+    api_response = intercom.CompaniesApi.retrieve_a_company_by_id(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->retrieve_a_company_by_id: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1566,65 +1491,57 @@ You can fetch a company by either passing in `company_id` or `name` as a query p
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    query_params = {
-        'filter': dict(),
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a company
-        api_response = api_instance.retrieve_company(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->retrieve_company: %s\n" % e)
+```python
+query_params = {
+    'filter': dict(),
+}
+header_params = {
+}
+try:
+    # Retrieve a company
+    api_response = intercom.CompaniesApi.retrieve_company(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->retrieve_company: %s\n" % e)
 
-    # example passing only optional values
-    query_params = {
-        'filter': dict(),
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a company
-        api_response = api_instance.retrieve_company(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->retrieve_company: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+query_params = {
+    'filter': dict(),
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Retrieve a company
+    api_response = intercom.CompaniesApi.retrieve_company(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->retrieve_company: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1765,49 +1682,38 @@ Scroll over all companies
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.company_scroll import CompanyScroll
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+```
 
-    # example passing only optional values
-    query_params = {
-        'scroll_param': "scroll_param_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Scroll over all companies
-        api_response = api_instance.scroll_over_all_companies(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->scroll_over_all_companies: %s\n" % e)
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+query_params = {
+    'scroll_param': "scroll_param_example",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Scroll over all companies
+    api_response = intercom.CompaniesApi.scroll_over_all_companies(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->scroll_over_all_companies: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1899,65 +1805,57 @@ You can update a single company
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import companies_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = companies_api.CompaniesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # Update a company
-        api_response = api_instance.update_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->update_company: %s\n" % e)
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+}
+try:
+    # Update a company
+    api_response = intercom.CompaniesApi.update_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->update_company: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Update a company
-        api_response = api_instance.update_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling CompaniesApi->update_company: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Update a company
+    api_response = intercom.CompaniesApi.update_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling CompaniesApi->update_company: %s\n" % e)
+
 ```
 ### Parameters
 

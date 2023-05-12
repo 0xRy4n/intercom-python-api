@@ -90,13 +90,9 @@ class Configuration(object):
         server_variables=None,
         server_operation_index=None,
         server_operation_variables=None,
-        access_token=None,
     ):
         """Constructor
         """
-
-        self.access_token = access_token
-
         self._base_path = "https://api.intercom.io" if host is None else host
         """Default Base url
         """
@@ -368,7 +364,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2.8\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 1.0.1".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

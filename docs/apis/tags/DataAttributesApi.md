@@ -20,54 +20,43 @@ You can create a data attributes for a `contact` or a `company`.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import data_attributes_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_data_attribute_request import CreateDataAttributeRequest
 from intercom_python_api.model.data_attribute import DataAttribute
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_attributes_api.DataAttributesApi(api_client)
+```
 
-    # example passing only optional values
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateDataAttributeRequest(
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = CreateDataAttributeRequest(
         name="My Data Attribute",
         model="contact",
         data_type="string",
         description="My Data Attribute Description",
         options=["option1","option2"],
     )
-    try:
-        # Create a data attribute
-        api_response = api_instance.create_data_attribute(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->create_data_attribute: %s\n" % e)
+try:
+    # Create a data attribute
+    api_response = intercom.DataAttributesApi.create_data_attribute(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->create_data_attribute: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -167,50 +156,39 @@ You can fetch a list of all data attributes belonging to a workspace for contact
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import data_attributes_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.data_attribute_list import DataAttributeList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_attributes_api.DataAttributesApi(api_client)
+```
 
-    # example passing only optional values
-    query_params = {
-        'model': "company",
-        'include_archived': False,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all data attributes
-        api_response = api_instance.lis_data_attributes(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->lis_data_attributes: %s\n" % e)
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+query_params = {
+    'model': "company",
+    'include_archived': False,
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List all data attributes
+    api_response = intercom.DataAttributesApi.lis_data_attributes(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->lis_data_attributes: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -310,72 +288,64 @@ Update a data attribute
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import data_attributes_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.update_data_attribute_request import UpdateDataAttributeRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.data_attribute import DataAttribute
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_attributes_api.DataAttributesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # Update a data attribute
-        api_response = api_instance.update_data_attribute(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
+```python
+path_params = {
+    'id': 1,
+}
+header_params = {
+}
+try:
+    # Update a data attribute
+    api_response = intercom.DataAttributesApi.update_data_attribute(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateDataAttributeRequest(
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': 1,
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = UpdateDataAttributeRequest(
         archived=False,
         description="My Data Attribute Description",
         options=["option1","option2"],
     )
-    try:
-        # Update a data attribute
-        api_response = api_instance.update_data_attribute(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
+try:
+    # Update a data attribute
+    api_response = intercom.DataAttributesApi.update_data_attribute(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
+
 ```
 ### Parameters
 

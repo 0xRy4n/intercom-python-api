@@ -22,39 +22,27 @@ You can create a new article by making a POST request to `https://api.intercom.i
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import articles_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.create_article_request import CreateArticleRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = articles_api.ArticlesApi(api_client)
+```
 
-    # example passing only optional values
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateArticleRequest(
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = CreateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",
         body="<p>This is the body in html</p>",
@@ -113,15 +101,16 @@ with intercom_python_api.ApiClient(configuration) as api_client:
 ,
         ),
     )
-    try:
-        # Create an article
-        api_response = api_instance.create_article(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->create_article: %s\n" % e)
+try:
+    # Create an article
+    api_response = intercom.ArticlesApi.create_article(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->create_article: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -221,65 +210,57 @@ You can delete a single article by making a DELETE request to `https://api.inter
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import articles_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.deleted_article_object import DeletedArticleObject
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = articles_api.ArticlesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Delete an article
-        api_response = api_instance.delete_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+}
+try:
+    # Delete an article
+    api_response = intercom.ArticlesApi.delete_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete an article
-        api_response = api_instance.delete_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Delete an article
+    api_response = intercom.ArticlesApi.delete_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -384,45 +365,34 @@ You can fetch a list of all articles by making a GET request to `https://api.int
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import articles_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.article_list import ArticleList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = articles_api.ArticlesApi(api_client)
+```
 
-    # example passing only optional values
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all articles
-        api_response = api_instance.list_articles(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->list_articles: %s\n" % e)
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # List all articles
+    api_response = intercom.ArticlesApi.list_articles(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->list_articles: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -498,65 +468,57 @@ You can fetch the details of a single article by making a GET request to `https:
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import articles_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = articles_api.ArticlesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve an article
-        api_response = api_instance.retrieve_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+}
+try:
+    # Retrieve an article
+    api_response = intercom.ArticlesApi.retrieve_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve an article
-        api_response = api_instance.retrieve_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+try:
+    # Retrieve an article
+    api_response = intercom.ArticlesApi.retrieve_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -661,58 +623,49 @@ You can update the details of a single article by making a PUT request to `https
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
-import intercom_python_api
-from intercom_python_api.apis.tags import articles_api
+import intercom_python_api import Intercom
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.update_article_request import UpdateArticleRequest
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = articles_api.ArticlesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Update an article
-        api_response = api_instance.update_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->update_article: %s\n" % e)
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+}
+try:
+    # Update an article
+    api_response = intercom.ArticlesApi.update_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->update_article: %s\n" % e)
 
-    # example passing only optional values
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateArticleRequest(
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
+path_params = {
+    'id': 123,
+}
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+body = UpdateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",
         body="<p>This is the body in html</p>",
@@ -771,16 +724,17 @@ with intercom_python_api.ApiClient(configuration) as api_client:
 ,
         ),
     )
-    try:
-        # Update an article
-        api_response = api_instance.update_article(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->update_article: %s\n" % e)
+try:
+    # Update an article
+    api_response = intercom.ArticlesApi.update_article(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->update_article: %s\n" % e)
+
 ```
 ### Parameters
 
