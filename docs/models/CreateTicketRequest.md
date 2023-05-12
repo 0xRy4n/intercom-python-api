@@ -12,7 +12,7 @@ Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
 **ticket_type_id** | str,  | str,  | The ID of the type of ticket you want to create | 
 **[contacts](#contacts)** | list, tuple,  | tuple,  | The list of contacts (users or leads) affected by this ticket. Currently only one is allowed | 
-**custom_attributes** | [**TicketRequestCustomAttributes**](TicketRequestCustomAttributes.md) | [**TicketRequestCustomAttributes**](TicketRequestCustomAttributes.md) |  | [optional] 
+**ticket_attributes** | [**TicketRequestCustomAttributes**](TicketRequestCustomAttributes.md) | [**TicketRequestCustomAttributes**](TicketRequestCustomAttributes.md) |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # contacts
