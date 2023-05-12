@@ -70,6 +70,8 @@ do
     if [ $version = "0" ]
     then
         parsed_version="unstable"
+    else
+        parsed_version=$version
     fi
 
     log "Checking out git repository for branch $parsed_version"

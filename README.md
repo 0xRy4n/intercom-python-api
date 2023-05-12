@@ -1,5 +1,7 @@
 # Intercom Python API
+<p style="text-align:center">
 ![Intercom Python API](https://i.imgur.com/rQooYPo.png)
+</p>
 
 This package provides a wrapper around the Intercom API in the form of a python client. It conforms to the OpenAPI specification files provided by Intercom.
 
@@ -59,7 +61,7 @@ In order to avoid name collisions in parameter names provided in different locat
 - cookie_params
 
 ### Endpoint Responses
-All API calls / endpoint responses will a response object with three attributes:
+All API calls / endpoint responses will provide a response object with three attributes:
 
 - response: urllib3.HTTPResponse
 - headers: typing.Union[Unset, TODO]
