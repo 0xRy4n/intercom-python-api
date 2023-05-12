@@ -63,15 +63,15 @@ fi
 log "All packages found."
 
 log "Getting OpenAPI specifications from official Intercom repository ..."
-descriptions="$(curl -XGET --url 'https://api.github.com/repos/intercom/Intercom-OpenAPI/contents/descriptions')"
+descriptions=$(curl -XGET --url 'https://api.github.com/repos/intercom/Intercom-OpenAPI/contents/descriptions')
 
 log $descriptions
 log "Parsing found specifications ..."
 
 echo $descriptions | jq -c '.[]' | while read description;
 do
-    version=$(echo $description | jq .name)
-    if [ $version -eq "0" ]
+    version="$(echo $description | jq .name)"
+    if [ $version = "0" ]
     then
         parsed_version="unstable"
     fi
