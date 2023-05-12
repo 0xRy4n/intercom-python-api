@@ -39,13 +39,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = ConvertVisitorRequest(
         type="user",
         user=dict(),
@@ -164,12 +160,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a visitor
     api_response = intercom.VisitorsApi.delete_visitor(
@@ -188,13 +180,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a visitor
     api_response = intercom.VisitorsApi.delete_visitor(
@@ -327,12 +315,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a visitor with ID
     api_response = intercom.VisitorsApi.retrieve_visitor(
@@ -351,13 +335,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a visitor with ID
     api_response = intercom.VisitorsApi.retrieve_visitor(
@@ -487,15 +467,11 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-
 query_params = {
     'user_id': "user_id_example",
 }
-
-
 header_params = {
 }
-
 try:
     # Retrieve a visitor with User ID
     api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
@@ -511,16 +487,12 @@ except intercom_python_api.ApiException as e:
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'user_id': "user_id_example",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a visitor with User ID
     api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
@@ -653,13 +625,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateVisitorRequest()
 try:
     # Update a visitor

@@ -36,13 +36,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateDataEventRequest()
 try:
     # Submit a data event
@@ -148,13 +144,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateDataEventSummariesRequest(
         user_id="314159",
         event_summaries=dict(
@@ -267,16 +259,12 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-
 query_params = {
     'filter': dict(),
     'type': "type_example",
 }
-
-
 header_params = {
 }
-
 try:
     # List all data events
     api_response = intercom.DataEventsApi.lis_data_events(
@@ -292,18 +280,14 @@ except intercom_python_api.ApiException as e:
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'filter': dict(),
     'type': "type_example",
     'summary': True,
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all data events
     api_response = intercom.DataEventsApi.lis_data_events(

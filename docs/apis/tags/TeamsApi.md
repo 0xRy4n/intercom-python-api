@@ -35,13 +35,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all teams
     api_response = intercom.TeamsApi.list_teams(
@@ -144,12 +140,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a team
     api_response = intercom.TeamsApi.retrieve_team(
@@ -168,13 +160,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a team
     api_response = intercom.TeamsApi.retrieve_team(

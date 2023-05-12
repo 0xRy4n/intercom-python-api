@@ -44,13 +44,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateCollectionRequest(
         name="collection 51",
         description="English description",
@@ -225,13 +221,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateSectionRequest(
         name="Section 51",
         parent_id=18,
@@ -407,12 +399,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a collection
     api_response = intercom.HelpCenterApi.delete_collection(
@@ -431,13 +419,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a collection
     api_response = intercom.HelpCenterApi.delete_collection(
@@ -570,12 +554,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a section
     api_response = intercom.HelpCenterApi.delete_section(
@@ -594,13 +574,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a section
     api_response = intercom.HelpCenterApi.delete_section(
@@ -731,13 +707,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all collections
     api_response = intercom.HelpCenterApi.list_all_collections(
@@ -838,13 +810,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all sections
     api_response = intercom.HelpCenterApi.list_all_sections(
@@ -947,12 +915,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a collection
     api_response = intercom.HelpCenterApi.retrieve_collection(
@@ -971,13 +935,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a collection
     api_response = intercom.HelpCenterApi.retrieve_collection(
@@ -1110,12 +1070,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a section
     api_response = intercom.HelpCenterApi.retrieve_section(
@@ -1134,13 +1090,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a section
     api_response = intercom.HelpCenterApi.retrieve_section(
@@ -1274,12 +1226,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a collection
     api_response = intercom.HelpCenterApi.update_collection(
@@ -1298,13 +1246,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateCollectionRequest(
         name="collection 51",
         description="English description",
@@ -1497,12 +1441,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a section
     api_response = intercom.HelpCenterApi.update_section(
@@ -1521,13 +1461,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateSectionRequest(
         name="Section 51",
         parent_id=18,

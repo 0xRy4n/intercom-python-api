@@ -37,13 +37,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Identify an admin
     api_response = intercom.AdminsApi.identify_admin(
@@ -129,15 +125,11 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-
 query_params = {
     'created_at_after': "1677255034",
 }
-
-
 header_params = {
 }
-
 try:
     # List all activity logs
     api_response = intercom.AdminsApi.list_activity_logs(
@@ -153,17 +145,13 @@ except intercom_python_api.ApiException as e:
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'created_at_after': "1677255034",
     'created_at_before': "1677863434",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all activity logs
     api_response = intercom.AdminsApi.list_activity_logs(
@@ -289,13 +277,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all admins
     api_response = intercom.AdminsApi.list_admins(
@@ -398,12 +382,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve an admin
     api_response = intercom.AdminsApi.retrieve_admin(
@@ -422,13 +402,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve an admin
     api_response = intercom.AdminsApi.retrieve_admin(
@@ -561,12 +537,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Set an admin to away
     api_response = intercom.AdminsApi.set_away_admin(
@@ -585,13 +557,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         away_mode_enabled=True,
         away_mode_reassign=False,

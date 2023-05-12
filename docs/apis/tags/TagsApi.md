@@ -44,12 +44,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add tag to a contact
     api_response = intercom.TagsApi.attach_tag_to_contact(
@@ -68,13 +64,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="7522907",
     )
@@ -228,12 +220,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'conversation_id': "64619700005694",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add tag to a conversation
     api_response = intercom.TagsApi.attach_tag_to_conversation(
@@ -252,13 +240,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'conversation_id': "64619700005694",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="7522907",
         admin_id="780",
@@ -416,13 +400,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = None
 try:
     # Create or update a tag, Tag or untag companies, Tag contacts
@@ -574,12 +554,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete tag
     api_response = intercom.TagsApi.delete_tag(
@@ -597,13 +573,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete tag
     api_response = intercom.TagsApi.delete_tag(
@@ -744,12 +716,8 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "7522907",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove tag from a contact
     api_response = intercom.TagsApi.detach_tag_from_contact(
@@ -769,13 +737,9 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "7522907",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Remove tag from a contact
     api_response = intercom.TagsApi.detach_tag_from_contact(
@@ -917,12 +881,8 @@ path_params = {
     'conversation_id': "64619700005694",
     'id': "7522907",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove tag from a conversation
     api_response = intercom.TagsApi.detach_tag_from_conversation(
@@ -942,13 +902,9 @@ path_params = {
     'conversation_id': "64619700005694",
     'id': "7522907",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         admin_id="123",
     )
@@ -1110,12 +1066,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Find a specific tag
     api_response = intercom.TagsApi.find_tag(
@@ -1134,13 +1086,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Find a specific tag
     api_response = intercom.TagsApi.find_tag(
@@ -1271,13 +1219,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all tags
     api_response = intercom.TagsApi.list_tags(
@@ -1380,12 +1324,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List tags attached to a contact
     api_response = intercom.TagsApi.list_tags_for_a_contact(
@@ -1404,13 +1344,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List tags attached to a contact
     api_response = intercom.TagsApi.list_tags_for_a_contact(

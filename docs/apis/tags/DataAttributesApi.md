@@ -37,13 +37,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateDataAttributeRequest(
         name="My Data Attribute",
         model="contact",
@@ -176,17 +172,13 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'model': "company",
     'include_archived': False,
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all data attributes
     api_response = intercom.DataAttributesApi.lis_data_attributes(
@@ -315,12 +307,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a data attribute
     api_response = intercom.DataAttributesApi.update_data_attribute(
@@ -339,13 +327,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateDataAttributeRequest(
         archived=False,
         description="My Data Attribute Description",

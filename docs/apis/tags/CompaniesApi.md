@@ -47,12 +47,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Attach a Contact to a Company
     api_response = intercom.CompaniesApi.attach_contact_to_a_company(
@@ -71,13 +67,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="58a430d35458202d41b1e65b",
     )
@@ -230,13 +222,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateOrUpdateCompanyRequest(
         name="Intercom",
         company_id="625e90fc55ab113b6d92175f",
@@ -377,12 +365,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a company
     api_response = intercom.CompaniesApi.delete_company(
@@ -401,13 +385,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a company
     api_response = intercom.CompaniesApi.delete_company(
@@ -541,12 +521,8 @@ path_params = {
     'contact_id': "58a430d35458202d41b1e65b",
     'id': "58a430d35458202d41b1e65b",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Detach a contact from a company
     api_response = intercom.CompaniesApi.dettach_contact_from_a_company(
@@ -566,13 +542,9 @@ path_params = {
     'contact_id': "58a430d35458202d41b1e65b",
     'id': "58a430d35458202d41b1e65b",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Detach a contact from a company
     api_response = intercom.CompaniesApi.dettach_contact_from_a_company(
@@ -710,15 +682,11 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-
 query_params = {
     'filter': dict(),
 }
-
-
 header_params = {
 }
-
 try:
     # List all companies
     api_response = intercom.CompaniesApi.list_all_companies(
@@ -734,19 +702,15 @@ except intercom_python_api.ApiException as e:
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'page': "first page",
     'per_page': "15",
     'order': "desc",
     'filter': dict(),
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all companies
     api_response = intercom.CompaniesApi.list_all_companies(
@@ -925,12 +889,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached contacts
     api_response = intercom.CompaniesApi.list_attached_contacts(
@@ -949,13 +909,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached contacts
     api_response = intercom.CompaniesApi.list_attached_contacts(
@@ -1088,12 +1044,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached segments for companies
     api_response = intercom.CompaniesApi.list_attached_segments_for_companies(
@@ -1112,13 +1064,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached segments for companies
     api_response = intercom.CompaniesApi.list_attached_segments_for_companies(
@@ -1251,12 +1199,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached companies for contact
     api_response = intercom.CompaniesApi.list_companies_for_a_contact(
@@ -1275,13 +1219,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached companies for contact
     api_response = intercom.CompaniesApi.list_companies_for_a_contact(
@@ -1414,12 +1354,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a company by ID
     api_response = intercom.CompaniesApi.retrieve_a_company_by_id(
@@ -1438,13 +1374,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a company by ID
     api_response = intercom.CompaniesApi.retrieve_a_company_by_id(
@@ -1574,15 +1506,11 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-
 query_params = {
     'filter': dict(),
 }
-
-
 header_params = {
 }
-
 try:
     # Retrieve a company
     api_response = intercom.CompaniesApi.retrieve_company(
@@ -1598,16 +1526,12 @@ except intercom_python_api.ApiException as e:
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'filter': dict(),
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a company
     api_response = intercom.CompaniesApi.retrieve_company(
@@ -1774,16 +1698,12 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'scroll_param': "scroll_param_example",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Scroll over all companies
     api_response = intercom.CompaniesApi.scroll_over_all_companies(
@@ -1903,12 +1823,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a company
     api_response = intercom.CompaniesApi.update_company(
@@ -1927,13 +1843,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Update a company
     api_response = intercom.CompaniesApi.update_company(

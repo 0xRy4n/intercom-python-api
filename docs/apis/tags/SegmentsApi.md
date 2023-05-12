@@ -36,16 +36,12 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'include_count': True,
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all segments
     api_response = intercom.SegmentsApi.list_segments(
@@ -165,12 +161,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached segments for contact
     api_response = intercom.SegmentsApi.list_segments_for_a_contact(
@@ -189,13 +181,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached segments for contact
     api_response = intercom.SegmentsApi.list_segments_for_a_contact(
@@ -328,12 +316,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a segment
     api_response = intercom.SegmentsApi.retrieve_segment(
@@ -352,13 +336,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a segment
     api_response = intercom.SegmentsApi.retrieve_segment(

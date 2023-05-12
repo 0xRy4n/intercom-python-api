@@ -39,12 +39,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add subscription to a contact
     api_response = intercom.SubscriptionTypesApi.attach_subscription_type_to_contact(
@@ -63,13 +59,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="37846",
         consent_type="opt_in",
@@ -226,12 +218,8 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "37846",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove subscription from a contact
     api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
@@ -251,13 +239,9 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "37846",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Remove subscription from a contact
     api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
@@ -396,13 +380,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List subscription types
     api_response = intercom.SubscriptionTypesApi.list_subscription_types(
@@ -505,12 +485,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List subscriptions for a contact
     api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(
@@ -529,13 +505,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List subscriptions for a contact
     api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(

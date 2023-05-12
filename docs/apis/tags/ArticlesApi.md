@@ -39,13 +39,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",
@@ -232,12 +228,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete an article
     api_response = intercom.ArticlesApi.delete_article(
@@ -256,13 +248,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete an article
     api_response = intercom.ArticlesApi.delete_article(
@@ -393,13 +381,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all articles
     api_response = intercom.ArticlesApi.list_articles(
@@ -502,12 +486,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve an article
     api_response = intercom.ArticlesApi.retrieve_article(
@@ -526,13 +506,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve an article
     api_response = intercom.ArticlesApi.retrieve_article(
@@ -666,12 +642,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update an article
     api_response = intercom.ArticlesApi.update_article(
@@ -690,13 +662,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",

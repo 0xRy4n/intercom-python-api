@@ -35,13 +35,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreatePhoneSwitchRequest(
         phone="+1 1234567890",
         custom_attributes=CustomAttributes(

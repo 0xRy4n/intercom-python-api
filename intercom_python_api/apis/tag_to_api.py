@@ -2,6 +2,7 @@ import typing_extensions
 import warnings
 
 from intercom_python_api.apis.tags import TagValues
+
 try:
     from intercom_python_api.apis.tags.admins_api import AdminsApi
 except ModuleNotFoundError as e:
@@ -143,53 +144,132 @@ except ModuleNotFoundError as e:
         RuntimeWarning
     )
 
+
+tag_dict = {}
+        
+try:
+    tag_dict[TagValues.ADMINS] = AdminsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.ARTICLES] = ArticlesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.COMPANIES] = CompaniesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.CONTACTS] = ContactsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.CONVERSATIONS] = ConversationsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.DATA_ATTRIBUTES] = DataAttributesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.DATA_EVENTS] = DataEventsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.DATA_EXPORT] = DataExportApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.HELP_CENTER] = HelpCenterApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.MESSAGES] = MessagesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.NEWS] = NewsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.NOTES] = NotesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.SEGMENTS] = SegmentsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.SUBSCRIPTION_TYPES] = SubscriptionTypesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.SWITCH] = SwitchApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.TAGS] = TagsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.TEAMS] = TeamsApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.TICKET_TYPE_ATTRIBUTES] = TicketTypeAttributesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.TICKET_TYPES] = TicketTypesApi
+except:
+    pass
+
+        
+try:
+    tag_dict[TagValues.VISITORS] = VisitorsApi
+except:
+    pass
+
+
 TagToApi = typing_extensions.TypedDict(
     'TagToApi',
-    {
-        TagValues.ADMINS: AdminsApi,
-        TagValues.ARTICLES: ArticlesApi,
-        TagValues.COMPANIES: CompaniesApi,
-        TagValues.CONTACTS: ContactsApi,
-        TagValues.CONVERSATIONS: ConversationsApi,
-        TagValues.DATA_ATTRIBUTES: DataAttributesApi,
-        TagValues.DATA_EVENTS: DataEventsApi,
-        TagValues.DATA_EXPORT: DataExportApi,
-        TagValues.HELP_CENTER: HelpCenterApi,
-        TagValues.MESSAGES: MessagesApi,
-        TagValues.NEWS: NewsApi,
-        TagValues.NOTES: NotesApi,
-        TagValues.SEGMENTS: SegmentsApi,
-        TagValues.SUBSCRIPTION_TYPES: SubscriptionTypesApi,
-        TagValues.SWITCH: SwitchApi,
-        TagValues.TAGS: TagsApi,
-        TagValues.TEAMS: TeamsApi,
-        TagValues.TICKET_TYPE_ATTRIBUTES: TicketTypeAttributesApi,
-        TagValues.TICKET_TYPES: TicketTypesApi,
-        TagValues.VISITORS: VisitorsApi,
-    }
+    tag_dict
 )
 
-tag_to_api = TagToApi(
-    {
-        TagValues.ADMINS: AdminsApi,
-        TagValues.ARTICLES: ArticlesApi,
-        TagValues.COMPANIES: CompaniesApi,
-        TagValues.CONTACTS: ContactsApi,
-        TagValues.CONVERSATIONS: ConversationsApi,
-        TagValues.DATA_ATTRIBUTES: DataAttributesApi,
-        TagValues.DATA_EVENTS: DataEventsApi,
-        TagValues.DATA_EXPORT: DataExportApi,
-        TagValues.HELP_CENTER: HelpCenterApi,
-        TagValues.MESSAGES: MessagesApi,
-        TagValues.NEWS: NewsApi,
-        TagValues.NOTES: NotesApi,
-        TagValues.SEGMENTS: SegmentsApi,
-        TagValues.SUBSCRIPTION_TYPES: SubscriptionTypesApi,
-        TagValues.SWITCH: SwitchApi,
-        TagValues.TAGS: TagsApi,
-        TagValues.TEAMS: TeamsApi,
-        TagValues.TICKET_TYPE_ATTRIBUTES: TicketTypeAttributesApi,
-        TagValues.TICKET_TYPES: TicketTypesApi,
-        TagValues.VISITORS: VisitorsApi,
-    }
-)
+tag_to_api = TagToApi(tag_dict)

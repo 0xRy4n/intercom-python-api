@@ -56,12 +56,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Archive contact
     api_response = intercom.ContactsApi.archive_contact(
@@ -80,13 +76,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Archive contact
     api_response = intercom.ContactsApi.archive_contact(
@@ -191,12 +183,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Attach a Contact to a Company
     api_response = intercom.ContactsApi.attach_contact_to_a_company(
@@ -215,13 +203,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="58a430d35458202d41b1e65b",
     )
@@ -375,12 +359,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add subscription to a contact
     api_response = intercom.ContactsApi.attach_subscription_type_to_contact(
@@ -399,13 +379,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="37846",
         consent_type="opt_in",
@@ -561,12 +537,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add tag to a contact
     api_response = intercom.ContactsApi.attach_tag_to_contact(
@@ -585,13 +557,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="7522907",
     )
@@ -744,13 +712,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = None
 try:
     # Create contact
@@ -872,12 +836,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Create a note
     api_response = intercom.ContactsApi.create_note(
@@ -896,13 +856,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         body="New note",
         contact_id="123",
@@ -1046,12 +1002,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a contact
     api_response = intercom.ContactsApi.delete_contact(
@@ -1070,13 +1022,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "id_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a contact
     api_response = intercom.ContactsApi.delete_contact(
@@ -1196,12 +1144,8 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "37846",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove subscription from a contact
     api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
@@ -1221,13 +1165,9 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "37846",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Remove subscription from a contact
     api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
@@ -1369,12 +1309,8 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "7522907",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove tag from a contact
     api_response = intercom.ContactsApi.detach_tag_from_contact(
@@ -1394,13 +1330,9 @@ path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
     'id': "7522907",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Remove tag from a contact
     api_response = intercom.ContactsApi.detach_tag_from_contact(
@@ -1542,12 +1474,8 @@ path_params = {
     'contact_id': "58a430d35458202d41b1e65b",
     'id': "58a430d35458202d41b1e65b",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Detach a contact from a company
     api_response = intercom.ContactsApi.dettach_contact_from_a_company(
@@ -1567,13 +1495,9 @@ path_params = {
     'contact_id': "58a430d35458202d41b1e65b",
     'id': "58a430d35458202d41b1e65b",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Detach a contact from a company
     api_response = intercom.ContactsApi.dettach_contact_from_a_company(
@@ -1714,12 +1638,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached contacts
     api_response = intercom.ContactsApi.list_attached_contacts(
@@ -1738,13 +1658,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached contacts
     api_response = intercom.ContactsApi.list_attached_contacts(
@@ -1877,12 +1793,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached companies for contact
     api_response = intercom.ContactsApi.list_companies_for_a_contact(
@@ -1901,13 +1813,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached companies for contact
     api_response = intercom.ContactsApi.list_companies_for_a_contact(
@@ -2038,13 +1946,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all contacts
     api_response = intercom.ContactsApi.list_contacts(
@@ -2147,12 +2051,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
 }
-
 try:
     # List all notes
     api_response = intercom.ContactsApi.list_notes(
@@ -2171,13 +2071,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all notes
     api_response = intercom.ContactsApi.list_notes(
@@ -2296,12 +2192,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List attached segments for contact
     api_response = intercom.ContactsApi.list_segments_for_a_contact(
@@ -2320,13 +2212,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List attached segments for contact
     api_response = intercom.ContactsApi.list_segments_for_a_contact(
@@ -2459,12 +2347,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List subscriptions for a contact
     api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
@@ -2483,13 +2367,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List subscriptions for a contact
     api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
@@ -2622,12 +2502,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List tags attached to a contact
     api_response = intercom.ContactsApi.list_tags_for_a_contact(
@@ -2646,13 +2522,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'contact_id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List tags attached to a contact
     api_response = intercom.ContactsApi.list_tags_for_a_contact(
@@ -2784,13 +2656,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = MergeContactsRequest(
         _from="5d70dd30de4efd54f42fd526",
         into="5ba682d23d7cf92bef87bfd4",
@@ -2907,13 +2775,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = SearchRequest(
         query=None,
         pagination=StartingAfterPaging(
@@ -3034,12 +2898,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Get a contact
     api_response = intercom.ContactsApi.show_contact(
@@ -3058,13 +2918,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Get a contact
     api_response = intercom.ContactsApi.show_contact(
@@ -3182,12 +3038,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Unarchive contact
     api_response = intercom.ContactsApi.unarchive_contact(
@@ -3206,13 +3058,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Unarchive contact
     api_response = intercom.ContactsApi.unarchive_contact(
@@ -3317,12 +3165,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a contact
     api_response = intercom.ContactsApi.update_contact(
@@ -3341,13 +3185,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "63a07ddf05a32042dffac965",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Update a contact
     api_response = intercom.ContactsApi.update_contact(

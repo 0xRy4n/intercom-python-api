@@ -38,12 +38,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Cancel content data export
     api_response = intercom.DataExportApi.cancel_data_export(
@@ -62,13 +58,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Cancel content data export
     api_response = intercom.DataExportApi.cancel_data_export(
@@ -171,13 +163,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateDataExportsRequest(
         created_at_after=1527811200,
         created_at_before=1527811200,
@@ -279,12 +267,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Download content data export
     api_response = intercom.DataExportApi.download_data_export(
@@ -302,13 +286,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Download content data export
     api_response = intercom.DataExportApi.download_data_export(
@@ -404,12 +384,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Show content data export
     api_response = intercom.DataExportApi.get_data_export(
@@ -428,13 +404,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'job_identifier': "job_identifier_example",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Show content data export
     api_response = intercom.DataExportApi.get_data_export(

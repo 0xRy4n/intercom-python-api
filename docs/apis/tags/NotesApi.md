@@ -38,12 +38,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Create a note
     api_response = intercom.NotesApi.create_note(
@@ -62,13 +58,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         body="New note",
         contact_id="123",
@@ -212,12 +204,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
 }
-
 try:
     # List all notes
     api_response = intercom.NotesApi.list_notes(
@@ -236,13 +224,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all notes
     api_response = intercom.NotesApi.list_notes(
@@ -361,12 +345,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a note
     api_response = intercom.NotesApi.retrieve_note(
@@ -385,13 +365,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 1,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a note
     api_response = intercom.NotesApi.retrieve_note(

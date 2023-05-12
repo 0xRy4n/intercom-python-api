@@ -49,12 +49,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Attach a contact to a conversation
     api_response = intercom.ConversationsApi.attach_contact_to_conversation(
@@ -73,13 +69,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = AttachContactToConversationRequest(
         admin_id="12345",
         customer=dict(),
@@ -241,12 +233,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'conversation_id': "64619700005694",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Add tag to a conversation
     api_response = intercom.ConversationsApi.attach_tag_to_conversation(
@@ -265,13 +253,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'conversation_id': "64619700005694",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         id="7522907",
         admin_id="780",
@@ -427,12 +411,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Run Assignment Rules on a conversation
     api_response = intercom.ConversationsApi.auto_assign_conversation(
@@ -451,13 +431,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Run Assignment Rules on a conversation
     api_response = intercom.ConversationsApi.auto_assign_conversation(
@@ -603,13 +579,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = CreateConversationRequest(
         _from=dict(
             type="user",
@@ -760,12 +732,8 @@ path_params = {
     'conversation_id': "123",
     'contact_id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Detach a contact from a group conversation
     api_response = intercom.ConversationsApi.detach_contact_from_conversation(
@@ -785,13 +753,9 @@ path_params = {
     'conversation_id': "123",
     'contact_id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = DetachContactFromConversationRequest(None)
 try:
     # Detach a contact from a group conversation
@@ -973,12 +937,8 @@ path_params = {
     'conversation_id': "64619700005694",
     'id': "7522907",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Remove tag from a conversation
     api_response = intercom.ConversationsApi.detach_tag_from_conversation(
@@ -998,13 +958,9 @@ path_params = {
     'conversation_id': "64619700005694",
     'id': "7522907",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = dict(
         admin_id="123",
     )
@@ -1164,17 +1120,13 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
 query_params = {
     'per_page': 20,
     'starting_after': "starting_after_example",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all conversations
     api_response = intercom.ConversationsApi.list_conversations(
@@ -1320,12 +1272,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Manage a conversation
     api_response = intercom.ConversationsApi.manage_conversation(
@@ -1344,13 +1292,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = None
 try:
     # Manage a conversation
@@ -1518,13 +1462,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = RedactConversationRequest(None)
 try:
     # Redact a conversation part
@@ -1654,12 +1594,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': None,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Reply to a conversation
     api_response = intercom.ConversationsApi.reply_conversation(
@@ -1678,13 +1614,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': None,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = ReplyConversationRequest(None)
 try:
     # Reply to a conversation
@@ -1868,14 +1800,10 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
 query_params = {
 }
-
-
 header_params = {
 }
-
 try:
     # Retrieve a conversation
     api_response = intercom.ConversationsApi.retrieve_conversation(
@@ -1895,16 +1823,12 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
 query_params = {
     'display_as': "plaintext",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a conversation
     api_response = intercom.ConversationsApi.retrieve_conversation(
@@ -2066,13 +1990,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = SearchRequest(
         query=None,
         pagination=StartingAfterPaging(
@@ -2180,14 +2100,10 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
 query_params = {
 }
-
-
 header_params = {
 }
-
 try:
     # Update a conversation
     api_response = intercom.ConversationsApi.update_conversation(
@@ -2207,16 +2123,12 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
 query_params = {
     'display_as': "plaintext",
 }
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = UpdateConversationRequest(
         read=True,
         custom_attributes=CustomAttributes(

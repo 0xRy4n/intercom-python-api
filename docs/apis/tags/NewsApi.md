@@ -42,13 +42,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = NewsItemRequest(
         title="Halloween is here!",
         body="<p>New costumes in store for this spooky season</p>",
@@ -177,12 +173,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Delete a news item
     api_response = intercom.NewsApi.delete_news_item(
@@ -201,13 +193,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Delete a news item
     api_response = intercom.NewsApi.delete_news_item(
@@ -340,12 +328,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # List all live newsfeed items
     api_response = intercom.NewsApi.list_live_newsfeed_items(
@@ -364,13 +348,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all live newsfeed items
     api_response = intercom.NewsApi.list_live_newsfeed_items(
@@ -487,13 +467,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all news items
     api_response = intercom.NewsApi.list_news_items(
@@ -594,13 +570,9 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # List all newsfeeds
     api_response = intercom.NewsApi.list_newsfeeds(
@@ -703,12 +675,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a news item
     api_response = intercom.NewsApi.retrieve_news_item(
@@ -727,13 +695,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a news item
     api_response = intercom.NewsApi.retrieve_news_item(
@@ -866,12 +830,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
 }
-
 try:
     # Retrieve a newsfeed
     api_response = intercom.NewsApi.retrieve_newsfeed(
@@ -890,13 +850,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': "123",
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 try:
     # Retrieve a newsfeed
     api_response = intercom.NewsApi.retrieve_newsfeed(
@@ -1014,12 +970,8 @@ An example of an API call passing only required parameters which have no default
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
 }
-
 try:
     # Update a news item
     api_response = intercom.NewsApi.update_news_item(
@@ -1038,13 +990,9 @@ An example passing **only** the optional values (like `Intercom-Version`):
 path_params = {
     'id': 123,
 }
-
-
-
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-
 body = NewsItemRequest(
         title="Halloween is here!",
         body="<p>New costumes in store for this spooky season</p>",
