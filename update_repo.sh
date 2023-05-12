@@ -94,7 +94,7 @@ do
 
     git add .
     git commit -m "Automated update of branch using update_repo.sh script."
-    git push "origin/$parsed_version" --dry-run
+    git push "origin/$parsed_version"
 
 done
 
