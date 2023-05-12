@@ -1,0 +1,7 @@
+# do not import all endpoints into this module because that uses a lot of memory and stack frames
+# if you need the ability to import all endpoints from this module, import them with
+# from intercom_python_api.paths.tickets_ticket_id_reply import Api
+
+from intercom_python_api.paths import PathValues
+
+path = PathValues.TICKETS_TICKET_ID_REPLY

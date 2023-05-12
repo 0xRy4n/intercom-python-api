@@ -1,11 +1,11 @@
 # intercom_python_api.model.ticket_request_custom_attributes.TicketRequestCustomAttributes
 
-The custom attributes set on the ticket. For the default title and description attributes, the keys are `_default_title_` and `_default_description_`.
+The attributes set on the ticket. When setting the default title and description attributes, the attribute keys that should be used are `_default_title_` and `_default_description_`. When setting ticket type attributes of the list attribute type, the key should be the attribute name and the value of the attribute should be the list item id, obtainable by [listing the ticket type](ref:get_ticket-types). For example, if the ticket type has an attribute called `priority` of type `list`, the key should be `priority` and the value of the attribute should be the guid of the list item (e.g. `de1825a0-0164-4070-8ca6-13e22462fa7e`).
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict,  | frozendict.frozendict,  | The custom attributes set on the ticket. For the default title and description attributes, the keys are &#x60;_default_title_&#x60; and &#x60;_default_description_&#x60;. | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  | The attributes set on the ticket. When setting the default title and description attributes, the attribute keys that should be used are &#x60;_default_title_&#x60; and &#x60;_default_description_&#x60;. When setting ticket type attributes of the list attribute type, the key should be the attribute name and the value of the attribute should be the list item id, obtainable by [listing the ticket type](ref:get_ticket-types). For example, if the ticket type has an attribute called &#x60;priority&#x60; of type &#x60;list&#x60;, the key should be &#x60;priority&#x60; and the value of the attribute should be the guid of the list item (e.g. &#x60;de1825a0-0164-4070-8ca6-13e22462fa7e&#x60;). | 
 
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes

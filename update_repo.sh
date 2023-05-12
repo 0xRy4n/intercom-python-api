@@ -15,10 +15,6 @@ error () {
 
 # GENERATIVE FUNCTIONS
 
-generate () {
-    openapi-generator-cli generate -t templates -g python -o . -i $1 --skip-validate-spec --additional-properties=packageName=intercom_python_api,packageUrl=$PACKAGE_URL
-}
-
 increment_version() {
     major=$(echo $package_version | cut -d. -f1)
     minor=$(echo $package_version | cut -d. -f2)
@@ -90,7 +86,7 @@ do
     fi
 
     echo $package_version > docs/package_version
-    generate ./docs/api.intercom.yaml
+    openapi-generator-cli generate -t templates -g python -o . -i docs/api.intercom.io.yaml --skip-validate-spec --additional-properties=packageName=intercom_python_api,packageUrl=$PACKAGE_URL,packageVersion=$package_version
 
     git add .
     git commit -m "Automated update of branch using update_repo.sh script."

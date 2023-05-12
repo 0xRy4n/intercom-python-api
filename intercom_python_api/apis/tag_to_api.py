@@ -137,6 +137,13 @@ except ModuleNotFoundError as e:
         RuntimeWarning
     )
 try:
+    from intercom_python_api.apis.tags.tickets_api import TicketsApi
+except ModuleNotFoundError as e:
+    warnings.warn(
+        f"Unable to import 'TicketsApi'. Got error: {e}",
+        RuntimeWarning
+    )
+try:
     from intercom_python_api.apis.tags.visitors_api import VisitorsApi
 except ModuleNotFoundError as e:
     warnings.warn(
@@ -146,126 +153,90 @@ except ModuleNotFoundError as e:
 
 
 tag_dict = {}
-        
 try:
     tag_dict[TagValues.ADMINS] = AdminsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.ARTICLES] = ArticlesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.COMPANIES] = CompaniesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.CONTACTS] = ContactsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.CONVERSATIONS] = ConversationsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.DATA_ATTRIBUTES] = DataAttributesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.DATA_EVENTS] = DataEventsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.DATA_EXPORT] = DataExportApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.HELP_CENTER] = HelpCenterApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.MESSAGES] = MessagesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.NEWS] = NewsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.NOTES] = NotesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.SEGMENTS] = SegmentsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.SUBSCRIPTION_TYPES] = SubscriptionTypesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.SWITCH] = SwitchApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.TAGS] = TagsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.TEAMS] = TeamsApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.TICKET_TYPE_ATTRIBUTES] = TicketTypeAttributesApi
 except:
     pass
-
-        
 try:
     tag_dict[TagValues.TICKET_TYPES] = TicketTypesApi
 except:
     pass
-
-        
+try:
+    tag_dict[TagValues.TICKETS] = TicketsApi
+except:
+    pass
 try:
     tag_dict[TagValues.VISITORS] = VisitorsApi
 except:
     pass
-
 
 TagToApi = typing_extensions.TypedDict(
     'TagToApi',
