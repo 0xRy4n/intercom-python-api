@@ -13,7 +13,6 @@ from {{packageName}} import Intercom
 {{#with operations}}
 {{#each operation}}
 {{#if @first}}
-{{> doc_auth_partial}}
 
 # Instantiate Intercom client object
 intercom = Intercom(api_key='<YOUR API TOKEN>')
