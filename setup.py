@@ -12,7 +12,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "intercom-python-api"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -35,7 +35,7 @@ setup(
     description="Intercom API",
     author="Intercom Developer Hub",
     author_email="team@openapitools.org",
-    url="",
+    url="https://github.com/0xRy4n/intercom-python-api",
     keywords=["OpenAPI", "OpenAPI-Generator", "Intercom API"],
     python_requires=">=3.7",
     install_requires=REQUIRES,

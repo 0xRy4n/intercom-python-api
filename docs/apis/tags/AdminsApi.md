@@ -23,43 +23,31 @@ Identify an admin
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
 from intercom_python_api.model.admin_with_app import AdminWithApp
 from intercom_python_api.model.intercom_version import IntercomVersion
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admins_api.AdminsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     try:
         # Identify an admin
-        api_response = api_instance.identify_admin(
+        api_response = intercom.AdminsApi.identify_admin(
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->identify_admin: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -122,33 +110,19 @@ You can get a log of activities by all admins in an app.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
 from intercom_python_api.model.activity_log_list import ActivityLogList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admins_api.AdminsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     query_params = {
         'created_at_after': "1677255034",
     }
@@ -156,7 +130,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all activity logs
-        api_response = api_instance.list_activity_logs(
+        api_response = intercom.AdminsApi.list_activity_logs(
             query_params=query_params,
             header_params=header_params,
         )
@@ -164,7 +138,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     query_params = {
         'created_at_after': "1677255034",
         'created_at_before': "1677863434",
@@ -174,13 +152,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all activity logs
-        api_response = api_instance.list_activity_logs(
+        api_response = intercom.AdminsApi.list_activity_logs(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -281,44 +260,32 @@ You can fetch a list of admins for a given workspace.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.admin_list import AdminList
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admins_api.AdminsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     try:
         # List all admins
-        api_response = api_instance.list_admins(
+        api_response = intercom.AdminsApi.list_admins(
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->list_admins: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -395,33 +362,19 @@ You can retrieve the details of a single admin.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admins_api.AdminsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 123,
     }
@@ -429,7 +382,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve an admin
-        api_response = api_instance.retrieve_admin(
+        api_response = intercom.AdminsApi.retrieve_admin(
             path_params=path_params,
             header_params=header_params,
         )
@@ -437,7 +390,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 123,
     }
@@ -446,13 +403,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve an admin
-        api_response = api_instance.retrieve_admin(
+        api_response = intercom.AdminsApi.retrieve_admin(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -558,33 +516,19 @@ You can set an Admin as away for the Inbox.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = admins_api.AdminsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 1,
     }
@@ -592,7 +536,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Set an admin to away
-        api_response = api_instance.set_away_admin(
+        api_response = intercom.AdminsApi.set_away_admin(
             path_params=path_params,
             header_params=header_params,
         )
@@ -600,7 +544,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 1,
     }
@@ -613,7 +561,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Set an admin to away
-        api_response = api_instance.set_away_admin(
+        api_response = intercom.AdminsApi.set_away_admin(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -621,6 +569,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
+
 ```
 ### Parameters
 

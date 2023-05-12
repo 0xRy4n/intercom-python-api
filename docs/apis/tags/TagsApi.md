@@ -27,33 +27,19 @@ You can tag a specific contact. This will return a tag object for the tag that w
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
     }
@@ -61,7 +47,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Add tag to a contact
-        api_response = api_instance.attach_tag_to_contact(
+        api_response = intercom.TagsApi.attach_tag_to_contact(
             path_params=path_params,
             header_params=header_params,
         )
@@ -69,7 +55,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
     }
@@ -81,7 +71,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Add tag to a contact
-        api_response = api_instance.attach_tag_to_contact(
+        api_response = intercom.TagsApi.attach_tag_to_contact(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -89,6 +79,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -211,33 +202,19 @@ You can tag a specific conversation. This will return a tag object for the tag t
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'conversation_id': "64619700005694",
     }
@@ -245,7 +222,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Add tag to a conversation
-        api_response = api_instance.attach_tag_to_conversation(
+        api_response = intercom.TagsApi.attach_tag_to_conversation(
             path_params=path_params,
             header_params=header_params,
         )
@@ -253,7 +230,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'conversation_id': "64619700005694",
     }
@@ -266,7 +247,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Add tag to a conversation
-        api_response = api_instance.attach_tag_to_conversation(
+        api_response = intercom.TagsApi.attach_tag_to_conversation(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -274,6 +255,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -397,7 +379,7 @@ You can use this endpoint to perform the following operations:    **1. Create a 
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.create_or_update_tag_request import CreateOrUpdateTagRequest
@@ -406,41 +388,29 @@ from intercom_python_api.model.untag_company_request import UntagCompanyRequest
 from intercom_python_api.model.tag_multiple_users_request import TagMultipleUsersRequest
 from intercom_python_api.model.tag_company_request import TagCompanyRequest
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     body = None
     try:
         # Create or update a tag, Tag or untag companies, Tag contacts
-        api_response = api_instance.create_tag(
+        api_response = intercom.TagsApi.create_tag(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->create_tag: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -565,32 +535,18 @@ You can delete the details of tags that are on the workspace by passing in the i
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "123",
     }
@@ -598,14 +554,18 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete tag
-        api_response = api_instance.delete_tag(
+        api_response = intercom.TagsApi.delete_tag(
             path_params=path_params,
             header_params=header_params,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "123",
     }
@@ -614,12 +574,13 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete tag
-        api_response = api_instance.delete_tag(
+        api_response = intercom.TagsApi.delete_tag(
             path_params=path_params,
             header_params=header_params,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -733,33 +694,19 @@ You can remove tag from a specific contact. This will return a tag object for th
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
         'id': "7522907",
@@ -768,7 +715,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Remove tag from a contact
-        api_response = api_instance.detach_tag_from_contact(
+        api_response = intercom.TagsApi.detach_tag_from_contact(
             path_params=path_params,
             header_params=header_params,
         )
@@ -776,7 +723,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
         'id': "7522907",
@@ -786,13 +737,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Remove tag from a contact
-        api_response = api_instance.detach_tag_from_contact(
+        api_response = intercom.TagsApi.detach_tag_from_contact(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -906,33 +858,19 @@ You can remove tag from a specific conversation. This will return a tag object f
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'conversation_id': "64619700005694",
         'id': "7522907",
@@ -941,7 +879,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Remove tag from a conversation
-        api_response = api_instance.detach_tag_from_conversation(
+        api_response = intercom.TagsApi.detach_tag_from_conversation(
             path_params=path_params,
             header_params=header_params,
         )
@@ -949,7 +887,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'conversation_id': "64619700005694",
         'id': "7522907",
@@ -962,7 +904,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Remove tag from a conversation
-        api_response = api_instance.detach_tag_from_conversation(
+        api_response = intercom.TagsApi.detach_tag_from_conversation(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -970,6 +912,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1100,33 +1043,19 @@ You can fetch the details of tags that are on the workspace by their id. This wi
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "123",
     }
@@ -1134,7 +1063,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Find a specific tag
-        api_response = api_instance.find_tag(
+        api_response = intercom.TagsApi.find_tag(
             path_params=path_params,
             header_params=header_params,
         )
@@ -1142,7 +1071,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->find_tag: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "123",
     }
@@ -1151,13 +1084,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Find a specific tag
-        api_response = api_instance.find_tag(
+        api_response = intercom.TagsApi.find_tag(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->find_tag: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1263,44 +1197,32 @@ You can fetch a list of all tags for a given workspace.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag_list import TagList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     try:
         # List all tags
-        api_response = api_instance.list_tags(
+        api_response = intercom.TagsApi.list_tags(
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->list_tags: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1377,33 +1299,19 @@ You can fetch a list of all tags that are attached to a specific contact.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
 from intercom_python_api.model.tag_list import TagList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tags_api.TagsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
     }
@@ -1411,7 +1319,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List tags attached to a contact
-        api_response = api_instance.list_tags_for_a_contact(
+        api_response = intercom.TagsApi.list_tags_for_a_contact(
             path_params=path_params,
             header_params=header_params,
         )
@@ -1419,7 +1327,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'contact_id': "63a07ddf05a32042dffac965",
     }
@@ -1428,13 +1340,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List tags attached to a contact
-        api_response = api_instance.list_tags_for_a_contact(
+        api_response = intercom.TagsApi.list_tags_for_a_contact(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
+
 ```
 ### Parameters
 

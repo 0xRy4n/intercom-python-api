@@ -21,33 +21,19 @@ You can add a note to a single contact.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.note import Note
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = notes_api.NotesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 123,
     }
@@ -55,7 +41,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Create a note
-        api_response = api_instance.create_note(
+        api_response = intercom.NotesApi.create_note(
             path_params=path_params,
             header_params=header_params,
         )
@@ -63,7 +49,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 123,
     }
@@ -77,7 +67,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Create a note
-        api_response = api_instance.create_note(
+        api_response = intercom.NotesApi.create_note(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -85,6 +75,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->create_note: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -195,33 +186,19 @@ You can fetch a list of notes that are associated to a contact.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api
 from intercom_python_api.model.note_list import NoteList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = notes_api.NotesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 1,
     }
@@ -229,7 +206,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all notes
-        api_response = api_instance.list_notes(
+        api_response = intercom.NotesApi.list_notes(
             path_params=path_params,
             header_params=header_params,
         )
@@ -237,7 +214,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->list_notes: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 1,
     }
@@ -246,13 +227,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all notes
-        api_response = api_instance.list_notes(
+        api_response = intercom.NotesApi.list_notes(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->list_notes: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -344,33 +326,19 @@ You can fetch the details of a single note.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.note import Note
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = notes_api.NotesApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 1,
     }
@@ -378,7 +346,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a note
-        api_response = api_instance.retrieve_note(
+        api_response = intercom.NotesApi.retrieve_note(
             path_params=path_params,
             header_params=header_params,
         )
@@ -386,7 +354,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 1,
     }
@@ -395,13 +367,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a note
-        api_response = api_instance.retrieve_note(
+        api_response = intercom.NotesApi.retrieve_note(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
+
 ```
 ### Parameters
 

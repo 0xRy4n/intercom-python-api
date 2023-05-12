@@ -29,7 +29,7 @@ You can add participants who are contacts to a conversation, on behalf of either
 
 ### Example
 
-- Bearer Authentication (bearerAuth):
+Bearer Authentication (bearerAuth):
 
 ```python
 import intercom_python_api import Intercom

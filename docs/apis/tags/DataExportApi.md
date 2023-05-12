@@ -22,32 +22,18 @@ You can cancel your job
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.intercom_version import IntercomVersion
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_export_api.DataExportApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -55,7 +41,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Cancel content data export
-        api_response = api_instance.cancel_data_export(
+        api_response = intercom.DataExportApi.cancel_data_export(
             path_params=path_params,
             header_params=header_params,
         )
@@ -63,7 +49,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -72,13 +62,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Cancel content data export
-        api_response = api_instance.cancel_data_export(
+        api_response = intercom.DataExportApi.cancel_data_export(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -156,33 +147,20 @@ To create your export job, you need to send a `POST` request to the export endpo
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.create_data_exports_request import CreateDataExportsRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_export_api.DataExportApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
@@ -192,13 +170,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Create content data export
-        api_response = api_instance.create_data_export(
+        api_response = intercom.DataExportApi.create_data_export(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->create_data_export: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -271,31 +250,17 @@ When a job has a status of complete, and thus a filled download_url, you can dow
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
 from intercom_python_api.model.intercom_version import IntercomVersion
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_export_api.DataExportApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -303,14 +268,18 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Download content data export
-        api_response = api_instance.download_data_export(
+        api_response = intercom.DataExportApi.download_data_export(
             path_params=path_params,
             header_params=header_params,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -319,12 +288,13 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Download content data export
-        api_response = api_instance.download_data_export(
+        api_response = intercom.DataExportApi.download_data_export(
             path_params=path_params,
             header_params=header_params,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -395,32 +365,18 @@ You can view the status of your job by sending a `GET` request to the URL `https
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.intercom_version import IntercomVersion
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_export_api.DataExportApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -428,7 +384,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Show content data export
-        api_response = api_instance.get_data_export(
+        api_response = intercom.DataExportApi.get_data_export(
             path_params=path_params,
             header_params=header_params,
         )
@@ -436,7 +392,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'job_identifier': "job_identifier_example",
     }
@@ -445,13 +405,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Show content data export
-        api_response = api_instance.get_data_export(
+        api_response = intercom.DataExportApi.get_data_export(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
+
 ```
 ### Parameters
 

@@ -26,34 +26,21 @@ You can create a news item
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.news_item_request import NewsItemRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.news_item import NewsItem
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
@@ -74,13 +61,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Create a news item
-        api_response = api_instance.create_news_item(
+        api_response = intercom.NewsApi.create_news_item(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->create_news_item: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -167,33 +155,19 @@ You can delete a single news item.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.deleted_object import DeletedObject
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 123,
     }
@@ -201,7 +175,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete a news item
-        api_response = api_instance.delete_news_item(
+        api_response = intercom.NewsApi.delete_news_item(
             path_params=path_params,
             header_params=header_params,
         )
@@ -209,7 +183,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->delete_news_item: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 123,
     }
@@ -218,13 +196,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete a news item
-        api_response = api_instance.delete_news_item(
+        api_response = intercom.NewsApi.delete_news_item(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->delete_news_item: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -330,33 +309,19 @@ You can fetch a list of all news items that are live on a given newsfeed
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.paginated_response import PaginatedResponse
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "123",
     }
@@ -364,7 +329,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all live newsfeed items
-        api_response = api_instance.list_live_newsfeed_items(
+        api_response = intercom.NewsApi.list_live_newsfeed_items(
             path_params=path_params,
             header_params=header_params,
         )
@@ -372,7 +337,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->list_live_newsfeed_items: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "123",
     }
@@ -381,13 +350,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all live newsfeed items
-        api_response = api_instance.list_live_newsfeed_items(
+        api_response = intercom.NewsApi.list_live_newsfeed_items(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->list_live_newsfeed_items: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -479,44 +449,32 @@ You can fetch a list of all news items
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.paginated_response import PaginatedResponse
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     try:
         # List all news items
-        api_response = api_instance.list_news_items(
+        api_response = intercom.NewsApi.list_news_items(
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->list_news_items: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -593,44 +551,32 @@ You can fetch a list of all newsfeeds
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.paginated_response import PaginatedResponse
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     try:
         # List all newsfeeds
-        api_response = api_instance.list_newsfeeds(
+        api_response = intercom.NewsApi.list_newsfeeds(
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->list_newsfeeds: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -707,33 +653,19 @@ You can fetch the details of a single news item.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.news_item import NewsItem
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 123,
     }
@@ -741,7 +673,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a news item
-        api_response = api_instance.retrieve_news_item(
+        api_response = intercom.NewsApi.retrieve_news_item(
             path_params=path_params,
             header_params=header_params,
         )
@@ -749,7 +681,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->retrieve_news_item: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 123,
     }
@@ -758,13 +694,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a news item
-        api_response = api_instance.retrieve_news_item(
+        api_response = intercom.NewsApi.retrieve_news_item(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->retrieve_news_item: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -870,33 +807,19 @@ You can fetch the details of a single newsfeed
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.newsfeed import Newsfeed
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "123",
     }
@@ -904,7 +827,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a newsfeed
-        api_response = api_instance.retrieve_newsfeed(
+        api_response = intercom.NewsApi.retrieve_newsfeed(
             path_params=path_params,
             header_params=header_params,
         )
@@ -912,7 +835,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->retrieve_newsfeed: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "123",
     }
@@ -921,13 +848,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a newsfeed
-        api_response = api_instance.retrieve_newsfeed(
+        api_response = intercom.NewsApi.retrieve_newsfeed(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->retrieve_newsfeed: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -1017,34 +945,20 @@ Update a news item
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
 from intercom_python_api.model.news_item_request import NewsItemRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.news_item import NewsItem
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = news_api.NewsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': 123,
     }
@@ -1052,7 +966,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Update a news item
-        api_response = api_instance.update_news_item(
+        api_response = intercom.NewsApi.update_news_item(
             path_params=path_params,
             header_params=header_params,
         )
@@ -1060,7 +974,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->update_news_item: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': 123,
     }
@@ -1084,7 +1002,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Update a news item
-        api_response = api_instance.update_news_item(
+        api_response = intercom.NewsApi.update_news_item(
             path_params=path_params,
             header_params=header_params,
             body=body,
@@ -1092,6 +1010,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling NewsApi->update_news_item: %s\n" % e)
+
 ```
 ### Parameters
 

@@ -1,0 +1,30 @@
+import typing_extensions
+import warnings
+
+from {{packageName}}.apis.tags import TagValues
+{{#each tagModuleNameToApiClassname}}
+try:
+    from {{packageName}}.apis.tags.{{@key}} import {{this}}
+except ModuleNotFoundError as e:
+    warnings.warn(
+        f"Unable to import '{{this}}'. Got error: {e}",
+        RuntimeWarning
+    )
+{{/each}}
+
+TagToApi = typing_extensions.TypedDict(
+    'TagToApi',
+    {
+{{#each tagEnumToApiClassname}}
+        TagValues.{{@key}}: {{this}},
+{{/each}}
+    }
+)
+
+tag_to_api = TagToApi(
+    {
+{{#each tagEnumToApiClassname}}
+        TagValues.{{@key}}: {{this}},
+{{/each}}
+    }
+)

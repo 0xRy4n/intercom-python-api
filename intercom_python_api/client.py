@@ -15,8 +15,3 @@ class Intercom:
         for value in tag_to_api.values():
             instance = value(self.raw_api_client)
             setattr(self, value.__name__, instance)
-
-
-
-
-

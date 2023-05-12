@@ -21,45 +21,33 @@ Submit a data event
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
 from intercom_python_api.model.create_data_event_request import CreateDataEventRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_events_api.DataEventsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     body = CreateDataEventRequest()
     try:
         # Submit a data event
-        api_response = api_instance.create_data_event(
+        api_response = intercom.DataEventsApi.create_data_event(
             header_params=header_params,
             body=body,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataEventsApi->create_data_event: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -140,33 +128,20 @@ Create event summaries for a user. Event summaries are used to track the number 
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_data_event_summaries_request import CreateDataEventSummariesRequest
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_events_api.DataEventsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
@@ -181,12 +156,13 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Create event summaries
-        api_response = api_instance.data_event_summaries(
+        api_response = intercom.DataEventsApi.data_event_summaries(
             header_params=header_params,
             body=body,
         )
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataEventsApi->data_event_summaries: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -267,33 +243,19 @@ List all data events
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.data_event_summary import DataEventSummary
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = data_events_api.DataEventsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     query_params = {
         'filter': dict(),
         'type': "type_example",
@@ -302,7 +264,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all data events
-        api_response = api_instance.lis_data_events(
+        api_response = intercom.DataEventsApi.lis_data_events(
             query_params=query_params,
             header_params=header_params,
         )
@@ -310,7 +272,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     query_params = {
         'filter': dict(),
         'type': "type_example",
@@ -321,13 +287,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # List all data events
-        api_response = api_instance.lis_data_events(
+        api_response = intercom.DataEventsApi.lis_data_events(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
+
 ```
 ### Parameters
 

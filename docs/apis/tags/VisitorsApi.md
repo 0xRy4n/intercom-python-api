@@ -23,34 +23,21 @@ You can merge a Visitor to a Contact of role type `lead` or `user`.  > 📘 What
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.convert_visitor_request import ConvertVisitorRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = visitors_api.VisitorsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
@@ -61,13 +48,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     )
     try:
         # Convert a visitor
-        api_response = api_instance.convert_visitor(
+        api_response = intercom.VisitorsApi.convert_visitor(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->convert_visitor: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -154,33 +142,19 @@ You can delete a single visitor.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
 from intercom_python_api.model.visitor_deleted_object import VisitorDeletedObject
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = visitors_api.VisitorsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
     }
@@ -188,7 +162,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete a visitor
-        api_response = api_instance.delete_visitor(
+        api_response = intercom.VisitorsApi.delete_visitor(
             path_params=path_params,
             header_params=header_params,
         )
@@ -196,7 +170,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
     }
@@ -205,13 +183,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Delete a visitor
-        api_response = api_instance.delete_visitor(
+        api_response = intercom.VisitorsApi.delete_visitor(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -317,33 +296,19 @@ You can fetch the details of a single visitor.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = visitors_api.VisitorsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     path_params = {
         'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
     }
@@ -351,7 +316,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a visitor with ID
-        api_response = api_instance.retrieve_visitor(
+        api_response = intercom.VisitorsApi.retrieve_visitor(
             path_params=path_params,
             header_params=header_params,
         )
@@ -359,7 +324,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     path_params = {
         'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
     }
@@ -368,13 +337,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a visitor with ID
-        api_response = api_instance.retrieve_visitor(
+        api_response = intercom.VisitorsApi.retrieve_visitor(
             path_params=path_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -480,33 +450,19 @@ You can fetch the details of a single visitor.
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
+```
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = visitors_api.VisitorsApi(api_client)
+An example of an API call passing only required parameters which have no default value:
 
-    # example passing only required values which don't have defaults set
+```python
     query_params = {
         'user_id': "user_id_example",
     }
@@ -514,7 +470,7 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a visitor with User ID
-        api_response = api_instance.retrieve_visitor_with_user_id(
+        api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
             query_params=query_params,
             header_params=header_params,
         )
@@ -522,7 +478,11 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
 
-    # example passing only optional values
+```
+
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     query_params = {
         'user_id': "user_id_example",
     }
@@ -531,13 +491,14 @@ with intercom_python_api.ApiClient(configuration) as api_client:
     }
     try:
         # Retrieve a visitor with User ID
-        api_response = api_instance.retrieve_visitor_with_user_id(
+        api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
             query_params=query_params,
             header_params=header_params,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
+
 ```
 ### Parameters
 
@@ -644,47 +605,35 @@ Sending a PUT request to `/visitors` will result in an update of an existing Vis
 
 * Bearer Authentication (bearerAuth):
 ```python
-import intercom_python_api
+import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.update_visitor_request import UpdateVisitorRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.intercom.io
-# See configuration.py for a list of all supported configuration parameters.
-configuration = intercom_python_api.Configuration(
-    host = "https://api.intercom.io"
-)
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Create an Intercom client context.
+intercom = Intercom(api_key='<YOUR API TOKEN>')
 
-# Configure Bearer authorization: bearerAuth
-configuration = intercom_python_api.Configuration(
-    access_token = 'YOUR_BEARER_TOKEN'
-)
-# Enter a context with an instance of the API client
-with intercom_python_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = visitors_api.VisitorsApi(api_client)
+```
 
-    # example passing only optional values
+An example passing **only** the optional values (like `Intercom-Version`):
+
+```python
     header_params = {
         'Intercom-Version': IntercomVersion("Unstable"),
     }
     body = UpdateVisitorRequest()
     try:
         # Update a visitor
-        api_response = api_instance.update_visitor(
+        api_response = intercom.VisitorsApi.update_visitor(
             header_params=header_params,
             body=body,
         )
         pprint(api_response)
     except intercom_python_api.ApiException as e:
         print("Exception when calling VisitorsApi->update_visitor: %s\n" % e)
+
 ```
 ### Parameters
 
