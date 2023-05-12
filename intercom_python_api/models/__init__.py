@@ -16,7 +16,6 @@ from intercom_python_api.model.activity_log_list import ActivityLogList
 from intercom_python_api.model.addressable_list import AddressableList
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.admin_list import AdminList
-from intercom_python_api.model.admin_priority_level import AdminPriorityLevel
 from intercom_python_api.model.admin_reply_conversation_request import AdminReplyConversationRequest
 from intercom_python_api.model.admin_with_app import AdminWithApp
 from intercom_python_api.model.app import App
@@ -71,9 +70,7 @@ from intercom_python_api.model.create_or_update_company_request import CreateOrU
 from intercom_python_api.model.create_or_update_tag_request import CreateOrUpdateTagRequest
 from intercom_python_api.model.create_phone_switch_request import CreatePhoneSwitchRequest
 from intercom_python_api.model.create_section_request import CreateSectionRequest
-from intercom_python_api.model.create_ticket_reply_request import CreateTicketReplyRequest
 from intercom_python_api.model.create_ticket_request import CreateTicketRequest
-from intercom_python_api.model.create_ticket_type_attribute_request import CreateTicketTypeAttributeRequest
 from intercom_python_api.model.create_ticket_type_request import CreateTicketTypeRequest
 from intercom_python_api.model.cursor_pages import CursorPages
 from intercom_python_api.model.custom_attributes import CustomAttributes
@@ -134,11 +131,8 @@ from intercom_python_api.model.tag_multiple_users_request import TagMultipleUser
 from intercom_python_api.model.tags import Tags
 from intercom_python_api.model.team import Team
 from intercom_python_api.model.team_list import TeamList
-from intercom_python_api.model.team_priority_level import TeamPriorityLevel
-from intercom_python_api.model.ticket import Ticket
 from intercom_python_api.model.ticket_contacts import TicketContacts
 from intercom_python_api.model.ticket_custom_attributes import TicketCustomAttributes
-from intercom_python_api.model.ticket_note import TicketNote
 from intercom_python_api.model.ticket_part import TicketPart
 from intercom_python_api.model.ticket_part_author import TicketPartAuthor
 from intercom_python_api.model.ticket_parts import TicketParts
@@ -151,13 +145,10 @@ from intercom_python_api.model.translation import Translation
 from intercom_python_api.model.untag_company_request import UntagCompanyRequest
 from intercom_python_api.model.update_article_request import UpdateArticleRequest
 from intercom_python_api.model.update_collection_request import UpdateCollectionRequest
-from intercom_python_api.model.update_contact_request import UpdateContactRequest
 from intercom_python_api.model.update_conversation_request import UpdateConversationRequest
 from intercom_python_api.model.update_data_attribute_request import UpdateDataAttributeRequest
 from intercom_python_api.model.update_section_request import UpdateSectionRequest
 from intercom_python_api.model.update_ticket_request import UpdateTicketRequest
-from intercom_python_api.model.update_ticket_type_attribute_request import UpdateTicketTypeAttributeRequest
-from intercom_python_api.model.update_ticket_type_request import UpdateTicketTypeRequest
 from intercom_python_api.model.update_visitor_request import UpdateVisitorRequest
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.visitor_deleted_object import VisitorDeletedObject

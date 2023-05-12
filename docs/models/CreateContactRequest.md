@@ -1,11 +1,11 @@
 # intercom_python_api.model.create_contact_request.CreateContactRequest
 
-Payload to create a contact
+Conversations are how you can communicate with users in Intercom. They are created when a contact replies to an outbound message, or when one admin directly sends a message to a single contact.
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-dict, frozendict.frozendict,  | frozendict.frozendict,  | Payload to create a contact | 
+dict, frozendict.frozendict,  | frozendict.frozendict,  | Conversations are how you can communicate with users in Intercom. They are created when a contact replies to an outbound message, or when one admin directly sends a message to a single contact. | 
 
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes

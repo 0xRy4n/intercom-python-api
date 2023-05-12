@@ -25,5 +25,4 @@ class TagValues(str, enum.Enum):
     TEAMS = "Teams"
     TICKET_TYPE_ATTRIBUTES = "Ticket Type Attributes"
     TICKET_TYPES = "Ticket Types"
-    TICKETS = "Tickets"
     VISITORS = "Visitors"

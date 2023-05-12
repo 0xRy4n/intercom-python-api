@@ -20,7 +20,6 @@ Key | Input Type | Accessed Type | Description | Notes
 **has_inbox_seat** | bool,  | BoolClass,  | Identifies if this admin has a paid inbox seat to restrict/allow features that require them. | [optional] 
 **[team_ids](#team_ids)** | list, tuple,  | tuple,  | This object represents the avatar associated with the admin. | [optional] 
 **avatar** | None, str,  | NoneClass, str,  | Image for the associated team or teammate | [optional] 
-**team_priority_level** | [**TeamPriorityLevel**](TeamPriorityLevel.md) | [**TeamPriorityLevel**](TeamPriorityLevel.md) |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # team_ids

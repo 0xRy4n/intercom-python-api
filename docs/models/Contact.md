@@ -16,7 +16,6 @@ Key | Input Type | Accessed Type | Description | Notes
 **role** | str,  | str,  | The role of the contact. | [optional] 
 **email** | str,  | str,  | The contacts email. | [optional] 
 **phone** | None, str,  | NoneClass, str,  | The contacts phone. | [optional] 
-**formatted_phone** | None, str,  | NoneClass, str,  | The contacts phone number normalized to the E164 format | [optional] 
 **name** | None, str,  | NoneClass, str,  | The contacts name. | [optional] 
 **owner_id** | None, decimal.Decimal, int,  | NoneClass, decimal.Decimal,  | The id of an admin that has been assigned account ownership of the contact. | [optional] 
 **has_hard_bounced** | bool,  | BoolClass,  | Whether the contact has had an email sent to them hard bounce. | [optional] 

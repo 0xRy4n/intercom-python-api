@@ -16,7 +16,6 @@ Key | Input Type | Accessed Type | Description | Notes
 **description** | str,  | str,  | The description of the ticket type | [optional] 
 **icon** | str,  | str,  | The icon of the ticket type | [optional] 
 **workspace_id** | str,  | str,  | The id of the workspace that the ticket type belongs to. | [optional] 
-**ticket_type_attributes** | [**TicketTypeAttributeList**](TicketTypeAttributeList.md) | [**TicketTypeAttributeList**](TicketTypeAttributeList.md) |  | [optional] 
 **archived** | bool,  | BoolClass,  | Whether the ticket type is archived or not. | [optional] 
 **created_at** | decimal.Decimal, int,  | decimal.Decimal,  | The date and time the ticket type was created. | [optional] 
 **updated_at** | decimal.Decimal, int,  | decimal.Decimal,  | The date and time the ticket type was last updated. | [optional] 

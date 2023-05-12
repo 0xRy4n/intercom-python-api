@@ -137,13 +137,6 @@ except ModuleNotFoundError as e:
         RuntimeWarning
     )
 try:
-    from intercom_python_api.apis.tags.tickets_api import TicketsApi
-except ModuleNotFoundError as e:
-    warnings.warn(
-        f"Unable to import 'TicketsApi'. Got error: {e}",
-        RuntimeWarning
-    )
-try:
     from intercom_python_api.apis.tags.visitors_api import VisitorsApi
 except ModuleNotFoundError as e:
     warnings.warn(
@@ -227,10 +220,6 @@ except:
     pass
 try:
     tag_dict[TagValues.TICKET_TYPES] = TicketTypesApi
-except:
-    pass
-try:
-    tag_dict[TagValues.TICKETS] = TicketsApi
 except:
     pass
 try:

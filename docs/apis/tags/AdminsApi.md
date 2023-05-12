@@ -126,7 +126,7 @@ An example of an API call passing only required parameters which have no default
 
 ```python
 query_params = {
-    'created_at_after': "1677253093",
+    'created_at_after': "1677253651",
 }
 header_params = {
 }
@@ -146,8 +146,8 @@ An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
 query_params = {
-    'created_at_after': "1677253093",
-    'created_at_before': "1677861493",
+    'created_at_after': "1677253651",
+    'created_at_before': "1677862051",
 }
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),

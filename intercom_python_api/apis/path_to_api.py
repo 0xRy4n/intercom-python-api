@@ -10,6 +10,8 @@ from intercom_python_api.apis.paths.articles import Articles
 from intercom_python_api.apis.paths.articles_id import ArticlesId
 from intercom_python_api.apis.paths.help_center_collections import HelpCenterCollections
 from intercom_python_api.apis.paths.help_center_collections_id import HelpCenterCollectionsId
+from intercom_python_api.apis.paths.help_center_sections import HelpCenterSections
+from intercom_python_api.apis.paths.help_center_sections_id import HelpCenterSectionsId
 from intercom_python_api.apis.paths.companies import Companies
 from intercom_python_api.apis.paths.companies_id import CompaniesId
 from intercom_python_api.apis.paths.companies_id_contacts import CompaniesIdContacts
@@ -65,13 +67,6 @@ from intercom_python_api.apis.paths.tags import Tags
 from intercom_python_api.apis.paths.tags_id import TagsId
 from intercom_python_api.apis.paths.teams import Teams
 from intercom_python_api.apis.paths.teams_id import TeamsId
-from intercom_python_api.apis.paths.ticket_types_ticket_type_id_attributes import TicketTypesTicketTypeIdAttributes
-from intercom_python_api.apis.paths.ticket_types_ticket_type_id_attributes_id import TicketTypesTicketTypeIdAttributesId
-from intercom_python_api.apis.paths.ticket_types import TicketTypes
-from intercom_python_api.apis.paths.ticket_types_id import TicketTypesId
-from intercom_python_api.apis.paths.tickets_ticket_id_reply import TicketsTicketIdReply
-from intercom_python_api.apis.paths.tickets import Tickets
-from intercom_python_api.apis.paths.tickets_id import TicketsId
 from intercom_python_api.apis.paths.visitors import Visitors
 from intercom_python_api.apis.paths.visitors_id import VisitorsId
 from intercom_python_api.apis.paths.visitors_convert import VisitorsConvert
@@ -88,6 +83,8 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.ARTICLES_ID: ArticlesId,
         PathValues.HELP_CENTER_COLLECTIONS: HelpCenterCollections,
         PathValues.HELP_CENTER_COLLECTIONS_ID: HelpCenterCollectionsId,
+        PathValues.HELP_CENTER_SECTIONS: HelpCenterSections,
+        PathValues.HELP_CENTER_SECTIONS_ID: HelpCenterSectionsId,
         PathValues.COMPANIES: Companies,
         PathValues.COMPANIES_ID: CompaniesId,
         PathValues.COMPANIES_ID_CONTACTS: CompaniesIdContacts,
@@ -143,13 +140,6 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.TAGS_ID: TagsId,
         PathValues.TEAMS: Teams,
         PathValues.TEAMS_ID: TeamsId,
-        PathValues.TICKET_TYPES_TICKET_TYPE_ID_ATTRIBUTES: TicketTypesTicketTypeIdAttributes,
-        PathValues.TICKET_TYPES_TICKET_TYPE_ID_ATTRIBUTES_ID: TicketTypesTicketTypeIdAttributesId,
-        PathValues.TICKET_TYPES: TicketTypes,
-        PathValues.TICKET_TYPES_ID: TicketTypesId,
-        PathValues.TICKETS_TICKET_ID_REPLY: TicketsTicketIdReply,
-        PathValues.TICKETS: Tickets,
-        PathValues.TICKETS_ID: TicketsId,
         PathValues.VISITORS: Visitors,
         PathValues.VISITORS_ID: VisitorsId,
         PathValues.VISITORS_CONVERT: VisitorsConvert,
@@ -167,6 +157,8 @@ path_to_api = PathToApi(
         PathValues.ARTICLES_ID: ArticlesId,
         PathValues.HELP_CENTER_COLLECTIONS: HelpCenterCollections,
         PathValues.HELP_CENTER_COLLECTIONS_ID: HelpCenterCollectionsId,
+        PathValues.HELP_CENTER_SECTIONS: HelpCenterSections,
+        PathValues.HELP_CENTER_SECTIONS_ID: HelpCenterSectionsId,
         PathValues.COMPANIES: Companies,
         PathValues.COMPANIES_ID: CompaniesId,
         PathValues.COMPANIES_ID_CONTACTS: CompaniesIdContacts,
@@ -222,13 +214,6 @@ path_to_api = PathToApi(
         PathValues.TAGS_ID: TagsId,
         PathValues.TEAMS: Teams,
         PathValues.TEAMS_ID: TeamsId,
-        PathValues.TICKET_TYPES_TICKET_TYPE_ID_ATTRIBUTES: TicketTypesTicketTypeIdAttributes,
-        PathValues.TICKET_TYPES_TICKET_TYPE_ID_ATTRIBUTES_ID: TicketTypesTicketTypeIdAttributesId,
-        PathValues.TICKET_TYPES: TicketTypes,
-        PathValues.TICKET_TYPES_ID: TicketTypesId,
-        PathValues.TICKETS_TICKET_ID_REPLY: TicketsTicketIdReply,
-        PathValues.TICKETS: Tickets,
-        PathValues.TICKETS_ID: TicketsId,
         PathValues.VISITORS: Visitors,
         PathValues.VISITORS_ID: VisitorsId,
         PathValues.VISITORS_CONVERT: VisitorsConvert,
