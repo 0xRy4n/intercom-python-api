@@ -2,7 +2,7 @@
 openapi: 3.0.1
 info:
   title: Intercom API
-  version: '2.7'
+  version: '2.8'
   description: The intercom API reference.
   contact:
     name: Intercom Developer Hub
@@ -37,7 +37,7 @@ paths:
                 Successful response:
                   value:
                     type: admin
-                    id: '991266214'
+                    id: '991266673'
                     email: admin1@email.com
                     name: Ciaran1 Lee
                     email_verified: true
@@ -45,7 +45,7 @@ paths:
                       type: app
                       id_code: this_is_an_id1_that_should_be_at_least_40
                       name: MyApp 1
-                      created_at: 1677858456
+                      created_at: 1677859839
                       secure: false
                       identity_verification: false
                       timezone: America/Los_Angeles
@@ -83,7 +83,7 @@ paths:
                 Successful response:
                   value:
                     type: admin
-                    id: '991266215'
+                    id: '991266674'
                     name: Ciaran2 Lee
                     email: admin2@email.com
                     away_mode_enabled: true
@@ -100,7 +100,7 @@ paths:
                 Admin not found:
                   value:
                     type: error.list
-                    request_id: cf0af2f3-5d8b-4e15-9aad-511423c53c5a
+                    request_id: 731d78c0-bc71-472d-88bc-e6380f275ba5
                     errors:
                     - code: admin_not_found
                       message: Admin for admin_id not found
@@ -114,7 +114,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 43efc7b9-9028-4cbd-a462-f4dc25a14c88
+                    request_id: 075aa359-d063-42e7-b88e-85d7d591fe62
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -170,7 +170,7 @@ paths:
         required: true
         description: The start date that you request data for. It must be formatted
           as a UNIX timestamp.
-        example: '1677253651'
+        example: '1677255034'
         schema:
           type: string
       - name: created_at_before
@@ -178,7 +178,7 @@ paths:
         required: false
         description: The end date that you request data for. It must be formatted
           as a UNIX timestamp.
-        example: '1677862051'
+        example: '1677863434'
         schema:
           type: string
       tags:
@@ -201,10 +201,10 @@ paths:
                       per_page: 20
                       total_pages: 1
                     activity_logs:
-                    - id: f263aa36-6fca-434a-a74f-7bfabf64c2b9
+                    - id: 235c3fc5-5348-444c-a992-b3e86a0c7252
                       performed_by:
                         type: admin
-                        id: '991266219'
+                        id: '991266678'
                         email: admin5@email.com
                         ip: 127.0.0.1
                       metadata:
@@ -213,21 +213,21 @@ paths:
                           title: Initial message title
                         before: Initial message title
                         after: Eventual message title
-                      created_at: 1677858464
+                      created_at: 1677859847
                       activity_type: message_state_change
                       activity_description: Ciaran5 Lee changed your Initial message
                         title message from Initial message title to Eventual message
                         title.
-                    - id: d4da3b4f-66f1-4551-a534-cfd35aa508a1
+                    - id: 1bfa346c-2cb0-489a-b2ac-7340334ae075
                       performed_by:
                         type: admin
-                        id: '991266219'
+                        id: '991266678'
                         email: admin5@email.com
                         ip: 127.0.0.1
                       metadata:
                         before: before
                         after: after
-                      created_at: 1677858464
+                      created_at: 1677859847
                       activity_type: app_name_change
                       activity_description: Ciaran5 Lee changed your app name from
                         before to after.
@@ -241,7 +241,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: e9f30a70-614e-4642-810d-1897792fd715
+                    request_id: 144aed07-f36c-4c90-ab69-a1187753b86e
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -271,7 +271,7 @@ paths:
                     admins:
                     - type: admin
                       email: admin7@email.com
-                      id: '991266221'
+                      id: '991266680'
                       name: Ciaran7 Lee
                       away_mode_enabled: false
                       away_mode_reassign: false
@@ -287,7 +287,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 0d944f95-f99e-4102-ab5f-64d32d352282
+                    request_id: 68f10440-06d4-443a-90f5-d61b9a08af57
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -321,7 +321,7 @@ paths:
                 Admin found:
                   value:
                     type: admin
-                    id: '991266223'
+                    id: '991266682'
                     name: Ciaran9 Lee
                     email: admin9@email.com
                     away_mode_enabled: false
@@ -338,7 +338,7 @@ paths:
                 Admin not found:
                   value:
                     type: error.list
-                    request_id: f896f2d9-30f8-43b0-b252-bde7fd4473a4
+                    request_id: b7cbb99f-2a77-4163-8f1a-04c9e78a28e0
                     errors:
                     - code: admin_not_found
                       message: Admin not found
@@ -352,7 +352,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 29bdfbf3-bfce-4853-81a0-e4a26a003387
+                    request_id: ee219e55-58de-4486-bbd6-bb95fec5fe61
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -390,19 +390,19 @@ paths:
                       total_pages: 1
                     total_count: 1
                     data:
-                    - id: '1'
+                    - id: '16'
                       type: article
                       workspace_id: this_is_an_id22_that_should_be_at_least_4
-                      parent_id: 1
+                      parent_id: 73
                       parent_type: collection
                       title: This is the article title
                       description: ''
                       body: ''
-                      author_id: 991266226
+                      author_id: 991266685
                       state: published
-                      created_at: 1677858470
-                      updated_at: 1677858470
-                      url: http://help-center.test/myapp-22/en/articles/1-this-is-the-article-title
+                      created_at: 1677859854
+                      updated_at: 1677859854
+                      url: http://help-center.test/myapp-22/en/articles/16-this-is-the-article-title
               schema:
                 "$ref": "#/components/schemas/article_list"
         '401':
@@ -413,7 +413,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a7d13556-a58a-436c-9467-0363ecded645
+                    request_id: 0035c3c3-f6df-4db5-a875-f8b2111102df
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -438,10 +438,10 @@ paths:
               examples:
                 article created:
                   value:
-                    id: '4'
+                    id: '19'
                     type: article
                     workspace_id: this_is_an_id26_that_should_be_at_least_4
-                    parent_id: 3
+                    parent_id: 75
                     parent_type: collection
                     statistics:
                       type: article_statistics
@@ -454,11 +454,11 @@ paths:
                     title: Thanks for everything
                     description: Description of the Article
                     body: <p class="no-margin">Body of the Article</p>
-                    author_id: 991266234
+                    author_id: 991266693
                     state: published
-                    created_at: 1677858473
-                    updated_at: 1677858473
-                    url: http://help-center.test/myapp-26/en/articles/4-thanks-for-everything
+                    created_at: 1677859857
+                    updated_at: 1677859857
+                    url: http://help-center.test/myapp-26/en/articles/19-thanks-for-everything
               schema:
                 "$ref": "#/components/schemas/article"
         '400':
@@ -469,7 +469,7 @@ paths:
                 Bad Request:
                   value:
                     type: error.list
-                    request_id: 4debf60a-6cbb-41d8-a681-4833e64e98b9
+                    request_id: d1dc9bb6-9471-42f2-9e95-bbf7d7fb4c2f
                     errors:
                     - code: parameter_not_found
                       message: author_id must be in the main body or default locale
@@ -484,7 +484,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 6d9e8c4c-9ece-486c-8df0-e830839e855d
+                    request_id: 7ae55681-b541-4260-9678-844a0fb25400
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -502,16 +502,16 @@ paths:
                   title: Thanks for everything
                   description: Description of the Article
                   body: Body of the Article
-                  author_id: 991266234
+                  author_id: 991266693
                   state: published
-                  parent_id: 3
+                  parent_id: 75
                   parent_type: collection
                   translated_content:
                     fr:
                       title: Merci pour tout
                       description: Description de l'article
                       body: Corps de l'article
-                      author_id: 991266234
+                      author_id: 991266693
                       state: published
               bad_request:
                 summary: Bad Request
@@ -548,10 +548,10 @@ paths:
               examples:
                 Article found:
                   value:
-                    id: '7'
+                    id: '22'
                     type: article
                     workspace_id: this_is_an_id32_that_should_be_at_least_4
-                    parent_id: 6
+                    parent_id: 78
                     parent_type: collection
                     statistics:
                       type: article_statistics
@@ -564,11 +564,11 @@ paths:
                     title: This is the article title
                     description: ''
                     body: ''
-                    author_id: 991266241
+                    author_id: 991266700
                     state: published
-                    created_at: 1677858476
-                    updated_at: 1677858476
-                    url: http://help-center.test/myapp-32/en/articles/7-this-is-the-article-title
+                    created_at: 1677859860
+                    updated_at: 1677859860
+                    url: http://help-center.test/myapp-32/en/articles/22-this-is-the-article-title
               schema:
                 "$ref": "#/components/schemas/article"
         '404':
@@ -579,7 +579,7 @@ paths:
                 Article not found:
                   value:
                     type: error.list
-                    request_id: f64d823a-6d1c-46a2-a0a4-b115d221363c
+                    request_id: 7d50b385-e877-4956-9c90-0e0202060bcf
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -593,7 +593,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: '04998032-847d-4317-b253-aeced8af9fa9'
+                    request_id: 8e2512d6-3aa2-492f-85f3-0a09de44c000
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -626,10 +626,10 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '10'
+                    id: '25'
                     type: article
                     workspace_id: this_is_an_id38_that_should_be_at_least_4
-                    parent_id: 9
+                    parent_id: 81
                     parent_type: collection
                     statistics:
                       type: article_statistics
@@ -642,11 +642,11 @@ paths:
                     title: Christmas is here!
                     description: ''
                     body: <p class="no-margin">New gifts in store for the jolly season</p>
-                    author_id: 991266250
+                    author_id: 991266709
                     state: published
-                    created_at: 1677858479
-                    updated_at: 1677858480
-                    url: http://help-center.test/myapp-38/en/articles/10-christmas-is-here
+                    created_at: 1677859864
+                    updated_at: 1677859865
+                    url: http://help-center.test/myapp-38/en/articles/25-christmas-is-here
               schema:
                 "$ref": "#/components/schemas/article"
         '404':
@@ -657,7 +657,7 @@ paths:
                 Article Not Found:
                   value:
                     type: error.list
-                    request_id: a8cffc6d-9e89-4c1a-a3b7-a19e084baa3c
+                    request_id: 7287b360-4f35-4197-8653-9c56279a0427
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -671,7 +671,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: f00ee103-0be6-407c-ae31-182553e6a1d3
+                    request_id: b6f7faca-4537-47ec-ae4e-3087426dc8a8
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -719,7 +719,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '13'
+                    id: '28'
                     object: article
                     deleted: true
               schema:
@@ -732,7 +732,7 @@ paths:
                 Article Not Found:
                   value:
                     type: error.list
-                    request_id: 027d1548-a7d5-4a05-848f-9f08d932972d
+                    request_id: b4412add-3354-433a-af38-c62afa7d0689
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -746,7 +746,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 7fe948ea-2668-44b4-a1af-0e564643547a
+                    request_id: c976e9e0-1b29-47c6-859f-b59b6b636523
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -779,13 +779,13 @@ paths:
                   value:
                     type: list
                     data:
-                    - id: '15'
+                    - id: '87'
                       workspace_id: this_is_an_id50_that_should_be_at_least_4
                       name: English collection title
                       url: http://help-center.test/myapp-50/collection-15
                       order: 15
-                      created_at: 1677858486
-                      updated_at: 1677858486
+                      created_at: 1677859871
+                      updated_at: 1677859871
                       description: english collection description
                       icon: bookmark
                       type: collection
@@ -805,7 +805,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 3171ae8d-f8a2-4029-9748-f031baa790d5
+                    request_id: 27ee1938-e9c2-4948-afa8-1c7daab81196
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -830,13 +830,13 @@ paths:
               examples:
                 collection created:
                   value:
-                    id: '21'
+                    id: '93'
                     workspace_id: this_is_an_id54_that_should_be_at_least_4
                     name: Thanks for everything
                     url: http://help-center.test/myapp-54/
                     order: 1
-                    created_at: 1677858488
-                    updated_at: 1677858488
+                    created_at: 1677859873
+                    updated_at: 1677859873
                     description: 
                     icon: book-bookmark
                     type: collection
@@ -850,7 +850,7 @@ paths:
                 Bad Request:
                   value:
                     type: error.list
-                    request_id: 50814a9e-7046-4ea1-a53a-969e8328fa52
+                    request_id: 88c5aafe-2fa9-4cd6-8d67-95a1aaa81bf5
                     errors:
                     - code: parameter_not_found
                       message: Name is a required parameter.
@@ -864,7 +864,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: eae6aba0-2119-49f7-9e09-ad74c1a69c75
+                    request_id: c10bb1d9-3ee5-424e-8566-024b2330bb04
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -912,13 +912,13 @@ paths:
               examples:
                 Collection found:
                   value:
-                    id: '26'
+                    id: '98'
                     workspace_id: this_is_an_id60_that_should_be_at_least_4
                     name: English collection title
                     url: http://help-center.test/myapp-60/collection-20
                     order: 20
-                    created_at: 1677858489
-                    updated_at: 1677858489
+                    created_at: 1677859874
+                    updated_at: 1677859874
                     description: english collection description
                     icon: bookmark
                     type: collection
@@ -932,7 +932,7 @@ paths:
                 Collection not found:
                   value:
                     type: error.list
-                    request_id: 8999cc0a-4bc7-4be5-88c4-9c0bff7016b0
+                    request_id: 0554f732-f639-4b33-a841-f26f78ccf8ac
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -946,7 +946,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 11650587-2b3c-483f-906e-4aec5f5fc4e6
+                    request_id: 5a4285a5-ab89-407a-88d7-02ba9d7b3b9a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -979,13 +979,13 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '32'
+                    id: '104'
                     workspace_id: this_is_an_id66_that_should_be_at_least_4
                     name: Update collection name
                     url: http://help-center.test/myapp-66/collection-23
                     order: 23
-                    created_at: 1677858491
-                    updated_at: 1677858492
+                    created_at: 1677859876
+                    updated_at: 1677859877
                     description: english collection description
                     icon: bookmark
                     type: collection
@@ -999,7 +999,7 @@ paths:
                 Collection Not Found:
                   value:
                     type: error.list
-                    request_id: f57b1d8e-883f-4b6c-85b0-f7ae98023499
+                    request_id: c901e757-3462-4b67-9eda-790f5f1a26f5
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -1013,7 +1013,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: db2c80ae-36b7-400d-b654-860251a45583
+                    request_id: 5607beeb-60a8-4f5f-9fdf-701b05fd3db1
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1060,7 +1060,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '38'
+                    id: '110'
                     object: collection
                     deleted: true
               schema:
@@ -1073,7 +1073,7 @@ paths:
                 collection Not Found:
                   value:
                     type: error.list
-                    request_id: 1fef412b-e6d4-4d9c-b9de-0c135ae67d29
+                    request_id: 892047cd-5876-4e45-91b1-cee733be3c00
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -1087,7 +1087,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: c98abff6-c313-43be-b950-a3bd3497bf5a
+                    request_id: c1a45d21-2926-44a6-a0d7-5af502d94d7d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1119,15 +1119,15 @@ paths:
                   value:
                     type: list
                     data:
-                    - id: '45'
+                    - id: '117'
                       workspace_id: this_is_an_id78_that_should_be_at_least_4
                       name: English section title
                       url: http://help-center.test/myapp-78/section-15
                       order: 15
-                      created_at: 1677858496
-                      updated_at: 1677858496
+                      created_at: 1677859881
+                      updated_at: 1677859881
                       type: section
-                      parent_id: 44
+                      parent_id: 116
                     total_count: 1
                     pages:
                       type: pages
@@ -1144,7 +1144,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 49e44722-ced8-4d88-a09d-a04cb43d803d
+                    request_id: 3111b2a7-b73f-45c6-b2c6-1dd1b2ab0744
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1169,15 +1169,15 @@ paths:
               examples:
                 section created:
                   value:
-                    id: '50'
+                    id: '122'
                     workspace_id: this_is_an_id82_that_should_be_at_least_4
                     name: Thanks for everything
                     url: http://help-center.test/myapp-82/
                     order: 1
-                    created_at: 1677858498
-                    updated_at: 1677858498
+                    created_at: 1677859883
+                    updated_at: 1677859883
                     type: section
-                    parent_id: '48'
+                    parent_id: '120'
               schema:
                 "$ref": "#/components/schemas/section"
         '400':
@@ -1188,7 +1188,7 @@ paths:
                 Bad Request:
                   value:
                     type: error.list
-                    request_id: 6a75c762-ad36-4003-b769-6c3e0ae1fe5b
+                    request_id: 1347cec0-a994-4b2f-b442-4f9126733d06
                     errors:
                     - code: parameter_invalid
                       message: Parent ID can't be nil
@@ -1202,7 +1202,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: ecb5527c-6222-4e0b-a83a-2801b30656eb
+                    request_id: e0e938c3-cc29-490b-8cfc-f6ed0e976ccf
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1218,7 +1218,7 @@ paths:
                 summary: section created
                 value:
                   name: Thanks for everything
-                  parent_id: 48
+                  parent_id: 120
               bad_request:
                 summary: Bad Request
                 value:
@@ -1251,15 +1251,15 @@ paths:
               examples:
                 Section found:
                   value:
-                    id: '56'
+                    id: '128'
                     workspace_id: this_is_an_id88_that_should_be_at_least_4
                     name: English section title
                     url: http://help-center.test/myapp-88/section-20
                     order: 20
-                    created_at: 1677858500
-                    updated_at: 1677858500
+                    created_at: 1677859885
+                    updated_at: 1677859885
                     type: section
-                    parent_id: 55
+                    parent_id: 127
               schema:
                 "$ref": "#/components/schemas/section"
         '404':
@@ -1270,7 +1270,7 @@ paths:
                 Section not found:
                   value:
                     type: error.list
-                    request_id: 74a92cd1-4e1c-4385-9841-ee599c887527
+                    request_id: e8cc533c-e16a-4506-8a40-bae094d44ce1
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -1284,7 +1284,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: fa500908-b606-41a3-b51f-0199c63a9c38
+                    request_id: 1a572af2-0af2-46ea-9686-1809f127670f
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1317,15 +1317,15 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '62'
+                    id: '134'
                     workspace_id: this_is_an_id94_that_should_be_at_least_4
                     name: Update section name
                     url: http://help-center.test/myapp-94/section-23
                     order: 23
-                    created_at: 1677858502
-                    updated_at: 1677858503
+                    created_at: 1677859888
+                    updated_at: 1677859889
                     type: section
-                    parent_id: '61'
+                    parent_id: '133'
               schema:
                 "$ref": "#/components/schemas/section"
         '404':
@@ -1336,7 +1336,7 @@ paths:
                 Section Not Found:
                   value:
                     type: error.list
-                    request_id: 9e4c0c9c-019d-4fd7-9f0a-01cede8e2b29
+                    request_id: 04aa35ff-3806-4405-949d-8f7f77ec3e61
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -1350,7 +1350,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: b2c228b4-3dca-4575-8770-99137b15930a
+                    request_id: 2b203411-cadf-440a-a32c-85ec5085df41
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1366,12 +1366,12 @@ paths:
                 summary: successful
                 value:
                   name: Update section name
-                  parent_id: 61
+                  parent_id: 133
               section_not_found:
                 summary: Section Not Found
                 value:
                   name: Update section name
-                  parent_id: 63
+                  parent_id: 135
     delete:
       summary: Delete a section
       parameters:
@@ -1398,7 +1398,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '68'
+                    id: '140'
                     object: section
                     deleted: true
               schema:
@@ -1411,7 +1411,7 @@ paths:
                 section Not Found:
                   value:
                     type: error.list
-                    request_id: 336678ab-eba1-4bd2-9cae-74b204a08a97
+                    request_id: 07bad4d3-4cb5-456d-b79d-220690c56ae0
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -1425,7 +1425,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 3e33af91-3db4-43ec-ab14-7f192ba2f7d9
+                    request_id: 19746769-b942-4a8e-a13f-dde9a796e8e4
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1457,12 +1457,12 @@ paths:
                   value:
                     type: company
                     company_id: company_remote_id
-                    id: 640216d04c21b42eec02f939
+                    id: 64021c3b4c21b4352588c402
                     app_id: this_is_an_id109_that_should_be_at_least_
                     name: my company
                     remote_created_at: 1374138000
-                    created_at: 1677858513
-                    updated_at: 1677858513
+                    created_at: 1677859899
+                    updated_at: 1677859899
                     monthly_spend: 0
                     session_count: 0
                     user_count: 0
@@ -1499,7 +1499,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a9c43de2-0b90-4d87-90db-9a52dfea753e
+                    request_id: b2bc79a5-f123-4e14-9f2d-bc73032b9d93
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1570,12 +1570,12 @@ paths:
                   value:
                     type: company
                     company_id: '1'
-                    id: 640216d44c21b42eec02f943
+                    id: 64021c404c21b4352588c40c
                     app_id: this_is_an_id115_that_should_be_at_least_
                     name: company2
-                    remote_created_at: 1677858516
-                    created_at: 1677858516
-                    updated_at: 1677858516
+                    remote_created_at: 1677859904
+                    created_at: 1677859904
+                    updated_at: 1677859904
                     monthly_spend: 0
                     session_count: 0
                     user_count: 1
@@ -1597,7 +1597,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: 0e34fc27-2068-4391-9429-05cf80f5db68
+                    request_id: bf8894ac-fcbd-48a0-a9a1-3079ac986c5f
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1611,7 +1611,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 33431ae1-5ef4-4f7a-9f0c-d67a3bcaa5c0
+                    request_id: 2a1e1545-3447-4707-8902-f053ac920f60
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1646,12 +1646,12 @@ paths:
                   value:
                     type: company
                     company_id: '1'
-                    id: 640216d84c21b42eec02f94e
+                    id: 64021c444c21b4352588c417
                     app_id: this_is_an_id121_that_should_be_at_least_
                     name: company4
-                    remote_created_at: 1677858520
-                    created_at: 1677858521
-                    updated_at: 1677858521
+                    remote_created_at: 1677859908
+                    created_at: 1677859908
+                    updated_at: 1677859908
                     monthly_spend: 0
                     session_count: 0
                     user_count: 1
@@ -1673,7 +1673,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: ea9ea8d9-7891-4ed6-b17e-ffeb662dec25
+                    request_id: 236ae5f6-b3d6-49c0-9dbf-8d014f65f2c0
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1687,7 +1687,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: de2f3782-fbbb-4dff-b5d6-dc8d058175d2
+                    request_id: de6c93d4-fee5-45ba-b534-098215c0158a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1721,12 +1721,12 @@ paths:
                   value:
                     type: company
                     company_id: '1'
-                    id: 640216dd4c21b42eec02f958
+                    id: 64021c494c21b4352588c421
                     app_id: this_is_an_id127_that_should_be_at_least_
                     name: company5
-                    remote_created_at: 1677858525
-                    created_at: 1677858525
-                    updated_at: 1677858525
+                    remote_created_at: 1677859913
+                    created_at: 1677859913
+                    updated_at: 1677859913
                     monthly_spend: 0
                     session_count: 0
                     user_count: 1
@@ -1748,7 +1748,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: d7a4ab98-ece8-44ea-8900-43f08266e785
+                    request_id: e34fc622-4fd1-4a51-a212-3ba9f0554f72
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1762,7 +1762,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 9d436b8f-220e-4d3e-a5e0-09de4d426b81
+                    request_id: b43bc2c7-c4ce-4758-b031-dc7cbafa4d08
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1794,7 +1794,7 @@ paths:
               examples:
                 Successful:
                   value:
-                    id: 640216e24c21b42eec02f962
+                    id: 64021c4f4c21b4352588c42b
                     object: company
                     deleted: true
               schema:
@@ -1807,7 +1807,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: 63a70873-cd76-4787-895b-99a942199244
+                    request_id: 292dfaa4-7f08-4267-b885-c07f0305f94d
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1821,7 +1821,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d62a12ad-21b1-429f-92b4-e17cbb7feca5
+                    request_id: 69eefcc0-1157-4167-92ba-6e9b53983e3c
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1873,7 +1873,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: d209ada5-4a46-4a12-9c01-d706df47c3c0
+                    request_id: f57bae40-156c-49e7-9916-b64619014571
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1887,7 +1887,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 5276784b-8506-4700-a8a7-0cb88e699f8e
+                    request_id: 65c47bf1-cddc-41ae-8d8e-11d0e5a5695a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -1932,7 +1932,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: 5831f43b-fc7a-4e76-95a5-dbc0e3a53284
+                    request_id: 5186265d-cfa3-449b-96d8-4b0fb68299e7
                     errors:
                     - code: company_not_found
                       message: Company Not Found
@@ -1946,7 +1946,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 4b24cd74-e5b5-4670-8b2d-78154e2a42d1
+                    request_id: cc674678-5bb0-4371-a73f-e33d9e1ac333
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2027,12 +2027,12 @@ paths:
                     data:
                     - type: company
                       company_id: remote_companies_scroll_2
-                      id: 640216ef4c21b42eec02f97e
+                      id: 64021c5c4c21b4352588c447
                       app_id: this_is_an_id151_that_should_be_at_least_
                       name: IntercomQATest1
-                      remote_created_at: 1677858543
-                      created_at: 1677858543
-                      updated_at: 1677858543
+                      remote_created_at: 1677859932
+                      created_at: 1677859932
+                      updated_at: 1677859932
                       monthly_spend: 0
                       session_count: 0
                       user_count: 4
@@ -2061,7 +2061,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 455146af-3244-4c6b-b107-7bfb6f1221b9
+                    request_id: 9077e8c6-971a-4af7-bbf9-0facfbeb1f7f
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2113,12 +2113,12 @@ paths:
                     data:
                     - type: company
                       company_id: remote_companies_scroll_2
-                      id: 640216f24c21b42eec02f986
+                      id: 64021c604c21b4352588c44f
                       app_id: this_is_an_id155_that_should_be_at_least_
                       name: IntercomQATest1
-                      remote_created_at: 1677858546
-                      created_at: 1677858546
-                      updated_at: 1677858546
+                      remote_created_at: 1677859936
+                      created_at: 1677859936
+                      updated_at: 1677859936
                       monthly_spend: 0
                       session_count: 0
                       user_count: 4
@@ -2132,7 +2132,7 @@ paths:
                       custom_attributes: {}
                     pages: 
                     total_count: 
-                    scroll_param: c803637a-fb00-4016-9eb3-65e0ce8ee05a
+                    scroll_param: 5d61a137-2fda-4188-b319-f537a2a679a7
               schema:
                 "$ref": "#/components/schemas/company_scroll"
         '401':
@@ -2143,7 +2143,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 6170e3e2-cba3-4786-b876-f19d88f9d4f5
+                    request_id: f86f048e-2b50-476d-a5c4-4733ab4735ab
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2178,12 +2178,12 @@ paths:
                   value:
                     type: company
                     company_id: '1'
-                    id: 640216f54c21b42eec02f98f
+                    id: 64021c634c21b4352588c458
                     app_id: this_is_an_id159_that_should_be_at_least_
                     name: company9
-                    remote_created_at: 1677858549
-                    created_at: 1677858549
-                    updated_at: 1677858549
+                    remote_created_at: 1677859939
+                    created_at: 1677859939
+                    updated_at: 1677859939
                     monthly_spend: 0
                     session_count: 0
                     user_count: 1
@@ -2205,7 +2205,7 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: e094a559-dd1d-4af7-95b9-d9de673000d0
+                    request_id: 37b0549e-f184-40b2-9093-43a5fd38e5b4
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2219,7 +2219,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: b9fb00f8-770e-4fc9-8039-ddcb393edbc0
+                    request_id: e64c370b-436d-45ff-a734-76b8c3357d50
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2242,11 +2242,11 @@ paths:
               successful:
                 summary: Successful
                 value:
-                  id: 640216f54c21b42eec02f98f
+                  id: 64021c634c21b4352588c458
               company_not_found:
                 summary: Company Not Found
                 value:
-                  id: 640216f74c21b42eec02f993
+                  id: 64021c654c21b4352588c45c
   "/contacts/{contact_id}/companies/{id}":
     delete:
       summary: Detach a contact from a company
@@ -2284,12 +2284,12 @@ paths:
                   value:
                     type: company
                     company_id: '1'
-                    id: 640216fb4c21b42eec02f99b
+                    id: 64021c684c21b4352588c464
                     app_id: this_is_an_id165_that_should_be_at_least_
                     name: company12
-                    remote_created_at: 1677858555
-                    created_at: 1677858555
-                    updated_at: 1677858556
+                    remote_created_at: 1677859944
+                    created_at: 1677859944
+                    updated_at: 1677859945
                     monthly_spend: 0
                     session_count: 0
                     user_count: 0
@@ -2311,14 +2311,14 @@ paths:
                 Company Not Found:
                   value:
                     type: error.list
-                    request_id: bc6d7317-365f-474f-9639-a884bd036dc9
+                    request_id: 017b4a05-20ae-4736-b2ba-55be0914cbae
                     errors:
                     - code: company_not_found
                       message: Company Not Found
                 Contact Not Found:
                   value:
                     type: error.list
-                    request_id: 84427170-24a2-42e4-8702-83bdb8734c0b
+                    request_id: 3e5d33f9-39d6-4f27-92cc-950ec7797de3
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2332,7 +2332,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 2a1aff4c-eaf6-4afd-8412-f593ab2ccda5
+                    request_id: 22db25ae-469d-4946-ae8d-26f328b4c542
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2370,13 +2370,13 @@ paths:
                     data:
                     - type: company
                       company_id: '1'
-                      id: 640217104c21b42eec02f9c1
+                      id: 64021c7e4c21b4352588c48a
                       app_id: this_is_an_id173_that_should_be_at_least_
                       name: company25
-                      remote_created_at: 1677858576
-                      created_at: 1677858576
-                      updated_at: 1677858576
-                      last_request_at: 1677685776
+                      remote_created_at: 1677859966
+                      created_at: 1677859966
+                      updated_at: 1677859966
+                      last_request_at: 1677687166
                       monthly_spend: 0
                       session_count: 0
                       user_count: 1
@@ -2405,7 +2405,7 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: f591fd02-95dc-41d2-a7db-0b05600f4c7e
+                    request_id: 8476e1e2-e9b8-407a-865a-ffdd0f2952cc
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2419,7 +2419,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 745b8ccc-71c7-4d4a-86fc-0c286ebf104b
+                    request_id: b5732e6e-e3e8-4e99-950d-eaa9900b1bfb
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2455,42 +2455,42 @@ paths:
                     type: list
                     data:
                     - type: note
-                      id: '3'
-                      created_at: 1677253783
+                      id: '26'
+                      created_at: 1677255173
                       contact:
                         type: contact
-                        id: 640217174c21b42eec02f9cc
+                        id: 64021c844c21b4352588c495
                       author:
                         type: admin
-                        id: '991266331'
+                        id: '991266790'
                         name: Ciaran117 Lee
                         email: admin117@email.com
                         away_mode_enabled: false
                         away_mode_reassign: false
                       body: "<p>This is a note.</p>"
                     - type: note
-                      id: '2'
-                      created_at: 1677167383
+                      id: '25'
+                      created_at: 1677168773
                       contact:
                         type: contact
-                        id: 640217174c21b42eec02f9cc
+                        id: 64021c844c21b4352588c495
                       author:
                         type: admin
-                        id: '991266331'
+                        id: '991266790'
                         name: Ciaran117 Lee
                         email: admin117@email.com
                         away_mode_enabled: false
                         away_mode_reassign: false
                       body: "<p>This is a note.</p>"
                     - type: note
-                      id: '1'
-                      created_at: 1677167382
+                      id: '24'
+                      created_at: 1677168772
                       contact:
                         type: contact
-                        id: 640217174c21b42eec02f9cc
+                        id: 64021c844c21b4352588c495
                       author:
                         type: admin
-                        id: '991266331'
+                        id: '991266790'
                         name: Ciaran117 Lee
                         email: admin117@email.com
                         away_mode_enabled: false
@@ -2513,7 +2513,7 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: a3982328-5751-493e-9af8-11c7e418c196
+                    request_id: 0fd75c5d-cb2d-4a30-99bd-3535e17893db
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2547,14 +2547,14 @@ paths:
                 Successful response:
                   value:
                     type: note
-                    id: '8'
-                    created_at: 1677858586
+                    id: '31'
+                    created_at: 1677859975
                     contact:
                       type: contact
-                      id: 640217194c21b42eec02f9ce
+                      id: 64021c864c21b4352588c497
                     author:
                       type: admin
-                      id: '991266333'
+                      id: '991266792'
                       name: Ciaran119 Lee
                       email: admin119@email.com
                       away_mode_enabled: false
@@ -2570,14 +2570,14 @@ paths:
                 Admin not found:
                   value:
                     type: error.list
-                    request_id: 8b24de47-8509-4dd3-8962-11896704ae22
+                    request_id: 28ab0dc5-42ec-4ded-8b13-ed1a3ba192a1
                     errors:
                     - code: not_found
                       message: Resource Not Found
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 20b85ab7-1787-4309-88b0-1a85776aafd6
+                    request_id: 33b300b8-29e2-4197-bed0-85b7d43b3c9b
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2607,20 +2607,20 @@ paths:
               successful_response:
                 summary: Successful response
                 value:
-                  contact_id: 640217194c21b42eec02f9ce
-                  admin_id: 991266333
+                  contact_id: 64021c864c21b4352588c497
+                  admin_id: 991266792
                   body: Hello
               admin_not_found:
                 summary: Admin not found
                 value:
-                  contact_id: 6402171a4c21b42eec02f9cf
+                  contact_id: 64021c874c21b4352588c498
                   admin_id: 123
                   body: Hello
               contact_not_found:
                 summary: Contact not found
                 value:
                   contact_id: 123
-                  admin_id: 991266335
+                  admin_id: 991266794
                   body: Hello
   "/contacts/{contact_id}/segments":
     get:
@@ -2653,10 +2653,10 @@ paths:
                     type: list
                     data:
                     - type: segment
-                      id: 6402171c4c21b42eec02f9d1
+                      id: 64021c894c21b4352588c49a
                       name: segment
-                      created_at: 1677858588
-                      updated_at: 1677858588
+                      created_at: 1677859977
+                      updated_at: 1677859977
                       person_type: user
               schema:
                 "$ref": "#/components/schemas/contact_segments"
@@ -2668,7 +2668,7 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: f306405a-fe52-4a34-a921-027f9eec6941
+                    request_id: eee98ec1-1c4a-4bcf-9d8a-819350862277
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2682,7 +2682,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 44357d2b-9cc0-4337-8820-08800a823bc3
+                    request_id: 9c55cf09-32bd-4f41-b7e8-0c563d9d5916
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2726,7 +2726,7 @@ paths:
                     type: list
                     data:
                     - type: subscription
-                      id: '1'
+                      id: '47'
                       state: live
                       consent_type: opt_out
                       default_translation:
@@ -2740,7 +2740,7 @@ paths:
                       content_types:
                       - email
                     - type: subscription
-                      id: '3'
+                      id: '49'
                       state: live
                       consent_type: opt_in
                       default_translation:
@@ -2763,7 +2763,7 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 92eefb96-2b5a-4e4d-afb4-b96d704f7c84
+                    request_id: 06eb2a2b-651f-420b-b234-6f6f2c3ac31c
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -2777,7 +2777,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 5161f130-a4e5-4ac8-9437-42f472a3ad58
+                    request_id: ff33fc67-c277-4582-b61e-6859ed5e3deb
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2818,7 +2818,7 @@ paths:
                 Successful:
                   value:
                     type: subscription
-                    id: '16'
+                    id: '62'
                     state: live
                     consent_type: opt_in
                     default_translation:
@@ -2841,14 +2841,14 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: c5d9f1f0-d8cb-4abf-8b9d-24cd11e8129f
+                    request_id: b74936a7-7e0c-4d69-bc0c-f93372d68703
                     errors:
                     - code: not_found
                       message: User Not Found
                 Resource not found:
                   value:
                     type: error.list
-                    request_id: fc2cbe50-5d97-4cbb-a4ab-3f996bd05558
+                    request_id: 19338cd3-c967-4116-b74b-9c6115f34389
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -2862,7 +2862,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: fffcc9de-fba6-4e80-8266-beefa6c9c8cb
+                    request_id: 41380476-dbff-409e-8cdb-927951e9ce43
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -2890,12 +2890,12 @@ paths:
               successful:
                 summary: Successful
                 value:
-                  id: 16
+                  id: 62
                   consent_type: opt_in
               contact_not_found:
                 summary: Contact not found
                 value:
-                  id: 20
+                  id: 66
                   consent_type: opt_in
               resource_not_found:
                 summary: Resource not found
@@ -2941,7 +2941,7 @@ paths:
                 Successful:
                   value:
                     type: subscription
-                    id: '32'
+                    id: '78'
                     state: live
                     consent_type: opt_in
                     default_translation:
@@ -2964,14 +2964,14 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 58f8eec1-3326-46eb-b020-ffbea3a32226
+                    request_id: 5a31c184-a4d8-491d-ab22-761c1dabf4f3
                     errors:
                     - code: not_found
                       message: User Not Found
                 Resource not found:
                   value:
                     type: error.list
-                    request_id: 7f0223b8-01cc-437b-b4e7-0c223ec30608
+                    request_id: 7856b32f-d31a-4ed9-b43d-0876972fe232
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -2985,7 +2985,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: e6aa48f5-7899-4547-b83b-2acbe76a3650
+                    request_id: 8eb861d4-a7a2-4fde-a11a-6ac40f65e59f
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3023,7 +3023,7 @@ paths:
                     type: list
                     data:
                     - type: tag
-                      id: '3'
+                      id: '56'
                       name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag_list"
@@ -3035,7 +3035,7 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 50f7dc17-27a0-4eee-9cc2-4bc65fdbea1a
+                    request_id: 8932550d-7924-4d66-b387-d66a1091c336
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -3049,7 +3049,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 468b6416-1a15-4826-be67-3e6bd30f62be
+                    request_id: f5132a08-f94d-4787-a4ca-88805552fac9
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3084,7 +3084,7 @@ paths:
                 successful:
                   value:
                     type: tag
-                    id: '4'
+                    id: '57'
                     name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -3096,14 +3096,14 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 740dd244-b9c6-4ee4-9270-59f7d5817a2b
+                    request_id: '08010015-dc06-4272-871c-1147b183d97c'
                     errors:
                     - code: not_found
                       message: User Not Found
                 Tag not found:
                   value:
                     type: error.list
-                    request_id: 7a99c3ac-9bb0-4d63-86cd-a40c4b46f03b
+                    request_id: b9a793d9-fb4e-4972-ab6e-b97392566a2a
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -3117,7 +3117,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: e86f6712-f419-43e5-9c0d-fdd54a197062
+                    request_id: 5826ba84-fec5-4ac4-9ee9-5dbd652a545a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3140,11 +3140,11 @@ paths:
               successful:
                 summary: successful
                 value:
-                  id: 4
+                  id: 57
               contact_not_found:
                 summary: Contact not found
                 value:
-                  id: 5
+                  id: 58
               tag_not_found:
                 summary: Tag not found
                 value:
@@ -3186,7 +3186,7 @@ paths:
                 successful:
                   value:
                     type: tag
-                    id: '7'
+                    id: '60'
                     name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -3198,14 +3198,14 @@ paths:
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 30e0e277-5928-4d79-aaf3-510e16cef2e8
+                    request_id: c70a88cc-1515-49ca-aa3c-0625dd8b7325
                     errors:
                     - code: not_found
                       message: User Not Found
                 Tag not found:
                   value:
                     type: error.list
-                    request_id: 193c4ad4-002b-4da7-a374-34b317035f0a
+                    request_id: 562cf733-f964-47cf-9778-9bdb4d87ddc0
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -3219,7 +3219,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 109effea-c0d4-40a0-8982-54b5c7deff86
+                    request_id: 94094494-1747-420b-b3c8-adf89afec07d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3253,7 +3253,7 @@ paths:
                 successful:
                   value:
                     type: contact
-                    id: 640217344c21b42eec02f9e8
+                    id: 64021ca14c21b4352588c4b1
                     workspace_id: this_is_an_id239_that_should_be_at_least_
                     external_id: '70'
                     role: user
@@ -3268,9 +3268,9 @@ paths:
                     has_hard_bounced: false
                     marked_email_as_spam: false
                     unsubscribed_from_emails: false
-                    created_at: 1677858612
-                    updated_at: 1677858612
-                    signed_up_at: 1677858612
+                    created_at: 1677860001
+                    updated_at: 1677860001
+                    signed_up_at: 1677860001
                     last_seen_at: 
                     last_replied_at: 
                     last_contacted_at: 
@@ -3304,31 +3304,31 @@ paths:
                     tags:
                       type: list
                       data: []
-                      url: "/contacts/640217344c21b42eec02f9e8/tags"
+                      url: "/contacts/64021ca14c21b4352588c4b1/tags"
                       total_count: 0
                       has_more: false
                     notes:
                       type: list
                       data: []
-                      url: "/contacts/640217344c21b42eec02f9e8/notes"
+                      url: "/contacts/64021ca14c21b4352588c4b1/notes"
                       total_count: 0
                       has_more: false
                     companies:
                       type: list
                       data: []
-                      url: "/contacts/640217344c21b42eec02f9e8/companies"
+                      url: "/contacts/64021ca14c21b4352588c4b1/companies"
                       total_count: 0
                       has_more: false
                     opted_out_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217344c21b42eec02f9e8/subscriptions"
+                      url: "/contacts/64021ca14c21b4352588c4b1/subscriptions"
                       total_count: 0
                       has_more: false
                     opted_in_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217344c21b42eec02f9e8/subscriptions"
+                      url: "/contacts/64021ca14c21b4352588c4b1/subscriptions"
                       total_count: 0
                       has_more: false
                     utm_campaign: 
@@ -3347,7 +3347,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 3eba3723-e4f2-4305-9729-88d75bdfac9d
+                    request_id: f0ebf84f-1b41-4af1-91e0-df00e905ad8e
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3380,7 +3380,7 @@ paths:
                 successful:
                   value:
                     type: contact
-                    id: 640217374c21b42eec02f9e9
+                    id: 64021ca34c21b4352588c4b2
                     workspace_id: this_is_an_id243_that_should_be_at_least_
                     external_id: '70'
                     role: user
@@ -3395,9 +3395,9 @@ paths:
                     has_hard_bounced: false
                     marked_email_as_spam: false
                     unsubscribed_from_emails: false
-                    created_at: 1677858615
-                    updated_at: 1677858615
-                    signed_up_at: 1677858615
+                    created_at: 1677860003
+                    updated_at: 1677860003
+                    signed_up_at: 1677860003
                     last_seen_at: 
                     last_replied_at: 
                     last_contacted_at: 
@@ -3431,31 +3431,31 @@ paths:
                     tags:
                       type: list
                       data: []
-                      url: "/contacts/640217374c21b42eec02f9e9/tags"
+                      url: "/contacts/64021ca34c21b4352588c4b2/tags"
                       total_count: 0
                       has_more: false
                     notes:
                       type: list
                       data: []
-                      url: "/contacts/640217374c21b42eec02f9e9/notes"
+                      url: "/contacts/64021ca34c21b4352588c4b2/notes"
                       total_count: 0
                       has_more: false
                     companies:
                       type: list
                       data: []
-                      url: "/contacts/640217374c21b42eec02f9e9/companies"
+                      url: "/contacts/64021ca34c21b4352588c4b2/companies"
                       total_count: 0
                       has_more: false
                     opted_out_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217374c21b42eec02f9e9/subscriptions"
+                      url: "/contacts/64021ca34c21b4352588c4b2/subscriptions"
                       total_count: 0
                       has_more: false
                     opted_in_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217374c21b42eec02f9e9/subscriptions"
+                      url: "/contacts/64021ca34c21b4352588c4b2/subscriptions"
                       total_count: 0
                       has_more: false
                     utm_campaign: 
@@ -3474,7 +3474,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 6bd748a0-5a13-4d67-85c6-1db7afae838d
+                    request_id: 35cb1e23-eeb5-44ec-a928-8ba14cc9d2d8
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3505,7 +3505,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: 640217394c21b42eec02f9ea
+                    id: 64021ca74c21b4352588c4b3
                     object: contact
                     deleted: true
               schema:
@@ -3518,7 +3518,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 474b1c2f-5521-40d2-a6c4-a55749e354c7
+                    request_id: e38bf5c6-9cd9-44d9-a6aa-f58041d4094d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3546,7 +3546,7 @@ paths:
                 successful:
                   value:
                     type: contact
-                    id: 6402173d4c21b42eec02f9ec
+                    id: 64021caa4c21b4352588c4b5
                     workspace_id: this_is_an_id251_that_should_be_at_least_
                     external_id: '70'
                     role: user
@@ -3561,9 +3561,9 @@ paths:
                     has_hard_bounced: false
                     marked_email_as_spam: false
                     unsubscribed_from_emails: false
-                    created_at: 1677858621
-                    updated_at: 1677858622
-                    signed_up_at: 1677858621
+                    created_at: 1677860010
+                    updated_at: 1677860010
+                    signed_up_at: 1677860010
                     last_seen_at: 
                     last_replied_at: 
                     last_contacted_at: 
@@ -3597,31 +3597,31 @@ paths:
                     tags:
                       type: list
                       data: []
-                      url: "/contacts/6402173d4c21b42eec02f9ec/tags"
+                      url: "/contacts/64021caa4c21b4352588c4b5/tags"
                       total_count: 0
                       has_more: false
                     notes:
                       type: list
                       data: []
-                      url: "/contacts/6402173d4c21b42eec02f9ec/notes"
+                      url: "/contacts/64021caa4c21b4352588c4b5/notes"
                       total_count: 0
                       has_more: false
                     companies:
                       type: list
                       data: []
-                      url: "/contacts/6402173d4c21b42eec02f9ec/companies"
+                      url: "/contacts/64021caa4c21b4352588c4b5/companies"
                       total_count: 0
                       has_more: false
                     opted_out_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/6402173d4c21b42eec02f9ec/subscriptions"
+                      url: "/contacts/64021caa4c21b4352588c4b5/subscriptions"
                       total_count: 0
                       has_more: false
                     opted_in_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/6402173d4c21b42eec02f9ec/subscriptions"
+                      url: "/contacts/64021caa4c21b4352588c4b5/subscriptions"
                       total_count: 0
                       has_more: false
                     utm_campaign: 
@@ -3640,7 +3640,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 58fb7976-1f5f-4213-aea0-67cb97317837
+                    request_id: 4bcac09e-d907-476b-8c0b-ac7a6ecd9133
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3655,8 +3655,8 @@ paths:
               successful:
                 summary: successful
                 value:
-                  from: 6402173d4c21b42eec02f9eb
-                  into: 6402173d4c21b42eec02f9ec
+                  from: 64021caa4c21b4352588c4b4
+                  into: 64021caa4c21b4352588c4b5
   "/contacts/search":
     post:
       summary: Search contacts
@@ -3764,7 +3764,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d498ccec-4903-4300-8667-52a88df7f820
+                    request_id: 5d0519ce-4a1e-4bdd-be93-6c4d470b412b
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3784,15 +3784,15 @@ paths:
                     value:
                     - field: id
                       operator: "="
-                      value: 640217414c21b42eec02f9ef
+                      value: 64021cad4c21b4352588c4b8
                     - operator: OR
                       value:
                       - field: id
                         operator: "="
-                        value: 640217414c21b42eec02f9ef
+                        value: 64021cad4c21b4352588c4b8
                       - field: id
                         operator: "="
-                        value: 640217414c21b42eec02f9ef
+                        value: 64021cad4c21b4352588c4b8
   "/contacts":
     get:
       summary: List all contacts
@@ -3831,7 +3831,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 40b3800b-282c-4d93-8845-5c9fe9b3774f
+                    request_id: 2696d16a-c761-44b4-a91f-0309f364b9b8
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3857,7 +3857,7 @@ paths:
                 successful:
                   value:
                     type: contact
-                    id: 640217464c21b42eec02f9f1
+                    id: 64021cb34c21b4352588c4ba
                     workspace_id: this_is_an_id263_that_should_be_at_least_
                     external_id: 
                     role: user
@@ -3872,8 +3872,8 @@ paths:
                     has_hard_bounced: false
                     marked_email_as_spam: false
                     unsubscribed_from_emails: false
-                    created_at: 1677858630
-                    updated_at: 1677858630
+                    created_at: 1677860019
+                    updated_at: 1677860019
                     signed_up_at: 
                     last_seen_at: 
                     last_replied_at: 
@@ -3908,31 +3908,31 @@ paths:
                     tags:
                       type: list
                       data: []
-                      url: "/contacts/640217464c21b42eec02f9f1/tags"
+                      url: "/contacts/64021cb34c21b4352588c4ba/tags"
                       total_count: 0
                       has_more: false
                     notes:
                       type: list
                       data: []
-                      url: "/contacts/640217464c21b42eec02f9f1/notes"
+                      url: "/contacts/64021cb34c21b4352588c4ba/notes"
                       total_count: 0
                       has_more: false
                     companies:
                       type: list
                       data: []
-                      url: "/contacts/640217464c21b42eec02f9f1/companies"
+                      url: "/contacts/64021cb34c21b4352588c4ba/companies"
                       total_count: 0
                       has_more: false
                     opted_out_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217464c21b42eec02f9f1/subscriptions"
+                      url: "/contacts/64021cb34c21b4352588c4ba/subscriptions"
                       total_count: 0
                       has_more: false
                     opted_in_subscription_types:
                       type: list
                       data: []
-                      url: "/contacts/640217464c21b42eec02f9f1/subscriptions"
+                      url: "/contacts/64021cb34c21b4352588c4ba/subscriptions"
                       total_count: 0
                       has_more: false
                     utm_campaign: 
@@ -3951,7 +3951,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 347a86b7-1c61-4be3-908e-8bdef60f45ff
+                    request_id: 387c0c7d-9e59-4f45-a164-d41a6777b2a9
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -3995,7 +3995,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: 640217494c21b42eec02f9f2
+                    id: 64021cb54c21b4352588c4bb
                     object: contact
                     archived: true
               schema:
@@ -4027,7 +4027,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: 6402174a4c21b42eec02f9f3
+                    id: 64021cb64c21b4352588c4bc
                     object: contact
                     archived: false
               schema:
@@ -4062,7 +4062,7 @@ paths:
                 successful:
                   value:
                     type: tag
-                    id: '9'
+                    id: '62'
                     name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -4074,7 +4074,7 @@ paths:
                 Conversation not found:
                   value:
                     type: error.list
-                    request_id: cfa912b4-4ee8-42ed-958f-811a4f1c395c
+                    request_id: fecacc02-29c3-4af2-a790-0ad5e1e2bb0f
                     errors:
                     - code: not_found
                       message: Conversation not found
@@ -4088,7 +4088,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 3a96a079-ecba-4908-9a51-4c8b1f6a044b
+                    request_id: b34fc7bc-5b7d-47a4-a406-8015a6cad3f9
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4117,13 +4117,13 @@ paths:
               successful:
                 summary: successful
                 value:
-                  id: 9
-                  admin_id: 991266366
+                  id: 62
+                  admin_id: 991266825
               conversation_not_found:
                 summary: Conversation not found
                 value:
-                  id: 10
-                  admin_id: 991266368
+                  id: 63
+                  admin_id: 991266827
   "/conversations/{conversation_id}/tags/{id}":
     delete:
       summary: Remove tag from a conversation
@@ -4161,7 +4161,7 @@ paths:
                 successful:
                   value:
                     type: tag
-                    id: '12'
+                    id: '65'
                     name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -4173,14 +4173,14 @@ paths:
                 Conversation not found:
                   value:
                     type: error.list
-                    request_id: c048e7ae-08ed-418b-b1fe-de8a2239ec06
+                    request_id: 8c39dd69-e586-4128-b7a6-262a3cb305b7
                     errors:
                     - code: not_found
                       message: Conversation not found
                 Tag not found:
                   value:
                     type: error.list
-                    request_id: 55d87873-e50c-401b-91d9-c59f774c47c5
+                    request_id: 759e300c-1982-4ee7-94d7-ba47665800e0
                     errors:
                     - code: tag_not_found
                       message: Tag not found
@@ -4194,7 +4194,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 17006401-5889-41b0-a9e6-a948e77b3367
+                    request_id: 8658f87f-dcf6-461f-9704-7c99d0186f40
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4217,15 +4217,15 @@ paths:
               successful:
                 summary: successful
                 value:
-                  admin_id: 991266370
+                  admin_id: 991266829
               conversation_not_found:
                 summary: Conversation not found
                 value:
-                  admin_id: 991266372
+                  admin_id: 991266831
               tag_not_found:
                 summary: Tag not found
                 value:
-                  admin_id: 991266373
+                  admin_id: 991266832
   "/conversations":
     get:
       summary: List all conversations
@@ -4272,20 +4272,20 @@ paths:
                     total_count: 1
                     conversations:
                     - type: conversation
-                      id: '5'
-                      created_at: 1677858648
-                      updated_at: 1677858648
+                      id: '148'
+                      created_at: 1677860034
+                      updated_at: 1677860034
                       waiting_since: 
                       snoozed_until: 
                       source:
                         type: conversation
-                        id: '403918065'
+                        id: '403918149'
                         delivered_as: admin_initiated
                         subject: ''
                         body: "<p>this is the message body</p>"
                         author:
                           type: admin
-                          id: '991266376'
+                          id: '991266835'
                           name: Ciaran159 Lee
                           email: admin159@email.com
                         attachments: []
@@ -4295,7 +4295,7 @@ paths:
                         type: contact.list
                         contacts:
                         - type: contact
-                          id: 640217574c21b42eec02f9f7
+                          id: 64021cc14c21b4352588c4c0
                       first_contact_reply: 
                       admin_assignee_id: 
                       team_assignee_id: 
@@ -4323,7 +4323,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: df8c505c-f0f3-4eb9-9426-1291561399f4
+                    request_id: 1dd7ff23-4ff9-4c1a-ba6a-3508c6938b60
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4337,7 +4337,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: ca6a5bde-066f-499d-a080-0fb4e55f8565
+                    request_id: aefa6c41-f7bb-48c3-b86c-5bfc9ebdcc79
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -4369,11 +4369,11 @@ paths:
                 conversation created:
                   value:
                     type: user_message
-                    id: '403918075'
-                    created_at: 1677858675
+                    id: '403918159'
+                    created_at: 1677860062
                     body: Hello there
                     message_type: inapp
-                    conversation_id: '30'
+                    conversation_id: '173'
               schema:
                 "$ref": "#/components/schemas/message"
         '404':
@@ -4384,7 +4384,7 @@ paths:
                 Contact Not Found:
                   value:
                     type: error.list
-                    request_id: acaafa86-82d0-4d4c-b854-adfc3049f95c
+                    request_id: 4d9acdd8-46c2-4b5e-9bc9-61db597471ea
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -4398,7 +4398,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: cb030bc2-accf-42d0-9a2c-49181a9d9e8f
+                    request_id: b0a55bad-14a9-42de-8e5e-4eeb13fcbb1a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4412,7 +4412,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: 195f8d5e-64b5-440f-b935-9f7e957e91b2
+                    request_id: e67c4ded-52e6-4c5f-bf4d-3c7ed2370742
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -4429,7 +4429,7 @@ paths:
                 value:
                   from:
                     type: user
-                    id: 640217724c21b42eec02fa0c
+                    id: 64021cdd4c21b4352588c4d5
                   body: Hello there
               contact_not_found:
                 summary: Contact Not Found
@@ -4477,20 +4477,20 @@ paths:
                 conversation found:
                   value:
                     type: conversation
-                    id: '34'
-                    created_at: 1677858685
-                    updated_at: 1677858685
+                    id: '177'
+                    created_at: 1677860071
+                    updated_at: 1677860071
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918079'
+                      id: '403918163'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266390'
+                        id: '991266849'
                         name: Ciaran166 Lee
                         email: admin166@email.com
                       attachments: []
@@ -4500,7 +4500,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 6402177c4c21b42eec02fa10
+                        id: 64021ce64c21b4352588c4d9
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -4532,7 +4532,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 942251d6-3164-48c7-b8c6-dc92a6df91bf
+                    request_id: ba633a29-3fcf-4f6f-b105-6ea45f77740b
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -4546,7 +4546,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d6a135c5-618d-433b-8c43-43e744fdb32a
+                    request_id: b2035e8c-c55e-45c0-9550-644c0834703c
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4560,7 +4560,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: 3e0b29fd-c36a-4cee-b150-4b3426b6d37e
+                    request_id: 9ba521a4-1950-48d6-a523-37f1b2e2273a
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -4603,20 +4603,20 @@ paths:
                 conversation found:
                   value:
                     type: conversation
-                    id: '38'
-                    created_at: 1677858695
-                    updated_at: 1677858697
+                    id: '181'
+                    created_at: 1677860080
+                    updated_at: 1677860082
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918083'
+                      id: '403918167'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266398'
+                        id: '991266857'
                         name: Ciaran170 Lee
                         email: admin170@email.com
                       attachments: []
@@ -4626,7 +4626,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217864c21b42eec02fa14
+                        id: 64021cef4c21b4352588c4dd
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -4650,15 +4650,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '4'
+                        id: '28'
                         part_type: conversation_attribute_updated_by_admin
                         body: 
-                        created_at: 1677858696
-                        updated_at: 1677858696
-                        notified_at: 1677858696
+                        created_at: 1677860082
+                        updated_at: 1677860082
+                        notified_at: 1677860082
                         assigned_to: 
                         author:
-                          id: '991266399'
+                          id: '991266858'
                           type: bot
                           name: Operator
                           email: operator+this_is_an_id307_that_should_be_at_least_@intercom.io
@@ -4666,15 +4666,15 @@ paths:
                         external_id: 
                         redacted: false
                       - type: conversation_part
-                        id: '5'
+                        id: '29'
                         part_type: conversation_attribute_updated_by_admin
                         body: 
-                        created_at: 1677858697
-                        updated_at: 1677858697
-                        notified_at: 1677858697
+                        created_at: 1677860082
+                        updated_at: 1677860082
+                        notified_at: 1677860082
                         assigned_to: 
                         author:
-                          id: '991266399'
+                          id: '991266858'
                           type: bot
                           name: Operator
                           email: operator+this_is_an_id307_that_should_be_at_least_@intercom.io
@@ -4692,7 +4692,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: de633bb5-825c-4092-b036-8a32bd2f348e
+                    request_id: 7a3f7e62-17d4-46d8-b05d-28735f0794ee
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -4706,7 +4706,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: fdf764fb-31b6-4097-9528-022d07bf6d18
+                    request_id: 7f9d75c2-645f-4c8a-94e0-92f40c818baa
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -4720,7 +4720,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: d56c3ee3-343c-49bb-adde-7886aa7cdbdb
+                    request_id: 8c01da67-1449-4f19-aa15-e4d6ae3842df
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -4839,20 +4839,20 @@ paths:
                     total_count: 1
                     conversations:
                     - type: conversation
-                      id: '42'
-                      created_at: 1677858708
-                      updated_at: 1677858708
+                      id: '185'
+                      created_at: 1677860093
+                      updated_at: 1677860093
                       waiting_since: 
                       snoozed_until: 
                       source:
                         type: conversation
-                        id: '403918087'
+                        id: '403918171'
                         delivered_as: admin_initiated
                         subject: ''
                         body: "<p>this is the message body</p>"
                         author:
                           type: admin
-                          id: '991266422'
+                          id: '991266881'
                           name: Ciaran190 Lee
                           email: admin190@email.com
                         attachments: []
@@ -4862,7 +4862,7 @@ paths:
                         type: contact.list
                         contacts:
                         - type: contact
-                          id: 640217944c21b42eec02fa18
+                          id: 64021cfc4c21b4352588c4e1
                       first_contact_reply: 
                       admin_assignee_id: 
                       team_assignee_id: 
@@ -4896,15 +4896,15 @@ paths:
                     value:
                     - field: id
                       operator: "="
-                      value: '42'
+                      value: '185'
                     - operator: OR
                       value:
                       - field: id
                         operator: "="
-                        value: '42'
+                        value: '185'
                       - field: id
                         operator: "="
-                        value: '42'
+                        value: '185'
   "/conversations/{id}/reply":
     post:
       summary: Reply to a conversation
@@ -4943,20 +4943,20 @@ paths:
                 User reply:
                   value:
                     type: conversation
-                    id: '50'
-                    created_at: 1677858717
-                    updated_at: 1677858718
-                    waiting_since: 1677858718
+                    id: '193'
+                    created_at: 1677860100
+                    updated_at: 1677860102
+                    waiting_since: 1677860102
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918090'
+                      id: '403918174'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266424'
+                        id: '991266883'
                         name: Ciaran191 Lee
                         email: admin191@email.com
                       attachments: []
@@ -4966,9 +4966,9 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 6402179d4c21b42eec02fa1f
+                        id: 64021d044c21b4352588c4e8
                     first_contact_reply:
-                      created_at: 1677858718
+                      created_at: 1677860102
                       type: conversation
                       url: 
                     admin_assignee_id: 
@@ -4991,15 +4991,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '7'
+                        id: '31'
                         part_type: comment
                         body: "<p>Thanks again :)</p>"
-                        created_at: 1677858718
-                        updated_at: 1677858718
-                        notified_at: 1677858718
+                        created_at: 1677860102
+                        updated_at: 1677860102
+                        notified_at: 1677860102
                         assigned_to: 
                         author:
-                          id: 6402179d4c21b42eec02fa1f
+                          id: 64021d044c21b4352588c4e8
                           type: user
                           name: Joe Bloggs
                           email: joe@bloggs.com
@@ -5010,20 +5010,20 @@ paths:
                 Admin note reply:
                   value:
                     type: conversation
-                    id: '51'
-                    created_at: 1677858722
-                    updated_at: 1677858723
+                    id: '194'
+                    created_at: 1677860105
+                    updated_at: 1677860106
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918091'
+                      id: '403918175'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266426'
+                        id: '991266885'
                         name: Ciaran192 Lee
                         email: admin192@email.com
                       attachments: []
@@ -5033,7 +5033,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217a14c21b42eec02fa20
+                        id: 64021d084c21b4352588c4e9
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -5055,7 +5055,7 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '8'
+                        id: '32'
                         part_type: note
                         body: |-
                           <h2>An Unordered HTML List</h2>
@@ -5070,12 +5070,12 @@ paths:
                           <li>Tea</li>
                           <li>Milk</li>
                           </ol>
-                        created_at: 1677858723
-                        updated_at: 1677858723
-                        notified_at: 1677858723
+                        created_at: 1677860106
+                        updated_at: 1677860106
+                        notified_at: 1677860106
                         assigned_to: 
                         author:
-                          id: '991266426'
+                          id: '991266885'
                           type: admin
                           name: Ciaran192 Lee
                           email: admin192@email.com
@@ -5086,20 +5086,20 @@ paths:
                 User last conversation reply:
                   value:
                     type: conversation
-                    id: '53'
-                    created_at: 1677858728
-                    updated_at: 1677858729
-                    waiting_since: 1677858729
+                    id: '196'
+                    created_at: 1677860110
+                    updated_at: 1677860111
+                    waiting_since: 1677860111
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918093'
+                      id: '403918177'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266430'
+                        id: '991266889'
                         name: Ciaran194 Lee
                         email: admin194@email.com
                       attachments: []
@@ -5109,9 +5109,9 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217a74c21b42eec02fa22
+                        id: 64021d0d4c21b4352588c4eb
                     first_contact_reply:
-                      created_at: 1677858729
+                      created_at: 1677860111
                       type: conversation
                       url: 
                     admin_assignee_id: 
@@ -5134,15 +5134,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '9'
+                        id: '33'
                         part_type: comment
                         body: "<p>Thanks again :)</p>"
-                        created_at: 1677858729
-                        updated_at: 1677858729
-                        notified_at: 1677858729
+                        created_at: 1677860111
+                        updated_at: 1677860111
+                        notified_at: 1677860111
                         assigned_to: 
                         author:
-                          id: 640217a74c21b42eec02fa22
+                          id: 64021d0d4c21b4352588c4eb
                           type: user
                           name: Joe Bloggs
                           email: joe@bloggs.com
@@ -5160,7 +5160,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 6bb2ff03-12bb-4582-9629-80a6c49605a7
+                    request_id: e1b65dc0-1921-4f14-b65d-ddfb3f1eff34
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -5174,7 +5174,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 1b6eaa41-4841-4cf6-9b1f-1cb3e45f0fa3
+                    request_id: 2c889292-0099-434f-a129-87eecda417de
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -5188,7 +5188,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: 6653fdc8-664e-4a38-b584-c0823cefc920
+                    request_id: d3b9075a-276b-4e0d-8d54-88a4317902a6
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -5205,14 +5205,14 @@ paths:
                 value:
                   message_type: comment
                   type: user
-                  intercom_user_id: 6402179d4c21b42eec02fa1f
+                  intercom_user_id: 64021d044c21b4352588c4e8
                   body: Thanks again :)
               admin_note_reply:
                 summary: Admin note reply
                 value:
                   message_type: note
                   type: admin
-                  admin_id: 991266426
+                  admin_id: 991266885
                   body: "<html> <body>  <h2>An Unordered HTML List</h2>  <ul>   <li>Coffee</li>
                     \  <li>Tea</li>   <li>Milk</li> </ul>    <h2>An Ordered HTML List</h2>
                     \ <ol>   <li>Coffee</li>   <li>Tea</li>   <li>Milk</li> </ol>
@@ -5222,14 +5222,14 @@ paths:
                 value:
                   message_type: comment
                   type: user
-                  intercom_user_id: 640217a74c21b42eec02fa22
+                  intercom_user_id: 64021d0d4c21b4352588c4eb
                   body: Thanks again :)
               not_found:
                 summary: Not found
                 value:
                   message_type: comment
                   type: user
-                  intercom_user_id: 640217ac4c21b42eec02fa23
+                  intercom_user_id: 64021d124c21b4352588c4ec
                   body: Thanks again :)
   "/conversations/{id}/parts":
     post:
@@ -5263,20 +5263,20 @@ paths:
                 Close a conversation:
                   value:
                     type: conversation
-                    id: '57'
-                    created_at: 1677858739
-                    updated_at: 1677858741
+                    id: '200'
+                    created_at: 1677860122
+                    updated_at: 1677860123
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918097'
+                      id: '403918181'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266438'
+                        id: '991266897'
                         name: Ciaran198 Lee
                         email: admin198@email.com
                       attachments: []
@@ -5286,7 +5286,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217b34c21b42eec02fa26
+                        id: 64021d194c21b4352588c4ef
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -5308,15 +5308,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '10'
+                        id: '34'
                         part_type: close
                         body: "<p>Goodbye :)</p>"
-                        created_at: 1677858741
-                        updated_at: 1677858741
-                        notified_at: 1677858741
+                        created_at: 1677860123
+                        updated_at: 1677860123
+                        notified_at: 1677860123
                         assigned_to: 
                         author:
-                          id: '991266438'
+                          id: '991266897'
                           type: admin
                           name: Ciaran198 Lee
                           email: admin198@email.com
@@ -5327,20 +5327,20 @@ paths:
                 Snooze a conversation:
                   value:
                     type: conversation
-                    id: '58'
-                    created_at: 1677858744
-                    updated_at: 1677858745
+                    id: '201'
+                    created_at: 1677860126
+                    updated_at: 1677860127
                     waiting_since: 
-                    snoozed_until: 1677862345
+                    snoozed_until: 1677863726
                     source:
                       type: conversation
-                      id: '403918098'
+                      id: '403918182'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266440'
+                        id: '991266899'
                         name: Ciaran199 Lee
                         email: admin199@email.com
                       attachments: []
@@ -5350,7 +5350,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217b74c21b42eec02fa27
+                        id: 64021d1d4c21b4352588c4f0
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -5372,15 +5372,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '11'
+                        id: '35'
                         part_type: snoozed
                         body: 
-                        created_at: 1677858745
-                        updated_at: 1677858745
-                        notified_at: 1677858745
+                        created_at: 1677860127
+                        updated_at: 1677860127
+                        notified_at: 1677860127
                         assigned_to: 
                         author:
-                          id: '991266440'
+                          id: '991266899'
                           type: admin
                           name: Ciaran199 Lee
                           email: admin199@email.com
@@ -5391,20 +5391,20 @@ paths:
                 Open a conversation:
                   value:
                     type: conversation
-                    id: '63'
-                    created_at: 1677858745
-                    updated_at: 1677858754
+                    id: '206'
+                    created_at: 1677860126
+                    updated_at: 1677860135
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918099'
+                      id: '403918183'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266442'
+                        id: '991266901'
                         name: Ciaran200 Lee
                         email: admin200@email.com
                       attachments: []
@@ -5414,7 +5414,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217be4c21b42eec02fa2c
+                        id: 64021d234c21b4352588c4f5
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -5436,15 +5436,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '13'
+                        id: '37'
                         part_type: open
                         body: 
-                        created_at: 1677858754
-                        updated_at: 1677858754
-                        notified_at: 1677858754
+                        created_at: 1677860135
+                        updated_at: 1677860135
+                        notified_at: 1677860135
                         assigned_to: 
                         author:
-                          id: '991266442'
+                          id: '991266901'
                           type: admin
                           name: Ciaran200 Lee
                           email: admin200@email.com
@@ -5455,20 +5455,20 @@ paths:
                 Assign a conversation:
                   value:
                     type: conversation
-                    id: '67'
-                    created_at: 1677858756
-                    updated_at: 1677858758
+                    id: '210'
+                    created_at: 1677860137
+                    updated_at: 1677860138
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918102'
+                      id: '403918186'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266444'
+                        id: '991266903'
                         name: Ciaran201 Lee
                         email: admin201@email.com
                       attachments: []
@@ -5478,9 +5478,9 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217c44c21b42eec02fa2f
+                        id: 64021d294c21b4352588c4f8
                     first_contact_reply: 
-                    admin_assignee_id: 991266444
+                    admin_assignee_id: 991266903
                     team_assignee_id: 
                     open: true
                     state: open
@@ -5500,17 +5500,17 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '14'
+                        id: '38'
                         part_type: assign_and_reopen
                         body: 
-                        created_at: 1677858758
-                        updated_at: 1677858758
-                        notified_at: 1677858758
+                        created_at: 1677860139
+                        updated_at: 1677860139
+                        notified_at: 1677860139
                         assigned_to:
                           type: admin
-                          id: '991266444'
+                          id: '991266903'
                         author:
-                          id: '991266444'
+                          id: '991266903'
                           type: admin
                           name: Ciaran201 Lee
                           email: admin201@email.com
@@ -5528,7 +5528,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 616d1bd8-74f2-43a2-969e-44c2b761a0ab
+                    request_id: 055ccd3c-0c7e-4d1b-bae9-6e6af44ac989
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -5542,7 +5542,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 04f17663-a4c8-4d82-88ff-332177f8b693
+                    request_id: f3c039f5-2a06-4750-8976-927f72a8a4f7
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -5556,7 +5556,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: af09ed56-fc96-4887-a4e0-ec2cb20e5e32
+                    request_id: 7768f8fb-8f63-47cf-ab30-ee77f2c49473
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -5577,32 +5577,32 @@ paths:
                 value:
                   message_type: close
                   type: admin
-                  admin_id: 991266438
+                  admin_id: 991266897
                   body: Goodbye :)
               snooze_a_conversation:
                 summary: Snooze a conversation
                 value:
                   message_type: snoozed
-                  admin_id: 991266440
-                  snoozed_until: 1677862345
+                  admin_id: 991266899
+                  snoozed_until: 1677863726
               open_a_conversation:
                 summary: Open a conversation
                 value:
                   message_type: open
-                  admin_id: 991266442
+                  admin_id: 991266901
               assign_a_conversation:
                 summary: Assign a conversation
                 value:
                   message_type: assignment
                   type: admin
-                  admin_id: 991266444
-                  assignee_id: 991266444
+                  admin_id: 991266903
+                  assignee_id: 991266903
               not_found:
                 summary: Not found
                 value:
                   message_type: close
                   type: admin
-                  admin_id: 991266446
+                  admin_id: 991266905
                   body: Goodbye :)
   "/conversations/{id}/run_assignment_rules":
     post:
@@ -5633,20 +5633,20 @@ paths:
                 Assign a conversation using assignment rules:
                   value:
                     type: conversation
-                    id: '71'
-                    created_at: 1677858768
-                    updated_at: 1677858770
+                    id: '214'
+                    created_at: 1677860149
+                    updated_at: 1677860151
                     waiting_since: 
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918106'
+                      id: '403918190'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266452'
+                        id: '991266911'
                         name: Ciaran205 Lee
                         email: admin205@email.com
                       attachments: []
@@ -5656,7 +5656,7 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 640217d04c21b42eec02fa33
+                        id: 64021d344c21b4352588c4fc
                     first_contact_reply: 
                     admin_assignee_id: 
                     team_assignee_id: 
@@ -5678,17 +5678,17 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '15'
+                        id: '39'
                         part_type: default_assignment
                         body: 
-                        created_at: 1677858770
-                        updated_at: 1677858770
-                        notified_at: 1677858770
+                        created_at: 1677860151
+                        updated_at: 1677860151
+                        notified_at: 1677860151
                         assigned_to:
                           type: nobody_admin
                           id: 
                         author:
-                          id: '991266453'
+                          id: '991266912'
                           type: bot
                           name: Operator
                           email: operator+this_is_an_id345_that_should_be_at_least_@intercom.io
@@ -5706,7 +5706,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 7efc170b-a304-4dc8-b36e-790a0c34b2c0
+                    request_id: 40a535e4-e4cc-4c40-9d62-4616d731681e
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -5720,7 +5720,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 8753ff1c-602c-48ef-bea4-7ad77074ed75
+                    request_id: 980fc47d-5681-43f9-90aa-a537d3f7310d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -5734,7 +5734,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: fab0a6ec-fb97-4705-9b4e-8b9ae343eeeb
+                    request_id: 6e4fa8b5-0ea9-429b-87e8-73e765829e28
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -5773,7 +5773,7 @@ paths:
                   value:
                     customers:
                     - type: user
-                      id: 640217dc4c21b42eec02fa37
+                      id: 64021d3f4c21b4352588c500
               schema:
                 "$ref": "#/components/schemas/conversation"
         '404':
@@ -5784,7 +5784,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 7f1ffbe6-07b9-405b-b06b-d28c02a244b5
+                    request_id: d1d219d9-5684-4f17-b4e8-d7810a1f7c19
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -5798,7 +5798,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: eb7b1cf2-8ca8-4452-9387-145af24c40b8
+                    request_id: 4f07bfba-8d8c-4d82-a796-6a57949eb54b
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -5812,7 +5812,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: 849096ba-e3ad-4916-8d4a-3a8096c7ef0d
+                    request_id: feb9929d-8902-4913-ac20-0a68b4e65a1a
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -5827,15 +5827,15 @@ paths:
               attach_a_contact_to_a_conversation:
                 summary: Attach a contact to a conversation
                 value:
-                  admin_id: 991266460
+                  admin_id: 991266919
                   customer:
-                    intercom_user_id: 640217dc4c21b42eec02fa37
+                    intercom_user_id: 64021d3f4c21b4352588c500
               not_found:
                 summary: Not found
                 value:
-                  admin_id: 991266462
+                  admin_id: 991266921
                   customer:
-                    intercom_user_id: 640217df4c21b42eec02fa38
+                    intercom_user_id: 64021d414c21b4352588c501
   "/conversations/{conversation_id}/customers/{contact_id}":
     delete:
       summary: Detach a contact from a group conversation
@@ -5876,7 +5876,7 @@ paths:
                   value:
                     customers:
                     - type: user
-                      id: 640217ee4c21b42eec02fa42
+                      id: 64021d4f4c21b4352588c50b
               schema:
                 "$ref": "#/components/schemas/conversation"
         '404':
@@ -5887,14 +5887,14 @@ paths:
                 Conversation not found:
                   value:
                     type: error.list
-                    request_id: 104d9c77-72c4-4368-b949-5784cb67d751
+                    request_id: 52fd4ec8-9ac2-44d2-ab83-56fb729aa375
                     errors:
                     - code: not_found
                       message: Resource Not Found
                 Contact not found:
                   value:
                     type: error.list
-                    request_id: 99a70126-256a-4510-a001-b29e38c33904
+                    request_id: cae1d589-4f86-4d9e-906f-846e9d2aec7d
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -5908,7 +5908,7 @@ paths:
                 Last customer:
                   value:
                     type: error.list
-                    request_id: 238f03aa-3cb8-419f-90e9-e86ae98d3649
+                    request_id: 8f240ce9-0227-444d-b459-925dae826a55
                     errors:
                     - code: parameter_invalid
                       message: Removing the last customer is not allowed
@@ -5922,7 +5922,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 1e826dca-b143-4acf-88a6-aebaaf242ab0
+                    request_id: 2a7b12f1-dcf3-4745-829c-99bb3f81b39a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -5936,7 +5936,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: 3de051c2-34de-4d7f-b149-dfe66988b895
+                    request_id: 6e07134f-98c6-4e41-a01b-4866d0395c67
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -5951,27 +5951,27 @@ paths:
               detach_a_contact_from_a_group_conversation:
                 summary: Detach a contact from a group conversation
                 value:
-                  admin_id: 991266468
+                  admin_id: 991266927
                   customer:
-                    intercom_user_id: 640217e74c21b42eec02fa3b
+                    intercom_user_id: 64021d494c21b4352588c504
               conversation_not_found:
                 summary: Conversation not found
                 value:
-                  admin_id: 991266470
+                  admin_id: 991266929
                   customer:
-                    intercom_user_id: 640217f04c21b42eec02fa43
+                    intercom_user_id: 64021d514c21b4352588c50c
               contact_not_found:
                 summary: Contact not found
                 value:
-                  admin_id: 991266472
+                  admin_id: 991266931
                   customer:
-                    intercom_user_id: 640217f94c21b42eec02fa4a
+                    intercom_user_id: 64021d5a4c21b4352588c513
               last_customer:
                 summary: Last customer
                 value:
-                  admin_id: 991266474
+                  admin_id: 991266933
                   customer:
-                    intercom_user_id: 640218044c21b42eec02fa51
+                    intercom_user_id: 64021d624c21b4352588c51a
   "/conversations/redact":
     post:
       summary: Redact a conversation part
@@ -5998,20 +5998,20 @@ paths:
                 Redact a conversation part:
                   value:
                     type: conversation
-                    id: '127'
-                    created_at: 1677858848
-                    updated_at: 1677858850
-                    waiting_since: 1677858849
+                    id: '270'
+                    created_at: 1677860220
+                    updated_at: 1677860223
+                    waiting_since: 1677860221
                     snoozed_until: 
                     source:
                       type: conversation
-                      id: '403918132'
+                      id: '403918216'
                       delivered_as: admin_initiated
                       subject: ''
                       body: "<p>this is the message body</p>"
                       author:
                         type: admin
-                        id: '991266480'
+                        id: '991266939'
                         name: Ciaran219 Lee
                         email: admin219@email.com
                       attachments: []
@@ -6021,9 +6021,9 @@ paths:
                       type: contact.list
                       contacts:
                       - type: contact
-                        id: 6402181f4c21b42eec02fa66
+                        id: 64021d7c4c21b4352588c52f
                     first_contact_reply:
-                      created_at: 1677858849
+                      created_at: 1677860221
                       type: conversation
                       url: 
                     admin_assignee_id: 
@@ -6046,15 +6046,15 @@ paths:
                       type: conversation_part.list
                       conversation_parts:
                       - type: conversation_part
-                        id: '23'
+                        id: '47'
                         part_type: comment
                         body: "<p><i>This message was deleted</i></p>"
-                        created_at: 1677858849
-                        updated_at: 1677858850
-                        notified_at: 1677858849
+                        created_at: 1677860221
+                        updated_at: 1677860223
+                        notified_at: 1677860221
                         assigned_to: 
                         author:
-                          id: 6402181f4c21b42eec02fa66
+                          id: 64021d7c4c21b4352588c52f
                           type: user
                           name: Joe Bloggs
                           email: joe@bloggs.com
@@ -6072,7 +6072,7 @@ paths:
                 Not found:
                   value:
                     type: error.list
-                    request_id: 43ac8235-0caf-4d77-b84a-9a946821a2a5
+                    request_id: 8fc4a3db-df4a-47a7-bd98-23ef336538ad
                     errors:
                     - code: conversation_part_or_message_not_found
                       message: Conversation part or message not found
@@ -6086,7 +6086,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 8ac46cc2-7ee4-4c94-952a-d9e97ab3a8f8
+                    request_id: 26dcfb3a-041c-4fa0-af0f-8b0a8aaabd4e
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6102,8 +6102,8 @@ paths:
                 summary: Redact a conversation part
                 value:
                   type: conversation_part
-                  conversation_id: 127
-                  conversation_part_id: 23
+                  conversation_id: 270
+                  conversation_part_id: 47
               not_found:
                 summary: Not found
                 value:
@@ -6279,7 +6279,7 @@ paths:
                       custom: false
                       archived: false
                       model: company
-                    - id: 8
+                    - id: 33
                       type: data_attribute
                       name: The One Ring
                       full_name: custom_attributes.The One Ring
@@ -6291,9 +6291,9 @@ paths:
                       ui_writable: false
                       custom: true
                       archived: false
-                      admin_id: '991266486'
-                      created_at: 1677858857
-                      updated_at: 1677858857
+                      admin_id: '991266945'
+                      created_at: 1677860230
+                      updated_at: 1677860230
                       model: company
                     - type: data_attribute
                       name: id
@@ -6360,7 +6360,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 28a43676-e458-43a8-bb9d-86fd6e654755
+                    request_id: 9d56881e-583f-413f-bb6a-beaaabe717da
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6385,7 +6385,7 @@ paths:
               examples:
                 Successful:
                   value:
-                    id: 11
+                    id: 36
                     type: data_attribute
                     name: Mithril Shirt
                     full_name: custom_attributes.Mithril Shirt
@@ -6395,9 +6395,9 @@ paths:
                     ui_writable: false
                     custom: true
                     archived: false
-                    admin_id: '991266488'
-                    created_at: 1677858859
-                    updated_at: 1677858859
+                    admin_id: '991266947'
+                    created_at: 1677860231
+                    updated_at: 1677860231
                     model: company
               schema:
                 "$ref": "#/components/schemas/data_attribute"
@@ -6409,7 +6409,7 @@ paths:
                 Same name already exists:
                   value:
                     type: error.list
-                    request_id: 15b67347-ba23-4c08-bd5b-e2803add5376
+                    request_id: 9e83ed4b-ed41-4277-816c-f0851c7ed403
                     errors:
                     - code: parameter_invalid
                       message: You already have 'The One Ring' in your company data.
@@ -6417,7 +6417,7 @@ paths:
                 Invalid name:
                   value:
                     type: error.list
-                    request_id: 5c824096-fb09-450b-adb6-82a2bc91ad1f
+                    request_id: 0cc466f6-a0f6-40e2-afd5-1de39a725228
                     errors:
                     - code: parameter_invalid
                       message: Your name for this attribute must only contain alphanumeric
@@ -6425,7 +6425,7 @@ paths:
                 Attribute already exists:
                   value:
                     type: error.list
-                    request_id: dbb85b8c-2e09-42b9-9105-1e78f0ad86e1
+                    request_id: 87d716ab-903c-4887-9103-f3c844ddf2e7
                     errors:
                     - code: parameter_invalid
                       message: You already have 'The One Ring' in your company data.
@@ -6433,14 +6433,14 @@ paths:
                 Invalid Data Type:
                   value:
                     type: error.list
-                    request_id: 425d2a97-6b82-4841-88c9-547cecd7c76a
+                    request_id: 73817dcd-15d9-4c5a-9201-bbd7ccfb13e6
                     errors:
                     - code: parameter_invalid
                       message: Data Type isn't an option
                 Too few options for list:
                   value:
                     type: error.list
-                    request_id: '08aeafd6-53ce-40ed-a7d4-fdf1549dc606'
+                    request_id: c56ba85a-b06d-42a3-b27a-071fe024889d
                     errors:
                     - code: parameter_invalid
                       message: The Data Attribute model field must be either contact
@@ -6455,7 +6455,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 82285536-8988-4e7f-baa0-d11b5e08eb12
+                    request_id: add27613-7188-4e32-b9c5-77d5af2f6124
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6534,7 +6534,7 @@ paths:
               examples:
                 Successful:
                   value:
-                    id: 18
+                    id: 43
                     type: data_attribute
                     name: The One Ring
                     full_name: custom_attributes.The One Ring
@@ -6548,9 +6548,9 @@ paths:
                     ui_writable: false
                     custom: true
                     archived: false
-                    admin_id: '991266495'
-                    created_at: 1677858865
-                    updated_at: 1677858865
+                    admin_id: '991266954'
+                    created_at: 1677860237
+                    updated_at: 1677860237
                     model: company
               schema:
                 "$ref": "#/components/schemas/data_attribute"
@@ -6562,7 +6562,7 @@ paths:
                 Too few options in list:
                   value:
                     type: error.list
-                    request_id: 1a5b1c33-f313-4465-b19a-5f36ee75c821
+                    request_id: d7576bbe-419c-4434-b70a-dd9c6367c877
                     errors:
                     - code: parameter_invalid
                       message: Options isn't an array
@@ -6576,7 +6576,7 @@ paths:
                 Attribute Not Found:
                   value:
                     type: error.list
-                    request_id: ec066c89-aa5f-40a5-91fa-0b287db1140d
+                    request_id: ef25edb9-5fbc-4891-af3c-5d2501a3a442
                     errors:
                     - code: field_not_found
                       message: We couldn't find that data attribute to update
@@ -6590,7 +6590,7 @@ paths:
                 Has Dependant Object:
                   value:
                     type: error.list
-                    request_id: 01ec0254-6eeb-490f-831e-d9bc11d086b3
+                    request_id: 4db3e028-8a6b-464e-9ff9-d187b1730a57
                     errors:
                     - code: data_invalid
                       message: The Data Attribute you are trying to archive has a
@@ -6605,7 +6605,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 6d5f566e-60e2-4b32-997c-825608c9a8fc
+                    request_id: 5be79865-e4c0-404e-b673-2ab0dec0e4e2
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6724,7 +6724,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: ad412f18-93dd-45c0-8bd1-13300e4df0cf
+                    request_id: 65a87f9f-b894-4dc9-aec6-af16f7c9e9ab
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6811,7 +6811,7 @@ paths:
                     pages:
                       next: http://api.intercom.test/events?next page
                     email: user24@email.com
-                    intercom_user_id: 640218414c21b42eec02fa7d
+                    intercom_user_id: 64021d9c4c21b4352588c546
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
               schema:
                 "$ref": "#/components/schemas/data_event_summary"
@@ -6823,7 +6823,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a65a78b4-24f9-42eb-99c3-6365d2ddbe1d
+                    request_id: d604ec3b-5511-4261-aece-6d17fc206ab9
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6854,7 +6854,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: f20bf81b-f884-48a3-87ca-82ed26ea78c0
+                    request_id: 554234b2-3d53-4cd1-9183-c86ac9b67612
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -6898,7 +6898,7 @@ paths:
               examples:
                 successful:
                   value:
-                    job_identifier: 8kwcbil7n1gb33kb
+                    job_identifier: z150moqpbt5v46e6
                     status: pending
                     download_url: ''
                     download_expires_at: ''
@@ -6913,8 +6913,8 @@ paths:
               successful:
                 summary: successful
                 value:
-                  created_at_after: 1677840885
-                  created_at_before: 1677858885
+                  created_at_after: 1677842255
+                  created_at_before: 1677860255
   "/export/content/data/{job_identifier}":
     get:
       summary: Show content data export
@@ -6948,7 +6948,7 @@ paths:
               examples:
                 successful:
                   value:
-                    job_identifier: kw9wb1xpgcoqxx8j
+                    job_identifier: trx0d92ocdv2esxq
                     status: pending
                     download_url: ''
                     download_expires_at: ''
@@ -6980,7 +6980,7 @@ paths:
               examples:
                 successful:
                   value:
-                    job_identifier: u3eriw6jp3ki8rmz
+                    job_identifier: l4qv3q6taskx2m6z
                     status: canceled
                     download_url: ''
                     download_expires_at: ''
@@ -7041,30 +7041,30 @@ paths:
                 user message created:
                   value:
                     type: user_message
-                    id: '403918141'
-                    created_at: 1677858945
+                    id: '403918225'
+                    created_at: 1677860313
                     body: heyy
                     message_type: inapp
-                    conversation_id: '141'
+                    conversation_id: '284'
                 lead message created:
                   value:
                     type: user_message
-                    id: '403918142'
-                    created_at: 1677858947
+                    id: '403918226'
+                    created_at: 1677860315
                     body: heyy
                     message_type: inapp
-                    conversation_id: '142'
+                    conversation_id: '285'
                 admin message created:
                   value:
                     type: admin_message
-                    id: '4'
-                    created_at: 1677858950
+                    id: '8'
+                    created_at: 1677860317
                     subject: heyy
                     body: heyy
                     message_type: inapp
                     owner:
                       type: admin
-                      id: '991266524'
+                      id: '991266983'
                       name: Ciaran252 Lee
                       email: admin252@email.com
                       away_mode_enabled: false
@@ -7079,14 +7079,14 @@ paths:
                 No body supplied for message:
                   value:
                     type: error.list
-                    request_id: 23b8fed6-a532-4856-928f-fb443fabe1a9
+                    request_id: 0a873022-3acc-4084-ad4e-ec02d0d6fba8
                     errors:
                     - code: parameter_invalid
                       message: Body is required
                 No body supplied for email message:
                   value:
                     type: error.list
-                    request_id: a4ad760b-1716-48ec-94a5-61dec62e1b8a
+                    request_id: 6df31f91-1c45-42a6-a780-94aca096ce77
                     errors:
                     - code: parameter_invalid
                       message: Body is required
@@ -7100,7 +7100,7 @@ paths:
                 No subject supplied for email message:
                   value:
                     type: error.list
-                    request_id: 224c6191-e599-49c1-a0ba-f2c6c1dc51ab
+                    request_id: 11499893-4e15-48dd-b216-a9dd200ed3fe
                     errors:
                     - code: parameter_not_found
                       message: No subject supplied for email message
@@ -7114,7 +7114,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 5b4f35c4-5ac8-4b06-be09-8c5ecd0482bd
+                    request_id: 20cbc3bb-2b30-4ae2-ad2f-76cde093ba6d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7128,7 +7128,7 @@ paths:
                 API plan restricted:
                   value:
                     type: error.list
-                    request_id: c394b2c6-a121-4edc-960f-bde4c8241d56
+                    request_id: 9ffe0f8c-6192-463a-8aec-060aff1f601c
                     errors:
                     - code: api_plan_restricted
                       message: Active subscription needed.
@@ -7145,7 +7145,7 @@ paths:
                 value:
                   from:
                     type: user
-                    id: 640218804c21b42eec02fad2
+                    id: 64021dd84c21b4352588c59b
                   body: heyy
                   referer: https://twitter.com/bob
               lead_message_created:
@@ -7153,7 +7153,7 @@ paths:
                 value:
                   from:
                     type: lead
-                    id: 640218834c21b42eec02fad3
+                    id: 64021dda4c21b4352588c59c
                   body: heyy
                   referer: https://twitter.com/bob
               admin_message_created:
@@ -7161,10 +7161,10 @@ paths:
                 value:
                   from:
                     type: admin
-                    id: '991266524'
+                    id: '991266983'
                   to:
                     type: user
-                    id: 640218854c21b42eec02fad4
+                    id: 64021ddc4c21b4352588c59d
                   message_type: conversation
                   body: heyy
               no_body_supplied_for_message:
@@ -7172,10 +7172,10 @@ paths:
                 value:
                   from:
                     type: admin
-                    id: '991266525'
+                    id: '991266984'
                   to:
                     type: user
-                    id: 640218864c21b42eec02fad5
+                    id: 64021ddd4c21b4352588c59e
                   message_type: inapp
                   body: 
                   subject: heyy
@@ -7184,7 +7184,7 @@ paths:
                 value:
                   from:
                     type: admin
-                    id: '991266526'
+                    id: '991266985'
                   to:
                     type: user
                     user_id: '70'
@@ -7195,10 +7195,10 @@ paths:
                 value:
                   from:
                     type: admin
-                    id: '991266527'
+                    id: '991266986'
                   to:
                     type: user
-                    id: 640218894c21b42eec02fad7
+                    id: 64021ddf4c21b4352588c5a0
                   message_type: email
                   body: 
                   subject: heyy
@@ -7229,12 +7229,12 @@ paths:
                       total_pages: 1
                       type: pages
                     data:
-                    - id: '1'
+                    - id: '15'
                       type: news-item
                       workspace_id: this_is_an_id445_that_should_be_at_least_
                       title: We have news
                       body: "<p>Hello there,</p>"
-                      sender_id: 991266532
+                      sender_id: 991266991
                       state: draft
                       labels: []
                       cover_image_url: 
@@ -7244,15 +7244,15 @@ paths:
                       - 
                       - 
                       deliver_silently: false
-                      created_at: 1677858956
-                      updated_at: 1677858956
+                      created_at: 1677860322
+                      updated_at: 1677860322
                       newsfeed_assignments: []
-                    - id: '2'
+                    - id: '16'
                       type: news-item
                       workspace_id: this_is_an_id445_that_should_be_at_least_
                       title: We have news
                       body: "<p>Hello there,</p>"
-                      sender_id: 991266534
+                      sender_id: 991266993
                       state: draft
                       labels: []
                       cover_image_url: 
@@ -7262,8 +7262,8 @@ paths:
                       - 
                       - 
                       deliver_silently: false
-                      created_at: 1677858956
-                      updated_at: 1677858956
+                      created_at: 1677860322
+                      updated_at: 1677860322
                       newsfeed_assignments: []
                     total_count: 2
               schema:
@@ -7276,7 +7276,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 8240401a-ac6d-4f0b-9d3c-8ac3cf038a35
+                    request_id: d32bfed4-efde-4e24-9a48-d53068fa77ca
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7301,12 +7301,12 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '5'
+                    id: '19'
                     type: news-item
                     workspace_id: this_is_an_id449_that_should_be_at_least_
                     title: Halloween is here!
                     body: "<p>New costumes in store for this spooky season</p>"
-                    sender_id: 991266541
+                    sender_id: 991267000
                     state: live
                     labels:
                     - New
@@ -7317,10 +7317,10 @@ paths:
                     - "\U0001F606"
                     - "\U0001F605"
                     deliver_silently: true
-                    created_at: 1677858959
-                    updated_at: 1677858959
+                    created_at: 1677860326
+                    updated_at: 1677860326
                     newsfeed_assignments:
-                    - newsfeed_id: 3
+                    - newsfeed_id: 28
                       published_at: 1664638214
               schema:
                 "$ref": "#/components/schemas/news_item"
@@ -7332,7 +7332,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 5f4fa6e8-5103-4bdc-b1ae-a67eb2b2beb7
+                    request_id: c9fc7fdc-51cd-49df-8369-51cded3d0995
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7353,14 +7353,14 @@ paths:
                   - Product
                   - Update
                   - New
-                  sender_id: 991266541
+                  sender_id: 991267000
                   deliver_silently: true
                   reactions:
                   - "\U0001F606"
                   - "\U0001F605"
                   state: live
                   newsfeed_assignments:
-                  - newsfeed_id: 3
+                  - newsfeed_id: 28
                     published_at: 1664638214
   "/news/news_items/{id}":
     get:
@@ -7389,12 +7389,12 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '6'
+                    id: '20'
                     type: news-item
                     workspace_id: this_is_an_id453_that_should_be_at_least_
                     title: We have news
                     body: "<p>Hello there,</p>"
-                    sender_id: 991266544
+                    sender_id: 991267003
                     state: live
                     labels: []
                     cover_image_url: 
@@ -7404,11 +7404,11 @@ paths:
                     - 
                     - 
                     deliver_silently: false
-                    created_at: 1677858962
-                    updated_at: 1677858962
+                    created_at: 1677860328
+                    updated_at: 1677860328
                     newsfeed_assignments:
-                    - newsfeed_id: 5
-                      published_at: 1677858962
+                    - newsfeed_id: 30
+                      published_at: 1677860329
               schema:
                 "$ref": "#/components/schemas/news_item"
         '404':
@@ -7419,7 +7419,7 @@ paths:
                 News Item Not Found:
                   value:
                     type: error.list
-                    request_id: b65f286e-d9db-4a34-835f-a47f10534739
+                    request_id: 8332bdff-250e-4e56-a283-1e89fc097ba7
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -7433,7 +7433,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 00a68c51-9f19-4fae-b7ab-7af144ebca49
+                    request_id: 66128d41-5ce7-4204-9066-fa22ca25197a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7464,12 +7464,12 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '9'
+                    id: '23'
                     type: news-item
                     workspace_id: this_is_an_id459_that_should_be_at_least_
                     title: Christmas is here!
                     body: "<p>New gifts in store for the jolly season</p>"
-                    sender_id: 991266552
+                    sender_id: 991267011
                     state: live
                     labels: []
                     cover_image_url: 
@@ -7477,8 +7477,8 @@ paths:
                     - "\U0001F61D"
                     - "\U0001F602"
                     deliver_silently: false
-                    created_at: 1677858965
-                    updated_at: 1677858966
+                    created_at: 1677860332
+                    updated_at: 1677860332
                     newsfeed_assignments: []
               schema:
                 "$ref": "#/components/schemas/news_item"
@@ -7490,7 +7490,7 @@ paths:
                 News Item Not Found:
                   value:
                     type: error.list
-                    request_id: fab52aa2-eff1-423f-810b-9c8d63959675
+                    request_id: 4cb70daf-e942-4d76-8caa-677f0a264567
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -7504,7 +7504,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 5c20788a-1e8c-44b7-bd9e-effa8f97b984
+                    request_id: b2180ba7-903a-42ac-b4bb-f24c1f164158
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7521,7 +7521,7 @@ paths:
                 value:
                   title: Christmas is here!
                   body: "<p>New gifts in store for the jolly season</p>"
-                  sender_id: 991266552
+                  sender_id: 991267011
                   reactions:
                   - "\U0001F61D"
                   - "\U0001F602"
@@ -7530,7 +7530,7 @@ paths:
                 value:
                   title: Christmas is here!
                   body: "<p>New gifts in store for the jolly season</p>"
-                  sender_id: 991266555
+                  sender_id: 991267014
                   reactions:
                   - "\U0001F61D"
                   - "\U0001F602"
@@ -7560,7 +7560,7 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '12'
+                    id: '26'
                     object: news-item
                     deleted: true
               schema:
@@ -7573,7 +7573,7 @@ paths:
                 News Item Not Found:
                   value:
                     type: error.list
-                    request_id: bb76fde9-94bb-46a7-ae39-0e898422a2b4
+                    request_id: 9b88c8c9-bb80-4b32-bbae-83632ed1e3f7
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -7587,7 +7587,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a0170d21-5e60-4bb4-9e17-480e33e72d5e
+                    request_id: d552a33c-cbcb-4629-b075-7d38a1cc6ef5
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7640,7 +7640,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d95f547a-4c24-43e2-85c7-ca7c07aa2dce
+                    request_id: b85e83dd-6580-48c8-b598-9ab96bc0cab1
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7673,16 +7673,16 @@ paths:
                       total_pages: 1
                       type: pages
                     data:
-                    - id: '18'
+                    - id: '43'
                       type: newsfeed
                       name: Visitor Feed
-                      created_at: 1677858975
-                      updated_at: 1677858975
-                    - id: '19'
+                      created_at: 1677860341
+                      updated_at: 1677860341
+                    - id: '44'
                       type: newsfeed
                       name: Visitor Feed
-                      created_at: 1677858975
-                      updated_at: 1677858975
+                      created_at: 1677860341
+                      updated_at: 1677860341
                     total_count: 2
               schema:
                 "$ref": "#/components/schemas/paginated_response"
@@ -7694,7 +7694,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 565413e3-c05f-40f6-b404-f798ea941083
+                    request_id: 0f82672f-5994-4964-b57f-12240c47db2e
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7728,11 +7728,11 @@ paths:
               examples:
                 successful:
                   value:
-                    id: '22'
+                    id: '47'
                     type: newsfeed
                     name: Visitor Feed
-                    created_at: 1677858976
-                    updated_at: 1677858976
+                    created_at: 1677860343
+                    updated_at: 1677860343
               schema:
                 "$ref": "#/components/schemas/newsfeed"
         '401':
@@ -7743,7 +7743,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a4e6b8de-5d4c-4f93-9c0b-b26180763fcc
+                    request_id: 21ef16cd-0ff9-4c82-a655-b24a73470d2c
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7777,14 +7777,14 @@ paths:
                 Note found:
                   value:
                     type: note
-                    id: '21'
-                    created_at: 1677167782
+                    id: '44'
+                    created_at: 1677169150
                     contact:
                       type: contact
-                      id: 640218a64c21b42eec02fae2
+                      id: 64021dfe4c21b4352588c5ab
                     author:
                       type: admin
-                      id: '991266571'
+                      id: '991267030'
                       name: Ciaran299 Lee
                       email: admin299@email.com
                       away_mode_enabled: false
@@ -7800,7 +7800,7 @@ paths:
                 Note not found:
                   value:
                     type: error.list
-                    request_id: 5ff5440e-97a5-48ea-952c-7f133057d92e
+                    request_id: 9047d4a4-7d09-4810-8155-3c8691e1ee3d
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -7814,7 +7814,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 384401b4-6e9b-42c2-9635-15a453b6c451
+                    request_id: 7158d416-7701-4201-be69-068d428f266d
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7850,16 +7850,16 @@ paths:
                     type: segment.list
                     segments:
                     - type: segment
-                      id: 640218ae4c21b42eec02faea
+                      id: 64021e064c21b4352588c5b3
                       name: Jane segment
-                      created_at: 1677858990
-                      updated_at: 1677858990
+                      created_at: 1677860358
+                      updated_at: 1677860358
                       person_type: user
                     - type: segment
-                      id: 640218ae4c21b42eec02fae9
+                      id: 64021e064c21b4352588c5b2
                       name: John segment
-                      created_at: 1677858990
-                      updated_at: 1677858990
+                      created_at: 1677860358
+                      updated_at: 1677860358
                       person_type: user
               schema:
                 "$ref": "#/components/schemas/segment_list"
@@ -7871,7 +7871,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 9a09d14f-0f8f-4cfe-a128-efa4f7ce2a67
+                    request_id: b6dfa03f-6865-4b55-933d-e40066e40d02
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7905,10 +7905,10 @@ paths:
                 Successful response:
                   value:
                     type: segment
-                    id: 640218af4c21b42eec02faed
+                    id: 64021e084c21b4352588c5b6
                     name: John segment
-                    created_at: 1677858991
-                    updated_at: 1677858991
+                    created_at: 1677860360
+                    updated_at: 1677860360
                     person_type: user
               schema:
                 "$ref": "#/components/schemas/segment"
@@ -7920,7 +7920,7 @@ paths:
                 Segment not found:
                   value:
                     type: error.list
-                    request_id: 98ce7931-6384-44a8-bc49-1c3ea292924b
+                    request_id: 202c721c-84a0-4d04-8c32-2fe13de384a7
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -7934,7 +7934,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d3efebe1-adf3-4df3-8de6-b6cb2e04fdc3
+                    request_id: 50226ef6-0edf-4fb7-8f02-d8039c24f680
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -7964,7 +7964,7 @@ paths:
                     type: list
                     data:
                     - type: subscription
-                      id: '45'
+                      id: '91'
                       state: live
                       consent_type: opt_out
                       default_translation:
@@ -7987,7 +7987,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: d16d17da-e898-4a18-a9c3-2d69ddf5deb6
+                    request_id: 7d1d50c5-9db1-4393-8e6c-38c0db57e5ca
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8017,7 +8017,7 @@ paths:
               examples:
                 successful:
                   value:
-                    url: http://via.intercom.io/msgr/a3cefb31-cc3c-4ae4-8fbc-2a472093c0ba
+                    url: http://via.intercom.io/msgr/3019c4be-85a2-490e-a1e6-b411402aac23
                     type: phone_call_redirect
               schema:
                 "$ref": "#/components/schemas/phone_switch"
@@ -8050,7 +8050,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 51139624-4ee7-46e4-8729-cfa9d4ad04b0
+                    request_id: 887022b0-8487-4240-a0a0-6607db92fc40
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8113,7 +8113,7 @@ paths:
                     type: list
                     data:
                     - type: tag
-                      id: '33'
+                      id: '86'
                       name: Manual tag 1
               schema:
                 "$ref": "#/components/schemas/tag_list"
@@ -8125,7 +8125,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: db00ff00-436a-4705-a8c4-317df64e2520
+                    request_id: 9964bae9-4b32-4079-a091-e431e5e86e68
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8164,7 +8164,7 @@ paths:
                 Action successful:
                   value:
                     type: tag
-                    id: '36'
+                    id: '89'
                     name: test
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -8176,7 +8176,7 @@ paths:
                 Invalid parameters:
                   value:
                     type: error.list
-                    request_id: d392576d-5a14-4402-abab-1b8138f3887e
+                    request_id: 5810c0aa-de68-4e62-9cfe-c9ee93de04fa
                     errors:
                     - code: parameter_invalid
                       message: invalid tag parameters
@@ -8190,14 +8190,14 @@ paths:
                 Company not found:
                   value:
                     type: error.list
-                    request_id: 4ce205e5-fbeb-44dd-95b6-cbf8dcaaf6b1
+                    request_id: 9b32cd5c-f6cb-4d82-8a48-b6852babc6ac
                     errors:
                     - code: company_not_found
                       message: Company Not Found
                 User  not found:
                   value:
                     type: error.list
-                    request_id: 2d60a051-b15d-4583-923f-d5f08a61f328
+                    request_id: 5c5576e5-08bd-4e52-a19e-57fac339889e
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -8211,7 +8211,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 1fc34679-447d-404c-9d27-5de648aef23d
+                    request_id: d0473ad6-7862-41cc-94ec-2faf19aacb1a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8277,7 +8277,7 @@ paths:
                 Tag found:
                   value:
                     type: tag
-                    id: '44'
+                    id: '97'
                     name: Manual tag
               schema:
                 "$ref": "#/components/schemas/tag"
@@ -8289,7 +8289,7 @@ paths:
                 Tag not found:
                   value:
                     type: error.list
-                    request_id: da532438-d395-422f-945c-b067e0287708
+                    request_id: 82b8a053-36d4-4a0f-bab4-c73830892942
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -8303,7 +8303,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 9305e3ca-8817-48c6-97c8-6f333c106626
+                    request_id: 187ae68a-d737-4b3c-92cd-81e4807d9afb
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8339,7 +8339,7 @@ paths:
                 Resource not found:
                   value:
                     type: error.list
-                    request_id: 9e17b3f9-1401-4ea3-a2f2-5d70a542d098
+                    request_id: 7d48e2c5-27db-41c1-9601-642e41c3b284
                     errors:
                     - code: not_found
                       message: Resource Not Found
@@ -8353,7 +8353,7 @@ paths:
                 Tag has dependent objects:
                   value:
                     type: error.list
-                    request_id: 14ebcdf9-d021-49bf-931d-0dd293c88f18
+                    request_id: 015036c4-b653-4d9e-a916-64f02bacc85a
                     errors:
                     - code: tag_has_dependent_objects
                       message: 'Unable to delete Tag with dependent objects. Segments:
@@ -8368,7 +8368,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: dba6c5c8-fe69-457c-9c1f-0331f76289e8
+                    request_id: f4865e98-0d37-45c0-91fa-17b10bf69316
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8406,7 +8406,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a0fbde79-38b5-4df6-84c3-f64ff12e324e
+                    request_id: d922f560-c30d-4768-8cce-b05ba8017bdc
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8441,7 +8441,7 @@ paths:
                 successful:
                   value:
                     type: team
-                    id: '991266615'
+                    id: '991267074'
                     name: team 1
                     admin_ids: []
               schema:
@@ -8454,7 +8454,7 @@ paths:
                 Team not found:
                   value:
                     type: error.list
-                    request_id: '0088d0b8-beca-41b0-b0ff-f589a4c9c96b'
+                    request_id: d6625e97-8a6b-406a-b82b-087aee4ca485
                     errors:
                     - code: team_not_found
                       message: Team not found
@@ -8468,7 +8468,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: fc7acb55-d071-4bbc-969e-918478987d0c
+                    request_id: 291be624-ecce-483a-b46e-c05dadb6c497
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8500,26 +8500,26 @@ paths:
                 successful:
                   value:
                     type: visitor
-                    id: 640219444c21b42eec02fc06
+                    id: 64021e9b4c21b4352588c6cf
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
                     anonymous: true
                     email: ''
                     phone: 
                     name: Gareth Bale
-                    pseudonym: Cyan Bus
+                    pseudonym: Cyan Car
                     avatar:
                       type: avatar
-                      image_url: https://static.intercomassets.com/app/pseudonym_avatars_2019/cyan-bus.png
+                      image_url: https://static.intercomassets.com/app/pseudonym_avatars_2019/cyan-car.png
                     app_id: this_is_an_id561_that_should_be_at_least_
                     companies:
                       type: company.list
                       companies: []
                     location_data: {}
                     last_request_at: 
-                    created_at: 1677859140
-                    remote_created_at: 1677859140
-                    signed_up_at: 1677859140
-                    updated_at: 1677859140
+                    created_at: 1677860507
+                    remote_created_at: 1677860507
+                    signed_up_at: 1677860507
+                    updated_at: 1677860508
                     session_count: 0
                     social_profiles:
                       type: social_profile.list
@@ -8552,7 +8552,7 @@ paths:
                 visitor Not Found:
                   value:
                     type: error.list
-                    request_id: cd12fa5f-fe04-4a14-9b5e-00f945b09bf7
+                    request_id: 8f1ba926-9b92-49d3-807d-382e83623e8e
                     errors:
                     - code: not_found
                       message: Visitor Not Found
@@ -8566,7 +8566,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: a4bdd3c7-403a-4325-a6c6-8dea160907ef
+                    request_id: 29f4be5d-038c-429d-9747-7047d2473302
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8581,7 +8581,7 @@ paths:
               successful:
                 summary: successful
                 value:
-                  id: 640219444c21b42eec02fc06
+                  id: 64021e9b4c21b4352588c6cf
                   name: Gareth Bale
               visitor_not_found:
                 summary: visitor Not Found
@@ -8614,7 +8614,7 @@ paths:
                 successful:
                   value:
                     type: visitor
-                    id: 640219464c21b42eec02fc09
+                    id: 64021e9e4c21b4352588c6d2
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
                     anonymous: true
                     email: ''
@@ -8630,10 +8630,10 @@ paths:
                       companies: []
                     location_data: {}
                     last_request_at: 
-                    created_at: 1677859142
-                    remote_created_at: 1677859142
-                    signed_up_at: 1677859142
-                    updated_at: 1677859142
+                    created_at: 1677860510
+                    remote_created_at: 1677860510
+                    signed_up_at: 1677860510
+                    updated_at: 1677860510
                     session_count: 0
                     social_profiles:
                       type: social_profile.list
@@ -8666,7 +8666,7 @@ paths:
                 Visitor not found:
                   value:
                     type: error.list
-                    request_id: dbea6cb2-51bf-4efc-be60-c1b3fbcf88cb
+                    request_id: 81f0ec51-f2e2-493a-bb73-15628c1b0ff8
                     errors:
                     - code: not_found
                       message: Visitor Not Found
@@ -8680,7 +8680,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 55324af8-8045-4166-b2db-92d39927abfc
+                    request_id: 3f26faf2-f4a1-4dce-b554-11d20b340b64
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8714,7 +8714,7 @@ paths:
                 successful:
                   value:
                     type: visitor
-                    id: 640219494c21b42eec02fc0c
+                    id: 64021ea04c21b4352588c6d5
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
                     anonymous: true
                     email: ''
@@ -8730,10 +8730,10 @@ paths:
                       companies: []
                     location_data: {}
                     last_request_at: 
-                    created_at: 1677859145
-                    remote_created_at: 1677859145
-                    signed_up_at: 1677859145
-                    updated_at: 1677859145
+                    created_at: 1677860512
+                    remote_created_at: 1677860512
+                    signed_up_at: 1677860512
+                    updated_at: 1677860512
                     session_count: 0
                     social_profiles:
                       type: social_profile.list
@@ -8766,7 +8766,7 @@ paths:
                 Visitor not found:
                   value:
                     type: error.list
-                    request_id: 213d92b5-480c-4b1b-9515-bf22e649b882
+                    request_id: '0558614c-8a1a-4f94-b8bd-abd135cc2b94'
                     errors:
                     - code: not_found
                       message: Visitor Not Found
@@ -8780,7 +8780,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: 2fce5b59-314a-41f8-a45b-83c103478e5d
+                    request_id: 2ba5252c-6f61-47b6-b4c4-0a562c2e93a2
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8813,7 +8813,7 @@ paths:
                 successful:
                   value:
                     type: visitor
-                    id: 6402194b4c21b42eec02fc0f
+                    id: 64021ea24c21b4352588c6d8
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
                     anonymous: true
                     email: ''
@@ -8829,10 +8829,10 @@ paths:
                       companies: []
                     location_data: {}
                     last_request_at: 
-                    created_at: 1677859147
-                    remote_created_at: 1677859147
-                    signed_up_at: 1677859147
-                    updated_at: 1677859148
+                    created_at: 1677860515
+                    remote_created_at: 1677860515
+                    signed_up_at: 1677860515
+                    updated_at: 1677860515
                     session_count: 0
                     social_profiles:
                       type: social_profile.list
@@ -8865,7 +8865,7 @@ paths:
                 Visitor Not Found:
                   value:
                     type: error.list
-                    request_id: 7fbc7f69-da5c-4981-82e0-de6e02f67067
+                    request_id: 851c6b8e-69f9-4514-86cd-1acafad690b5
                     errors:
                     - code: not_found
                       message: User Not Found
@@ -8879,7 +8879,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: cf7b7a2f-e8fe-4233-a184-52a1feab9343
+                    request_id: 0c4316b2-5cbe-418e-b636-0e39d98e798a
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -8910,26 +8910,26 @@ paths:
                 successful:
                   value:
                     type: visitor
-                    id: 6402194e4c21b42eec02fc12
+                    id: 64021ea54c21b4352588c6db
                     user_id: 3ecf64d0-9ed1-4e9f-88e1-da7d6e6782f3
                     anonymous: true
                     email: ''
                     phone: 
                     name: 
-                    pseudonym: Teal Cactus
+                    pseudonym: Violet Microphone
                     avatar:
                       type: avatar
-                      image_url: https://static.intercomassets.com/app/pseudonym_avatars_2019/teal-cactus.png
+                      image_url: https://static.intercomassets.com/app/pseudonym_avatars_2019/violet-microphone.png
                     app_id: this_is_an_id585_that_should_be_at_least_
                     companies:
                       type: company.list
                       companies: []
                     location_data: {}
                     last_request_at: 
-                    created_at: 1677859150
-                    remote_created_at: 1677859150
-                    signed_up_at: 1677859150
-                    updated_at: 1677859150
+                    created_at: 1677860517
+                    remote_created_at: 1677860518
+                    signed_up_at: 1677860518
+                    updated_at: 1677860518
                     session_count: 0
                     social_profiles:
                       type: social_profile.list
@@ -8962,7 +8962,7 @@ paths:
                 Unauthorized:
                   value:
                     type: error.list
-                    request_id: ce955896-e0fb-4c43-b51f-930704f6366d
+                    request_id: adb33430-3a98-4e5b-a309-70fa3a3cde91
                     errors:
                     - code: unauthorized
                       message: Access Token Invalid
@@ -9188,6 +9188,8 @@ components:
           nullable: true
           description: Image for the associated team or teammate
           example: https://picsum.photos/200/300
+        team_priority_level:
+          "$ref": "#/components/schemas/team_priority_level"
     admin_list:
       title: Admins
       type: object
@@ -9203,6 +9205,28 @@ components:
           description: A list of admins associated with a given workspace.
           items:
             "$ref": "#/components/schemas/admin"
+    admin_priority_level:
+      title: Admin Priority Level
+      type: object
+      nullable: true
+      description: Admin priority levels for the team
+      properties:
+        primary_admin_ids:
+          type: array
+          description: The primary admin ids for the team
+          nullable: true
+          example:
+          - 493881
+          items:
+            type: integer
+        secondary_admin_ids:
+          type: array
+          description: The secondary admin ids for the team
+          nullable: true
+          example:
+          - 814865
+          items:
+            type: integer
     admin_reply_conversation_request:
       title: Admin Reply
       type: object
@@ -13534,6 +13558,8 @@ components:
           - 493881
           items:
             type: integer
+        admin_priority_level:
+          "$ref": "#/components/schemas/admin_priority_level"
     team_list:
       title: Team List
       type: object
@@ -13550,6 +13576,28 @@ components:
           description: A list of team objects
           items:
             "$ref": "#/components/schemas/team"
+    team_priority_level:
+      title: Team Priority Level
+      type: object
+      nullable: true
+      description: Admin priority levels for teams
+      properties:
+        primary_team_ids:
+          type: array
+          description: The primary team ids for the team
+          nullable: true
+          example:
+          - 814865
+          items:
+            type: integer
+        secondary_team_ids:
+          type: array
+          description: The secondary team ids for the team
+          nullable: true
+          example:
+          - 493881
+          items:
+            type: integer
     ticket_contacts:
       title: Contacts
       type: object

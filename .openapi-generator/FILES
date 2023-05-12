@@ -25,6 +25,7 @@ docs/models/ActivityLogList.md
 docs/models/AddressableList.md
 docs/models/Admin.md
 docs/models/AdminList.md
+docs/models/AdminPriorityLevel.md
 docs/models/AdminReplyConversationRequest.md
 docs/models/AdminWithApp.md
 docs/models/App.md
@@ -140,6 +141,7 @@ docs/models/TagMultipleUsersRequest.md
 docs/models/Tags.md
 docs/models/Team.md
 docs/models/TeamList.md
+docs/models/TeamPriorityLevel.md
 docs/models/TicketContacts.md
 docs/models/TicketCustomAttributes.md
 docs/models/TicketPart.md
@@ -195,6 +197,8 @@ intercom_python_api/model/admin.py
 intercom_python_api/model/admin.pyi
 intercom_python_api/model/admin_list.py
 intercom_python_api/model/admin_list.pyi
+intercom_python_api/model/admin_priority_level.py
+intercom_python_api/model/admin_priority_level.pyi
 intercom_python_api/model/admin_reply_conversation_request.py
 intercom_python_api/model/admin_reply_conversation_request.pyi
 intercom_python_api/model/admin_with_app.py
@@ -425,6 +429,8 @@ intercom_python_api/model/team.py
 intercom_python_api/model/team.pyi
 intercom_python_api/model/team_list.py
 intercom_python_api/model/team_list.pyi
+intercom_python_api/model/team_priority_level.py
+intercom_python_api/model/team_priority_level.pyi
 intercom_python_api/model/ticket_contacts.py
 intercom_python_api/model/ticket_contacts.pyi
 intercom_python_api/model/ticket_custom_attributes.py

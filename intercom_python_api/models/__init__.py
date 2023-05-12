@@ -16,6 +16,7 @@ from intercom_python_api.model.activity_log_list import ActivityLogList
 from intercom_python_api.model.addressable_list import AddressableList
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.admin_list import AdminList
+from intercom_python_api.model.admin_priority_level import AdminPriorityLevel
 from intercom_python_api.model.admin_reply_conversation_request import AdminReplyConversationRequest
 from intercom_python_api.model.admin_with_app import AdminWithApp
 from intercom_python_api.model.app import App
@@ -131,6 +132,7 @@ from intercom_python_api.model.tag_multiple_users_request import TagMultipleUser
 from intercom_python_api.model.tags import Tags
 from intercom_python_api.model.team import Team
 from intercom_python_api.model.team_list import TeamList
+from intercom_python_api.model.team_priority_level import TeamPriorityLevel
 from intercom_python_api.model.ticket_contacts import TicketContacts
 from intercom_python_api.model.ticket_custom_attributes import TicketCustomAttributes
 from intercom_python_api.model.ticket_part import TicketPart
