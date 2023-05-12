@@ -82,7 +82,7 @@ do
     log "Downloading spec file and generating code for API Version: $version"
     wget "https://raw.githubusercontent.com/intercom/Intercom-OpenAPI/main/descriptions/$version/api.intercom.io.yaml" -O /tmp/intercom_api.yaml
 
-    if [ "$(md5sum /tmp/intercom_api.yaml)" -eq "$(md5sum docs/api.intercom.io.yaml)" ]
+    if [ "$(md5sum /tmp/intercom_api.yaml)" = "$(md5sum docs/api.intercom.io.yaml)" ]
     then
         continue
     else
@@ -94,7 +94,7 @@ do
 
     git add .
     git commit -m "Automated update of branch using update_repo.sh script."
-    git push origin/$parsed_version --dry-run
+    git push "origin/$parsed_version" --dry-run
 
 done
 
