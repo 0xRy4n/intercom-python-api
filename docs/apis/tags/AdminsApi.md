@@ -22,6 +22,7 @@ Identify an admin
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
@@ -109,6 +110,7 @@ You can get a log of activities by all admins in an app.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
@@ -259,6 +261,7 @@ You can fetch a list of admins for a given workspace.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
@@ -361,6 +364,7 @@ You can retrieve the details of a single admin.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api
@@ -515,6 +519,7 @@ You can set an Admin as away for the Inbox.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import admins_api

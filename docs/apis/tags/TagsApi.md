@@ -26,6 +26,7 @@ You can tag a specific contact. This will return a tag object for the tag that w
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -201,6 +202,7 @@ You can tag a specific conversation. This will return a tag object for the tag t
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -378,6 +380,7 @@ You can use this endpoint to perform the following operations:    **1. Create a 
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -534,6 +537,7 @@ You can delete the details of tags that are on the workspace by passing in the i
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -693,6 +697,7 @@ You can remove tag from a specific contact. This will return a tag object for th
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -857,6 +862,7 @@ You can remove tag from a specific conversation. This will return a tag object f
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -1042,6 +1048,7 @@ You can fetch the details of tags that are on the workspace by their id. This wi
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -1196,6 +1203,7 @@ You can fetch a list of all tags for a given workspace.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api
@@ -1298,6 +1306,7 @@ You can fetch a list of all tags that are attached to a specific contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import tags_api

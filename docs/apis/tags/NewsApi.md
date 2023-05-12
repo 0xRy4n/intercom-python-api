@@ -25,6 +25,7 @@ You can create a news item
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -154,6 +155,7 @@ You can delete a single news item.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -308,6 +310,7 @@ You can fetch a list of all news items that are live on a given newsfeed
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -448,6 +451,7 @@ You can fetch a list of all news items
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -550,6 +554,7 @@ You can fetch a list of all newsfeeds
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -652,6 +657,7 @@ You can fetch the details of a single news item.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -806,6 +812,7 @@ You can fetch the details of a single newsfeed
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api
@@ -944,6 +951,7 @@ Update a news item
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import news_api

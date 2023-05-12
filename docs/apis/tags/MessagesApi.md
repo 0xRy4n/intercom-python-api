@@ -18,6 +18,7 @@ You can create a message that has been initiated by an admin. The conversation c
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import messages_api

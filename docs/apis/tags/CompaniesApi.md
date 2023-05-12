@@ -29,6 +29,7 @@ You can attach a company to a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -204,6 +205,7 @@ You can create or update a company.  > 📘 Companies with no users > > Companie
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -345,6 +347,7 @@ You can delete a single company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -499,6 +502,7 @@ You can detach a company from a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -663,6 +667,7 @@ You can list companies. The company list is sorted by the `last_request_at` fiel
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -866,6 +871,7 @@ You can fetch a list of all contacts that belong to a company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1020,6 +1026,7 @@ You can fetch a list of all segments that belong to a company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1174,6 +1181,7 @@ You can fetch a list of companies that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1328,6 +1336,7 @@ You can fetch a single company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1482,6 +1491,7 @@ You can fetch a company by either passing in `company_id` or `name` as a query p
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1672,6 +1682,7 @@ Scroll over all companies
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api
@@ -1794,6 +1805,7 @@ You can update a single company
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import companies_api

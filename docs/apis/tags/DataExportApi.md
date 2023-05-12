@@ -21,6 +21,7 @@ You can cancel your job
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
@@ -146,6 +147,7 @@ To create your export job, you need to send a `POST` request to the export endpo
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
@@ -249,6 +251,7 @@ When a job has a status of complete, and thus a filled download_url, you can dow
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api
@@ -364,6 +367,7 @@ You can view the status of your job by sending a `GET` request to the URL `https
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_export_api

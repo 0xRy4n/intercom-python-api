@@ -39,6 +39,7 @@ You can archive a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -164,6 +165,7 @@ You can attach a company to a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -339,6 +341,7 @@ You can add a specific subscription to a contact. In Intercom, we have two diffe
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -516,6 +519,7 @@ You can tag a specific contact. This will return a tag object for the tag that w
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -691,6 +695,7 @@ You can create a new contact (ie. user or lead).
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -813,6 +818,7 @@ You can add a note to a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -978,6 +984,7 @@ You can delete a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1118,6 +1125,7 @@ You can remove a specific subscription from a contact. This will return a subscr
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1282,6 +1290,7 @@ You can remove tag from a specific contact. This will return a tag object for th
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1446,6 +1455,7 @@ You can detach a company from a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1610,6 +1620,7 @@ You can fetch a list of all contacts that belong to a company.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1764,6 +1775,7 @@ You can fetch a list of companies that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -1918,6 +1930,7 @@ You can fetch a list of all contacts.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2020,6 +2033,7 @@ You can fetch a list of notes that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2160,6 +2174,7 @@ You can fetch a list of segments that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2314,6 +2329,7 @@ You can fetch a list of subscription types that are attached to a contact. These
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2468,6 +2484,7 @@ You can fetch a list of all tags that are attached to a specific contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2622,6 +2639,7 @@ You can merge a contact with a `role` of `lead` into a contact with a `role` of 
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2740,6 +2758,7 @@ You can search for multiple contacts by the value of their attributes in order t
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -2861,6 +2880,7 @@ You can fetch the details of a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -3001,6 +3021,7 @@ You can unarchive a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api
@@ -3126,6 +3147,7 @@ You can update an existing contact (ie. user or lead).
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import contacts_api

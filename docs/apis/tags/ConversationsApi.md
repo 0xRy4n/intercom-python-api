@@ -29,7 +29,7 @@ You can add participants who are contacts to a conversation, on behalf of either
 
 ### Example
 
-- Bearer Authentication (bearerAuth):
+* Bearer Authentication (bearerAuth):
 
 ```python
 import intercom_python_api import Intercom
@@ -38,7 +38,6 @@ from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.attach_contact_to_conversation_request import AttachContactToConversationRequest
 from intercom_python_api.model.error import Error
-
 
 # Create an Intercom client context.
 intercom = Intercom(api_key='<YOUR API TOKEN>')
@@ -216,6 +215,7 @@ You can tag a specific conversation. This will return a tag object for the tag t
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -393,6 +393,7 @@ You can let a conversation be automatically assigned following assignment rules.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -561,6 +562,7 @@ You can create a conversation that has been initiated by a contact (ie. user or 
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -710,6 +712,7 @@ You can add participants who are contacts to a conversation, on behalf of either
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -915,6 +918,7 @@ You can remove tag from a specific conversation. This will return a tag object f
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1100,6 +1104,7 @@ You can fetch a list of all conversations.  You can optionally request the resul
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1245,6 +1250,7 @@ You can close a conversation. You can snooze a conversation to reopen on a futur
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1439,6 +1445,7 @@ You can redact a conversation part or the source message of a conversation (as s
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1568,6 +1575,7 @@ You can reply to a conversation with a message from an admin or on behalf of a c
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1774,6 +1782,7 @@ Retrieve a conversation
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -1965,6 +1974,7 @@ You can search for multiple conversations by the value of their attributes in or
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api
@@ -2071,6 +2081,7 @@ Update a conversation
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import conversations_api

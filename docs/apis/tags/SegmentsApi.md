@@ -20,6 +20,7 @@ You can fetch a list of all segments.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import segments_api
@@ -142,6 +143,7 @@ You can fetch a list of segments that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import segments_api
@@ -296,6 +298,7 @@ You can fetch the details of a single segment.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import segments_api

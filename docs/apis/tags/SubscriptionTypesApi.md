@@ -21,6 +21,7 @@ You can add a specific subscription to a contact. In Intercom, we have two diffe
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import subscription_types_api
@@ -53,7 +54,6 @@ An example of an API call passing only required parameters which have no default
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
-
 
 ```python
     path_params = {
@@ -199,6 +199,7 @@ You can remove a specific subscription from a contact. This will return a subscr
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import subscription_types_api
@@ -363,6 +364,7 @@ You can list all subscription types. A list of subscription type objects will be
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import subscription_types_api
@@ -465,6 +467,7 @@ You can fetch a list of subscription types that are attached to a contact. These
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import subscription_types_api

@@ -22,6 +22,7 @@ You can merge a Visitor to a Contact of role type `lead` or `user`.  > 📘 What
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
@@ -141,6 +142,7 @@ You can delete a single visitor.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
@@ -295,6 +297,7 @@ You can fetch the details of a single visitor.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
@@ -449,6 +452,7 @@ You can fetch the details of a single visitor.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api
@@ -604,6 +608,7 @@ Sending a PUT request to `/visitors` will result in an update of an existing Vis
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import visitors_api

@@ -20,6 +20,7 @@ You can add a note to a single contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api
@@ -185,6 +186,7 @@ You can fetch a list of notes that are associated to a contact.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api
@@ -325,6 +327,7 @@ You can fetch the details of a single note.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import notes_api

@@ -18,6 +18,7 @@ You can use the API to deflect phone calls to the Intercom Messenger. Calling th
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import switch_api

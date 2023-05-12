@@ -22,6 +22,7 @@ You can create a new article by making a POST request to `https://api.intercom.i
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import articles_api
@@ -209,6 +210,7 @@ You can delete a single article by making a DELETE request to `https://api.inter
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import articles_api
@@ -363,6 +365,7 @@ You can fetch a list of all articles by making a GET request to `https://api.int
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import articles_api
@@ -465,6 +468,7 @@ You can fetch the details of a single article by making a GET request to `https:
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import articles_api
@@ -619,6 +623,7 @@ You can update the details of a single article by making a PUT request to `https
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import articles_api

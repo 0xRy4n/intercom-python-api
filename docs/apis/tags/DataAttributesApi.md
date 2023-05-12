@@ -20,6 +20,7 @@ You can create a data attributes for a `contact` or a `company`.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_attributes_api
@@ -155,6 +156,7 @@ You can fetch a list of all data attributes belonging to a workspace for contact
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_attributes_api
@@ -286,6 +288,7 @@ Update a data attribute
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_attributes_api

@@ -19,6 +19,7 @@ This will return a list of team objects for the App.
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import teams_api
@@ -121,6 +122,7 @@ You can fetch the details of a single team, containing an array of admins that b
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import teams_api

@@ -20,6 +20,7 @@ Submit a data event
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
@@ -127,6 +128,7 @@ Create event summaries for a user. Event summaries are used to track the number 
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
@@ -242,6 +244,7 @@ List all data events
 ### Example
 
 * Bearer Authentication (bearerAuth):
+
 ```python
 import intercom_python_api import Intercom
 from intercom_python_api.apis.tags import data_events_api
