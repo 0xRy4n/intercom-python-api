@@ -1,7 +1,7 @@
 
 ```python
 import {{{packageName}}} import Intercom
-from {{packageName}}.{{apiPackage}}.tags import {{classFilename}}
+
 {{#each imports}}
 {{{.}}}
 {{/each}}
@@ -15,74 +15,78 @@ An example of an API call passing only required parameters which have no default
 
 ```python
 {{#if pathParams}}
-    path_params = {
-    {{#each pathParams}}
-    {{#if required}}
-        '{{baseName}}': {{{example}}},
-    {{/if}}
-    {{/each}}
-    }
+path_params = {
+{{#each pathParams}}
+{{#if required}}
+    '{{baseName}}': {{{example}}},
 {{/if}}
+{{/each}}
+}
+{{/if}}
+
 {{#if queryParams}}
-    query_params = {
-    {{#each queryParams}}
-    {{#if required}}
-        '{{baseName}}': {{{example}}},
-    {{/if}}
-    {{/each}}
-    }
+query_params = {
+{{#each queryParams}}
+{{#if required}}
+    '{{baseName}}': {{{example}}},
 {{/if}}
+{{/each}}
+}
+{{/if}}
+
 {{#if cookieParams}}
-    cookie_params = {
-    {{#each cookieParams}}
-    {{#if required}}
-        '{{baseName}}': {{{example}}},
-    {{/if}}
-    {{/each}}
-    }
+cookie_params = {
+{{#each cookieParams}}
+{{#if required}}
+    '{{baseName}}': {{{example}}},
 {{/if}}
+{{/each}}
+}
+{{/if}}
+
 {{#if headerParams}}
-    header_params = {
-    {{#each headerParams}}
-    {{#if required}}
-        '{{baseName}}': {{{example}}},
-    {{/if}}
-    {{/each}}
-    }
+header_params = {
+{{#each headerParams}}
+{{#if required}}
+    '{{baseName}}': {{{example}}},
 {{/if}}
+{{/each}}
+}
+{{/if}}
+
 {{#with bodyParam}}
-    {{#if required}}
-    body = {{{example}}}
-    {{/if}}
+{{#if required}}
+body = {{{example}}}
+{{/if}}
 {{/with}}
-    try:
+try:
 {{#if summary}}
-        # {{{summary}}}
+    # {{{summary}}}
 {{/if}}
-        api_response = intercom.{{{classname}}}.{{{operationId}}}(
-            {{#if pathParams}}
-            path_params=path_params,
-            {{/if}}
-            {{#if queryParams}}
-            query_params=query_params,
-            {{/if}}
-            {{#if headerParams}}
-            header_params=header_params,
-            {{/if}}
-            {{#if cookieParams}}
-            cookie_params=cookie_params,
-            {{/if}}
-            {{#with bodyParam}}
-            {{#if required}}
-            body=body,
-            {{/if}}
-            {{/with}}
-        )
+    api_response = intercom.{{{classname}}}.{{{operationId}}}(
+        {{#if pathParams}}
+        path_params=path_params,
+        {{/if}}
+        {{#if queryParams}}
+        query_params=query_params,
+        {{/if}}
+        {{#if headerParams}}
+        header_params=header_params,
+        {{/if}}
+        {{#if cookieParams}}
+        cookie_params=cookie_params,
+        {{/if}}
+        {{#with bodyParam}}
+        {{#if required}}
+        body=body,
+        {{/if}}
+        {{/with}}
+    )
 {{#if returnType}}
-        pprint(api_response)
+    pprint(api_response)
 {{/if}}
-    except {{{packageName}}}.ApiException as e:
-        print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+except {{{packageName}}}.ApiException as e:
+    print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 {{/if}}
 
 ```
@@ -92,62 +96,66 @@ An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
 {{#if pathParams}}
-    path_params = {
-    {{#each pathParams}}
-        '{{baseName}}': {{{example}}},
-    {{/each}}
-    }
+path_params = {
+{{#each pathParams}}
+    '{{baseName}}': {{{example}}},
+{{/each}}
+}
 {{/if}}
+
 {{#if queryParams}}
-    query_params = {
-    {{#each queryParams}}
-        '{{baseName}}': {{{example}}},
-    {{/each}}
-    }
+query_params = {
+{{#each queryParams}}
+    '{{baseName}}': {{{example}}},
+{{/each}}
+}
 {{/if}}
+
 {{#if cookieParams}}
-    cookie_params = {
-    {{#each cookieParams}}
-        '{{baseName}}': {{{example}}},
-    {{/each}}
-    }
+cookie_params = {
+{{#each cookieParams}}
+    '{{baseName}}': {{{example}}},
+{{/each}}
+}
 {{/if}}
+
 {{#if headerParams}}
-    header_params = {
-    {{#each headerParams}}
-        '{{baseName}}': {{{example}}},
-    {{/each}}
-    }
+header_params = {
+{{#each headerParams}}
+    '{{baseName}}': {{{example}}},
+{{/each}}
+}
 {{/if}}
+
 {{#with bodyParam}}
-    body = {{{example}}}
+body = {{{example}}}
 {{/with}}
-    try:
+try:
 {{#if summary}}
-        # {{{summary}}}
+    # {{{summary}}}
 {{/if}}
-        api_response = intercom.{{{classname}}}.{{{operationId}}}(
-            {{#if pathParams}}
-            path_params=path_params,
-            {{/if}}
-            {{#if queryParams}}
-            query_params=query_params,
-            {{/if}}
-            {{#if headerParams}}
-            header_params=header_params,
-            {{/if}}
-            {{#if cookieParams}}
-            cookie_params=cookie_params,
-            {{/if}}
-            {{#if bodyParam}}
-            body=body,
-            {{/if}}
-        )
+    api_response = intercom.{{{classname}}}.{{{operationId}}}(
+        {{#if pathParams}}
+        path_params=path_params,
+        {{/if}}
+        {{#if queryParams}}
+        query_params=query_params,
+        {{/if}}
+        {{#if headerParams}}
+        header_params=header_params,
+        {{/if}}
+        {{#if cookieParams}}
+        cookie_params=cookie_params,
+        {{/if}}
+        {{#if bodyParam}}
+        body=body,
+        {{/if}}
+    )
 {{#if returnType}}
-        pprint(api_response)
+    pprint(api_response)
 {{/if}}
-    except {{{packageName}}}.ApiException as e:
-        print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+except {{{packageName}}}.ApiException as e:
+    print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 {{/if}}
 
 ```
@@ -157,16 +165,16 @@ An example passing **only** the optional values (like `Intercom-Version`):
 This endpoint has no required or optional parameters:
 
 ```python
-    try:
+try:
 {{#if summary}}
-        # {{{summary}}}
+    # {{{summary}}}
 {{/if}}
-        api_response = intercom.{{{classname}}}.{{{operationId}}}()
+    api_response = intercom.{{{classname}}}.{{{operationId}}}()
 {{#if returnType}}
-        pprint(api_response)
+    pprint(api_response)
 {{/if}}
-    except {{{packageName}}}.ApiException as e:
-        print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+except {{{packageName}}}.ApiException as e:
+    print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
 ```
 {{/unless}}
 {{/unless}}
