@@ -80,7 +80,7 @@ do
     git checkout $parsed_version || git checkout -b $parsed_version
 
     log "Downloading spec file and generating code for API Version: $version"
-    wget https://raw.githubusercontent.com/intercom/Intercom-OpenAPI/main/descriptions/$version/api.intercom.io.yaml -O /tmp/intercom_api.yaml
+    wget "https://raw.githubusercontent.com/intercom/Intercom-OpenAPI/main/descriptions/$version/api.intercom.io.yaml" -O /tmp/intercom_api.yaml
 
     if [ "$(md5sum /tmp/intercom_api.yaml)" -eq "$(md5sum docs/api.intercom.io.yaml)" ]
     then
