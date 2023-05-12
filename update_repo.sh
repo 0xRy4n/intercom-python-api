@@ -70,7 +70,7 @@ log "Parsing found specifications ..."
 
 echo $descriptions | jq -c '.[]' | while read description;
 do
-    version="$(echo $description | jq .name)"
+    version="$(echo $description | jq .name | tr -d '"')"
     if [ $version = "0" ]
     then
         parsed_version="unstable"
