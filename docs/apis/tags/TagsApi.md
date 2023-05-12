@@ -29,7 +29,7 @@ You can tag a specific contact. This will return a tag object for the tag that w
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -41,45 +41,53 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Add tag to a contact
-        api_response = intercom.TagsApi.attach_tag_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add tag to a contact
+    api_response = intercom.TagsApi.attach_tag_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="7522907",
     )
-    try:
-        # Add tag to a contact
-        api_response = intercom.TagsApi.attach_tag_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
+try:
+    # Add tag to a contact
+    api_response = intercom.TagsApi.attach_tag_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->attach_tag_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -205,7 +213,7 @@ You can tag a specific conversation. This will return a tag object for the tag t
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -217,46 +225,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-    }
-    header_params = {
-    }
-    try:
-        # Add tag to a conversation
-        api_response = intercom.TagsApi.attach_tag_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "64619700005694",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add tag to a conversation
+    api_response = intercom.TagsApi.attach_tag_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'conversation_id': "64619700005694",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="7522907",
         admin_id="780",
     )
-    try:
-        # Add tag to a conversation
-        api_response = intercom.TagsApi.attach_tag_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
+try:
+    # Add tag to a conversation
+    api_response = intercom.TagsApi.attach_tag_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->attach_tag_to_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -383,7 +399,7 @@ You can use this endpoint to perform the following operations:    **1. Create a 
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.create_or_update_tag_request import CreateOrUpdateTagRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -400,19 +416,23 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = None
-    try:
-        # Create or update a tag, Tag or untag companies, Tag contacts
-        api_response = intercom.TagsApi.create_tag(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->create_tag: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = None
+try:
+    # Create or update a tag, Tag or untag companies, Tag contacts
+    api_response = intercom.TagsApi.create_tag(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->create_tag: %s\n" % e)
 
 ```
 ### Parameters
@@ -540,7 +560,7 @@ You can delete the details of tags that are on the workspace by passing in the i
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 
@@ -551,39 +571,47 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Delete tag
-        api_response = intercom.TagsApi.delete_tag(
-            path_params=path_params,
-            header_params=header_params,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete tag
+    api_response = intercom.TagsApi.delete_tag(
+        path_params=path_params,
+        header_params=header_params,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete tag
-        api_response = intercom.TagsApi.delete_tag(
-            path_params=path_params,
-            header_params=header_params,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->delete_tag: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete tag
+    api_response = intercom.TagsApi.delete_tag(
+        path_params=path_params,
+        header_params=header_params,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->delete_tag: %s\n" % e)
 
 ```
 ### Parameters
@@ -700,7 +728,7 @@ You can remove tag from a specific contact. This will return a tag object for th
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -712,43 +740,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "7522907",
-    }
-    header_params = {
-    }
-    try:
-        # Remove tag from a contact
-        api_response = intercom.TagsApi.detach_tag_from_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove tag from a contact
+    api_response = intercom.TagsApi.detach_tag_from_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "7522907",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Remove tag from a contact
-        api_response = intercom.TagsApi.detach_tag_from_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Remove tag from a contact
+    api_response = intercom.TagsApi.detach_tag_from_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->detach_tag_from_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -865,7 +901,7 @@ You can remove tag from a specific conversation. This will return a tag object f
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -877,47 +913,55 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-        'id': "7522907",
-    }
-    header_params = {
-    }
-    try:
-        # Remove tag from a conversation
-        api_response = intercom.TagsApi.detach_tag_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "64619700005694",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove tag from a conversation
+    api_response = intercom.TagsApi.detach_tag_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-        'id': "7522907",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'conversation_id': "64619700005694",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         admin_id="123",
     )
-    try:
-        # Remove tag from a conversation
-        api_response = intercom.TagsApi.detach_tag_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
+try:
+    # Remove tag from a conversation
+    api_response = intercom.TagsApi.detach_tag_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->detach_tag_from_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1051,7 +1095,7 @@ You can fetch the details of tags that are on the workspace by their id. This wi
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1063,41 +1107,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Find a specific tag
-        api_response = intercom.TagsApi.find_tag(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->find_tag: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Find a specific tag
+    api_response = intercom.TagsApi.find_tag(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->find_tag: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Find a specific tag
-        api_response = intercom.TagsApi.find_tag(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->find_tag: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Find a specific tag
+    api_response = intercom.TagsApi.find_tag(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->find_tag: %s\n" % e)
 
 ```
 ### Parameters
@@ -1206,7 +1258,7 @@ You can fetch a list of all tags for a given workspace.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag_list import TagList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1219,17 +1271,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all tags
-        api_response = intercom.TagsApi.list_tags(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->list_tags: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all tags
+    api_response = intercom.TagsApi.list_tags(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->list_tags: %s\n" % e)
 
 ```
 ### Parameters
@@ -1309,7 +1365,7 @@ You can fetch a list of all tags that are attached to a specific contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import tags_api
+
 from intercom_python_api.model.tag_list import TagList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1321,41 +1377,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List tags attached to a contact
-        api_response = intercom.TagsApi.list_tags_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List tags attached to a contact
+    api_response = intercom.TagsApi.list_tags_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List tags attached to a contact
-        api_response = intercom.TagsApi.list_tags_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List tags attached to a contact
+    api_response = intercom.TagsApi.list_tags_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TagsApi->list_tags_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters

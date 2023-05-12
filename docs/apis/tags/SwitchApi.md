@@ -21,7 +21,7 @@ You can use the API to deflect phone calls to the Intercom Messenger. Calling th
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import switch_api
+
 from intercom_python_api.model.phone_switch import PhoneSwitch
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_phone_switch_request import CreatePhoneSwitchRequest
@@ -35,24 +35,28 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreatePhoneSwitchRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreatePhoneSwitchRequest(
         phone="+1 1234567890",
         custom_attributes=CustomAttributes(
             key=None,
         ),
     )
-    try:
-        # Create a phone Switch
-        api_response = intercom.SwitchApi.create_phone_switch(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SwitchApi->create_phone_switch: %s\n" % e)
+try:
+    # Create a phone Switch
+    api_response = intercom.SwitchApi.create_phone_switch(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SwitchApi->create_phone_switch: %s\n" % e)
 
 ```
 ### Parameters

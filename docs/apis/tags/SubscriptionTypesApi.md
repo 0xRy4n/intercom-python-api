@@ -24,7 +24,7 @@ You can add a specific subscription to a contact. In Intercom, we have two diffe
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import subscription_types_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.subscription_type import SubscriptionType
@@ -36,46 +36,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Add subscription to a contact
-        api_response = intercom.SubscriptionTypesApi.attach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->attach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add subscription to a contact
+    api_response = intercom.SubscriptionTypesApi.attach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->attach_subscription_type_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="37846",
         consent_type="opt_in",
     )
-    try:
-        # Add subscription to a contact
-        api_response = intercom.SubscriptionTypesApi.attach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->attach_subscription_type_to_contact: %s\n" % e)
+try:
+    # Add subscription to a contact
+    api_response = intercom.SubscriptionTypesApi.attach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->attach_subscription_type_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -202,7 +210,7 @@ You can remove a specific subscription from a contact. This will return a subscr
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import subscription_types_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.subscription_type import SubscriptionType
@@ -214,43 +222,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "37846",
-    }
-    header_params = {
-    }
-    try:
-        # Remove subscription from a contact
-        api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->detach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "37846",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove subscription from a contact
+    api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->detach_subscription_type_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "37846",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Remove subscription from a contact
-        api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->detach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "37846",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Remove subscription from a contact
+    api_response = intercom.SubscriptionTypesApi.detach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->detach_subscription_type_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -367,7 +383,7 @@ You can list all subscription types. A list of subscription type objects will be
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import subscription_types_api
+
 from intercom_python_api.model.subscription_type_list import SubscriptionTypeList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -380,17 +396,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List subscription types
-        api_response = intercom.SubscriptionTypesApi.list_subscription_types(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->list_subscription_types: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List subscription types
+    api_response = intercom.SubscriptionTypesApi.list_subscription_types(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->list_subscription_types: %s\n" % e)
 
 ```
 ### Parameters
@@ -470,7 +490,7 @@ You can fetch a list of subscription types that are attached to a contact. These
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import subscription_types_api
+
 from intercom_python_api.model.subscription_type_list import SubscriptionTypeList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -482,41 +502,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List subscriptions for a contact
-        api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->list_subscriptions_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List subscriptions for a contact
+    api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->list_subscriptions_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List subscriptions for a contact
-        api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SubscriptionTypesApi->list_subscriptions_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List subscriptions for a contact
+    api_response = intercom.SubscriptionTypesApi.list_subscriptions_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SubscriptionTypesApi->list_subscriptions_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters

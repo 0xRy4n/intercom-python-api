@@ -33,7 +33,7 @@ You can add participants who are contacts to a conversation, on behalf of either
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.attach_contact_to_conversation_request import AttachContactToConversationRequest
@@ -46,46 +46,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Attach a contact to a conversation
-        api_response = intercom.ConversationsApi.attach_contact_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->attach_contact_to_conversation: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Attach a contact to a conversation
+    api_response = intercom.ConversationsApi.attach_contact_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->attach_contact_to_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = AttachContactToConversationRequest(
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = AttachContactToConversationRequest(
         admin_id="12345",
         customer=dict(),
     )
-    try:
-        # Attach a contact to a conversation
-        api_response = intercom.ConversationsApi.attach_contact_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->attach_contact_to_conversation: %s\n" % e)
+try:
+    # Attach a contact to a conversation
+    api_response = intercom.ConversationsApi.attach_contact_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->attach_contact_to_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -218,7 +226,7 @@ You can tag a specific conversation. This will return a tag object for the tag t
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -230,46 +238,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-    }
-    header_params = {
-    }
-    try:
-        # Add tag to a conversation
-        api_response = intercom.ConversationsApi.attach_tag_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->attach_tag_to_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "64619700005694",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add tag to a conversation
+    api_response = intercom.ConversationsApi.attach_tag_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->attach_tag_to_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'conversation_id': "64619700005694",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="7522907",
         admin_id="780",
     )
-    try:
-        # Add tag to a conversation
-        api_response = intercom.ConversationsApi.attach_tag_to_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->attach_tag_to_conversation: %s\n" % e)
+try:
+    # Add tag to a conversation
+    api_response = intercom.ConversationsApi.attach_tag_to_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->attach_tag_to_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -396,7 +412,7 @@ You can let a conversation be automatically assigned following assignment rules.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -408,41 +424,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Run Assignment Rules on a conversation
-        api_response = intercom.ConversationsApi.auto_assign_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->auto_assign_conversation: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Run Assignment Rules on a conversation
+    api_response = intercom.ConversationsApi.auto_assign_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->auto_assign_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Run Assignment Rules on a conversation
-        api_response = intercom.ConversationsApi.auto_assign_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->auto_assign_conversation: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Run Assignment Rules on a conversation
+    api_response = intercom.ConversationsApi.auto_assign_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->auto_assign_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -565,7 +589,7 @@ You can create a conversation that has been initiated by a contact (ie. user or 
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.message import Message
 from intercom_python_api.model.create_conversation_request import CreateConversationRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -579,25 +603,29 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateConversationRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateConversationRequest(
         _from=dict(
             type="user",
             id="id_example",
         ),
         body="Hello",
     )
-    try:
-        # Creates a conversation
-        api_response = intercom.ConversationsApi.create_conversation(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->create_conversation: %s\n" % e)
+try:
+    # Creates a conversation
+    api_response = intercom.ConversationsApi.create_conversation(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->create_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -715,7 +743,7 @@ You can add participants who are contacts to a conversation, on behalf of either
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.detach_contact_from_conversation_request import DetachContactFromConversationRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -728,45 +756,53 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'conversation_id': "123",
-        'contact_id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Detach a contact from a group conversation
-        api_response = intercom.ConversationsApi.detach_contact_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->detach_contact_from_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "123",
+    'contact_id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Detach a contact from a group conversation
+    api_response = intercom.ConversationsApi.detach_contact_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->detach_contact_from_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'conversation_id': "123",
-        'contact_id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = DetachContactFromConversationRequest(None)
-    try:
-        # Detach a contact from a group conversation
-        api_response = intercom.ConversationsApi.detach_contact_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->detach_contact_from_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "123",
+    'contact_id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = DetachContactFromConversationRequest(None)
+try:
+    # Detach a contact from a group conversation
+    api_response = intercom.ConversationsApi.detach_contact_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->detach_contact_from_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -921,7 +957,7 @@ You can remove tag from a specific conversation. This will return a tag object f
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -933,47 +969,55 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-        'id': "7522907",
-    }
-    header_params = {
-    }
-    try:
-        # Remove tag from a conversation
-        api_response = intercom.ConversationsApi.detach_tag_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->detach_tag_from_conversation: %s\n" % e)
+path_params = {
+    'conversation_id': "64619700005694",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove tag from a conversation
+    api_response = intercom.ConversationsApi.detach_tag_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->detach_tag_from_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'conversation_id': "64619700005694",
-        'id': "7522907",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'conversation_id': "64619700005694",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         admin_id="123",
     )
-    try:
-        # Remove tag from a conversation
-        api_response = intercom.ConversationsApi.detach_tag_from_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->detach_tag_from_conversation: %s\n" % e)
+try:
+    # Remove tag from a conversation
+    api_response = intercom.ConversationsApi.detach_tag_from_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->detach_tag_from_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1107,7 +1151,7 @@ You can fetch a list of all conversations.  You can optionally request the resul
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.paginated_response import PaginatedResponse
 from intercom_python_api.model.error import Error
@@ -1120,22 +1164,26 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'per_page': 20,
-        'starting_after': "starting_after_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all conversations
-        api_response = intercom.ConversationsApi.list_conversations(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->list_conversations: %s\n" % e)
+
+query_params = {
+    'per_page': 20,
+    'starting_after': "starting_after_example",
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all conversations
+    api_response = intercom.ConversationsApi.list_conversations(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->list_conversations: %s\n" % e)
 
 ```
 ### Parameters
@@ -1253,7 +1301,7 @@ You can close a conversation. You can snooze a conversation to reopen on a futur
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.close_conversation_request import CloseConversationRequest
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -1269,43 +1317,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Manage a conversation
-        api_response = intercom.ConversationsApi.manage_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->manage_conversation: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Manage a conversation
+    api_response = intercom.ConversationsApi.manage_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->manage_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = None
-    try:
-        # Manage a conversation
-        api_response = intercom.ConversationsApi.manage_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->manage_conversation: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = None
+try:
+    # Manage a conversation
+    api_response = intercom.ConversationsApi.manage_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->manage_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1448,7 +1504,7 @@ You can redact a conversation part or the source message of a conversation (as s
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1462,19 +1518,23 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = RedactConversationRequest(None)
-    try:
-        # Redact a conversation part
-        api_response = intercom.ConversationsApi.redact_conversation(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->redact_conversation: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = RedactConversationRequest(None)
+try:
+    # Redact a conversation part
+    api_response = intercom.ConversationsApi.redact_conversation(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->redact_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1578,7 +1638,7 @@ You can reply to a conversation with a message from an admin or on behalf of a c
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.reply_conversation_request import ReplyConversationRequest
@@ -1591,43 +1651,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': None,
-    }
-    header_params = {
-    }
-    try:
-        # Reply to a conversation
-        api_response = intercom.ConversationsApi.reply_conversation(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->reply_conversation: %s\n" % e)
+path_params = {
+    'id': None,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Reply to a conversation
+    api_response = intercom.ConversationsApi.reply_conversation(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->reply_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': None,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = ReplyConversationRequest(None)
-    try:
-        # Reply to a conversation
-        api_response = intercom.ConversationsApi.reply_conversation(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->reply_conversation: %s\n" % e)
+path_params = {
+    'id': None,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = ReplyConversationRequest(None)
+try:
+    # Reply to a conversation
+    api_response = intercom.ConversationsApi.reply_conversation(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->reply_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1785,7 +1853,7 @@ Retrieve a conversation
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1797,48 +1865,56 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    query_params = {
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a conversation
-        api_response = intercom.ConversationsApi.retrieve_conversation(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->retrieve_conversation: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+query_params = {
+}
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a conversation
+    api_response = intercom.ConversationsApi.retrieve_conversation(
+        path_params=path_params,
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->retrieve_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    query_params = {
-        'display_as': "plaintext",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a conversation
-        api_response = intercom.ConversationsApi.retrieve_conversation(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->retrieve_conversation: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+query_params = {
+    'display_as': "plaintext",
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a conversation
+    api_response = intercom.ConversationsApi.retrieve_conversation(
+        path_params=path_params,
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->retrieve_conversation: %s\n" % e)
 
 ```
 ### Parameters
@@ -1977,7 +2053,7 @@ You can search for multiple conversations by the value of their attributes in or
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation_list import ConversationList
 from intercom_python_api.model.search_request import SearchRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -1990,25 +2066,29 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = SearchRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = SearchRequest(
         query=None,
         pagination=StartingAfterPaging(
             page=2,
             starting_after="1HaSB+xrOyyMXAkS/c1RteCL7BzOzTvYjmjakgTergIH31eoe2v4/sbLsJWP\\nIncfQLD3ouPkZlCwJ86F\\n",
         ),
     )
-    try:
-        # Search conversations
-        api_response = intercom.ConversationsApi.search_conversations(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->search_conversations: %s\n" % e)
+try:
+    # Search conversations
+    api_response = intercom.ConversationsApi.search_conversations(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->search_conversations: %s\n" % e)
 
 ```
 ### Parameters
@@ -2084,7 +2164,7 @@ Update a conversation
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import conversations_api
+
 from intercom_python_api.model.conversation import Conversation
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.update_conversation_request import UpdateConversationRequest
@@ -2097,55 +2177,63 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    query_params = {
-    }
-    header_params = {
-    }
-    try:
-        # Update a conversation
-        api_response = intercom.ConversationsApi.update_conversation(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->update_conversation: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+query_params = {
+}
+
+
+header_params = {
+}
+
+try:
+    # Update a conversation
+    api_response = intercom.ConversationsApi.update_conversation(
+        path_params=path_params,
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->update_conversation: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    query_params = {
-        'display_as': "plaintext",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateConversationRequest(
+path_params = {
+    'id': 123,
+}
+
+query_params = {
+    'display_as': "plaintext",
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateConversationRequest(
         read=True,
         custom_attributes=CustomAttributes(
             key=None,
         ),
     )
-    try:
-        # Update a conversation
-        api_response = intercom.ConversationsApi.update_conversation(
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ConversationsApi->update_conversation: %s\n" % e)
+try:
+    # Update a conversation
+    api_response = intercom.ConversationsApi.update_conversation(
+        path_params=path_params,
+        query_params=query_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ConversationsApi->update_conversation: %s\n" % e)
 
 ```
 ### Parameters

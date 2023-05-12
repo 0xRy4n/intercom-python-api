@@ -42,7 +42,7 @@ You can archive a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 
@@ -53,41 +53,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Archive contact
-        api_response = intercom.ContactsApi.archive_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->archive_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Archive contact
+    api_response = intercom.ContactsApi.archive_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->archive_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Archive contact
-        api_response = intercom.ContactsApi.archive_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->archive_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Archive contact
+    api_response = intercom.ContactsApi.archive_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->archive_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -168,7 +176,7 @@ You can attach a company to a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -180,45 +188,53 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-    }
-    try:
-        # Attach a Contact to a Company
-        api_response = intercom.ContactsApi.attach_contact_to_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_contact_to_a_company: %s\n" % e)
+path_params = {
+    'id': "id_example",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Attach a Contact to a Company
+    api_response = intercom.ContactsApi.attach_contact_to_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_contact_to_a_company: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'id': "id_example",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="58a430d35458202d41b1e65b",
     )
-    try:
-        # Attach a Contact to a Company
-        api_response = intercom.ContactsApi.attach_contact_to_a_company(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_contact_to_a_company: %s\n" % e)
+try:
+    # Attach a Contact to a Company
+    api_response = intercom.ContactsApi.attach_contact_to_a_company(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_contact_to_a_company: %s\n" % e)
 
 ```
 ### Parameters
@@ -344,7 +360,7 @@ You can add a specific subscription to a contact. In Intercom, we have two diffe
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.subscription_type import SubscriptionType
@@ -356,46 +372,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Add subscription to a contact
-        api_response = intercom.ContactsApi.attach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add subscription to a contact
+    api_response = intercom.ContactsApi.attach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_subscription_type_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="37846",
         consent_type="opt_in",
     )
-    try:
-        # Add subscription to a contact
-        api_response = intercom.ContactsApi.attach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_subscription_type_to_contact: %s\n" % e)
+try:
+    # Add subscription to a contact
+    api_response = intercom.ContactsApi.attach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_subscription_type_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -522,7 +546,7 @@ You can tag a specific contact. This will return a tag object for the tag that w
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -534,45 +558,53 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Add tag to a contact
-        api_response = intercom.ContactsApi.attach_tag_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_tag_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Add tag to a contact
+    api_response = intercom.ContactsApi.attach_tag_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_tag_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         id="7522907",
     )
-    try:
-        # Add tag to a contact
-        api_response = intercom.ContactsApi.attach_tag_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->attach_tag_to_contact: %s\n" % e)
+try:
+    # Add tag to a contact
+    api_response = intercom.ContactsApi.attach_tag_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->attach_tag_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -698,7 +730,7 @@ You can create a new contact (ie. user or lead).
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.create_contact_request import CreateContactRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -712,19 +744,23 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = None
-    try:
-        # Create contact
-        api_response = intercom.ContactsApi.create_contact(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->create_contact: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = None
+try:
+    # Create contact
+    api_response = intercom.ContactsApi.create_contact(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->create_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -821,7 +857,7 @@ You can add a note to a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.note import Note
 from intercom_python_api.model.error import Error
@@ -833,47 +869,55 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Create a note
-        api_response = intercom.ContactsApi.create_note(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->create_note: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Create a note
+    api_response = intercom.ContactsApi.create_note(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->create_note: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         body="New note",
         contact_id="123",
         admin_id="123",
     )
-    try:
-        # Create a note
-        api_response = intercom.ContactsApi.create_note(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->create_note: %s\n" % e)
+try:
+    # Create a note
+    api_response = intercom.ContactsApi.create_note(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->create_note: %s\n" % e)
 
 ```
 ### Parameters
@@ -987,7 +1031,7 @@ You can delete a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -999,41 +1043,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-    }
-    try:
-        # Delete a contact
-        api_response = intercom.ContactsApi.delete_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->delete_contact: %s\n" % e)
+path_params = {
+    'id': "id_example",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete a contact
+    api_response = intercom.ContactsApi.delete_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->delete_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "id_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete a contact
-        api_response = intercom.ContactsApi.delete_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->delete_contact: %s\n" % e)
+path_params = {
+    'id': "id_example",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete a contact
+    api_response = intercom.ContactsApi.delete_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->delete_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -1128,7 +1180,7 @@ You can remove a specific subscription from a contact. This will return a subscr
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.subscription_type import SubscriptionType
@@ -1140,43 +1192,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "37846",
-    }
-    header_params = {
-    }
-    try:
-        # Remove subscription from a contact
-        api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->detach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "37846",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove subscription from a contact
+    api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->detach_subscription_type_to_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "37846",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Remove subscription from a contact
-        api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->detach_subscription_type_to_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "37846",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Remove subscription from a contact
+    api_response = intercom.ContactsApi.detach_subscription_type_to_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->detach_subscription_type_to_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -1293,7 +1353,7 @@ You can remove tag from a specific contact. This will return a tag object for th
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.tag import Tag
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1305,43 +1365,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "7522907",
-    }
-    header_params = {
-    }
-    try:
-        # Remove tag from a contact
-        api_response = intercom.ContactsApi.detach_tag_from_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->detach_tag_from_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Remove tag from a contact
+    api_response = intercom.ContactsApi.detach_tag_from_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->detach_tag_from_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-        'id': "7522907",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Remove tag from a contact
-        api_response = intercom.ContactsApi.detach_tag_from_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->detach_tag_from_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+    'id': "7522907",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Remove tag from a contact
+    api_response = intercom.ContactsApi.detach_tag_from_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->detach_tag_from_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -1458,7 +1526,7 @@ You can detach a company from a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.company import Company
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1470,43 +1538,51 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "58a430d35458202d41b1e65b",
-        'id': "58a430d35458202d41b1e65b",
-    }
-    header_params = {
-    }
-    try:
-        # Detach a contact from a company
-        api_response = intercom.ContactsApi.dettach_contact_from_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->dettach_contact_from_a_company: %s\n" % e)
+path_params = {
+    'contact_id': "58a430d35458202d41b1e65b",
+    'id': "58a430d35458202d41b1e65b",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Detach a contact from a company
+    api_response = intercom.ContactsApi.dettach_contact_from_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->dettach_contact_from_a_company: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "58a430d35458202d41b1e65b",
-        'id': "58a430d35458202d41b1e65b",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Detach a contact from a company
-        api_response = intercom.ContactsApi.dettach_contact_from_a_company(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->dettach_contact_from_a_company: %s\n" % e)
+path_params = {
+    'contact_id': "58a430d35458202d41b1e65b",
+    'id': "58a430d35458202d41b1e65b",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Detach a contact from a company
+    api_response = intercom.ContactsApi.dettach_contact_from_a_company(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->dettach_contact_from_a_company: %s\n" % e)
 
 ```
 ### Parameters
@@ -1623,7 +1699,7 @@ You can fetch a list of all contacts that belong to a company.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.company_attached_contacts import CompanyAttachedContacts
 from intercom_python_api.model.error import Error
@@ -1635,41 +1711,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-    }
-    try:
-        # List attached contacts
-        api_response = intercom.ContactsApi.list_attached_contacts(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_attached_contacts: %s\n" % e)
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List attached contacts
+    api_response = intercom.ContactsApi.list_attached_contacts(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_attached_contacts: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached contacts
-        api_response = intercom.ContactsApi.list_attached_contacts(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_attached_contacts: %s\n" % e)
+path_params = {
+    'id': "5f4d3c1c-7b1b-4d7d-a97e-6095715c6632",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List attached contacts
+    api_response = intercom.ContactsApi.list_attached_contacts(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_attached_contacts: %s\n" % e)
 
 ```
 ### Parameters
@@ -1778,7 +1862,7 @@ You can fetch a list of companies that are associated to a contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.contact_attached_companies import ContactAttachedCompanies
 from intercom_python_api.model.error import Error
@@ -1790,41 +1874,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List attached companies for contact
-        api_response = intercom.ContactsApi.list_companies_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_companies_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List attached companies for contact
+    api_response = intercom.ContactsApi.list_companies_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_companies_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached companies for contact
-        api_response = intercom.ContactsApi.list_companies_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_companies_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List attached companies for contact
+    api_response = intercom.ContactsApi.list_companies_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_companies_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -1933,7 +2025,7 @@ You can fetch a list of all contacts.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact_list import ContactList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -1946,17 +2038,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all contacts
-        api_response = intercom.ContactsApi.list_contacts(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_contacts: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all contacts
+    api_response = intercom.ContactsApi.list_contacts(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_contacts: %s\n" % e)
 
 ```
 ### Parameters
@@ -2036,7 +2132,7 @@ You can fetch a list of notes that are associated to a contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.note_list import NoteList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -2048,41 +2144,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # List all notes
-        api_response = intercom.ContactsApi.list_notes(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_notes: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List all notes
+    api_response = intercom.ContactsApi.list_notes(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_notes: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all notes
-        api_response = intercom.ContactsApi.list_notes(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_notes: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all notes
+    api_response = intercom.ContactsApi.list_notes(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_notes: %s\n" % e)
 
 ```
 ### Parameters
@@ -2177,7 +2281,7 @@ You can fetch a list of segments that are associated to a contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact_segments import ContactSegments
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -2189,41 +2293,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List attached segments for contact
-        api_response = intercom.ContactsApi.list_segments_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_segments_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List attached segments for contact
+    api_response = intercom.ContactsApi.list_segments_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_segments_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached segments for contact
-        api_response = intercom.ContactsApi.list_segments_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_segments_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List attached segments for contact
+    api_response = intercom.ContactsApi.list_segments_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_segments_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -2332,7 +2444,7 @@ You can fetch a list of subscription types that are attached to a contact. These
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.subscription_type_list import SubscriptionTypeList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -2344,41 +2456,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List subscriptions for a contact
-        api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_subscriptions_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List subscriptions for a contact
+    api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_subscriptions_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List subscriptions for a contact
-        api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_subscriptions_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List subscriptions for a contact
+    api_response = intercom.ContactsApi.list_subscriptions_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_subscriptions_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -2487,7 +2607,7 @@ You can fetch a list of all tags that are attached to a specific contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.tag_list import TagList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -2499,41 +2619,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List tags attached to a contact
-        api_response = intercom.ContactsApi.list_tags_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_tags_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List tags attached to a contact
+    api_response = intercom.ContactsApi.list_tags_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_tags_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List tags attached to a contact
-        api_response = intercom.ContactsApi.list_tags_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->list_tags_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List tags attached to a contact
+    api_response = intercom.ContactsApi.list_tags_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->list_tags_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -2642,7 +2770,7 @@ You can merge a contact with a `role` of `lead` into a contact with a `role` of 
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.merge_contacts_request import MergeContactsRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -2656,22 +2784,26 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = MergeContactsRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = MergeContactsRequest(
         _from="5d70dd30de4efd54f42fd526",
         into="5ba682d23d7cf92bef87bfd4",
     )
-    try:
-        # Merge a lead and a user
-        api_response = intercom.ContactsApi.merge_contact(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->merge_contact: %s\n" % e)
+try:
+    # Merge a lead and a user
+    api_response = intercom.ContactsApi.merge_contact(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->merge_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -2761,7 +2893,7 @@ You can search for multiple contacts by the value of their attributes in order t
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact_list import ContactList
 from intercom_python_api.model.search_request import SearchRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -2775,25 +2907,29 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = SearchRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = SearchRequest(
         query=None,
         pagination=StartingAfterPaging(
             page=2,
             starting_after="1HaSB+xrOyyMXAkS/c1RteCL7BzOzTvYjmjakgTergIH31eoe2v4/sbLsJWP\\nIncfQLD3ouPkZlCwJ86F\\n",
         ),
     )
-    try:
-        # Search contacts
-        api_response = intercom.ContactsApi.search_contacts(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->search_contacts: %s\n" % e)
+try:
+    # Search contacts
+    api_response = intercom.ContactsApi.search_contacts(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->search_contacts: %s\n" % e)
 
 ```
 ### Parameters
@@ -2883,7 +3019,7 @@ You can fetch the details of a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -2895,41 +3031,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Get a contact
-        api_response = intercom.ContactsApi.show_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->show_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Get a contact
+    api_response = intercom.ContactsApi.show_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->show_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Get a contact
-        api_response = intercom.ContactsApi.show_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->show_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Get a contact
+    api_response = intercom.ContactsApi.show_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->show_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -3024,7 +3168,7 @@ You can unarchive a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 
@@ -3035,41 +3179,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Unarchive contact
-        api_response = intercom.ContactsApi.unarchive_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->unarchive_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Unarchive contact
+    api_response = intercom.ContactsApi.unarchive_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->unarchive_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Unarchive contact
-        api_response = intercom.ContactsApi.unarchive_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->unarchive_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Unarchive contact
+    api_response = intercom.ContactsApi.unarchive_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->unarchive_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -3150,7 +3302,7 @@ You can update an existing contact (ie. user or lead).
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import contacts_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -3162,41 +3314,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # Update a contact
-        api_response = intercom.ContactsApi.update_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->update_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Update a contact
+    api_response = intercom.ContactsApi.update_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->update_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Update a contact
-        api_response = intercom.ContactsApi.update_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ContactsApi->update_contact: %s\n" % e)
+path_params = {
+    'id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Update a contact
+    api_response = intercom.ContactsApi.update_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ContactsApi->update_contact: %s\n" % e)
 
 ```
 ### Parameters

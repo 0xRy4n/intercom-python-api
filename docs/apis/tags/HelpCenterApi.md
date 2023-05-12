@@ -30,7 +30,7 @@ You can create a new collection by making a POST request to `https://api.interco
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.collection import Collection
 from intercom_python_api.model.create_collection_request import CreateCollectionRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -44,10 +44,14 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateCollectionRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateCollectionRequest(
         name="collection 51",
         description="English description",
         translated_content=GroupTranslatedContent(
@@ -95,15 +99,15 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Create a collection
-        api_response = intercom.HelpCenterApi.create_collection(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->create_collection: %s\n" % e)
+try:
+    # Create a collection
+    api_response = intercom.HelpCenterApi.create_collection(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->create_collection: %s\n" % e)
 
 ```
 ### Parameters
@@ -207,7 +211,7 @@ You can create a new section by making a POST request to `https://api.intercom.i
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.create_section_request import CreateSectionRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.section import Section
@@ -221,10 +225,14 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateSectionRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateSectionRequest(
         name="Section 51",
         parent_id=18,
         translated_content=GroupTranslatedContent(
@@ -272,15 +280,15 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Create a section
-        api_response = intercom.HelpCenterApi.create_section(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->create_section: %s\n" % e)
+try:
+    # Create a section
+    api_response = intercom.HelpCenterApi.create_section(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->create_section: %s\n" % e)
 
 ```
 ### Parameters
@@ -384,7 +392,7 @@ You can delete a single collection by making a DELETE request to `https://api.in
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
 from intercom_python_api.model.deleted_collection_object import DeletedCollectionObject
@@ -396,41 +404,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Delete a collection
-        api_response = intercom.HelpCenterApi.delete_collection(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->delete_collection: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete a collection
+    api_response = intercom.HelpCenterApi.delete_collection(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->delete_collection: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete a collection
-        api_response = intercom.HelpCenterApi.delete_collection(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->delete_collection: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete a collection
+    api_response = intercom.HelpCenterApi.delete_collection(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->delete_collection: %s\n" % e)
 
 ```
 ### Parameters
@@ -539,7 +555,7 @@ You can delete a single section by making a DELETE request to `https://api.inter
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.deleted_section_object import DeletedSectionObject
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -551,41 +567,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Delete a section
-        api_response = intercom.HelpCenterApi.delete_section(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->delete_section: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete a section
+    api_response = intercom.HelpCenterApi.delete_section(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->delete_section: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete a section
-        api_response = intercom.HelpCenterApi.delete_section(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->delete_section: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete a section
+    api_response = intercom.HelpCenterApi.delete_section(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->delete_section: %s\n" % e)
 
 ```
 ### Parameters
@@ -694,7 +718,7 @@ You can fetch a list of all collections by making a GET request to `https://api.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.collection_list import CollectionList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -707,17 +731,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all collections
-        api_response = intercom.HelpCenterApi.list_all_collections(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->list_all_collections: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all collections
+    api_response = intercom.HelpCenterApi.list_all_collections(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->list_all_collections: %s\n" % e)
 
 ```
 ### Parameters
@@ -797,7 +825,7 @@ You can fetch a list of all sections by making a GET request to `https://api.int
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.section_list import SectionList
 from intercom_python_api.model.error import Error
@@ -810,17 +838,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all sections
-        api_response = intercom.HelpCenterApi.list_all_sections(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->list_all_sections: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all sections
+    api_response = intercom.HelpCenterApi.list_all_sections(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->list_all_sections: %s\n" % e)
 
 ```
 ### Parameters
@@ -900,7 +932,7 @@ You can fetch the details of a single collection by making a GET request to `htt
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.collection import Collection
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -912,41 +944,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a collection
-        api_response = intercom.HelpCenterApi.retrieve_collection(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->retrieve_collection: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a collection
+    api_response = intercom.HelpCenterApi.retrieve_collection(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->retrieve_collection: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a collection
-        api_response = intercom.HelpCenterApi.retrieve_collection(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->retrieve_collection: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a collection
+    api_response = intercom.HelpCenterApi.retrieve_collection(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->retrieve_collection: %s\n" % e)
 
 ```
 ### Parameters
@@ -1055,7 +1095,7 @@ You can fetch the details of a single section by making a GET request to `https:
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.section import Section
 from intercom_python_api.model.error import Error
@@ -1067,41 +1107,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a section
-        api_response = intercom.HelpCenterApi.retrieve_section(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->retrieve_section: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a section
+    api_response = intercom.HelpCenterApi.retrieve_section(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->retrieve_section: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a section
-        api_response = intercom.HelpCenterApi.retrieve_section(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->retrieve_section: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a section
+    api_response = intercom.HelpCenterApi.retrieve_section(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->retrieve_section: %s\n" % e)
 
 ```
 ### Parameters
@@ -1210,7 +1258,7 @@ You can update the details of a single collection by making a PUT request to `ht
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.collection import Collection
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.update_collection_request import UpdateCollectionRequest
@@ -1223,33 +1271,41 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Update a collection
-        api_response = intercom.HelpCenterApi.update_collection(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->update_collection: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Update a collection
+    api_response = intercom.HelpCenterApi.update_collection(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->update_collection: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateCollectionRequest(
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateCollectionRequest(
         name="collection 51",
         description="English description",
         translated_content=GroupTranslatedContent(
@@ -1297,16 +1353,16 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Update a collection
-        api_response = intercom.HelpCenterApi.update_collection(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->update_collection: %s\n" % e)
+try:
+    # Update a collection
+    api_response = intercom.HelpCenterApi.update_collection(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->update_collection: %s\n" % e)
 
 ```
 ### Parameters
@@ -1425,7 +1481,7 @@ You can update the details of a single section by making a PUT request to `https
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import help_center_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.section import Section
 from intercom_python_api.model.update_section_request import UpdateSectionRequest
@@ -1438,33 +1494,41 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Update a section
-        api_response = intercom.HelpCenterApi.update_section(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->update_section: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Update a section
+    api_response = intercom.HelpCenterApi.update_section(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->update_section: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateSectionRequest(
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateSectionRequest(
         name="Section 51",
         parent_id=18,
         translated_content=GroupTranslatedContent(
@@ -1512,16 +1576,16 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Update a section
-        api_response = intercom.HelpCenterApi.update_section(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling HelpCenterApi->update_section: %s\n" % e)
+try:
+    # Update a section
+    api_response = intercom.HelpCenterApi.update_section(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling HelpCenterApi->update_section: %s\n" % e)
 
 ```
 ### Parameters

@@ -22,7 +22,7 @@ This will return a list of team objects for the App.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import teams_api
+
 from intercom_python_api.model.team_list import TeamList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -35,17 +35,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all teams
-        api_response = intercom.TeamsApi.list_teams(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TeamsApi->list_teams: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all teams
+    api_response = intercom.TeamsApi.list_teams(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TeamsApi->list_teams: %s\n" % e)
 
 ```
 ### Parameters
@@ -125,7 +129,7 @@ You can fetch the details of a single team, containing an array of admins that b
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import teams_api
+
 from intercom_python_api.model.team import Team
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -137,41 +141,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a team
-        api_response = intercom.TeamsApi.retrieve_team(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a team
+    api_response = intercom.TeamsApi.retrieve_team(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a team
-        api_response = intercom.TeamsApi.retrieve_team(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a team
+    api_response = intercom.TeamsApi.retrieve_team(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling TeamsApi->retrieve_team: %s\n" % e)
 
 ```
 ### Parameters

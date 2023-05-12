@@ -23,7 +23,7 @@ You can create a data attributes for a `contact` or a `company`.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_attributes_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_data_attribute_request import CreateDataAttributeRequest
 from intercom_python_api.model.data_attribute import DataAttribute
@@ -37,25 +37,29 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateDataAttributeRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateDataAttributeRequest(
         name="My Data Attribute",
         model="contact",
         data_type="string",
         description="My Data Attribute Description",
         options=["option1","option2"],
     )
-    try:
-        # Create a data attribute
-        api_response = intercom.DataAttributesApi.create_data_attribute(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->create_data_attribute: %s\n" % e)
+try:
+    # Create a data attribute
+    api_response = intercom.DataAttributesApi.create_data_attribute(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->create_data_attribute: %s\n" % e)
 
 ```
 ### Parameters
@@ -159,7 +163,7 @@ You can fetch a list of all data attributes belonging to a workspace for contact
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_attributes_api
+
 from intercom_python_api.model.data_attribute_list import DataAttributeList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -172,22 +176,26 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'model': "company",
-        'include_archived': False,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all data attributes
-        api_response = intercom.DataAttributesApi.lis_data_attributes(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->lis_data_attributes: %s\n" % e)
+
+query_params = {
+    'model': "company",
+    'include_archived': False,
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all data attributes
+    api_response = intercom.DataAttributesApi.lis_data_attributes(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->lis_data_attributes: %s\n" % e)
 
 ```
 ### Parameters
@@ -291,7 +299,7 @@ Update a data attribute
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_attributes_api
+
 from intercom_python_api.model.update_data_attribute_request import UpdateDataAttributeRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.data_attribute import DataAttribute
@@ -304,47 +312,55 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # Update a data attribute
-        api_response = intercom.DataAttributesApi.update_data_attribute(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Update a data attribute
+    api_response = intercom.DataAttributesApi.update_data_attribute(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateDataAttributeRequest(
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateDataAttributeRequest(
         archived=False,
         description="My Data Attribute Description",
         options=["option1","option2"],
     )
-    try:
-        # Update a data attribute
-        api_response = intercom.DataAttributesApi.update_data_attribute(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
+try:
+    # Update a data attribute
+    api_response = intercom.DataAttributesApi.update_data_attribute(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataAttributesApi->update_data_attribute: %s\n" % e)
 
 ```
 ### Parameters

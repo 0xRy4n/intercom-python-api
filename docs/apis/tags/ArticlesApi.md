@@ -25,7 +25,7 @@ You can create a new article by making a POST request to `https://api.intercom.i
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import articles_api
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -39,10 +39,14 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateArticleRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",
         body="<p>This is the body in html</p>",
@@ -101,15 +105,15 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Create an article
-        api_response = intercom.ArticlesApi.create_article(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->create_article: %s\n" % e)
+try:
+    # Create an article
+    api_response = intercom.ArticlesApi.create_article(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->create_article: %s\n" % e)
 
 ```
 ### Parameters
@@ -213,7 +217,7 @@ You can delete a single article by making a DELETE request to `https://api.inter
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import articles_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.deleted_article_object import DeletedArticleObject
 from intercom_python_api.model.error import Error
@@ -225,41 +229,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Delete an article
-        api_response = intercom.ArticlesApi.delete_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete an article
+    api_response = intercom.ArticlesApi.delete_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete an article
-        api_response = intercom.ArticlesApi.delete_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete an article
+    api_response = intercom.ArticlesApi.delete_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->delete_article: %s\n" % e)
 
 ```
 ### Parameters
@@ -368,7 +380,7 @@ You can fetch a list of all articles by making a GET request to `https://api.int
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import articles_api
+
 from intercom_python_api.model.article_list import ArticleList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -381,17 +393,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all articles
-        api_response = intercom.ArticlesApi.list_articles(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->list_articles: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all articles
+    api_response = intercom.ArticlesApi.list_articles(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->list_articles: %s\n" % e)
 
 ```
 ### Parameters
@@ -471,7 +487,7 @@ You can fetch the details of a single article by making a GET request to `https:
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import articles_api
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -483,41 +499,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve an article
-        api_response = intercom.ArticlesApi.retrieve_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve an article
+    api_response = intercom.ArticlesApi.retrieve_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve an article
-        api_response = intercom.ArticlesApi.retrieve_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve an article
+    api_response = intercom.ArticlesApi.retrieve_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->retrieve_article: %s\n" % e)
 
 ```
 ### Parameters
@@ -626,7 +650,7 @@ You can update the details of a single article by making a PUT request to `https
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import articles_api
+
 from intercom_python_api.model.article import Article
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.update_article_request import UpdateArticleRequest
@@ -639,33 +663,41 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Update an article
-        api_response = intercom.ArticlesApi.update_article(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->update_article: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Update an article
+    api_response = intercom.ArticlesApi.update_article(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->update_article: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateArticleRequest(
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateArticleRequest(
         title="Thanks for everything",
         description="Description of the Article",
         body="<p>This is the body in html</p>",
@@ -724,16 +756,16 @@ An example passing **only** the optional values (like `Intercom-Version`):
 ,
         ),
     )
-    try:
-        # Update an article
-        api_response = intercom.ArticlesApi.update_article(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling ArticlesApi->update_article: %s\n" % e)
+try:
+    # Update an article
+    api_response = intercom.ArticlesApi.update_article(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling ArticlesApi->update_article: %s\n" % e)
 
 ```
 ### Parameters

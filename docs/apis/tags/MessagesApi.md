@@ -21,7 +21,7 @@ You can create a message that has been initiated by an admin. The conversation c
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import messages_api
+
 from intercom_python_api.model.message import Message
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_message_request import CreateMessageRequest
@@ -35,19 +35,23 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateMessageRequest()
-    try:
-        # Create a message
-        api_response = intercom.MessagesApi.create_message(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling MessagesApi->create_message: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateMessageRequest()
+try:
+    # Create a message
+    api_response = intercom.MessagesApi.create_message(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling MessagesApi->create_message: %s\n" % e)
 
 ```
 ### Parameters

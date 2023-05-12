@@ -24,7 +24,7 @@ You can cancel your job
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_export_api
+
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.intercom_version import IntercomVersion
 
@@ -35,41 +35,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-    }
-    try:
-        # Cancel content data export
-        api_response = intercom.DataExportApi.cancel_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Cancel content data export
+    api_response = intercom.DataExportApi.cancel_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Cancel content data export
-        api_response = intercom.DataExportApi.cancel_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Cancel content data export
+    api_response = intercom.DataExportApi.cancel_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->cancel_data_export: %s\n" % e)
 
 ```
 ### Parameters
@@ -150,7 +158,7 @@ To create your export job, you need to send a `POST` request to the export endpo
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_export_api
+
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.create_data_exports_request import CreateDataExportsRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -163,22 +171,26 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateDataExportsRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateDataExportsRequest(
         created_at_after=1527811200,
         created_at_before=1527811200,
     )
-    try:
-        # Create content data export
-        api_response = intercom.DataExportApi.create_data_export(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->create_data_export: %s\n" % e)
+try:
+    # Create content data export
+    api_response = intercom.DataExportApi.create_data_export(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->create_data_export: %s\n" % e)
 
 ```
 ### Parameters
@@ -254,7 +266,7 @@ When a job has a status of complete, and thus a filled download_url, you can dow
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_export_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 
 # Create an Intercom client context.
@@ -264,39 +276,47 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-    }
-    try:
-        # Download content data export
-        api_response = intercom.DataExportApi.download_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Download content data export
+    api_response = intercom.DataExportApi.download_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Download content data export
-        api_response = intercom.DataExportApi.download_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Download content data export
+    api_response = intercom.DataExportApi.download_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->download_data_export: %s\n" % e)
 
 ```
 ### Parameters
@@ -370,7 +390,7 @@ You can view the status of your job by sending a `GET` request to the URL `https
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_export_api
+
 from intercom_python_api.model.data_export import DataExport
 from intercom_python_api.model.intercom_version import IntercomVersion
 
@@ -381,41 +401,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-    }
-    try:
-        # Show content data export
-        api_response = intercom.DataExportApi.get_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Show content data export
+    api_response = intercom.DataExportApi.get_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'job_identifier': "job_identifier_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Show content data export
-        api_response = intercom.DataExportApi.get_data_export(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
+path_params = {
+    'job_identifier': "job_identifier_example",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Show content data export
+    api_response = intercom.DataExportApi.get_data_export(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataExportApi->get_data_export: %s\n" % e)
 
 ```
 ### Parameters

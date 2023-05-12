@@ -25,7 +25,7 @@ You can merge a Visitor to a Contact of role type `lead` or `user`.  > 📘 What
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import visitors_api
+
 from intercom_python_api.model.contact import Contact
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -39,23 +39,27 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = ConvertVisitorRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = ConvertVisitorRequest(
         type="user",
         user=dict(),
         visitor=dict(),
     )
-    try:
-        # Convert a visitor
-        api_response = intercom.VisitorsApi.convert_visitor(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->convert_visitor: %s\n" % e)
+try:
+    # Convert a visitor
+    api_response = intercom.VisitorsApi.convert_visitor(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->convert_visitor: %s\n" % e)
 
 ```
 ### Parameters
@@ -145,7 +149,7 @@ You can delete a single visitor.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import visitors_api
+
 from intercom_python_api.model.visitor_deleted_object import VisitorDeletedObject
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -157,41 +161,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
-    }
-    header_params = {
-    }
-    try:
-        # Delete a visitor
-        api_response = intercom.VisitorsApi.delete_visitor(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
+path_params = {
+    'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Delete a visitor
+    api_response = intercom.VisitorsApi.delete_visitor(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Delete a visitor
-        api_response = intercom.VisitorsApi.delete_visitor(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
+path_params = {
+    'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Delete a visitor
+    api_response = intercom.VisitorsApi.delete_visitor(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->delete_visitor: %s\n" % e)
 
 ```
 ### Parameters
@@ -300,7 +312,7 @@ You can fetch the details of a single visitor.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import visitors_api
+
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -312,41 +324,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a visitor with ID
-        api_response = intercom.VisitorsApi.retrieve_visitor(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
+path_params = {
+    'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a visitor with ID
+    api_response = intercom.VisitorsApi.retrieve_visitor(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a visitor with ID
-        api_response = intercom.VisitorsApi.retrieve_visitor(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
+path_params = {
+    'id': "5e1c4c1c-7b1e-4b5d-8c1c-5e1c4c1c7b1e",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a visitor with ID
+    api_response = intercom.VisitorsApi.retrieve_visitor(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->retrieve_visitor: %s\n" % e)
 
 ```
 ### Parameters
@@ -455,7 +475,7 @@ You can fetch the details of a single visitor.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import visitors_api
+
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -467,41 +487,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    query_params = {
-        'user_id': "user_id_example",
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a visitor with User ID
-        api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
+
+query_params = {
+    'user_id': "user_id_example",
+}
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a visitor with User ID
+    api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'user_id': "user_id_example",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a visitor with User ID
-        api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
+
+query_params = {
+    'user_id': "user_id_example",
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a visitor with User ID
+    api_response = intercom.VisitorsApi.retrieve_visitor_with_user_id(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->retrieve_visitor_with_user_id: %s\n" % e)
 
 ```
 ### Parameters
@@ -611,7 +639,7 @@ Sending a PUT request to `/visitors` will result in an update of an existing Vis
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import visitors_api
+
 from intercom_python_api.model.visitor import Visitor
 from intercom_python_api.model.update_visitor_request import UpdateVisitorRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
@@ -625,19 +653,23 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = UpdateVisitorRequest()
-    try:
-        # Update a visitor
-        api_response = intercom.VisitorsApi.update_visitor(
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling VisitorsApi->update_visitor: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = UpdateVisitorRequest()
+try:
+    # Update a visitor
+    api_response = intercom.VisitorsApi.update_visitor(
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling VisitorsApi->update_visitor: %s\n" % e)
 
 ```
 ### Parameters

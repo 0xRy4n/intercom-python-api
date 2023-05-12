@@ -25,7 +25,7 @@ Identify an admin
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import admins_api
+
 from intercom_python_api.model.admin_with_app import AdminWithApp
 from intercom_python_api.model.intercom_version import IntercomVersion
 
@@ -37,17 +37,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Identify an admin
-        api_response = intercom.AdminsApi.identify_admin(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->identify_admin: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Identify an admin
+    api_response = intercom.AdminsApi.identify_admin(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->identify_admin: %s\n" % e)
 
 ```
 ### Parameters
@@ -113,7 +117,7 @@ You can get a log of activities by all admins in an app.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import admins_api
+
 from intercom_python_api.model.activity_log_list import ActivityLogList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -125,42 +129,50 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    query_params = {
-        'created_at_after': "1677255034",
-    }
-    header_params = {
-    }
-    try:
-        # List all activity logs
-        api_response = intercom.AdminsApi.list_activity_logs(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
+
+query_params = {
+    'created_at_after': "1677255034",
+}
+
+
+header_params = {
+}
+
+try:
+    # List all activity logs
+    api_response = intercom.AdminsApi.list_activity_logs(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'created_at_after': "1677255034",
-        'created_at_before': "1677863434",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all activity logs
-        api_response = intercom.AdminsApi.list_activity_logs(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
+
+query_params = {
+    'created_at_after': "1677255034",
+    'created_at_before': "1677863434",
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all activity logs
+    api_response = intercom.AdminsApi.list_activity_logs(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->list_activity_logs: %s\n" % e)
 
 ```
 ### Parameters
@@ -264,7 +276,7 @@ You can fetch a list of admins for a given workspace.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import admins_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.admin_list import AdminList
 from intercom_python_api.model.error import Error
@@ -277,17 +289,21 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all admins
-        api_response = intercom.AdminsApi.list_admins(
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->list_admins: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all admins
+    api_response = intercom.AdminsApi.list_admins(
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->list_admins: %s\n" % e)
 
 ```
 ### Parameters
@@ -367,7 +383,7 @@ You can retrieve the details of a single admin.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import admins_api
+
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -379,41 +395,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve an admin
-        api_response = intercom.AdminsApi.retrieve_admin(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve an admin
+    api_response = intercom.AdminsApi.retrieve_admin(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve an admin
-        api_response = intercom.AdminsApi.retrieve_admin(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve an admin
+    api_response = intercom.AdminsApi.retrieve_admin(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->retrieve_admin: %s\n" % e)
 
 ```
 ### Parameters
@@ -522,7 +546,7 @@ You can set an Admin as away for the Inbox.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import admins_api
+
 from intercom_python_api.model.admin import Admin
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -534,46 +558,54 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # Set an admin to away
-        api_response = intercom.AdminsApi.set_away_admin(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Set an admin to away
+    api_response = intercom.AdminsApi.set_away_admin(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         away_mode_enabled=True,
         away_mode_reassign=False,
     )
-    try:
-        # Set an admin to away
-        api_response = intercom.AdminsApi.set_away_admin(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
+try:
+    # Set an admin to away
+    api_response = intercom.AdminsApi.set_away_admin(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling AdminsApi->set_away_admin: %s\n" % e)
 
 ```
 ### Parameters

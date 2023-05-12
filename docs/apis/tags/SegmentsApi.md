@@ -23,7 +23,7 @@ You can fetch a list of all segments.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import segments_api
+
 from intercom_python_api.model.segment_list import SegmentList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -36,21 +36,25 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'include_count': True,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all segments
-        api_response = intercom.SegmentsApi.list_segments(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SegmentsApi->list_segments: %s\n" % e)
+
+query_params = {
+    'include_count': True,
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all segments
+    api_response = intercom.SegmentsApi.list_segments(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SegmentsApi->list_segments: %s\n" % e)
 
 ```
 ### Parameters
@@ -146,7 +150,7 @@ You can fetch a list of segments that are associated to a contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import segments_api
+
 from intercom_python_api.model.contact_segments import ContactSegments
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -158,41 +162,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-    }
-    try:
-        # List attached segments for contact
-        api_response = intercom.SegmentsApi.list_segments_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SegmentsApi->list_segments_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List attached segments for contact
+    api_response = intercom.SegmentsApi.list_segments_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SegmentsApi->list_segments_for_a_contact: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'contact_id': "63a07ddf05a32042dffac965",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List attached segments for contact
-        api_response = intercom.SegmentsApi.list_segments_for_a_contact(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SegmentsApi->list_segments_for_a_contact: %s\n" % e)
+path_params = {
+    'contact_id': "63a07ddf05a32042dffac965",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List attached segments for contact
+    api_response = intercom.SegmentsApi.list_segments_for_a_contact(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SegmentsApi->list_segments_for_a_contact: %s\n" % e)
 
 ```
 ### Parameters
@@ -301,7 +313,7 @@ You can fetch the details of a single segment.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import segments_api
+
 from intercom_python_api.model.segment import Segment
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -313,41 +325,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a segment
-        api_response = intercom.SegmentsApi.retrieve_segment(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SegmentsApi->retrieve_segment: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a segment
+    api_response = intercom.SegmentsApi.retrieve_segment(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SegmentsApi->retrieve_segment: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': "123",
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a segment
-        api_response = intercom.SegmentsApi.retrieve_segment(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling SegmentsApi->retrieve_segment: %s\n" % e)
+path_params = {
+    'id': "123",
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a segment
+    api_response = intercom.SegmentsApi.retrieve_segment(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling SegmentsApi->retrieve_segment: %s\n" % e)
 
 ```
 ### Parameters

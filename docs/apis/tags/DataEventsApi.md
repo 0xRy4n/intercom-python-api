@@ -23,7 +23,7 @@ Submit a data event
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_events_api
+
 from intercom_python_api.model.create_data_event_request import CreateDataEventRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -36,18 +36,22 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateDataEventRequest()
-    try:
-        # Submit a data event
-        api_response = intercom.DataEventsApi.create_data_event(
-            header_params=header_params,
-            body=body,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataEventsApi->create_data_event: %s\n" % e)
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateDataEventRequest()
+try:
+    # Submit a data event
+    api_response = intercom.DataEventsApi.create_data_event(
+        header_params=header_params,
+        body=body,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataEventsApi->create_data_event: %s\n" % e)
 
 ```
 ### Parameters
@@ -131,7 +135,7 @@ Create event summaries for a user. Event summaries are used to track the number 
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_events_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.create_data_event_summaries_request import CreateDataEventSummariesRequest
 from intercom_python_api.model.error import Error
@@ -144,10 +148,14 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = CreateDataEventSummariesRequest(
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = CreateDataEventSummariesRequest(
         user_id="314159",
         event_summaries=dict(
             event_name="invited-friend",
@@ -156,14 +164,14 @@ An example passing **only** the optional values (like `Intercom-Version`):
             last=1671028894,
         ),
     )
-    try:
-        # Create event summaries
-        api_response = intercom.DataEventsApi.data_event_summaries(
-            header_params=header_params,
-            body=body,
-        )
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataEventsApi->data_event_summaries: %s\n" % e)
+try:
+    # Create event summaries
+    api_response = intercom.DataEventsApi.data_event_summaries(
+        header_params=header_params,
+        body=body,
+    )
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataEventsApi->data_event_summaries: %s\n" % e)
 
 ```
 ### Parameters
@@ -247,7 +255,7 @@ List all data events
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import data_events_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.data_event_summary import DataEventSummary
 from intercom_python_api.model.error import Error
@@ -259,44 +267,52 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    query_params = {
-        'filter': dict(),
-        'type': "type_example",
-    }
-    header_params = {
-    }
-    try:
-        # List all data events
-        api_response = intercom.DataEventsApi.lis_data_events(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
+
+query_params = {
+    'filter': dict(),
+    'type': "type_example",
+}
+
+
+header_params = {
+}
+
+try:
+    # List all data events
+    api_response = intercom.DataEventsApi.lis_data_events(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    query_params = {
-        'filter': dict(),
-        'type': "type_example",
-        'summary': True,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all data events
-        api_response = intercom.DataEventsApi.lis_data_events(
-            query_params=query_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
+
+query_params = {
+    'filter': dict(),
+    'type': "type_example",
+    'summary': True,
+}
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all data events
+    api_response = intercom.DataEventsApi.lis_data_events(
+        query_params=query_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
 
 ```
 ### Parameters

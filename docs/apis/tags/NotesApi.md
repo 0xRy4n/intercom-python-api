@@ -23,7 +23,7 @@ You can add a note to a single contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import notes_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.note import Note
 from intercom_python_api.model.error import Error
@@ -35,47 +35,55 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-    }
-    try:
-        # Create a note
-        api_response = intercom.NotesApi.create_note(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->create_note: %s\n" % e)
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Create a note
+    api_response = intercom.NotesApi.create_note(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->create_note: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 123,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    body = dict(
+path_params = {
+    'id': 123,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+body = dict(
         body="New note",
         contact_id="123",
         admin_id="123",
     )
-    try:
-        # Create a note
-        api_response = intercom.NotesApi.create_note(
-            path_params=path_params,
-            header_params=header_params,
-            body=body,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->create_note: %s\n" % e)
+try:
+    # Create a note
+    api_response = intercom.NotesApi.create_note(
+        path_params=path_params,
+        header_params=header_params,
+        body=body,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->create_note: %s\n" % e)
 
 ```
 ### Parameters
@@ -189,7 +197,7 @@ You can fetch a list of notes that are associated to a contact.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import notes_api
+
 from intercom_python_api.model.note_list import NoteList
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.error import Error
@@ -201,41 +209,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # List all notes
-        api_response = intercom.NotesApi.list_notes(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->list_notes: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # List all notes
+    api_response = intercom.NotesApi.list_notes(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->list_notes: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # List all notes
-        api_response = intercom.NotesApi.list_notes(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->list_notes: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # List all notes
+    api_response = intercom.NotesApi.list_notes(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->list_notes: %s\n" % e)
 
 ```
 ### Parameters
@@ -330,7 +346,7 @@ You can fetch the details of a single note.
 
 ```python
 import intercom_python_api import Intercom
-from intercom_python_api.apis.tags import notes_api
+
 from intercom_python_api.model.intercom_version import IntercomVersion
 from intercom_python_api.model.note import Note
 from intercom_python_api.model.error import Error
@@ -342,41 +358,49 @@ intercom = Intercom(api_key='<YOUR API TOKEN>')
 An example of an API call passing only required parameters which have no default value:
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-    }
-    try:
-        # Retrieve a note
-        api_response = intercom.NotesApi.retrieve_note(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+}
+
+try:
+    # Retrieve a note
+    api_response = intercom.NotesApi.retrieve_note(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
 
 ```
 
 An example passing **only** the optional values (like `Intercom-Version`):
 
 ```python
-    path_params = {
-        'id': 1,
-    }
-    header_params = {
-        'Intercom-Version': IntercomVersion("Unstable"),
-    }
-    try:
-        # Retrieve a note
-        api_response = intercom.NotesApi.retrieve_note(
-            path_params=path_params,
-            header_params=header_params,
-        )
-        pprint(api_response)
-    except intercom_python_api.ApiException as e:
-        print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
+path_params = {
+    'id': 1,
+}
+
+
+
+header_params = {
+    'Intercom-Version': IntercomVersion("Unstable"),
+}
+
+try:
+    # Retrieve a note
+    api_response = intercom.NotesApi.retrieve_note(
+        path_params=path_params,
+        header_params=header_params,
+    )
+    pprint(api_response)
+except intercom_python_api.ApiException as e:
+    print("Exception when calling NotesApi->retrieve_note: %s\n" % e)
 
 ```
 ### Parameters
