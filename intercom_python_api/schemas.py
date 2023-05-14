@@ -346,13 +346,23 @@ class Schema:
             ApiTypeError: when the input type is not in the list of allowed spec types
         """
         base_class = type(arg)
+        castable = False
+        
         if base_class not in cls._types:
-            raise cls.__get_type_error(
-                arg,
-                validation_metadata.path_to_item,
-                cls._types,
-                key_type=False,
-            )
+            if str in cls._types:
+                try:
+                    str(arg)
+                    castable = True
+                except:
+                    pass
+            
+            if not castable:
+                raise cls.__get_type_error(
+                    arg,
+                    validation_metadata.path_to_item,
+                    cls._types,
+                    key_type=False,
+                )
 
         path_to_schemas = {validation_metadata.path_to_item: set()}
         path_to_schemas[validation_metadata.path_to_item].add(cls)
@@ -1881,15 +1891,31 @@ class ComposedBase(Discriminable):
                 path_to_schemas = oneof_cls._validate_oapg(arg, validation_metadata=validation_metadata)
             except (ApiValueError, ApiTypeError) as ex:
                 if discriminated_cls is not None and oneof_cls is discriminated_cls:
-                    raise ex
+                    """
+                    suppress exception because code was generated with
+                    nonCompliantUseDiscriminatorIfCompositionFails=true
+                    """
+                    pass
                 continue
             oneof_classes.append(oneof_cls)
         if not oneof_classes:
+            if discriminated_cls:
+                """
+                return without exception because code was generated with
+                nonCompliantUseDiscriminatorIfCompositionFails=true
+                """
+                return {}
             raise ApiValueError(
                 "Invalid inputs given to generate an instance of {}. None "
                 "of the oneOf schemas matched the input data.".format(cls)
             )
         elif len(oneof_classes) > 1:
+            if discriminated_cls:
+                """
+                return without exception because code was generated with
+                nonCompliantUseDiscriminatorIfCompositionFails=true
+                """
+                return {}
             raise ApiValueError(
                 "Invalid inputs given to generate an instance of {}. Multiple "
                 "oneOf schemas {} matched the inputs, but a max of one is allowed.".format(cls, oneof_classes)
@@ -1916,11 +1942,21 @@ class ComposedBase(Discriminable):
                 other_path_to_schemas = anyof_cls._validate_oapg(arg, validation_metadata=validation_metadata)
             except (ApiValueError, ApiTypeError) as ex:
                 if discriminated_cls is not None and anyof_cls is discriminated_cls:
-                    raise ex
+                    """
+                    suppress exception because code was generated with
+                    nonCompliantUseDiscriminatorIfCompositionFails=true
+                    """
+                    pass
                 continue
             anyof_classes.append(anyof_cls)
             update(path_to_schemas, other_path_to_schemas)
         if not anyof_classes:
+            if discriminated_cls:
+                """
+                return without exception because code was generated with
+                nonCompliantUseDiscriminatorIfCompositionFails=true
+                """
+                return {}
             raise ApiValueError(
                 "Invalid inputs given to generate an instance of {}. None "
                 "of the anyOf schemas matched the input data.".format(cls)

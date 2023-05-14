@@ -35,7 +35,7 @@ setup(
     description="Intercom API",
     author="Intercom Developer Hub",
     author_email="team@openapitools.org",
-    url="https://github.com/0xRy4n/intercom-python-api",
+    url="https://github.com/0xRy4n/intercom-python-api.git",
     keywords=["OpenAPI", "OpenAPI-Generator", "Intercom API"],
     python_requires=">=3.7",
     install_requires=REQUIRES,

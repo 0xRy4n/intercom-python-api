@@ -26,8 +26,8 @@ import frozendict  # noqa: F401
 from intercom_python_api import schemas  # noqa: F401
 
 from intercom_python_api.model.ticket_note import TicketNote
-from intercom_python_api.model.create_ticket_note_request import CreateTicketNoteRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
+from intercom_python_api.model.create_ticket_reply_request import CreateTicketReplyRequest
 from intercom_python_api.model.error import Error
 
 # Header params
@@ -82,10 +82,10 @@ request_path_ticket_id = api_client.PathParameter(
     required=True,
 )
 # body param
-SchemaForRequestBodyApplicationJson = CreateTicketNoteRequest
+SchemaForRequestBodyApplicationJson = CreateTicketReplyRequest
 
 
-request_body_body = api_client.RequestBody(
+request_body_create_ticket_reply_request = api_client.RequestBody(
     content={
         'application/json': api_client.MediaType(
             schema=SchemaForRequestBodyApplicationJson),
@@ -246,7 +246,7 @@ class BaseApi(api_client.Api):
         _fields = None
         _body = None
         if body is not schemas.unset:
-            serialized_data = request_body_body.serialize(body, content_type)
+            serialized_data = request_body_create_ticket_reply_request.serialize(body, content_type)
             _headers.add('Content-Type', content_type)
             if 'fields' in serialized_data:
                 _fields = serialized_data['fields']

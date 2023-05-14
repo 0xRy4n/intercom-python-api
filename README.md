@@ -1,5 +1,7 @@
 # Intercom Python API
+<p style="text-align:center">
 ![Intercom Python API](https://i.imgur.com/rQooYPo.png)
+</p>
 
 This package provides a wrapper around the Intercom API in the form of a python client. It conforms to the OpenAPI specification files provided by Intercom.
 
@@ -165,7 +167,7 @@ Class | Method | HTTP request | Description
 *DataAttributesApi* | [**update_data_attribute**](docs/apis/tags/DataAttributesApi.md#update_data_attribute) | **put** /data_attributes/{id} | Update a data attribute
 *DataEventsApi* | [**create_data_event**](docs/apis/tags/DataEventsApi.md#create_data_event) | **post** /events | Submit a data event
 *DataEventsApi* | [**data_event_summaries**](docs/apis/tags/DataEventsApi.md#data_event_summaries) | **post** /events/summaries | Create event summaries
-*DataEventsApi* | [**lis_data_events**](docs/apis/tags/DataEventsApi.md#lis_data_events) | **get** /events | List all data events
+*DataEventsApi* | [**list_data_events**](docs/apis/tags/DataEventsApi.md#list_data_events) | **get** /events | List all data events
 *DataExportApi* | [**cancel_data_export**](docs/apis/tags/DataExportApi.md#cancel_data_export) | **post** /export/cancel/{job_identifier} | Cancel content data export
 *DataExportApi* | [**create_data_export**](docs/apis/tags/DataExportApi.md#create_data_export) | **post** /export/content/data | Create content data export
 *DataExportApi* | [**download_data_export**](docs/apis/tags/DataExportApi.md#download_data_export) | **get** /download/content/data/{job_identifier} | Download content data export

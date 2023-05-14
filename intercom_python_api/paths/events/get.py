@@ -25,8 +25,8 @@ import frozendict  # noqa: F401
 
 from intercom_python_api import schemas  # noqa: F401
 
+from intercom_python_api.model.data_event_list import DataEventList
 from intercom_python_api.model.intercom_version import IntercomVersion
-from intercom_python_api.model.data_event_summary import DataEventSummary
 from intercom_python_api.model.error import Error
 
 from . import path
@@ -279,7 +279,7 @@ request_header_intercom_version = api_client.HeaderParameter(
 _auth = [
     'bearerAuth',
 ]
-SchemaFor200ResponseBodyApplicationJson = DataEventSummary
+SchemaFor200ResponseBodyApplicationJson = DataEventList
 
 
 @dataclass
@@ -328,7 +328,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _lis_data_events_oapg(
+    def _list_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -341,7 +341,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _lis_data_events_oapg(
+    def _list_data_events_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -352,7 +352,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _lis_data_events_oapg(
+    def _list_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -365,7 +365,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _lis_data_events_oapg(
+    def _list_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -441,11 +441,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class LisDataEvents(BaseApi):
+class ListDataEvents(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def lis_data_events(
+    def list_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -458,7 +458,7 @@ class LisDataEvents(BaseApi):
     ]: ...
 
     @typing.overload
-    def lis_data_events(
+    def list_data_events(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -469,7 +469,7 @@ class LisDataEvents(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def lis_data_events(
+    def list_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -482,7 +482,7 @@ class LisDataEvents(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def lis_data_events(
+    def list_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -491,7 +491,7 @@ class LisDataEvents(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._lis_data_events_oapg(
+        return self._list_data_events_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,
@@ -551,7 +551,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._lis_data_events_oapg(
+        return self._list_data_events_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,

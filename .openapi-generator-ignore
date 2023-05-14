@@ -23,3 +23,4 @@
 #!docs/README.md
 
 intercom_python_api/__init__.py
+git_push.sh

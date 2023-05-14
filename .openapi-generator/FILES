@@ -173,7 +173,6 @@ docs/models/UpdateTicketTypeRequest.md
 docs/models/UpdateVisitorRequest.md
 docs/models/Visitor.md
 docs/models/VisitorDeletedObject.md
-git_push.sh
 intercom_python_api/api_client.py
 intercom_python_api/apis/__init__.py
 intercom_python_api/apis/tags/admins_api.py

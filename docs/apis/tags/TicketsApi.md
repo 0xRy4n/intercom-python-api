@@ -458,8 +458,8 @@ You can create a new ticket reply. Only note is supported as a ticket reply type
 import intercom_python_api import Intercom
 
 from intercom_python_api.model.ticket_note import TicketNote
-from intercom_python_api.model.create_ticket_note_request import CreateTicketNoteRequest
 from intercom_python_api.model.intercom_version import IntercomVersion
+from intercom_python_api.model.create_ticket_reply_request import CreateTicketReplyRequest
 from intercom_python_api.model.error import Error
 
 # Create an Intercom client context.
@@ -495,7 +495,11 @@ path_params = {
 header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
-body = CreateTicketNoteRequest(None)
+body = CreateTicketReplyRequest(
+        body="<p>Okay!</p>",
+        message_type="note",
+        admin_id="1234",
+    )
 try:
     # Create a ticket reply
     api_response = intercom.TicketsApi.tickets_ticket_id_reply_post(
@@ -526,7 +530,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**CreateTicketNoteRequest**](../../models/CreateTicketNoteRequest.md) |  | 
+[**CreateTicketReplyRequest**](../../models/CreateTicketReplyRequest.md) |  | 
 
 
 ### header_params

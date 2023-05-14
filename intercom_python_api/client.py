@@ -9,6 +9,7 @@ class Intercom:
     def __init__(self, api_token=None, host="https://api.intercom.io"):
         config = Configuration()
         config.access_token = api_token
+        config.client_side_validation = False
         self.raw_api_client = ApiClient(config)
 
         for value in tag_to_api.values():
