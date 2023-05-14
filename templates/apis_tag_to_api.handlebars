@@ -1,16 +1,12 @@
 import typing_extensions
-import warnings
-
+import logging
 from {{packageName}}.apis.tags import TagValues
 
 {{#each tagModuleNameToApiClassname}}
 try:
     from {{packageName}}.apis.tags.{{@key}} import {{this}}
 except ModuleNotFoundError as e:
-    warnings.warn(
-        f"Unable to import '{{this}}'. Got error: {e}",
-        RuntimeWarning
-    )
+    logging.warn(f"Unable to import '{{this}}'. \n - This is likely due to an incomplete or improper OpenAPI specification. \n - This API module will be unavailable.\n")
 {{/each}}
 
 
