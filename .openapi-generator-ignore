@@ -22,5 +22,8 @@
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
 
+.github/workflows/python.yml
 intercom_python_api/__init__.py
 git_push.sh
+.travis.yml
+tox.ini
