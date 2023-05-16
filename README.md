@@ -1,6 +1,8 @@
 # Intercom Python API
 <p style="text-align:center">
+    
 ![Intercom Python API](https://i.imgur.com/rQooYPo.png)
+    
 </p>
 
 This package provides a wrapper around the Intercom API in the form of a python client. It conforms to the OpenAPI specification files provided by Intercom.
