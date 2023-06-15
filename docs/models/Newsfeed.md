@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | A newsfeed is a collec
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**id** | str,  | str,  | The unique identifier for the newsfeed which is given by Intercom. | [optional] 
-**type** | str,  | str,  | The type of object. | [optional] must be one of ["newsfeed", ] 
-**name** | str,  | str,  | The name of the newsfeed. This name will never be visible to your users. | [optional] 
 **created_at** | decimal.Decimal, int,  | decimal.Decimal,  | Timestamp for when the newsfeed was created. | [optional] 
+**id** | str,  | str,  | The unique identifier for the newsfeed which is given by Intercom. | [optional] 
+**name** | str,  | str,  | The name of the newsfeed. This name will never be visible to your users. | [optional] 
+**type** | str,  | str,  | The type of object. | [optional] must be one of ["newsfeed", ] 
 **updated_at** | decimal.Decimal, int,  | decimal.Decimal,  | Timestamp for when the newsfeed was last updated. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 

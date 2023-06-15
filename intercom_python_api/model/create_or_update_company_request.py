@@ -41,12 +41,7 @@ class CreateOrUpdateCompanyRequest(
     class MetaOapg:
         
         class properties:
-            name = schemas.StrSchema
             company_id = schemas.StrSchema
-            plan = schemas.StrSchema
-            size = schemas.IntSchema
-            website = schemas.StrSchema
-            industry = schemas.StrSchema
             
             
             class custom_attributes(
@@ -76,29 +71,46 @@ class CreateOrUpdateCompanyRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
-            remote_created_at = schemas.IntSchema
+            industry = schemas.StrSchema
             monthly_spend = schemas.IntSchema
+            name = schemas.StrSchema
+            plan = schemas.StrSchema
+            remote_created_at = schemas.IntSchema
+            size = schemas.IntSchema
+            website = schemas.StrSchema
             __annotations__ = {
-                "name": name,
                 "company_id": company_id,
+                "custom_attributes": custom_attributes,
+                "industry": industry,
+                "monthly_spend": monthly_spend,
+                "name": name,
                 "plan": plan,
+                "remote_created_at": remote_created_at,
                 "size": size,
                 "website": website,
-                "industry": industry,
-                "custom_attributes": custom_attributes,
-                "remote_created_at": remote_created_at,
-                "monthly_spend": monthly_spend,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["company_id"]) -> MetaOapg.properties.company_id: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["industry"]) -> MetaOapg.properties.industry: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["monthly_spend"]) -> MetaOapg.properties.monthly_spend: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["plan"]) -> MetaOapg.properties.plan: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["remote_created_at"]) -> MetaOapg.properties.remote_created_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["size"]) -> MetaOapg.properties.size: ...
@@ -107,33 +119,33 @@ class CreateOrUpdateCompanyRequest(
     def __getitem__(self, name: typing_extensions.Literal["website"]) -> MetaOapg.properties.website: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["industry"]) -> MetaOapg.properties.industry: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["remote_created_at"]) -> MetaOapg.properties.remote_created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["monthly_spend"]) -> MetaOapg.properties.monthly_spend: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "company_id", "plan", "size", "website", "industry", "custom_attributes", "remote_created_at", "monthly_spend", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["company_id", "custom_attributes", "industry", "monthly_spend", "name", "plan", "remote_created_at", "size", "website", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["company_id"]) -> typing.Union[MetaOapg.properties.company_id, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["industry"]) -> typing.Union[MetaOapg.properties.industry, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["monthly_spend"]) -> typing.Union[MetaOapg.properties.monthly_spend, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["plan"]) -> typing.Union[MetaOapg.properties.plan, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["remote_created_at"]) -> typing.Union[MetaOapg.properties.remote_created_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["size"]) -> typing.Union[MetaOapg.properties.size, schemas.Unset]: ...
@@ -142,51 +154,39 @@ class CreateOrUpdateCompanyRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["website"]) -> typing.Union[MetaOapg.properties.website, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["industry"]) -> typing.Union[MetaOapg.properties.industry, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["remote_created_at"]) -> typing.Union[MetaOapg.properties.remote_created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["monthly_spend"]) -> typing.Union[MetaOapg.properties.monthly_spend, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "company_id", "plan", "size", "website", "industry", "custom_attributes", "remote_created_at", "monthly_spend", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["company_id", "custom_attributes", "industry", "monthly_spend", "name", "plan", "remote_created_at", "size", "website", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         company_id: typing.Union[MetaOapg.properties.company_id, str, schemas.Unset] = schemas.unset,
+        custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        industry: typing.Union[MetaOapg.properties.industry, str, schemas.Unset] = schemas.unset,
+        monthly_spend: typing.Union[MetaOapg.properties.monthly_spend, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         plan: typing.Union[MetaOapg.properties.plan, str, schemas.Unset] = schemas.unset,
+        remote_created_at: typing.Union[MetaOapg.properties.remote_created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         size: typing.Union[MetaOapg.properties.size, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         website: typing.Union[MetaOapg.properties.website, str, schemas.Unset] = schemas.unset,
-        industry: typing.Union[MetaOapg.properties.industry, str, schemas.Unset] = schemas.unset,
-        custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        remote_created_at: typing.Union[MetaOapg.properties.remote_created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        monthly_spend: typing.Union[MetaOapg.properties.monthly_spend, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CreateOrUpdateCompanyRequest':
         return super().__new__(
             cls,
             *_args,
-            name=name,
             company_id=company_id,
+            custom_attributes=custom_attributes,
+            industry=industry,
+            monthly_spend=monthly_spend,
+            name=name,
             plan=plan,
+            remote_created_at=remote_created_at,
             size=size,
             website=website,
-            industry=industry,
-            custom_attributes=custom_attributes,
-            remote_created_at=remote_created_at,
-            monthly_spend=monthly_spend,
             _configuration=_configuration,
             **kwargs,
         )

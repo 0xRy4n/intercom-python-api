@@ -41,64 +41,67 @@ class TicketTypeAttribute(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            workspace_id = schemas.StrSchema
-            name = schemas.StrSchema
-            description = schemas.StrSchema
+            archived = schemas.BoolSchema
+            created_at = schemas.IntSchema
             data_type = schemas.StrSchema
+            default = schemas.BoolSchema
+            description = schemas.StrSchema
+            id = schemas.StrSchema
             input_options = schemas.DictSchema
+            name = schemas.StrSchema
             order = schemas.IntSchema
             required_to_create = schemas.BoolSchema
             required_to_create_for_contacts = schemas.BoolSchema
+            ticket_type_id = schemas.IntSchema
+            type = schemas.StrSchema
+            updated_at = schemas.IntSchema
             visible_on_create = schemas.BoolSchema
             visible_to_contacts = schemas.BoolSchema
-            default = schemas.BoolSchema
-            ticket_type_id = schemas.IntSchema
-            archived = schemas.BoolSchema
-            created_at = schemas.IntSchema
-            updated_at = schemas.IntSchema
+            workspace_id = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "workspace_id": workspace_id,
-                "name": name,
-                "description": description,
+                "archived": archived,
+                "created_at": created_at,
                 "data_type": data_type,
+                "default": default,
+                "description": description,
+                "id": id,
                 "input_options": input_options,
+                "name": name,
                 "order": order,
                 "required_to_create": required_to_create,
                 "required_to_create_for_contacts": required_to_create_for_contacts,
+                "ticket_type_id": ticket_type_id,
+                "type": type,
+                "updated_at": updated_at,
                 "visible_on_create": visible_on_create,
                 "visible_to_contacts": visible_to_contacts,
-                "default": default,
-                "ticket_type_id": ticket_type_id,
-                "archived": archived,
-                "created_at": created_at,
-                "updated_at": updated_at,
+                "workspace_id": workspace_id,
             }
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["archived"]) -> MetaOapg.properties.archived: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["workspace_id"]) -> MetaOapg.properties.workspace_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["default"]) -> MetaOapg.properties.default: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["input_options"]) -> MetaOapg.properties.input_options: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["order"]) -> MetaOapg.properties.order: ...
@@ -110,54 +113,54 @@ class TicketTypeAttribute(
     def __getitem__(self, name: typing_extensions.Literal["required_to_create_for_contacts"]) -> MetaOapg.properties.required_to_create_for_contacts: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["visible_on_create"]) -> MetaOapg.properties.visible_on_create: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["visible_to_contacts"]) -> MetaOapg.properties.visible_to_contacts: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["default"]) -> MetaOapg.properties.default: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["archived"]) -> MetaOapg.properties.archived: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["workspace_id"]) -> MetaOapg.properties.workspace_id: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "workspace_id", "name", "description", "data_type", "input_options", "order", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", "default", "ticket_type_id", "archived", "created_at", "updated_at", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["archived", "created_at", "data_type", "default", "description", "id", "input_options", "name", "order", "required_to_create", "required_to_create_for_contacts", "ticket_type_id", "type", "updated_at", "visible_on_create", "visible_to_contacts", "workspace_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["archived"]) -> typing.Union[MetaOapg.properties.archived, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["workspace_id"]) -> typing.Union[MetaOapg.properties.workspace_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> typing.Union[MetaOapg.properties.data_type, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["default"]) -> typing.Union[MetaOapg.properties.default, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["input_options"]) -> typing.Union[MetaOapg.properties.input_options, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["order"]) -> typing.Union[MetaOapg.properties.order, schemas.Unset]: ...
@@ -169,76 +172,73 @@ class TicketTypeAttribute(
     def get_item_oapg(self, name: typing_extensions.Literal["required_to_create_for_contacts"]) -> typing.Union[MetaOapg.properties.required_to_create_for_contacts, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["ticket_type_id"]) -> typing.Union[MetaOapg.properties.ticket_type_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["visible_on_create"]) -> typing.Union[MetaOapg.properties.visible_on_create, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["visible_to_contacts"]) -> typing.Union[MetaOapg.properties.visible_to_contacts, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["default"]) -> typing.Union[MetaOapg.properties.default, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ticket_type_id"]) -> typing.Union[MetaOapg.properties.ticket_type_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["archived"]) -> typing.Union[MetaOapg.properties.archived, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["workspace_id"]) -> typing.Union[MetaOapg.properties.workspace_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "workspace_id", "name", "description", "data_type", "input_options", "order", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", "default", "ticket_type_id", "archived", "created_at", "updated_at", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["archived", "created_at", "data_type", "default", "description", "id", "input_options", "name", "order", "required_to_create", "required_to_create_for_contacts", "ticket_type_id", "type", "updated_at", "visible_on_create", "visible_to_contacts", "workspace_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        workspace_id: typing.Union[MetaOapg.properties.workspace_id, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
-        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
+        archived: typing.Union[MetaOapg.properties.archived, bool, schemas.Unset] = schemas.unset,
+        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         data_type: typing.Union[MetaOapg.properties.data_type, str, schemas.Unset] = schemas.unset,
+        default: typing.Union[MetaOapg.properties.default, bool, schemas.Unset] = schemas.unset,
+        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         input_options: typing.Union[MetaOapg.properties.input_options, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         order: typing.Union[MetaOapg.properties.order, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         required_to_create: typing.Union[MetaOapg.properties.required_to_create, bool, schemas.Unset] = schemas.unset,
         required_to_create_for_contacts: typing.Union[MetaOapg.properties.required_to_create_for_contacts, bool, schemas.Unset] = schemas.unset,
+        ticket_type_id: typing.Union[MetaOapg.properties.ticket_type_id, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         visible_on_create: typing.Union[MetaOapg.properties.visible_on_create, bool, schemas.Unset] = schemas.unset,
         visible_to_contacts: typing.Union[MetaOapg.properties.visible_to_contacts, bool, schemas.Unset] = schemas.unset,
-        default: typing.Union[MetaOapg.properties.default, bool, schemas.Unset] = schemas.unset,
-        ticket_type_id: typing.Union[MetaOapg.properties.ticket_type_id, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        archived: typing.Union[MetaOapg.properties.archived, bool, schemas.Unset] = schemas.unset,
-        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        workspace_id: typing.Union[MetaOapg.properties.workspace_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'TicketTypeAttribute':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            workspace_id=workspace_id,
-            name=name,
-            description=description,
+            archived=archived,
+            created_at=created_at,
             data_type=data_type,
+            default=default,
+            description=description,
+            id=id,
             input_options=input_options,
+            name=name,
             order=order,
             required_to_create=required_to_create,
             required_to_create_for_contacts=required_to_create_for_contacts,
+            ticket_type_id=ticket_type_id,
+            type=type,
+            updated_at=updated_at,
             visible_on_create=visible_on_create,
             visible_to_contacts=visible_to_contacts,
-            default=default,
-            ticket_type_id=ticket_type_id,
-            archived=archived,
-            created_at=created_at,
-            updated_at=updated_at,
+            workspace_id=workspace_id,
             _configuration=_configuration,
             **kwargs,
         )

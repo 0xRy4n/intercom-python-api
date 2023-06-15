@@ -8,12 +8,12 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**event_name** | str,  | str,  | The name of the event that occurred. This is presented to your App&#x27;s admins when filtering and creating segments - a good event name is typically a past tense &#x27;verb-noun&#x27; combination, to improve readability, for example &#x60;updated-plan&#x60;. | [optional] 
 **created_at** | decimal.Decimal, int,  | decimal.Decimal,  | The time the event occurred as a UTC Unix timestamp | [optional] value must conform to RFC-3339 date-time
-**user_id** | str,  | str,  | Your identifier for the user. | [optional] 
-**id** | str,  | str,  | Your identifier for a lead or a user. | [optional] 
 **email** | str,  | str,  | An email address for your user. An email should only be used where your application uses email to uniquely identify users. | [optional] 
+**event_name** | str,  | str,  | The name of the event that occurred. This is presented to your App&#x27;s admins when filtering and creating segments - a good event name is typically a past tense &#x27;verb-noun&#x27; combination, to improve readability, for example &#x60;updated-plan&#x60;. | [optional] 
+**id** | str,  | str,  | Your identifier for a lead or a user. | [optional] 
 **[metadata](#metadata)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | Optional metadata about the event. | [optional] 
+**user_id** | str,  | str,  | Your identifier for the user. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # metadata

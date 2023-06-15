@@ -7,7 +7,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_data_event**](#create_data_event) | **post** /events | Submit a data event
 [**data_event_summaries**](#data_event_summaries) | **post** /events/summaries | Create event summaries
-[**list_data_events**](#list_data_events) | **get** /events | List all data events
+[**lis_data_events**](#lis_data_events) | **get** /events | List all data events
 
 # **create_data_event**
 <a name="create_data_event"></a>
@@ -106,10 +106,25 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
@@ -148,13 +163,13 @@ header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
 body = CreateDataEventSummariesRequest(
-        user_id="314159",
         event_summaries=dict(
-            event_name="invited-friend",
             count=1,
+            event_name="invited-friend",
             first=1671028894,
             last=1671028894,
         ),
+        user_id="314159",
     )
 try:
     # Create event summaries
@@ -222,10 +237,25 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
@@ -233,9 +263,9 @@ Type | Description  | Notes
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
-# **list_data_events**
-<a name="list_data_events"></a>
-> DataEventList list_data_events(filtertype)
+# **lis_data_events**
+<a name="lis_data_events"></a>
+> bool, date, datetime, dict, float, int, list, str, none_type lis_data_events(filtertype)
 
 List all data events
 
@@ -248,8 +278,8 @@ List all data events
 ```python
 import intercom_python_api import Intercom
 
-from intercom_python_api.model.data_event_list import DataEventList
 from intercom_python_api.model.intercom_version import IntercomVersion
+from intercom_python_api.model.data_event_summary import DataEventSummary
 from intercom_python_api.model.error import Error
 
 # Create an Intercom client context.
@@ -267,13 +297,13 @@ header_params = {
 }
 try:
     # List all data events
-    api_response = intercom.DataEventsApi.list_data_events(
+    api_response = intercom.DataEventsApi.lis_data_events(
         query_params=query_params,
         header_params=header_params,
     )
     pprint(api_response)
 except intercom_python_api.ApiException as e:
-    print("Exception when calling DataEventsApi->list_data_events: %s\n" % e)
+    print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
 
 ```
 
@@ -290,13 +320,13 @@ header_params = {
 }
 try:
     # List all data events
-    api_response = intercom.DataEventsApi.list_data_events(
+    api_response = intercom.DataEventsApi.lis_data_events(
         query_params=query_params,
         header_params=header_params,
     )
     pprint(api_response)
 except intercom_python_api.ApiException as e:
-    print("Exception when calling DataEventsApi->list_data_events: %s\n" % e)
+    print("Exception when calling DataEventsApi->lis_data_events: %s\n" % e)
 
 ```
 ### Parameters
@@ -403,10 +433,10 @@ Type | Description  | Notes
 Code | Class | Description
 ------------- | ------------- | -------------
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
-200 | [ApiResponseFor200](#list_data_events.ApiResponseFor200) | Successful response
-401 | [ApiResponseFor401](#list_data_events.ApiResponseFor401) | Unauthorized
+200 | [ApiResponseFor200](#lis_data_events.ApiResponseFor200) | Successful response
+401 | [ApiResponseFor401](#lis_data_events.ApiResponseFor401) | Unauthorized
 
-#### list_data_events.ApiResponseFor200
+#### lis_data_events.ApiResponseFor200
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -414,12 +444,27 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**DataEventList**](../../models/DataEventList.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
 
-#### list_data_events.ApiResponseFor401
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[DataEventSummary]({{complexTypePrefix}}DataEventSummary.md) | [**DataEventSummary**]({{complexTypePrefix}}DataEventSummary.md) | [**DataEventSummary**]({{complexTypePrefix}}DataEventSummary.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+#### lis_data_events.ApiResponseFor401
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -427,10 +472,25 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 

@@ -10,8 +10,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | This will return a lis
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of the object | [optional] must be one of ["team.list", ] 
 **[teams](#teams)** | list, tuple,  | tuple,  | A list of team objects | [optional] 
+**type** | str,  | str,  | The type of the object | [optional] must be one of ["team.list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # teams

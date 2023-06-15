@@ -42,7 +42,6 @@ class CreateTicketRequest(
         }
         
         class properties:
-            ticket_type_id = schemas.StrSchema
             
             
             class contacts(
@@ -272,13 +271,14 @@ class CreateTicketRequest(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            ticket_type_id = schemas.StrSchema
         
             @staticmethod
             def ticket_attributes() -> typing.Type['TicketRequestCustomAttributes']:
                 return TicketRequestCustomAttributes
             __annotations__ = {
-                "ticket_type_id": ticket_type_id,
                 "contacts": contacts,
+                "ticket_type_id": ticket_type_id,
                 "ticket_attributes": ticket_attributes,
             }
     
@@ -286,10 +286,10 @@ class CreateTicketRequest(
     contacts: MetaOapg.properties.contacts
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["contacts"]) -> MetaOapg.properties.contacts: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["contacts"]) -> MetaOapg.properties.contacts: ...
+    def __getitem__(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ticket_attributes"]) -> 'TicketRequestCustomAttributes': ...
@@ -297,16 +297,16 @@ class CreateTicketRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ticket_type_id", "contacts", "ticket_attributes", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["contacts", "ticket_type_id", "ticket_attributes", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["contacts"]) -> MetaOapg.properties.contacts: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["contacts"]) -> MetaOapg.properties.contacts: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["ticket_type_id"]) -> MetaOapg.properties.ticket_type_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ticket_attributes"]) -> typing.Union['TicketRequestCustomAttributes', schemas.Unset]: ...
@@ -314,7 +314,7 @@ class CreateTicketRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ticket_type_id", "contacts", "ticket_attributes", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["contacts", "ticket_type_id", "ticket_attributes", ], str]):
         return super().get_item_oapg(name)
     
 

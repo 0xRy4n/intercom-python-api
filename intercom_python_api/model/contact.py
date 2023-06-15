@@ -38,340 +38,6 @@ class Contact(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            workspace_id = schemas.StrSchema
-            role = schemas.StrSchema
-            email = schemas.StrSchema
-            
-            
-            class phone(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'phone':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class formatted_phone(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'formatted_phone':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class name(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'name':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class owner_id(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'owner_id':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            has_hard_bounced = schemas.BoolSchema
-            marked_email_as_spam = schemas.BoolSchema
-            unsubscribed_from_emails = schemas.BoolSchema
-            created_at = schemas.IntSchema
-            updated_at = schemas.IntSchema
-            
-            
-            class signed_up_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'signed_up_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class last_seen_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'last_seen_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class last_replied_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'last_replied_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class last_contacted_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'last_contacted_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class last_email_opened_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'last_email_opened_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class last_email_clicked_at(
-                schemas.IntBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneDecimalMixin
-            ):
-            
-            
-                class MetaOapg:
-                    format = 'date-time'
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'last_email_clicked_at':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class language_override(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'language_override':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class browser(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'browser':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class browser_version(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'browser_version':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class browser_language(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'browser_language':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class os(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'os':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
             
             
             class android_app_name(
@@ -434,6 +100,30 @@ class Contact(
                     )
             
             
+            class android_last_seen_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'android_last_seen_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
             class android_os_version(
                 schemas.StrBase,
                 schemas.NoneBase,
@@ -474,28 +164,180 @@ class Contact(
                     )
             
             
-            class android_last_seen_at(
-                schemas.IntBase,
+            class avatar(
+                schemas.DictBase,
                 schemas.NoneBase,
                 schemas.Schema,
-                schemas.NoneDecimalMixin
+                schemas.NoneFrozenDictMixin
             ):
             
             
                 class MetaOapg:
-                    format = 'date-time'
+                    
+                    class properties:
+                        
+                        
+                        class image_url(
+                            schemas.StrBase,
+                            schemas.NoneBase,
+                            schemas.Schema,
+                            schemas.NoneStrMixin
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                format = 'uri'
+                        
+                        
+                            def __new__(
+                                cls,
+                                *_args: typing.Union[None, str, ],
+                                _configuration: typing.Optional[schemas.Configuration] = None,
+                            ) -> 'image_url':
+                                return super().__new__(
+                                    cls,
+                                    *_args,
+                                    _configuration=_configuration,
+                                )
+                        type = schemas.StrSchema
+                        __annotations__ = {
+                            "image_url": image_url,
+                            "type": type,
+                        }
+            
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["image_url"]) -> MetaOapg.properties.image_url: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, None, ],
+                    image_url: typing.Union[MetaOapg.properties.image_url, None, str, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'avatar':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        image_url=image_url,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            
+            
+            class browser(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
             
             
                 def __new__(
                     cls,
-                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    *_args: typing.Union[None, str, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'android_last_seen_at':
+                ) -> 'browser':
                     return super().__new__(
                         cls,
                         *_args,
                         _configuration=_configuration,
                     )
+            
+            
+            class browser_language(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'browser_language':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class browser_version(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'browser_version':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+        
+            @staticmethod
+            def companies() -> typing.Type['ContactCompanies']:
+                return ContactCompanies
+            created_at = schemas.IntSchema
+            custom_attributes = schemas.DictSchema
+            email = schemas.StrSchema
+            
+            
+            class formatted_phone(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'formatted_phone':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            has_hard_bounced = schemas.BoolSchema
+            id = schemas.StrSchema
             
             
             class ios_app_name(
@@ -558,6 +400,30 @@ class Contact(
                     )
             
             
+            class ios_last_seen_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'ios_last_seen_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
             class ios_os_version(
                 schemas.StrBase,
                 schemas.NoneBase,
@@ -598,7 +464,27 @@ class Contact(
                     )
             
             
-            class ios_last_seen_at(
+            class language_override(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'language_override':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class last_contacted_at(
                 schemas.IntBase,
                 schemas.NoneBase,
                 schemas.Schema,
@@ -614,241 +500,280 @@ class Contact(
                     cls,
                     *_args: typing.Union[None, decimal.Decimal, int, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'ios_last_seen_at':
+                ) -> 'last_contacted_at':
                     return super().__new__(
                         cls,
                         *_args,
                         _configuration=_configuration,
                     )
-            custom_attributes = schemas.DictSchema
             
             
-            class avatar(
-                schemas.DictBase,
+            class last_email_clicked_at(
+                schemas.IntBase,
                 schemas.NoneBase,
                 schemas.Schema,
-                schemas.NoneFrozenDictMixin
+                schemas.NoneDecimalMixin
             ):
             
             
                 class MetaOapg:
-                    
-                    class properties:
-                        type = schemas.StrSchema
-                        
-                        
-                        class image_url(
-                            schemas.StrBase,
-                            schemas.NoneBase,
-                            schemas.Schema,
-                            schemas.NoneStrMixin
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                format = 'uri'
-                        
-                        
-                            def __new__(
-                                cls,
-                                *_args: typing.Union[None, str, ],
-                                _configuration: typing.Optional[schemas.Configuration] = None,
-                            ) -> 'image_url':
-                                return super().__new__(
-                                    cls,
-                                    *_args,
-                                    _configuration=_configuration,
-                                )
-                        __annotations__ = {
-                            "type": type,
-                            "image_url": image_url,
-                        }
+                    format = 'date-time'
             
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["image_url"]) -> MetaOapg.properties.image_url: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
-                    return super().get_item_oapg(name)
-                
             
                 def __new__(
                     cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, None, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    image_url: typing.Union[MetaOapg.properties.image_url, None, str, schemas.Unset] = schemas.unset,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
                     _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'avatar':
+                ) -> 'last_email_clicked_at':
                     return super().__new__(
                         cls,
                         *_args,
-                        type=type,
-                        image_url=image_url,
                         _configuration=_configuration,
-                        **kwargs,
                     )
-        
-            @staticmethod
-            def tags() -> typing.Type['ContactTags']:
-                return ContactTags
-        
-            @staticmethod
-            def notes() -> typing.Type['ContactNotes']:
-                return ContactNotes
-        
-            @staticmethod
-            def companies() -> typing.Type['ContactCompanies']:
-                return ContactCompanies
+            
+            
+            class last_email_opened_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'last_email_opened_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class last_replied_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'last_replied_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class last_seen_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'last_seen_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
         
             @staticmethod
             def location() -> typing.Type['ContactLocation']:
                 return ContactLocation
+            marked_email_as_spam = schemas.BoolSchema
+            
+            
+            class name(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'name':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+        
+            @staticmethod
+            def notes() -> typing.Type['ContactNotes']:
+                return ContactNotes
+            
+            
+            class os(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'os':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class owner_id(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'owner_id':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class phone(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'phone':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            role = schemas.StrSchema
+            
+            
+            class signed_up_at(
+                schemas.IntBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneDecimalMixin
+            ):
+            
+            
+                class MetaOapg:
+                    format = 'date-time'
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, decimal.Decimal, int, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'signed_up_at':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
         
             @staticmethod
             def social_profiles() -> typing.Type['ContactSocialProfiles']:
                 return ContactSocialProfiles
+        
+            @staticmethod
+            def tags() -> typing.Type['ContactTags']:
+                return ContactTags
+            type = schemas.StrSchema
+            unsubscribed_from_emails = schemas.BoolSchema
+            updated_at = schemas.IntSchema
+            workspace_id = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "workspace_id": workspace_id,
-                "role": role,
-                "email": email,
-                "phone": phone,
-                "formatted_phone": formatted_phone,
-                "name": name,
-                "owner_id": owner_id,
-                "has_hard_bounced": has_hard_bounced,
-                "marked_email_as_spam": marked_email_as_spam,
-                "unsubscribed_from_emails": unsubscribed_from_emails,
-                "created_at": created_at,
-                "updated_at": updated_at,
-                "signed_up_at": signed_up_at,
-                "last_seen_at": last_seen_at,
-                "last_replied_at": last_replied_at,
-                "last_contacted_at": last_contacted_at,
-                "last_email_opened_at": last_email_opened_at,
-                "last_email_clicked_at": last_email_clicked_at,
-                "language_override": language_override,
-                "browser": browser,
-                "browser_version": browser_version,
-                "browser_language": browser_language,
-                "os": os,
                 "android_app_name": android_app_name,
                 "android_app_version": android_app_version,
                 "android_device": android_device,
+                "android_last_seen_at": android_last_seen_at,
                 "android_os_version": android_os_version,
                 "android_sdk_version": android_sdk_version,
-                "android_last_seen_at": android_last_seen_at,
+                "avatar": avatar,
+                "browser": browser,
+                "browser_language": browser_language,
+                "browser_version": browser_version,
+                "companies": companies,
+                "created_at": created_at,
+                "custom_attributes": custom_attributes,
+                "email": email,
+                "formatted_phone": formatted_phone,
+                "has_hard_bounced": has_hard_bounced,
+                "id": id,
                 "ios_app_name": ios_app_name,
                 "ios_app_version": ios_app_version,
                 "ios_device": ios_device,
+                "ios_last_seen_at": ios_last_seen_at,
                 "ios_os_version": ios_os_version,
                 "ios_sdk_version": ios_sdk_version,
-                "ios_last_seen_at": ios_last_seen_at,
-                "custom_attributes": custom_attributes,
-                "avatar": avatar,
-                "tags": tags,
-                "notes": notes,
-                "companies": companies,
+                "language_override": language_override,
+                "last_contacted_at": last_contacted_at,
+                "last_email_clicked_at": last_email_clicked_at,
+                "last_email_opened_at": last_email_opened_at,
+                "last_replied_at": last_replied_at,
+                "last_seen_at": last_seen_at,
                 "location": location,
+                "marked_email_as_spam": marked_email_as_spam,
+                "name": name,
+                "notes": notes,
+                "os": os,
+                "owner_id": owner_id,
+                "phone": phone,
+                "role": role,
+                "signed_up_at": signed_up_at,
                 "social_profiles": social_profiles,
+                "tags": tags,
+                "type": type,
+                "unsubscribed_from_emails": unsubscribed_from_emails,
+                "updated_at": updated_at,
+                "workspace_id": workspace_id,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["workspace_id"]) -> MetaOapg.properties.workspace_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["role"]) -> MetaOapg.properties.role: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["phone"]) -> MetaOapg.properties.phone: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["formatted_phone"]) -> MetaOapg.properties.formatted_phone: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["owner_id"]) -> MetaOapg.properties.owner_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["has_hard_bounced"]) -> MetaOapg.properties.has_hard_bounced: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> MetaOapg.properties.marked_email_as_spam: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> MetaOapg.properties.unsubscribed_from_emails: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["signed_up_at"]) -> MetaOapg.properties.signed_up_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["last_seen_at"]) -> MetaOapg.properties.last_seen_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["last_replied_at"]) -> MetaOapg.properties.last_replied_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["last_contacted_at"]) -> MetaOapg.properties.last_contacted_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["last_email_opened_at"]) -> MetaOapg.properties.last_email_opened_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["last_email_clicked_at"]) -> MetaOapg.properties.last_email_clicked_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["language_override"]) -> MetaOapg.properties.language_override: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["browser"]) -> MetaOapg.properties.browser: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["browser_version"]) -> MetaOapg.properties.browser_version: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["browser_language"]) -> MetaOapg.properties.browser_language: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["os"]) -> MetaOapg.properties.os: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["android_app_name"]) -> MetaOapg.properties.android_app_name: ...
@@ -860,13 +785,46 @@ class Contact(
     def __getitem__(self, name: typing_extensions.Literal["android_device"]) -> MetaOapg.properties.android_device: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["android_last_seen_at"]) -> MetaOapg.properties.android_last_seen_at: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["android_os_version"]) -> MetaOapg.properties.android_os_version: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["android_sdk_version"]) -> MetaOapg.properties.android_sdk_version: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["android_last_seen_at"]) -> MetaOapg.properties.android_last_seen_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["avatar"]) -> MetaOapg.properties.avatar: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["browser"]) -> MetaOapg.properties.browser: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["browser_language"]) -> MetaOapg.properties.browser_language: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["browser_version"]) -> MetaOapg.properties.browser_version: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["companies"]) -> 'ContactCompanies': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["formatted_phone"]) -> MetaOapg.properties.formatted_phone: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["has_hard_bounced"]) -> MetaOapg.properties.has_hard_bounced: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ios_app_name"]) -> MetaOapg.properties.ios_app_name: ...
@@ -878,117 +836,84 @@ class Contact(
     def __getitem__(self, name: typing_extensions.Literal["ios_device"]) -> MetaOapg.properties.ios_device: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["ios_last_seen_at"]) -> MetaOapg.properties.ios_last_seen_at: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ios_os_version"]) -> MetaOapg.properties.ios_os_version: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ios_sdk_version"]) -> MetaOapg.properties.ios_sdk_version: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ios_last_seen_at"]) -> MetaOapg.properties.ios_last_seen_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["language_override"]) -> MetaOapg.properties.language_override: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
+    def __getitem__(self, name: typing_extensions.Literal["last_contacted_at"]) -> MetaOapg.properties.last_contacted_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["avatar"]) -> MetaOapg.properties.avatar: ...
+    def __getitem__(self, name: typing_extensions.Literal["last_email_clicked_at"]) -> MetaOapg.properties.last_email_clicked_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["tags"]) -> 'ContactTags': ...
+    def __getitem__(self, name: typing_extensions.Literal["last_email_opened_at"]) -> MetaOapg.properties.last_email_opened_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["notes"]) -> 'ContactNotes': ...
+    def __getitem__(self, name: typing_extensions.Literal["last_replied_at"]) -> MetaOapg.properties.last_replied_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["companies"]) -> 'ContactCompanies': ...
+    def __getitem__(self, name: typing_extensions.Literal["last_seen_at"]) -> MetaOapg.properties.last_seen_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["location"]) -> 'ContactLocation': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> MetaOapg.properties.marked_email_as_spam: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["notes"]) -> 'ContactNotes': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["os"]) -> MetaOapg.properties.os: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["owner_id"]) -> MetaOapg.properties.owner_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["phone"]) -> MetaOapg.properties.phone: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["role"]) -> MetaOapg.properties.role: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["signed_up_at"]) -> MetaOapg.properties.signed_up_at: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["social_profiles"]) -> 'ContactSocialProfiles': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["tags"]) -> 'ContactTags': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> MetaOapg.properties.unsubscribed_from_emails: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["workspace_id"]) -> MetaOapg.properties.workspace_id: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "workspace_id", "role", "email", "phone", "formatted_phone", "name", "owner_id", "has_hard_bounced", "marked_email_as_spam", "unsubscribed_from_emails", "created_at", "updated_at", "signed_up_at", "last_seen_at", "last_replied_at", "last_contacted_at", "last_email_opened_at", "last_email_clicked_at", "language_override", "browser", "browser_version", "browser_language", "os", "android_app_name", "android_app_version", "android_device", "android_os_version", "android_sdk_version", "android_last_seen_at", "ios_app_name", "ios_app_version", "ios_device", "ios_os_version", "ios_sdk_version", "ios_last_seen_at", "custom_attributes", "avatar", "tags", "notes", "companies", "location", "social_profiles", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["android_app_name", "android_app_version", "android_device", "android_last_seen_at", "android_os_version", "android_sdk_version", "avatar", "browser", "browser_language", "browser_version", "companies", "created_at", "custom_attributes", "email", "formatted_phone", "has_hard_bounced", "id", "ios_app_name", "ios_app_version", "ios_device", "ios_last_seen_at", "ios_os_version", "ios_sdk_version", "language_override", "last_contacted_at", "last_email_clicked_at", "last_email_opened_at", "last_replied_at", "last_seen_at", "location", "marked_email_as_spam", "name", "notes", "os", "owner_id", "phone", "role", "signed_up_at", "social_profiles", "tags", "type", "unsubscribed_from_emails", "updated_at", "workspace_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["workspace_id"]) -> typing.Union[MetaOapg.properties.workspace_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["role"]) -> typing.Union[MetaOapg.properties.role, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["phone"]) -> typing.Union[MetaOapg.properties.phone, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["formatted_phone"]) -> typing.Union[MetaOapg.properties.formatted_phone, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["owner_id"]) -> typing.Union[MetaOapg.properties.owner_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["has_hard_bounced"]) -> typing.Union[MetaOapg.properties.has_hard_bounced, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> typing.Union[MetaOapg.properties.marked_email_as_spam, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> typing.Union[MetaOapg.properties.unsubscribed_from_emails, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["signed_up_at"]) -> typing.Union[MetaOapg.properties.signed_up_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["last_seen_at"]) -> typing.Union[MetaOapg.properties.last_seen_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["last_replied_at"]) -> typing.Union[MetaOapg.properties.last_replied_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["last_contacted_at"]) -> typing.Union[MetaOapg.properties.last_contacted_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["last_email_opened_at"]) -> typing.Union[MetaOapg.properties.last_email_opened_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["last_email_clicked_at"]) -> typing.Union[MetaOapg.properties.last_email_clicked_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["language_override"]) -> typing.Union[MetaOapg.properties.language_override, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["browser"]) -> typing.Union[MetaOapg.properties.browser, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["browser_version"]) -> typing.Union[MetaOapg.properties.browser_version, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["browser_language"]) -> typing.Union[MetaOapg.properties.browser_language, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["os"]) -> typing.Union[MetaOapg.properties.os, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["android_app_name"]) -> typing.Union[MetaOapg.properties.android_app_name, schemas.Unset]: ...
@@ -1000,13 +925,46 @@ class Contact(
     def get_item_oapg(self, name: typing_extensions.Literal["android_device"]) -> typing.Union[MetaOapg.properties.android_device, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["android_last_seen_at"]) -> typing.Union[MetaOapg.properties.android_last_seen_at, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["android_os_version"]) -> typing.Union[MetaOapg.properties.android_os_version, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["android_sdk_version"]) -> typing.Union[MetaOapg.properties.android_sdk_version, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["android_last_seen_at"]) -> typing.Union[MetaOapg.properties.android_last_seen_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["browser"]) -> typing.Union[MetaOapg.properties.browser, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["browser_language"]) -> typing.Union[MetaOapg.properties.browser_language, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["browser_version"]) -> typing.Union[MetaOapg.properties.browser_version, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union['ContactCompanies', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["formatted_phone"]) -> typing.Union[MetaOapg.properties.formatted_phone, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["has_hard_bounced"]) -> typing.Union[MetaOapg.properties.has_hard_bounced, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ios_app_name"]) -> typing.Union[MetaOapg.properties.ios_app_name, schemas.Unset]: ...
@@ -1018,139 +976,181 @@ class Contact(
     def get_item_oapg(self, name: typing_extensions.Literal["ios_device"]) -> typing.Union[MetaOapg.properties.ios_device, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["ios_last_seen_at"]) -> typing.Union[MetaOapg.properties.ios_last_seen_at, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ios_os_version"]) -> typing.Union[MetaOapg.properties.ios_os_version, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ios_sdk_version"]) -> typing.Union[MetaOapg.properties.ios_sdk_version, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ios_last_seen_at"]) -> typing.Union[MetaOapg.properties.ios_last_seen_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["language_override"]) -> typing.Union[MetaOapg.properties.language_override, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["last_contacted_at"]) -> typing.Union[MetaOapg.properties.last_contacted_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["last_email_clicked_at"]) -> typing.Union[MetaOapg.properties.last_email_clicked_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union['ContactTags', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["last_email_opened_at"]) -> typing.Union[MetaOapg.properties.last_email_opened_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["notes"]) -> typing.Union['ContactNotes', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["last_replied_at"]) -> typing.Union[MetaOapg.properties.last_replied_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union['ContactCompanies', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["last_seen_at"]) -> typing.Union[MetaOapg.properties.last_seen_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["location"]) -> typing.Union['ContactLocation', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> typing.Union[MetaOapg.properties.marked_email_as_spam, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["notes"]) -> typing.Union['ContactNotes', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["os"]) -> typing.Union[MetaOapg.properties.os, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["owner_id"]) -> typing.Union[MetaOapg.properties.owner_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["phone"]) -> typing.Union[MetaOapg.properties.phone, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["role"]) -> typing.Union[MetaOapg.properties.role, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["signed_up_at"]) -> typing.Union[MetaOapg.properties.signed_up_at, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["social_profiles"]) -> typing.Union['ContactSocialProfiles', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union['ContactTags', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> typing.Union[MetaOapg.properties.unsubscribed_from_emails, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["workspace_id"]) -> typing.Union[MetaOapg.properties.workspace_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "workspace_id", "role", "email", "phone", "formatted_phone", "name", "owner_id", "has_hard_bounced", "marked_email_as_spam", "unsubscribed_from_emails", "created_at", "updated_at", "signed_up_at", "last_seen_at", "last_replied_at", "last_contacted_at", "last_email_opened_at", "last_email_clicked_at", "language_override", "browser", "browser_version", "browser_language", "os", "android_app_name", "android_app_version", "android_device", "android_os_version", "android_sdk_version", "android_last_seen_at", "ios_app_name", "ios_app_version", "ios_device", "ios_os_version", "ios_sdk_version", "ios_last_seen_at", "custom_attributes", "avatar", "tags", "notes", "companies", "location", "social_profiles", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["android_app_name", "android_app_version", "android_device", "android_last_seen_at", "android_os_version", "android_sdk_version", "avatar", "browser", "browser_language", "browser_version", "companies", "created_at", "custom_attributes", "email", "formatted_phone", "has_hard_bounced", "id", "ios_app_name", "ios_app_version", "ios_device", "ios_last_seen_at", "ios_os_version", "ios_sdk_version", "language_override", "last_contacted_at", "last_email_clicked_at", "last_email_opened_at", "last_replied_at", "last_seen_at", "location", "marked_email_as_spam", "name", "notes", "os", "owner_id", "phone", "role", "signed_up_at", "social_profiles", "tags", "type", "unsubscribed_from_emails", "updated_at", "workspace_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        workspace_id: typing.Union[MetaOapg.properties.workspace_id, str, schemas.Unset] = schemas.unset,
-        role: typing.Union[MetaOapg.properties.role, str, schemas.Unset] = schemas.unset,
-        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
-        phone: typing.Union[MetaOapg.properties.phone, None, str, schemas.Unset] = schemas.unset,
-        formatted_phone: typing.Union[MetaOapg.properties.formatted_phone, None, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
-        owner_id: typing.Union[MetaOapg.properties.owner_id, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        has_hard_bounced: typing.Union[MetaOapg.properties.has_hard_bounced, bool, schemas.Unset] = schemas.unset,
-        marked_email_as_spam: typing.Union[MetaOapg.properties.marked_email_as_spam, bool, schemas.Unset] = schemas.unset,
-        unsubscribed_from_emails: typing.Union[MetaOapg.properties.unsubscribed_from_emails, bool, schemas.Unset] = schemas.unset,
-        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        signed_up_at: typing.Union[MetaOapg.properties.signed_up_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        last_seen_at: typing.Union[MetaOapg.properties.last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        last_replied_at: typing.Union[MetaOapg.properties.last_replied_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        last_contacted_at: typing.Union[MetaOapg.properties.last_contacted_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        last_email_opened_at: typing.Union[MetaOapg.properties.last_email_opened_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        last_email_clicked_at: typing.Union[MetaOapg.properties.last_email_clicked_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        language_override: typing.Union[MetaOapg.properties.language_override, None, str, schemas.Unset] = schemas.unset,
-        browser: typing.Union[MetaOapg.properties.browser, None, str, schemas.Unset] = schemas.unset,
-        browser_version: typing.Union[MetaOapg.properties.browser_version, None, str, schemas.Unset] = schemas.unset,
-        browser_language: typing.Union[MetaOapg.properties.browser_language, None, str, schemas.Unset] = schemas.unset,
-        os: typing.Union[MetaOapg.properties.os, None, str, schemas.Unset] = schemas.unset,
         android_app_name: typing.Union[MetaOapg.properties.android_app_name, None, str, schemas.Unset] = schemas.unset,
         android_app_version: typing.Union[MetaOapg.properties.android_app_version, None, str, schemas.Unset] = schemas.unset,
         android_device: typing.Union[MetaOapg.properties.android_device, None, str, schemas.Unset] = schemas.unset,
+        android_last_seen_at: typing.Union[MetaOapg.properties.android_last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         android_os_version: typing.Union[MetaOapg.properties.android_os_version, None, str, schemas.Unset] = schemas.unset,
         android_sdk_version: typing.Union[MetaOapg.properties.android_sdk_version, None, str, schemas.Unset] = schemas.unset,
-        android_last_seen_at: typing.Union[MetaOapg.properties.android_last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, None, schemas.Unset] = schemas.unset,
+        browser: typing.Union[MetaOapg.properties.browser, None, str, schemas.Unset] = schemas.unset,
+        browser_language: typing.Union[MetaOapg.properties.browser_language, None, str, schemas.Unset] = schemas.unset,
+        browser_version: typing.Union[MetaOapg.properties.browser_version, None, str, schemas.Unset] = schemas.unset,
+        companies: typing.Union['ContactCompanies', schemas.Unset] = schemas.unset,
+        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
+        formatted_phone: typing.Union[MetaOapg.properties.formatted_phone, None, str, schemas.Unset] = schemas.unset,
+        has_hard_bounced: typing.Union[MetaOapg.properties.has_hard_bounced, bool, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         ios_app_name: typing.Union[MetaOapg.properties.ios_app_name, None, str, schemas.Unset] = schemas.unset,
         ios_app_version: typing.Union[MetaOapg.properties.ios_app_version, None, str, schemas.Unset] = schemas.unset,
         ios_device: typing.Union[MetaOapg.properties.ios_device, None, str, schemas.Unset] = schemas.unset,
+        ios_last_seen_at: typing.Union[MetaOapg.properties.ios_last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         ios_os_version: typing.Union[MetaOapg.properties.ios_os_version, None, str, schemas.Unset] = schemas.unset,
         ios_sdk_version: typing.Union[MetaOapg.properties.ios_sdk_version, None, str, schemas.Unset] = schemas.unset,
-        ios_last_seen_at: typing.Union[MetaOapg.properties.ios_last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, None, schemas.Unset] = schemas.unset,
-        tags: typing.Union['ContactTags', schemas.Unset] = schemas.unset,
-        notes: typing.Union['ContactNotes', schemas.Unset] = schemas.unset,
-        companies: typing.Union['ContactCompanies', schemas.Unset] = schemas.unset,
+        language_override: typing.Union[MetaOapg.properties.language_override, None, str, schemas.Unset] = schemas.unset,
+        last_contacted_at: typing.Union[MetaOapg.properties.last_contacted_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        last_email_clicked_at: typing.Union[MetaOapg.properties.last_email_clicked_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        last_email_opened_at: typing.Union[MetaOapg.properties.last_email_opened_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        last_replied_at: typing.Union[MetaOapg.properties.last_replied_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        last_seen_at: typing.Union[MetaOapg.properties.last_seen_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         location: typing.Union['ContactLocation', schemas.Unset] = schemas.unset,
+        marked_email_as_spam: typing.Union[MetaOapg.properties.marked_email_as_spam, bool, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
+        notes: typing.Union['ContactNotes', schemas.Unset] = schemas.unset,
+        os: typing.Union[MetaOapg.properties.os, None, str, schemas.Unset] = schemas.unset,
+        owner_id: typing.Union[MetaOapg.properties.owner_id, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        phone: typing.Union[MetaOapg.properties.phone, None, str, schemas.Unset] = schemas.unset,
+        role: typing.Union[MetaOapg.properties.role, str, schemas.Unset] = schemas.unset,
+        signed_up_at: typing.Union[MetaOapg.properties.signed_up_at, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         social_profiles: typing.Union['ContactSocialProfiles', schemas.Unset] = schemas.unset,
+        tags: typing.Union['ContactTags', schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        unsubscribed_from_emails: typing.Union[MetaOapg.properties.unsubscribed_from_emails, bool, schemas.Unset] = schemas.unset,
+        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        workspace_id: typing.Union[MetaOapg.properties.workspace_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Contact':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            workspace_id=workspace_id,
-            role=role,
-            email=email,
-            phone=phone,
-            formatted_phone=formatted_phone,
-            name=name,
-            owner_id=owner_id,
-            has_hard_bounced=has_hard_bounced,
-            marked_email_as_spam=marked_email_as_spam,
-            unsubscribed_from_emails=unsubscribed_from_emails,
-            created_at=created_at,
-            updated_at=updated_at,
-            signed_up_at=signed_up_at,
-            last_seen_at=last_seen_at,
-            last_replied_at=last_replied_at,
-            last_contacted_at=last_contacted_at,
-            last_email_opened_at=last_email_opened_at,
-            last_email_clicked_at=last_email_clicked_at,
-            language_override=language_override,
-            browser=browser,
-            browser_version=browser_version,
-            browser_language=browser_language,
-            os=os,
             android_app_name=android_app_name,
             android_app_version=android_app_version,
             android_device=android_device,
+            android_last_seen_at=android_last_seen_at,
             android_os_version=android_os_version,
             android_sdk_version=android_sdk_version,
-            android_last_seen_at=android_last_seen_at,
+            avatar=avatar,
+            browser=browser,
+            browser_language=browser_language,
+            browser_version=browser_version,
+            companies=companies,
+            created_at=created_at,
+            custom_attributes=custom_attributes,
+            email=email,
+            formatted_phone=formatted_phone,
+            has_hard_bounced=has_hard_bounced,
+            id=id,
             ios_app_name=ios_app_name,
             ios_app_version=ios_app_version,
             ios_device=ios_device,
+            ios_last_seen_at=ios_last_seen_at,
             ios_os_version=ios_os_version,
             ios_sdk_version=ios_sdk_version,
-            ios_last_seen_at=ios_last_seen_at,
-            custom_attributes=custom_attributes,
-            avatar=avatar,
-            tags=tags,
-            notes=notes,
-            companies=companies,
+            language_override=language_override,
+            last_contacted_at=last_contacted_at,
+            last_email_clicked_at=last_email_clicked_at,
+            last_email_opened_at=last_email_opened_at,
+            last_replied_at=last_replied_at,
+            last_seen_at=last_seen_at,
             location=location,
+            marked_email_as_spam=marked_email_as_spam,
+            name=name,
+            notes=notes,
+            os=os,
+            owner_id=owner_id,
+            phone=phone,
+            role=role,
+            signed_up_at=signed_up_at,
             social_profiles=social_profiles,
+            tags=tags,
+            type=type,
+            unsubscribed_from_emails=unsubscribed_from_emails,
+            updated_at=updated_at,
+            workspace_id=workspace_id,
             _configuration=_configuration,
             **kwargs,
         )

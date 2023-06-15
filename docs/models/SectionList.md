@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | This will return a lis
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of the object - &#x60;list&#x60;. | [optional] must be one of ["list", ] 
+**[data](#data)** | list, tuple,  | tuple,  | An array of section objects | [optional] 
 **pages** | [**CursorPages**](CursorPages.md) | [**CursorPages**](CursorPages.md) |  | [optional] 
 **total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of sections. | [optional] 
-**[data](#data)** | list, tuple,  | tuple,  | An array of section objects | [optional] 
+**type** | str,  | str,  | The type of the object - &#x60;list&#x60;. | [optional] must be one of ["list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

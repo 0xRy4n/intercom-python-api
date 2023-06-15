@@ -43,22 +43,22 @@ You can copy the `icon` property for your ticket type from [Twemoji Cheatsheet](
     class MetaOapg:
         
         class properties:
-            name = schemas.StrSchema
+            archived = schemas.BoolSchema
             description = schemas.StrSchema
             icon = schemas.StrSchema
-            archived = schemas.BoolSchema
             is_internal = schemas.BoolSchema
+            name = schemas.StrSchema
             __annotations__ = {
-                "name": name,
+                "archived": archived,
                 "description": description,
                 "icon": icon,
-                "archived": archived,
                 "is_internal": is_internal,
+                "name": name,
             }
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def __getitem__(self, name: typing_extensions.Literal["archived"]) -> MetaOapg.properties.archived: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
@@ -67,21 +67,21 @@ You can copy the `icon` property for your ticket type from [Twemoji Cheatsheet](
     def __getitem__(self, name: typing_extensions.Literal["icon"]) -> MetaOapg.properties.icon: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["archived"]) -> MetaOapg.properties.archived: ...
+    def __getitem__(self, name: typing_extensions.Literal["is_internal"]) -> MetaOapg.properties.is_internal: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["is_internal"]) -> MetaOapg.properties.is_internal: ...
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "description", "icon", "archived", "is_internal", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["archived", "description", "icon", "is_internal", "name", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["archived"]) -> typing.Union[MetaOapg.properties.archived, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
@@ -90,37 +90,37 @@ You can copy the `icon` property for your ticket type from [Twemoji Cheatsheet](
     def get_item_oapg(self, name: typing_extensions.Literal["icon"]) -> typing.Union[MetaOapg.properties.icon, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["archived"]) -> typing.Union[MetaOapg.properties.archived, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["is_internal"]) -> typing.Union[MetaOapg.properties.is_internal, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["is_internal"]) -> typing.Union[MetaOapg.properties.is_internal, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "description", "icon", "archived", "is_internal", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["archived", "description", "icon", "is_internal", "name", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        archived: typing.Union[MetaOapg.properties.archived, bool, schemas.Unset] = schemas.unset,
         description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
         icon: typing.Union[MetaOapg.properties.icon, str, schemas.Unset] = schemas.unset,
-        archived: typing.Union[MetaOapg.properties.archived, bool, schemas.Unset] = schemas.unset,
         is_internal: typing.Union[MetaOapg.properties.is_internal, bool, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'UpdateTicketTypeRequest':
         return super().__new__(
             cls,
             *_args,
-            name=name,
+            archived=archived,
             description=description,
             icon=icon,
-            archived=archived,
             is_internal=is_internal,
+            name=name,
             _configuration=_configuration,
             **kwargs,
         )

@@ -38,53 +38,11 @@ class DataAttribute(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "data_attribute": "DATA_ATTRIBUTE",
-                    }
-                
-                @schemas.classproperty
-                def DATA_ATTRIBUTE(cls):
-                    return cls("data_attribute")
-            id = schemas.IntSchema
-            
-            
-            class model(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "contact": "CONTACT",
-                        "company": "COMPANY",
-                        "conversation": "CONVERSATION",
-                    }
-                
-                @schemas.classproperty
-                def CONTACT(cls):
-                    return cls("contact")
-                
-                @schemas.classproperty
-                def COMPANY(cls):
-                    return cls("company")
-                
-                @schemas.classproperty
-                def CONVERSATION(cls):
-                    return cls("conversation")
-            name = schemas.StrSchema
-            full_name = schemas.StrSchema
-            label = schemas.StrSchema
-            description = schemas.StrSchema
+            admin_id = schemas.StrSchema
+            api_writable = schemas.BoolSchema
+            archived = schemas.BoolSchema
+            created_at = schemas.IntSchema
+            custom = schemas.BoolSchema
             
             
             class data_type(
@@ -121,6 +79,37 @@ class DataAttribute(
                 @schemas.classproperty
                 def DATE(cls):
                     return cls("date")
+            description = schemas.StrSchema
+            full_name = schemas.StrSchema
+            id = schemas.IntSchema
+            label = schemas.StrSchema
+            
+            
+            class model(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "contact": "CONTACT",
+                        "company": "COMPANY",
+                        "conversation": "CONVERSATION",
+                    }
+                
+                @schemas.classproperty
+                def CONTACT(cls):
+                    return cls("contact")
+                
+                @schemas.classproperty
+                def COMPANY(cls):
+                    return cls("company")
+                
+                @schemas.classproperty
+                def CONVERSATION(cls):
+                    return cls("conversation")
+            name = schemas.StrSchema
             
             
             class options(
@@ -144,67 +133,48 @@ class DataAttribute(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
-            api_writable = schemas.BoolSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "data_attribute": "DATA_ATTRIBUTE",
+                    }
+                
+                @schemas.classproperty
+                def DATA_ATTRIBUTE(cls):
+                    return cls("data_attribute")
             ui_writable = schemas.BoolSchema
-            custom = schemas.BoolSchema
-            archived = schemas.BoolSchema
-            created_at = schemas.IntSchema
             updated_at = schemas.IntSchema
-            admin_id = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "model": model,
-                "name": name,
-                "full_name": full_name,
-                "label": label,
-                "description": description,
-                "data_type": data_type,
-                "options": options,
+                "admin_id": admin_id,
                 "api_writable": api_writable,
-                "ui_writable": ui_writable,
-                "custom": custom,
                 "archived": archived,
                 "created_at": created_at,
+                "custom": custom,
+                "data_type": data_type,
+                "description": description,
+                "full_name": full_name,
+                "id": id,
+                "label": label,
+                "model": model,
+                "name": name,
+                "options": options,
+                "type": type,
+                "ui_writable": ui_writable,
                 "updated_at": updated_at,
-                "admin_id": admin_id,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["model"]) -> MetaOapg.properties.model: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["full_name"]) -> MetaOapg.properties.full_name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["label"]) -> MetaOapg.properties.label: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["options"]) -> MetaOapg.properties.options: ...
+    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["api_writable"]) -> MetaOapg.properties.api_writable: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ui_writable"]) -> MetaOapg.properties.ui_writable: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["custom"]) -> MetaOapg.properties.custom: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["archived"]) -> MetaOapg.properties.archived: ...
@@ -213,54 +183,54 @@ class DataAttribute(
     def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["custom"]) -> MetaOapg.properties.custom: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["full_name"]) -> MetaOapg.properties.full_name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["label"]) -> MetaOapg.properties.label: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["model"]) -> MetaOapg.properties.model: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["options"]) -> MetaOapg.properties.options: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["ui_writable"]) -> MetaOapg.properties.ui_writable: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "model", "name", "full_name", "label", "description", "data_type", "options", "api_writable", "ui_writable", "custom", "archived", "created_at", "updated_at", "admin_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_id", "api_writable", "archived", "created_at", "custom", "data_type", "description", "full_name", "id", "label", "model", "name", "options", "type", "ui_writable", "updated_at", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["model"]) -> typing.Union[MetaOapg.properties.model, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["full_name"]) -> typing.Union[MetaOapg.properties.full_name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["label"]) -> typing.Union[MetaOapg.properties.label, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> typing.Union[MetaOapg.properties.data_type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["options"]) -> typing.Union[MetaOapg.properties.options, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> typing.Union[MetaOapg.properties.admin_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["api_writable"]) -> typing.Union[MetaOapg.properties.api_writable, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ui_writable"]) -> typing.Union[MetaOapg.properties.ui_writable, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom"]) -> typing.Union[MetaOapg.properties.custom, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["archived"]) -> typing.Union[MetaOapg.properties.archived, schemas.Unset]: ...
@@ -269,59 +239,89 @@ class DataAttribute(
     def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["custom"]) -> typing.Union[MetaOapg.properties.custom, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> typing.Union[MetaOapg.properties.admin_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> typing.Union[MetaOapg.properties.data_type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["full_name"]) -> typing.Union[MetaOapg.properties.full_name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["label"]) -> typing.Union[MetaOapg.properties.label, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["model"]) -> typing.Union[MetaOapg.properties.model, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["options"]) -> typing.Union[MetaOapg.properties.options, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["ui_writable"]) -> typing.Union[MetaOapg.properties.ui_writable, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "model", "name", "full_name", "label", "description", "data_type", "options", "api_writable", "ui_writable", "custom", "archived", "created_at", "updated_at", "admin_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_id", "api_writable", "archived", "created_at", "custom", "data_type", "description", "full_name", "id", "label", "model", "name", "options", "type", "ui_writable", "updated_at", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        model: typing.Union[MetaOapg.properties.model, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
-        full_name: typing.Union[MetaOapg.properties.full_name, str, schemas.Unset] = schemas.unset,
-        label: typing.Union[MetaOapg.properties.label, str, schemas.Unset] = schemas.unset,
-        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
-        data_type: typing.Union[MetaOapg.properties.data_type, str, schemas.Unset] = schemas.unset,
-        options: typing.Union[MetaOapg.properties.options, list, tuple, schemas.Unset] = schemas.unset,
+        admin_id: typing.Union[MetaOapg.properties.admin_id, str, schemas.Unset] = schemas.unset,
         api_writable: typing.Union[MetaOapg.properties.api_writable, bool, schemas.Unset] = schemas.unset,
-        ui_writable: typing.Union[MetaOapg.properties.ui_writable, bool, schemas.Unset] = schemas.unset,
-        custom: typing.Union[MetaOapg.properties.custom, bool, schemas.Unset] = schemas.unset,
         archived: typing.Union[MetaOapg.properties.archived, bool, schemas.Unset] = schemas.unset,
         created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        custom: typing.Union[MetaOapg.properties.custom, bool, schemas.Unset] = schemas.unset,
+        data_type: typing.Union[MetaOapg.properties.data_type, str, schemas.Unset] = schemas.unset,
+        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
+        full_name: typing.Union[MetaOapg.properties.full_name, str, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        label: typing.Union[MetaOapg.properties.label, str, schemas.Unset] = schemas.unset,
+        model: typing.Union[MetaOapg.properties.model, str, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        options: typing.Union[MetaOapg.properties.options, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        ui_writable: typing.Union[MetaOapg.properties.ui_writable, bool, schemas.Unset] = schemas.unset,
         updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        admin_id: typing.Union[MetaOapg.properties.admin_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DataAttribute':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            model=model,
-            name=name,
-            full_name=full_name,
-            label=label,
-            description=description,
-            data_type=data_type,
-            options=options,
+            admin_id=admin_id,
             api_writable=api_writable,
-            ui_writable=ui_writable,
-            custom=custom,
             archived=archived,
             created_at=created_at,
+            custom=custom,
+            data_type=data_type,
+            description=description,
+            full_name=full_name,
+            id=id,
+            label=label,
+            model=model,
+            name=name,
+            options=options,
+            type=type,
+            ui_writable=ui_writable,
             updated_at=updated_at,
-            admin_id=admin_id,
             _configuration=_configuration,
             **kwargs,
         )

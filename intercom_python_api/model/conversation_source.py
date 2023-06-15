@@ -38,15 +38,6 @@ class ConversationSource(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            delivered_as = schemas.StrSchema
-            subject = schemas.StrSchema
-            body = schemas.StrSchema
-        
-            @staticmethod
-            def author() -> typing.Type['ConversationPartAuthor']:
-                return ConversationPartAuthor
             
             
             class attachments(
@@ -73,6 +64,16 @@ class ConversationSource(
             
                 def __getitem__(self, i: int) -> 'PartAttachment':
                     return super().__getitem__(i)
+        
+            @staticmethod
+            def author() -> typing.Type['ConversationPartAuthor']:
+                return ConversationPartAuthor
+            body = schemas.StrSchema
+            delivered_as = schemas.StrSchema
+            id = schemas.StrSchema
+            redacted = schemas.BoolSchema
+            subject = schemas.StrSchema
+            type = schemas.StrSchema
             
             
             class url(
@@ -93,115 +94,114 @@ class ConversationSource(
                         *_args,
                         _configuration=_configuration,
                     )
-            redacted = schemas.BoolSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "delivered_as": delivered_as,
-                "subject": subject,
-                "body": body,
-                "author": author,
                 "attachments": attachments,
-                "url": url,
+                "author": author,
+                "body": body,
+                "delivered_as": delivered_as,
+                "id": id,
                 "redacted": redacted,
+                "subject": subject,
+                "type": type,
+                "url": url,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["delivered_as"]) -> MetaOapg.properties.delivered_as: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["author"]) -> 'ConversationPartAuthor': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["attachments"]) -> MetaOapg.properties.attachments: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
+    def __getitem__(self, name: typing_extensions.Literal["author"]) -> 'ConversationPartAuthor': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["delivered_as"]) -> MetaOapg.properties.delivered_as: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["redacted"]) -> MetaOapg.properties.redacted: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "delivered_as", "subject", "body", "author", "attachments", "url", "redacted", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["attachments", "author", "body", "delivered_as", "id", "redacted", "subject", "type", "url", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["delivered_as"]) -> typing.Union[MetaOapg.properties.delivered_as, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["attachments"]) -> typing.Union[MetaOapg.properties.attachments, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["author"]) -> typing.Union['ConversationPartAuthor', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["attachments"]) -> typing.Union[MetaOapg.properties.attachments, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["delivered_as"]) -> typing.Union[MetaOapg.properties.delivered_as, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["redacted"]) -> typing.Union[MetaOapg.properties.redacted, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "delivered_as", "subject", "body", "author", "attachments", "url", "redacted", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["attachments", "author", "body", "delivered_as", "id", "redacted", "subject", "type", "url", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        delivered_as: typing.Union[MetaOapg.properties.delivered_as, str, schemas.Unset] = schemas.unset,
-        subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
-        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
-        author: typing.Union['ConversationPartAuthor', schemas.Unset] = schemas.unset,
         attachments: typing.Union[MetaOapg.properties.attachments, list, tuple, schemas.Unset] = schemas.unset,
-        url: typing.Union[MetaOapg.properties.url, None, str, schemas.Unset] = schemas.unset,
+        author: typing.Union['ConversationPartAuthor', schemas.Unset] = schemas.unset,
+        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
+        delivered_as: typing.Union[MetaOapg.properties.delivered_as, str, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         redacted: typing.Union[MetaOapg.properties.redacted, bool, schemas.Unset] = schemas.unset,
+        subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        url: typing.Union[MetaOapg.properties.url, None, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ConversationSource':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            delivered_as=delivered_as,
-            subject=subject,
-            body=body,
-            author=author,
             attachments=attachments,
-            url=url,
+            author=author,
+            body=body,
+            delivered_as=delivered_as,
+            id=id,
             redacted=redacted,
+            subject=subject,
+            type=type,
+            url=url,
             _configuration=_configuration,
             **kwargs,
         )

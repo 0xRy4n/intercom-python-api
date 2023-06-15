@@ -41,89 +41,7 @@ class ActivityLog(
     class MetaOapg:
         
         class properties:
-            id = schemas.StrSchema
-            
-            
-            class performed_by(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        type = schemas.StrSchema
-                        id = schemas.StrSchema
-                        email = schemas.StrSchema
-                        ip = schemas.StrSchema
-                        __annotations__ = {
-                            "type": type,
-                            "id": id,
-                            "email": email,
-                            "ip": ip,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["ip"]) -> MetaOapg.properties.ip: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "email", "ip", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["ip"]) -> typing.Union[MetaOapg.properties.ip, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "email", "ip", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
-                    ip: typing.Union[MetaOapg.properties.ip, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'performed_by':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        type=type,
-                        id=id,
-                        email=email,
-                        ip=ip,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
-            metadata = schemas.DictSchema
-            created_at = schemas.IntSchema
+            activity_description = schemas.StrSchema
             
             
             class activity_type(
@@ -470,89 +388,171 @@ class ActivityLog(
                 @schemas.classproperty
                 def WELCOME_MESSAGE_CHANGE(cls):
                     return cls("welcome_message_change")
-            activity_description = schemas.StrSchema
+            created_at = schemas.IntSchema
+            id = schemas.StrSchema
+            metadata = schemas.DictSchema
+            
+            
+            class performed_by(
+                schemas.DictSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    class properties:
+                        email = schemas.StrSchema
+                        id = schemas.StrSchema
+                        ip = schemas.StrSchema
+                        type = schemas.StrSchema
+                        __annotations__ = {
+                            "email": email,
+                            "id": id,
+                            "ip": ip,
+                            "type": type,
+                        }
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["ip"]) -> MetaOapg.properties.ip: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["email", "id", "ip", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["ip"]) -> typing.Union[MetaOapg.properties.ip, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["email", "id", "ip", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, ],
+                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
+                    id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+                    ip: typing.Union[MetaOapg.properties.ip, str, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'performed_by':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        email=email,
+                        id=id,
+                        ip=ip,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
             __annotations__ = {
-                "id": id,
-                "performed_by": performed_by,
-                "metadata": metadata,
-                "created_at": created_at,
-                "activity_type": activity_type,
                 "activity_description": activity_description,
+                "activity_type": activity_type,
+                "created_at": created_at,
+                "id": id,
+                "metadata": metadata,
+                "performed_by": performed_by,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["performed_by"]) -> MetaOapg.properties.performed_by: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["metadata"]) -> MetaOapg.properties.metadata: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["activity_type"]) -> MetaOapg.properties.activity_type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["activity_description"]) -> MetaOapg.properties.activity_description: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["activity_type"]) -> MetaOapg.properties.activity_type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["metadata"]) -> MetaOapg.properties.metadata: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["performed_by"]) -> MetaOapg.properties.performed_by: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "performed_by", "metadata", "created_at", "activity_type", "activity_description", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["activity_description", "activity_type", "created_at", "id", "metadata", "performed_by", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["performed_by"]) -> typing.Union[MetaOapg.properties.performed_by, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["metadata"]) -> typing.Union[MetaOapg.properties.metadata, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["activity_description"]) -> typing.Union[MetaOapg.properties.activity_description, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["activity_type"]) -> typing.Union[MetaOapg.properties.activity_type, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["activity_description"]) -> typing.Union[MetaOapg.properties.activity_description, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["metadata"]) -> typing.Union[MetaOapg.properties.metadata, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["performed_by"]) -> typing.Union[MetaOapg.properties.performed_by, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "performed_by", "metadata", "created_at", "activity_type", "activity_description", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["activity_description", "activity_type", "created_at", "id", "metadata", "performed_by", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        performed_by: typing.Union[MetaOapg.properties.performed_by, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        metadata: typing.Union[MetaOapg.properties.metadata, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        activity_type: typing.Union[MetaOapg.properties.activity_type, str, schemas.Unset] = schemas.unset,
         activity_description: typing.Union[MetaOapg.properties.activity_description, str, schemas.Unset] = schemas.unset,
+        activity_type: typing.Union[MetaOapg.properties.activity_type, str, schemas.Unset] = schemas.unset,
+        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+        metadata: typing.Union[MetaOapg.properties.metadata, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        performed_by: typing.Union[MetaOapg.properties.performed_by, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ActivityLog':
         return super().__new__(
             cls,
             *_args,
-            id=id,
-            performed_by=performed_by,
-            metadata=metadata,
-            created_at=created_at,
-            activity_type=activity_type,
             activity_description=activity_description,
+            activity_type=activity_type,
+            created_at=created_at,
+            id=id,
+            metadata=metadata,
+            performed_by=performed_by,
             _configuration=_configuration,
             **kwargs,
         )

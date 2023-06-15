@@ -67,14 +67,14 @@ class ContactTags(
             
                 def __getitem__(self, i: int) -> 'AddressableList':
                     return super().__getitem__(i)
-            url = schemas.StrSchema
-            total_count = schemas.IntSchema
             has_more = schemas.BoolSchema
+            total_count = schemas.IntSchema
+            url = schemas.StrSchema
             __annotations__ = {
                 "data": data,
-                "url": url,
-                "total_count": total_count,
                 "has_more": has_more,
+                "total_count": total_count,
+                "url": url,
             }
 
     
@@ -82,18 +82,18 @@ class ContactTags(
     def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
+    def __getitem__(self, name: typing_extensions.Literal["has_more"]) -> MetaOapg.properties.has_more: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["has_more"]) -> MetaOapg.properties.has_more: ...
+    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["data", "url", "total_count", "has_more", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["data", "has_more", "total_count", "url", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -102,18 +102,18 @@ class ContactTags(
     def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union[MetaOapg.properties.data, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["has_more"]) -> typing.Union[MetaOapg.properties.has_more, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["has_more"]) -> typing.Union[MetaOapg.properties.has_more, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["data", "url", "total_count", "has_more", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["data", "has_more", "total_count", "url", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -121,9 +121,9 @@ class ContactTags(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
         data: typing.Union[MetaOapg.properties.data, list, tuple, schemas.Unset] = schemas.unset,
-        url: typing.Union[MetaOapg.properties.url, str, schemas.Unset] = schemas.unset,
-        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         has_more: typing.Union[MetaOapg.properties.has_more, bool, schemas.Unset] = schemas.unset,
+        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        url: typing.Union[MetaOapg.properties.url, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ContactTags':
@@ -131,9 +131,9 @@ class ContactTags(
             cls,
             *_args,
             data=data,
-            url=url,
-            total_count=total_count,
             has_more=has_more,
+            total_count=total_count,
+            url=url,
             _configuration=_configuration,
             **kwargs,
         )

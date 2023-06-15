@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | Conversations are how 
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | Always conversation.list | [optional] must be one of ["conversation.list", ] 
 **[conversations](#conversations)** | list, tuple,  | tuple,  | The list of conversation objects | [optional] 
-**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of objects. | [optional] 
 **pages** | [**CursorPages**](CursorPages.md) | [**CursorPages**](CursorPages.md) |  | [optional] 
+**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of objects. | [optional] 
+**type** | str,  | str,  | Always conversation.list | [optional] must be one of ["conversation.list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # conversations

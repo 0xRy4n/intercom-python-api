@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | Contacts are your user
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | Always list | [optional] must be one of ["list", ] 
 **[data](#data)** | list, tuple,  | tuple,  | The list of contact objects | [optional] 
-**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of objects. | [optional] 
 **pages** | [**CursorPages**](CursorPages.md) | [**CursorPages**](CursorPages.md) |  | [optional] 
+**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of objects. | [optional] 
+**type** | str,  | str,  | Always list | [optional] must be one of ["list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

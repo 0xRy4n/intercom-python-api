@@ -43,6 +43,7 @@ class AdminReplyConversationRequest(
         }
         
         class properties:
+            admin_id = schemas.StrSchema
             
             
             class message_type(
@@ -67,8 +68,6 @@ class AdminReplyConversationRequest(
                 @schemas.classproperty
                 def ADMIN(cls):
                     return cls("admin")
-            admin_id = schemas.StrSchema
-            body = schemas.StrSchema
             
             
             class attachment_urls(
@@ -92,17 +91,21 @@ class AdminReplyConversationRequest(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            body = schemas.StrSchema
             __annotations__ = {
+                "admin_id": admin_id,
                 "message_type": message_type,
                 "type": type,
-                "admin_id": admin_id,
-                "body": body,
                 "attachment_urls": attachment_urls,
+                "body": body,
             }
     
     admin_id: MetaOapg.properties.admin_id
     message_type: MetaOapg.properties.message_type
     type: MetaOapg.properties.type
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
@@ -111,21 +114,21 @@ class AdminReplyConversationRequest(
     def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "admin_id", "body", "attachment_urls", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", "type", "attachment_urls", "body", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
@@ -134,18 +137,15 @@ class AdminReplyConversationRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "admin_id", "body", "attachment_urls", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", "type", "attachment_urls", "body", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -155,8 +155,8 @@ class AdminReplyConversationRequest(
         admin_id: typing.Union[MetaOapg.properties.admin_id, str, ],
         message_type: typing.Union[MetaOapg.properties.message_type, str, ],
         type: typing.Union[MetaOapg.properties.type, str, ],
-        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
         attachment_urls: typing.Union[MetaOapg.properties.attachment_urls, list, tuple, schemas.Unset] = schemas.unset,
+        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AdminReplyConversationRequest':
@@ -166,8 +166,8 @@ class AdminReplyConversationRequest(
             admin_id=admin_id,
             message_type=message_type,
             type=type,
-            body=body,
             attachment_urls=attachment_urls,
+            body=body,
             _configuration=_configuration,
             **kwargs,
         )

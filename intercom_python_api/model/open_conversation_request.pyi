@@ -42,6 +42,7 @@ class OpenConversationRequest(
         }
         
         class properties:
+            admin_id = schemas.StrSchema
             
             
             class message_type(
@@ -52,39 +53,38 @@ class OpenConversationRequest(
                 @schemas.classproperty
                 def OPEN(cls):
                     return cls("open")
-            admin_id = schemas.StrSchema
             __annotations__ = {
-                "message_type": message_type,
                 "admin_id": admin_id,
+                "message_type": message_type,
             }
     
     admin_id: MetaOapg.properties.admin_id
     message_type: MetaOapg.properties.message_type
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "admin_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "admin_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", ], str]):
         return super().get_item_oapg(name)
     
 

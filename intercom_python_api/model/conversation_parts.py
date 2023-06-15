@@ -40,22 +40,6 @@ class ConversationParts(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "conversation_part.list": "CONVERSATION_PART_LIST",
-                    }
-                
-                @schemas.classproperty
-                def CONVERSATION_PART_LIST(cls):
-                    return cls("conversation_part.list")
-            
-            
             class conversation_parts(
                 schemas.ListSchema
             ):
@@ -81,14 +65,27 @@ class ConversationParts(
                 def __getitem__(self, i: int) -> 'ConversationPart':
                     return super().__getitem__(i)
             total_count = schemas.IntSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "conversation_part.list": "CONVERSATION_PART_LIST",
+                    }
+                
+                @schemas.classproperty
+                def CONVERSATION_PART_LIST(cls):
+                    return cls("conversation_part.list")
             __annotations__ = {
-                "type": type,
                 "conversation_parts": conversation_parts,
                 "total_count": total_count,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["conversation_parts"]) -> MetaOapg.properties.conversation_parts: ...
@@ -97,15 +94,15 @@ class ConversationParts(
     def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "conversation_parts", "total_count", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["conversation_parts", "total_count", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["conversation_parts"]) -> typing.Union[MetaOapg.properties.conversation_parts, schemas.Unset]: ...
@@ -114,27 +111,30 @@ class ConversationParts(
     def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "conversation_parts", "total_count", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["conversation_parts", "total_count", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         conversation_parts: typing.Union[MetaOapg.properties.conversation_parts, list, tuple, schemas.Unset] = schemas.unset,
         total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ConversationParts':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             conversation_parts=conversation_parts,
             total_count=total_count,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

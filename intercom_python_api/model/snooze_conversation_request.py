@@ -43,6 +43,7 @@ class SnoozeConversationRequest(
         }
         
         class properties:
+            admin_id = schemas.StrSchema
             
             
             class message_type(
@@ -59,11 +60,10 @@ class SnoozeConversationRequest(
                 @schemas.classproperty
                 def SNOOZED(cls):
                     return cls("snoozed")
-            admin_id = schemas.StrSchema
             snoozed_until = schemas.IntSchema
             __annotations__ = {
-                "message_type": message_type,
                 "admin_id": admin_id,
+                "message_type": message_type,
                 "snoozed_until": snoozed_until,
             }
     
@@ -72,10 +72,10 @@ class SnoozeConversationRequest(
     snoozed_until: MetaOapg.properties.snoozed_until
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["snoozed_until"]) -> MetaOapg.properties.snoozed_until: ...
@@ -83,16 +83,16 @@ class SnoozeConversationRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "admin_id", "snoozed_until", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", "snoozed_until", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["snoozed_until"]) -> MetaOapg.properties.snoozed_until: ...
@@ -100,7 +100,7 @@ class SnoozeConversationRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "admin_id", "snoozed_until", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_id", "message_type", "snoozed_until", ], str]):
         return super().get_item_oapg(name)
     
 

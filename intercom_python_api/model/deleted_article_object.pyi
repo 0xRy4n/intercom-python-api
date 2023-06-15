@@ -38,6 +38,7 @@ class DeletedArticleObject(
     class MetaOapg:
         
         class properties:
+            deleted = schemas.BoolSchema
             id = schemas.StrSchema
             
             
@@ -49,12 +50,14 @@ class DeletedArticleObject(
                 @schemas.classproperty
                 def ARTICLE(cls):
                     return cls("article")
-            deleted = schemas.BoolSchema
             __annotations__ = {
+                "deleted": deleted,
                 "id": id,
                 "object": object,
-                "deleted": deleted,
             }
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["deleted"]) -> MetaOapg.properties.deleted: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
@@ -63,15 +66,15 @@ class DeletedArticleObject(
     def __getitem__(self, name: typing_extensions.Literal["object"]) -> MetaOapg.properties.object: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["deleted"]) -> MetaOapg.properties.deleted: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "object", "deleted", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["deleted", "id", "object", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["deleted"]) -> typing.Union[MetaOapg.properties.deleted, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
@@ -80,30 +83,27 @@ class DeletedArticleObject(
     def get_item_oapg(self, name: typing_extensions.Literal["object"]) -> typing.Union[MetaOapg.properties.object, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["deleted"]) -> typing.Union[MetaOapg.properties.deleted, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "object", "deleted", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["deleted", "id", "object", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
+        deleted: typing.Union[MetaOapg.properties.deleted, bool, schemas.Unset] = schemas.unset,
         id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         object: typing.Union[MetaOapg.properties.object, str, schemas.Unset] = schemas.unset,
-        deleted: typing.Union[MetaOapg.properties.deleted, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DeletedArticleObject':
         return super().__new__(
             cls,
             *_args,
+            deleted=deleted,
             id=id,
             object=object,
-            deleted=deleted,
             _configuration=_configuration,
             **kwargs,
         )

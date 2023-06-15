@@ -1750,7 +1750,11 @@ class DictBase(Discriminable, ValidatorBase):
         so that hasattr(instance, 'optionalProp') is False when that key is not present
         """
         if not isinstance(self, frozendict.frozendict):
-            return super().__getattr__(name)
+            try:
+                return super().__getattr__(name)
+            except:
+                pass
+
         if name not in self.__class__.__annotations__:
             raise AttributeError(f"{self} has no attribute '{name}'")
         try:
@@ -1765,7 +1769,10 @@ class DictBase(Discriminable, ValidatorBase):
         key errors thrown
         """
         if not isinstance(self, frozendict.frozendict):
-            return super().__getattr__(name)
+            try:
+                return super().__getattr__(name)
+            except:
+                pass
         return super().__getitem__(name)
 
     def get_item_oapg(self, name: str) -> typing.Union['AnyTypeSchema', Unset]:

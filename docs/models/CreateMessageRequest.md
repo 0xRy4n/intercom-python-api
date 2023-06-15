@@ -10,13 +10,13 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | You c
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
+**body** | str,  | str,  | The content of the message. HTML and plaintext are supported. | [optional] 
+**create_conversation_without_contact_reply** | bool,  | BoolClass,  | Whether a conversation should be opened in the inbox for the message without the contact replying. Defaults to false if not provided. | [optional] if omitted the server will use the default value of False
+**[from](#from)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | The sender of the message. If not provided, the default sender will be used. | [optional] 
 **message_type** | str,  | str,  | The kind of message being created. Values: &#x60;in_app&#x60; or &#x60;email&#x60;. | [optional] must be one of ["in_app", "email", ] 
 **subject** | str,  | str,  | The title of the email. | [optional] 
-**body** | str,  | str,  | The content of the message. HTML and plaintext are supported. | [optional] 
 **template** | str,  | str,  | The style of the outgoing message. Possible values &#x60;plain&#x60; or &#x60;personal&#x60;. | [optional] 
-**[from](#from)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | The sender of the message. If not provided, the default sender will be used. | [optional] 
 **[to](#to)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | The sender of the message. If not provided, the default sender will be used. | [optional] 
-**create_conversation_without_contact_reply** | bool,  | BoolClass,  | Whether a conversation should be opened in the inbox for the message without the contact replying. Defaults to false if not provided. | [optional] if omitted the server will use the default value of False
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # from

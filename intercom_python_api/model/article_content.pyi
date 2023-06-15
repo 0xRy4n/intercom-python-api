@@ -41,24 +41,10 @@ class ArticleContent(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def NONE(cls):
-                    return cls(None)
-                
-                @schemas.classproperty
-                def ARTICLE_CONTENT(cls):
-                    return cls("article_content")
-            title = schemas.StrSchema
-            description = schemas.StrSchema
-            body = schemas.StrSchema
             author_id = schemas.IntSchema
+            body = schemas.StrSchema
+            created_at = schemas.IntSchema
+            description = schemas.StrSchema
             
             
             class state(
@@ -73,42 +59,56 @@ class ArticleContent(
                 @schemas.classproperty
                 def DRAFT(cls):
                     return cls("draft")
-            created_at = schemas.IntSchema
+            title = schemas.StrSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def NONE(cls):
+                    return cls(None)
+                
+                @schemas.classproperty
+                def ARTICLE_CONTENT(cls):
+                    return cls("article_content")
             updated_at = schemas.IntSchema
             url = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "title": title,
-                "description": description,
-                "body": body,
                 "author_id": author_id,
-                "state": state,
+                "body": body,
                 "created_at": created_at,
+                "description": description,
+                "state": state,
+                "title": title,
+                "type": type,
                 "updated_at": updated_at,
                 "url": url,
             }
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
+    def __getitem__(self, name: typing_extensions.Literal["author_id"]) -> MetaOapg.properties.author_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["author_id"]) -> MetaOapg.properties.author_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
@@ -119,31 +119,31 @@ class ArticleContent(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "title", "description", "body", "author_id", "state", "created_at", "updated_at", "url", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["author_id", "body", "created_at", "description", "state", "title", "type", "updated_at", "url", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["title"]) -> typing.Union[MetaOapg.properties.title, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["author_id"]) -> typing.Union[MetaOapg.properties.author_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["author_id"]) -> typing.Union[MetaOapg.properties.author_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["state"]) -> typing.Union[MetaOapg.properties.state, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["title"]) -> typing.Union[MetaOapg.properties.title, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
@@ -154,20 +154,20 @@ class ArticleContent(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "title", "description", "body", "author_id", "state", "created_at", "updated_at", "url", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["author_id", "body", "created_at", "description", "state", "title", "type", "updated_at", "url", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        title: typing.Union[MetaOapg.properties.title, str, schemas.Unset] = schemas.unset,
-        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
-        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
         author_id: typing.Union[MetaOapg.properties.author_id, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
+        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
         created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
+        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
+        title: typing.Union[MetaOapg.properties.title, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         url: typing.Union[MetaOapg.properties.url, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -176,13 +176,13 @@ class ArticleContent(
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            title=title,
-            description=description,
-            body=body,
             author_id=author_id,
-            state=state,
+            body=body,
             created_at=created_at,
+            description=description,
+            state=state,
+            title=title,
+            type=type,
             updated_at=updated_at,
             url=url,
             _configuration=_configuration,

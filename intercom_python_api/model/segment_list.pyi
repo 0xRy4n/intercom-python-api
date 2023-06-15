@@ -38,16 +38,7 @@ class SegmentList(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def SEGMENT_LIST(cls):
-                    return cls("segment.list")
+            pages = schemas.DictSchema
             
             
             class segments(
@@ -74,61 +65,70 @@ class SegmentList(
             
                 def __getitem__(self, i: int) -> 'Segment':
                     return super().__getitem__(i)
-            pages = schemas.DictSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def SEGMENT_LIST(cls):
+                    return cls("segment.list")
             __annotations__ = {
-                "type": type,
-                "segments": segments,
                 "pages": pages,
+                "segments": segments,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["segments"]) -> MetaOapg.properties.segments: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["pages"]) -> MetaOapg.properties.pages: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["segments"]) -> MetaOapg.properties.segments: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "segments", "pages", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["pages", "segments", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union[MetaOapg.properties.pages, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["segments"]) -> typing.Union[MetaOapg.properties.segments, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union[MetaOapg.properties.pages, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "segments", "pages", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["pages", "segments", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        segments: typing.Union[MetaOapg.properties.segments, list, tuple, schemas.Unset] = schemas.unset,
         pages: typing.Union[MetaOapg.properties.pages, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        segments: typing.Union[MetaOapg.properties.segments, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SegmentList':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            segments=segments,
             pages=pages,
+            segments=segments,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

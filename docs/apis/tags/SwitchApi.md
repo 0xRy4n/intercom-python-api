@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **create_phone_switch**
 <a name="create_phone_switch"></a>
-> PhoneSwitch create_phone_switch()
+> bool, date, datetime, dict, float, int, list, str, none_type create_phone_switch()
 
 Create a phone Switch
 
@@ -39,10 +39,10 @@ header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
 body = CreatePhoneSwitchRequest(
-        phone="+1 1234567890",
         custom_attributes=CustomAttributes(
             key=None,
         ),
+        phone="+1 1234567890",
     )
 try:
     # Create a phone Switch
@@ -95,8 +95,8 @@ Code | Class | Description
 n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
 200 | [ApiResponseFor200](#create_phone_switch.ApiResponseFor200) | successful
 400 | [ApiResponseFor400](#create_phone_switch.ApiResponseFor400) | bad request - invalid number
-422 | [ApiResponseFor422](#create_phone_switch.ApiResponseFor422) | unprocessable entity
 401 | [ApiResponseFor401](#create_phone_switch.ApiResponseFor401) | Unauthorized
+422 | [ApiResponseFor422](#create_phone_switch.ApiResponseFor422) | unprocessable entity
 
 #### create_phone_switch.ApiResponseFor200
 Name | Type | Description  | Notes
@@ -106,19 +106,27 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**PhoneSwitch**](../../models/PhoneSwitch.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[PhoneSwitch]({{complexTypePrefix}}PhoneSwitch.md) | [**PhoneSwitch**]({{complexTypePrefix}}PhoneSwitch.md) | [**PhoneSwitch**]({{complexTypePrefix}}PhoneSwitch.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 #### create_phone_switch.ApiResponseFor400
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[Unset, ] |  |
-headers | Unset | headers were not defined |
-
-#### create_phone_switch.ApiResponseFor422
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
@@ -133,10 +141,32 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+#### create_phone_switch.ApiResponseFor422
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[Unset, ] |  |
+headers | Unset | headers were not defined |
 
 ### Authorization
 

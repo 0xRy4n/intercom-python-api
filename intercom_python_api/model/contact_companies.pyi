@@ -38,63 +38,63 @@ class ContactCompanies(
     class MetaOapg:
         
         class properties:
-            url = schemas.StrSchema
-            total_count = schemas.IntSchema
             has_more = schemas.BoolSchema
+            total_count = schemas.IntSchema
+            url = schemas.StrSchema
             __annotations__ = {
-                "url": url,
-                "total_count": total_count,
                 "has_more": has_more,
+                "total_count": total_count,
+                "url": url,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["has_more"]) -> MetaOapg.properties.has_more: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["url"]) -> MetaOapg.properties.url: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["url", "total_count", "has_more", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["has_more", "total_count", "url", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["has_more"]) -> typing.Union[MetaOapg.properties.has_more, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["has_more"]) -> typing.Union[MetaOapg.properties.has_more, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["url"]) -> typing.Union[MetaOapg.properties.url, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["url", "total_count", "has_more", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["has_more", "total_count", "url", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        url: typing.Union[MetaOapg.properties.url, str, schemas.Unset] = schemas.unset,
-        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         has_more: typing.Union[MetaOapg.properties.has_more, bool, schemas.Unset] = schemas.unset,
+        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        url: typing.Union[MetaOapg.properties.url, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ContactCompanies':
         return super().__new__(
             cls,
             *_args,
-            url=url,
-            total_count=total_count,
             has_more=has_more,
+            total_count=total_count,
+            url=url,
             _configuration=_configuration,
             **kwargs,
         )

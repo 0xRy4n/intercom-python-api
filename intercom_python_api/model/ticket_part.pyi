@@ -38,83 +38,10 @@ class TicketPart(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            part_type = schemas.StrSchema
-            
-            
-            class body(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'body':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class previous_ticket_state(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def SUBMITTED(cls):
-                    return cls("submitted")
-                
-                @schemas.classproperty
-                def IN_PROGRESS(cls):
-                    return cls("in_progress")
-                
-                @schemas.classproperty
-                def WAITING_ON_CUSTOMER(cls):
-                    return cls("waiting_on_customer")
-                
-                @schemas.classproperty
-                def RESOLVED(cls):
-                    return cls("resolved")
-            
-            
-            class ticket_state(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def SUBMITTED(cls):
-                    return cls("submitted")
-                
-                @schemas.classproperty
-                def IN_PROGRESS(cls):
-                    return cls("in_progress")
-                
-                @schemas.classproperty
-                def WAITING_ON_CUSTOMER(cls):
-                    return cls("waiting_on_customer")
-                
-                @schemas.classproperty
-                def RESOLVED(cls):
-                    return cls("resolved")
-            created_at = schemas.IntSchema
-            updated_at = schemas.IntSchema
         
             @staticmethod
             def assigned_to() -> typing.Type['Reference']:
                 return Reference
-        
-            @staticmethod
-            def author() -> typing.Type['TicketPartAuthor']:
-                return TicketPartAuthor
             
             
             class attachments(
@@ -141,6 +68,31 @@ class TicketPart(
             
                 def __getitem__(self, i: int) -> 'PartAttachment':
                     return super().__getitem__(i)
+        
+            @staticmethod
+            def author() -> typing.Type['TicketPartAuthor']:
+                return TicketPartAuthor
+            
+            
+            class body(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'body':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            created_at = schemas.IntSchema
             
             
             class external_id(
@@ -161,25 +113,88 @@ class TicketPart(
                         *_args,
                         _configuration=_configuration,
                     )
+            id = schemas.StrSchema
+            part_type = schemas.StrSchema
+            
+            
+            class previous_ticket_state(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def SUBMITTED(cls):
+                    return cls("submitted")
+                
+                @schemas.classproperty
+                def IN_PROGRESS(cls):
+                    return cls("in_progress")
+                
+                @schemas.classproperty
+                def WAITING_ON_CUSTOMER(cls):
+                    return cls("waiting_on_customer")
+                
+                @schemas.classproperty
+                def RESOLVED(cls):
+                    return cls("resolved")
             redacted = schemas.BoolSchema
+            
+            
+            class ticket_state(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def SUBMITTED(cls):
+                    return cls("submitted")
+                
+                @schemas.classproperty
+                def IN_PROGRESS(cls):
+                    return cls("in_progress")
+                
+                @schemas.classproperty
+                def WAITING_ON_CUSTOMER(cls):
+                    return cls("waiting_on_customer")
+                
+                @schemas.classproperty
+                def RESOLVED(cls):
+                    return cls("resolved")
+            type = schemas.StrSchema
+            updated_at = schemas.IntSchema
             __annotations__ = {
-                "type": type,
+                "assigned_to": assigned_to,
+                "attachments": attachments,
+                "author": author,
+                "body": body,
+                "created_at": created_at,
+                "external_id": external_id,
                 "id": id,
                 "part_type": part_type,
-                "body": body,
                 "previous_ticket_state": previous_ticket_state,
-                "ticket_state": ticket_state,
-                "created_at": created_at,
-                "updated_at": updated_at,
-                "assigned_to": assigned_to,
-                "author": author,
-                "attachments": attachments,
-                "external_id": external_id,
                 "redacted": redacted,
+                "ticket_state": ticket_state,
+                "type": type,
+                "updated_at": updated_at,
             }
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["assigned_to"]) -> 'Reference': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["attachments"]) -> MetaOapg.properties.attachments: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["author"]) -> 'TicketPartAuthor': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["external_id"]) -> MetaOapg.properties.external_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
@@ -188,45 +203,45 @@ class TicketPart(
     def __getitem__(self, name: typing_extensions.Literal["part_type"]) -> MetaOapg.properties.part_type: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["previous_ticket_state"]) -> MetaOapg.properties.previous_ticket_state: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ticket_state"]) -> MetaOapg.properties.ticket_state: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["assigned_to"]) -> 'Reference': ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["author"]) -> 'TicketPartAuthor': ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["attachments"]) -> MetaOapg.properties.attachments: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["external_id"]) -> MetaOapg.properties.external_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["redacted"]) -> MetaOapg.properties.redacted: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["ticket_state"]) -> MetaOapg.properties.ticket_state: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "part_type", "body", "previous_ticket_state", "ticket_state", "created_at", "updated_at", "assigned_to", "author", "attachments", "external_id", "redacted", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["assigned_to", "attachments", "author", "body", "created_at", "external_id", "id", "part_type", "previous_ticket_state", "redacted", "ticket_state", "type", "updated_at", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["assigned_to"]) -> typing.Union['Reference', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["attachments"]) -> typing.Union[MetaOapg.properties.attachments, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["author"]) -> typing.Union['TicketPartAuthor', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["external_id"]) -> typing.Union[MetaOapg.properties.external_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
@@ -235,77 +250,62 @@ class TicketPart(
     def get_item_oapg(self, name: typing_extensions.Literal["part_type"]) -> typing.Union[MetaOapg.properties.part_type, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["previous_ticket_state"]) -> typing.Union[MetaOapg.properties.previous_ticket_state, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ticket_state"]) -> typing.Union[MetaOapg.properties.ticket_state, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["assigned_to"]) -> typing.Union['Reference', schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["author"]) -> typing.Union['TicketPartAuthor', schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["attachments"]) -> typing.Union[MetaOapg.properties.attachments, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["external_id"]) -> typing.Union[MetaOapg.properties.external_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["redacted"]) -> typing.Union[MetaOapg.properties.redacted, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["ticket_state"]) -> typing.Union[MetaOapg.properties.ticket_state, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "part_type", "body", "previous_ticket_state", "ticket_state", "created_at", "updated_at", "assigned_to", "author", "attachments", "external_id", "redacted", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["assigned_to", "attachments", "author", "body", "created_at", "external_id", "id", "part_type", "previous_ticket_state", "redacted", "ticket_state", "type", "updated_at", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        assigned_to: typing.Union['Reference', schemas.Unset] = schemas.unset,
+        attachments: typing.Union[MetaOapg.properties.attachments, list, tuple, schemas.Unset] = schemas.unset,
+        author: typing.Union['TicketPartAuthor', schemas.Unset] = schemas.unset,
+        body: typing.Union[MetaOapg.properties.body, None, str, schemas.Unset] = schemas.unset,
+        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        external_id: typing.Union[MetaOapg.properties.external_id, None, str, schemas.Unset] = schemas.unset,
         id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         part_type: typing.Union[MetaOapg.properties.part_type, str, schemas.Unset] = schemas.unset,
-        body: typing.Union[MetaOapg.properties.body, None, str, schemas.Unset] = schemas.unset,
         previous_ticket_state: typing.Union[MetaOapg.properties.previous_ticket_state, str, schemas.Unset] = schemas.unset,
-        ticket_state: typing.Union[MetaOapg.properties.ticket_state, str, schemas.Unset] = schemas.unset,
-        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        assigned_to: typing.Union['Reference', schemas.Unset] = schemas.unset,
-        author: typing.Union['TicketPartAuthor', schemas.Unset] = schemas.unset,
-        attachments: typing.Union[MetaOapg.properties.attachments, list, tuple, schemas.Unset] = schemas.unset,
-        external_id: typing.Union[MetaOapg.properties.external_id, None, str, schemas.Unset] = schemas.unset,
         redacted: typing.Union[MetaOapg.properties.redacted, bool, schemas.Unset] = schemas.unset,
+        ticket_state: typing.Union[MetaOapg.properties.ticket_state, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'TicketPart':
         return super().__new__(
             cls,
             *_args,
-            type=type,
+            assigned_to=assigned_to,
+            attachments=attachments,
+            author=author,
+            body=body,
+            created_at=created_at,
+            external_id=external_id,
             id=id,
             part_type=part_type,
-            body=body,
             previous_ticket_state=previous_ticket_state,
-            ticket_state=ticket_state,
-            created_at=created_at,
-            updated_at=updated_at,
-            assigned_to=assigned_to,
-            author=author,
-            attachments=attachments,
-            external_id=external_id,
             redacted=redacted,
+            ticket_state=ticket_state,
+            type=type,
+            updated_at=updated_at,
             _configuration=_configuration,
             **kwargs,
         )

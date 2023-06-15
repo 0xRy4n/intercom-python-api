@@ -10,11 +10,11 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | The r
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**name** | str,  | str,  | The name of the ticket type. | [optional] 
+**archived** | bool,  | BoolClass,  | The archived status of the ticket type. | [optional] 
 **description** | str,  | str,  | The description of the ticket type. | [optional] 
 **icon** | str,  | str,  | The icon of the ticket type. | [optional] if omitted the server will use the default value of "🎟️"
-**archived** | bool,  | BoolClass,  | The archived status of the ticket type. | [optional] 
 **is_internal** | bool,  | BoolClass,  | Whether the tickets associated with this ticket type are intended for internal use only or will be shared with customers. This is currently a limited attribute. | [optional] if omitted the server will use the default value of False
+**name** | str,  | str,  | The name of the ticket type. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

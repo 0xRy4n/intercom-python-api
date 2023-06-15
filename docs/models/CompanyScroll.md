@@ -10,11 +10,11 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | Compa
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of object - &#x60;list&#x60; | [optional] must be one of ["list", ] 
 **[data](#data)** | list, tuple,  | tuple,  |  | [optional] 
 **pages** | [**CursorPages**](CursorPages.md) | [**CursorPages**](CursorPages.md) |  | [optional] 
-**total_count** | None, decimal.Decimal, int,  | NoneClass, decimal.Decimal,  | The total number of companies | [optional] 
 **scroll_param** | str,  | str,  | The scroll parameter to use in the next request to fetch the next page of results. | [optional] 
+**total_count** | None, decimal.Decimal, int,  | NoneClass, decimal.Decimal,  | The total number of companies | [optional] 
+**type** | str,  | str,  | The type of object - &#x60;list&#x60; | [optional] must be one of ["list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

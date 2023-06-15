@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **create_ticket_type_attribute**
 <a name="create_ticket_type_attribute"></a>
-> TicketTypeAttribute create_ticket_type_attribute(ticket_type_id)
+> bool, date, datetime, dict, float, int, list, str, none_type create_ticket_type_attribute(ticket_type_id)
 
 Create a new attribute for a ticket type
 
@@ -62,16 +62,16 @@ header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
 body = CreateTicketTypeAttributeRequest(
-        name="Bug Priority",
-        description="Priority level of the bug",
+        allow_multiple_values=False,
         data_type="string",
+        description="Priority level of the bug",
+        list_items="Low Priority,Medium Priority,High Priority",
+        multiline=False,
+        name="Bug Priority",
         required_to_create=False,
         required_to_create_for_contacts=False,
         visible_on_create=True,
         visible_to_contacts=True,
-        multiline=False,
-        list_items="Low Priority,Medium Priority,High Priority",
-        allow_multiple_values=False,
     )
 try:
     # Create a new attribute for a ticket type
@@ -149,10 +149,25 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**TicketTypeAttribute**](../../models/TicketTypeAttribute.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[TicketTypeAttribute]({{complexTypePrefix}}TicketTypeAttribute.md) | [**TicketTypeAttribute**]({{complexTypePrefix}}TicketTypeAttribute.md) | [**TicketTypeAttribute**]({{complexTypePrefix}}TicketTypeAttribute.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 #### create_ticket_type_attribute.ApiResponseFor401
 Name | Type | Description  | Notes
@@ -162,10 +177,25 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 
@@ -175,7 +205,7 @@ Type | Description  | Notes
 
 # **update_ticket_type_attribute**
 <a name="update_ticket_type_attribute"></a>
-> TicketTypeAttribute update_ticket_type_attribute(ticket_type_idid)
+> bool, date, datetime, dict, float, int, list, str, none_type update_ticket_type_attribute(ticket_type_idid)
 
 Update an existing attribute for a ticket type
 
@@ -229,16 +259,16 @@ header_params = {
     'Intercom-Version': IntercomVersion("Unstable"),
 }
 body = UpdateTicketTypeAttributeRequest(
-        name="Bug Priority",
+        allow_multiple_values=False,
+        archived=False,
         description="Priority level of the bug",
+        list_items="Low Priority,Medium Priority,High Priority",
+        multiline=False,
+        name="Bug Priority",
         required_to_create=False,
         required_to_create_for_contacts=False,
         visible_on_create=True,
         visible_to_contacts=True,
-        multiline=False,
-        list_items="Low Priority,Medium Priority,High Priority",
-        allow_multiple_values=False,
-        archived=False,
     )
 try:
     # Update an existing attribute for a ticket type
@@ -324,10 +354,25 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**TicketTypeAttribute**](../../models/TicketTypeAttribute.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[TicketTypeAttribute]({{complexTypePrefix}}TicketTypeAttribute.md) | [**TicketTypeAttribute**]({{complexTypePrefix}}TicketTypeAttribute.md) | [**TicketTypeAttribute**]({{complexTypePrefix}}TicketTypeAttribute.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 #### update_ticket_type_attribute.ApiResponseFor401
 Name | Type | Description  | Notes
@@ -337,10 +382,25 @@ body | typing.Union[SchemaFor401ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor401ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Error**](../../models/Error.md) |  | 
 
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader,  | frozendict.frozendict, str, decimal.Decimal, BoolClass, NoneClass, tuple, bytes, FileIO |  | 
+
+### Composed Schemas (allOf/anyOf/oneOf/not)
+#### oneOf
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[Error]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) | [**Error**]({{complexTypePrefix}}Error.md) |  | 
+[one_of_1](#one_of_1) | dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
+
+# one_of_1
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+dict, frozendict.frozendict,  | frozendict.frozendict,  |  | 
 
 ### Authorization
 

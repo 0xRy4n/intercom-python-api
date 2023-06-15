@@ -42,7 +42,6 @@ class Error(
         }
         
         class properties:
-            type = schemas.StrSchema
             
             
             class errors(
@@ -67,26 +66,6 @@ class Error(
                                 code = schemas.StrSchema
                                 
                                 
-                                class message(
-                                    schemas.StrBase,
-                                    schemas.NoneBase,
-                                    schemas.Schema,
-                                    schemas.NoneStrMixin
-                                ):
-                                
-                                
-                                    def __new__(
-                                        cls,
-                                        *_args: typing.Union[None, str, ],
-                                        _configuration: typing.Optional[schemas.Configuration] = None,
-                                    ) -> 'message':
-                                        return super().__new__(
-                                            cls,
-                                            *_args,
-                                            _configuration=_configuration,
-                                        )
-                                
-                                
                                 class field(
                                     schemas.StrBase,
                                     schemas.NoneBase,
@@ -105,10 +84,30 @@ class Error(
                                             *_args,
                                             _configuration=_configuration,
                                         )
+                                
+                                
+                                class message(
+                                    schemas.StrBase,
+                                    schemas.NoneBase,
+                                    schemas.Schema,
+                                    schemas.NoneStrMixin
+                                ):
+                                
+                                
+                                    def __new__(
+                                        cls,
+                                        *_args: typing.Union[None, str, ],
+                                        _configuration: typing.Optional[schemas.Configuration] = None,
+                                    ) -> 'message':
+                                        return super().__new__(
+                                            cls,
+                                            *_args,
+                                            _configuration=_configuration,
+                                        )
                                 __annotations__ = {
                                     "code": code,
-                                    "message": message,
                                     "field": field,
+                                    "message": message,
                                 }
                     
                         
@@ -118,15 +117,15 @@ class Error(
                         def __getitem__(self, name: typing_extensions.Literal["code"]) -> MetaOapg.properties.code: ...
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["message"]) -> MetaOapg.properties.message: ...
+                        def __getitem__(self, name: typing_extensions.Literal["field"]) -> MetaOapg.properties.field: ...
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["field"]) -> MetaOapg.properties.field: ...
+                        def __getitem__(self, name: typing_extensions.Literal["message"]) -> MetaOapg.properties.message: ...
                         
                         @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["code", "message", "field", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["code", "field", "message", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
@@ -135,15 +134,15 @@ class Error(
                         def get_item_oapg(self, name: typing_extensions.Literal["code"]) -> MetaOapg.properties.code: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["message"]) -> typing.Union[MetaOapg.properties.message, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["field"]) -> typing.Union[MetaOapg.properties.field, schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["field"]) -> typing.Union[MetaOapg.properties.field, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["message"]) -> typing.Union[MetaOapg.properties.message, schemas.Unset]: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["code", "message", "field", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["code", "field", "message", ], str]):
                             return super().get_item_oapg(name)
                         
                     
@@ -151,8 +150,8 @@ class Error(
                             cls,
                             *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
                             code: typing.Union[MetaOapg.properties.code, str, ],
-                            message: typing.Union[MetaOapg.properties.message, None, str, schemas.Unset] = schemas.unset,
                             field: typing.Union[MetaOapg.properties.field, None, str, schemas.Unset] = schemas.unset,
+                            message: typing.Union[MetaOapg.properties.message, None, str, schemas.Unset] = schemas.unset,
                             _configuration: typing.Optional[schemas.Configuration] = None,
                             **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                         ) -> 'items':
@@ -160,8 +159,8 @@ class Error(
                                 cls,
                                 *_args,
                                 code=code,
-                                message=message,
                                 field=field,
+                                message=message,
                                 _configuration=_configuration,
                                 **kwargs,
                             )
@@ -179,6 +178,7 @@ class Error(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            type = schemas.StrSchema
             
             
             class request_id(
@@ -205,8 +205,8 @@ class Error(
                         _configuration=_configuration,
                     )
             __annotations__ = {
-                "type": type,
                 "errors": errors,
+                "type": type,
                 "request_id": request_id,
             }
     
@@ -214,10 +214,10 @@ class Error(
     errors: MetaOapg.properties.errors
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["errors"]) -> MetaOapg.properties.errors: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["errors"]) -> MetaOapg.properties.errors: ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["request_id"]) -> MetaOapg.properties.request_id: ...
@@ -225,16 +225,16 @@ class Error(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "errors", "request_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["errors", "type", "request_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["errors"]) -> MetaOapg.properties.errors: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["errors"]) -> MetaOapg.properties.errors: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["request_id"]) -> typing.Union[MetaOapg.properties.request_id, schemas.Unset]: ...
@@ -242,7 +242,7 @@ class Error(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "errors", "request_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["errors", "type", "request_id", ], str]):
         return super().get_item_oapg(name)
     
 

@@ -45,10 +45,9 @@ class Message(
         }
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            created_at = schemas.IntSchema
             body = schemas.StrSchema
+            created_at = schemas.IntSchema
+            id = schemas.StrSchema
             
             
             class message_type(
@@ -80,16 +79,17 @@ class Message(
                 @schemas.classproperty
                 def TWITTER(cls):
                     return cls("twitter")
-            subject = schemas.StrSchema
+            type = schemas.StrSchema
             conversation_id = schemas.StrSchema
+            subject = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "created_at": created_at,
                 "body": body,
+                "created_at": created_at,
+                "id": id,
                 "message_type": message_type,
-                "subject": subject,
+                "type": type,
                 "conversation_id": conversation_id,
+                "subject": subject,
             }
     
     created_at: MetaOapg.properties.created_at
@@ -99,59 +99,59 @@ class Message(
     type: MetaOapg.properties.type
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["conversation_id"]) -> MetaOapg.properties.conversation_id: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "created_at", "body", "message_type", "subject", "conversation_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["body", "created_at", "id", "message_type", "type", "conversation_id", "subject", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["conversation_id"]) -> typing.Union[MetaOapg.properties.conversation_id, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "created_at", "body", "message_type", "subject", "conversation_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["body", "created_at", "id", "message_type", "type", "conversation_id", "subject", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -163,8 +163,8 @@ class Message(
         id: typing.Union[MetaOapg.properties.id, str, ],
         body: typing.Union[MetaOapg.properties.body, str, ],
         type: typing.Union[MetaOapg.properties.type, str, ],
-        subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
         conversation_id: typing.Union[MetaOapg.properties.conversation_id, str, schemas.Unset] = schemas.unset,
+        subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Message':
@@ -176,8 +176,8 @@ class Message(
             id=id,
             body=body,
             type=type,
-            subject=subject,
             conversation_id=conversation_id,
+            subject=subject,
             _configuration=_configuration,
             **kwargs,
         )

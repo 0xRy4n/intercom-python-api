@@ -94,16 +94,19 @@ class SchemaForRequestBodyApplicationJson(
         }
         
         class properties:
+            admin_id = schemas.StrSchema
             body = schemas.StrSchema
             contact_id = schemas.StrSchema
-            admin_id = schemas.StrSchema
             __annotations__ = {
+                "admin_id": admin_id,
                 "body": body,
                 "contact_id": contact_id,
-                "admin_id": admin_id,
             }
     
     body: MetaOapg.properties.body
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -112,15 +115,15 @@ class SchemaForRequestBodyApplicationJson(
     def __getitem__(self, name: typing_extensions.Literal["contact_id"]) -> MetaOapg.properties.contact_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["admin_id"]) -> MetaOapg.properties.admin_id: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["body", "contact_id", "admin_id", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_id", "body", "contact_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> typing.Union[MetaOapg.properties.admin_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -129,12 +132,9 @@ class SchemaForRequestBodyApplicationJson(
     def get_item_oapg(self, name: typing_extensions.Literal["contact_id"]) -> typing.Union[MetaOapg.properties.contact_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["admin_id"]) -> typing.Union[MetaOapg.properties.admin_id, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["body", "contact_id", "admin_id", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_id", "body", "contact_id", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -142,8 +142,8 @@ class SchemaForRequestBodyApplicationJson(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         body: typing.Union[MetaOapg.properties.body, str, ],
-        contact_id: typing.Union[MetaOapg.properties.contact_id, str, schemas.Unset] = schemas.unset,
         admin_id: typing.Union[MetaOapg.properties.admin_id, str, schemas.Unset] = schemas.unset,
+        contact_id: typing.Union[MetaOapg.properties.contact_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SchemaForRequestBodyApplicationJson':
@@ -151,8 +151,8 @@ class SchemaForRequestBodyApplicationJson(
             cls,
             *_args,
             body=body,
-            contact_id=contact_id,
             admin_id=admin_id,
+            contact_id=contact_id,
             _configuration=_configuration,
             **kwargs,
         )
@@ -164,7 +164,44 @@ request_body_any_type = api_client.RequestBody(
             schema=SchemaForRequestBodyApplicationJson),
     },
 )
-SchemaFor200ResponseBodyApplicationJson = Note
+
+
+class SchemaFor200ResponseBodyApplicationJson(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        one_of_1 = schemas.DictSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def one_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                Note,
+                cls.one_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'SchemaFor200ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *_args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass
@@ -183,7 +220,44 @@ _response_for_200 = api_client.OpenApiResponse(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
 )
-SchemaFor404ResponseBodyApplicationJson = Error
+
+
+class SchemaFor404ResponseBodyApplicationJson(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        one_of_1 = schemas.DictSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def one_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                Error,
+                cls.one_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'SchemaFor404ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *_args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass

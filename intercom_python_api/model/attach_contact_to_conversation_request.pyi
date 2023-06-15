@@ -61,43 +61,43 @@ class AttachContactToConversationRequest(
                             }
                             
                             class properties:
-                                intercom_user_id = schemas.StrSchema
                             
                                 @staticmethod
                                 def customer() -> typing.Type['CustomerRequest']:
                                     return CustomerRequest
+                                intercom_user_id = schemas.StrSchema
                                 __annotations__ = {
-                                    "intercom_user_id": intercom_user_id,
                                     "customer": customer,
+                                    "intercom_user_id": intercom_user_id,
                                 }
                     
                         
                         intercom_user_id: MetaOapg.properties.intercom_user_id
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
+                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
+                        def __getitem__(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
                         
                         @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["intercom_user_id", "customer", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["customer", "intercom_user_id", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["intercom_user_id", "customer", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["customer", "intercom_user_id", ], str]):
                             return super().get_item_oapg(name)
                         
                     
@@ -130,43 +130,43 @@ class AttachContactToConversationRequest(
                             }
                             
                             class properties:
-                                user_id = schemas.StrSchema
                             
                                 @staticmethod
                                 def customer() -> typing.Type['CustomerRequest']:
                                     return CustomerRequest
+                                user_id = schemas.StrSchema
                                 __annotations__ = {
-                                    "user_id": user_id,
                                     "customer": customer,
+                                    "user_id": user_id,
                                 }
                     
                         
                         user_id: MetaOapg.properties.user_id
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
+                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
+                        def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
                         
                         @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["user_id", "customer", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["customer", "user_id", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["user_id", "customer", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["customer", "user_id", ], str]):
                             return super().get_item_oapg(name)
                         
                     
@@ -199,43 +199,43 @@ class AttachContactToConversationRequest(
                             }
                             
                             class properties:
-                                email = schemas.StrSchema
                             
                                 @staticmethod
                                 def customer() -> typing.Type['CustomerRequest']:
                                     return CustomerRequest
+                                email = schemas.StrSchema
                                 __annotations__ = {
-                                    "email": email,
                                     "customer": customer,
+                                    "email": email,
                                 }
                     
                         
                         email: MetaOapg.properties.email
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
                         
                         @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["customer"]) -> 'CustomerRequest': ...
+                        def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
                         
                         @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["email", "customer", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["customer", "email", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["customer"]) -> typing.Union['CustomerRequest', schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["email", "customer", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["customer", "email", ], str]):
                             return super().get_item_oapg(name)
                         
                     

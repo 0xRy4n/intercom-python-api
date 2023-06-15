@@ -41,25 +41,31 @@ class ConversationRating(
     class MetaOapg:
         
         class properties:
-            rating = schemas.IntSchema
-            remark = schemas.StrSchema
-            created_at = schemas.IntSchema
         
             @staticmethod
             def contact() -> typing.Type['Reference']:
                 return Reference
+            created_at = schemas.IntSchema
+            rating = schemas.IntSchema
+            remark = schemas.StrSchema
         
             @staticmethod
             def teammate() -> typing.Type['Reference']:
                 return Reference
             __annotations__ = {
+                "contact": contact,
+                "created_at": created_at,
                 "rating": rating,
                 "remark": remark,
-                "created_at": created_at,
-                "contact": contact,
                 "teammate": teammate,
             }
 
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["contact"]) -> 'Reference': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["rating"]) -> MetaOapg.properties.rating: ...
@@ -68,21 +74,21 @@ class ConversationRating(
     def __getitem__(self, name: typing_extensions.Literal["remark"]) -> MetaOapg.properties.remark: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["contact"]) -> 'Reference': ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["teammate"]) -> 'Reference': ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["rating", "remark", "created_at", "contact", "teammate", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["contact", "created_at", "rating", "remark", "teammate", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["contact"]) -> typing.Union['Reference', schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["rating"]) -> typing.Union[MetaOapg.properties.rating, schemas.Unset]: ...
@@ -91,28 +97,22 @@ class ConversationRating(
     def get_item_oapg(self, name: typing_extensions.Literal["remark"]) -> typing.Union[MetaOapg.properties.remark, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["contact"]) -> typing.Union['Reference', schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["teammate"]) -> typing.Union['Reference', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["rating", "remark", "created_at", "contact", "teammate", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["contact", "created_at", "rating", "remark", "teammate", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
+        contact: typing.Union['Reference', schemas.Unset] = schemas.unset,
+        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         rating: typing.Union[MetaOapg.properties.rating, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         remark: typing.Union[MetaOapg.properties.remark, str, schemas.Unset] = schemas.unset,
-        created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        contact: typing.Union['Reference', schemas.Unset] = schemas.unset,
         teammate: typing.Union['Reference', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -120,10 +120,10 @@ class ConversationRating(
         return super().__new__(
             cls,
             *_args,
+            contact=contact,
+            created_at=created_at,
             rating=rating,
             remark=remark,
-            created_at=created_at,
-            contact=contact,
             teammate=teammate,
             _configuration=_configuration,
             **kwargs,

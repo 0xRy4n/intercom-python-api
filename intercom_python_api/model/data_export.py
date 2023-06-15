@@ -38,6 +38,8 @@ class DataExport(
     class MetaOapg:
         
         class properties:
+            download_expires_at = schemas.StrSchema
+            download_url = schemas.StrSchema
             job_identfier = schemas.StrSchema
             
             
@@ -80,20 +82,12 @@ class DataExport(
                 @schemas.classproperty
                 def CANCELED(cls):
                     return cls("canceled")
-            download_expires_at = schemas.StrSchema
-            download_url = schemas.StrSchema
             __annotations__ = {
-                "job_identfier": job_identfier,
-                "status": status,
                 "download_expires_at": download_expires_at,
                 "download_url": download_url,
+                "job_identfier": job_identfier,
+                "status": status,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["job_identfier"]) -> MetaOapg.properties.job_identfier: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["download_expires_at"]) -> MetaOapg.properties.download_expires_at: ...
@@ -102,18 +96,18 @@ class DataExport(
     def __getitem__(self, name: typing_extensions.Literal["download_url"]) -> MetaOapg.properties.download_url: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["job_identfier"]) -> MetaOapg.properties.job_identfier: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["job_identfier", "status", "download_expires_at", "download_url", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["download_expires_at", "download_url", "job_identfier", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["job_identfier"]) -> typing.Union[MetaOapg.properties.job_identfier, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["download_expires_at"]) -> typing.Union[MetaOapg.properties.download_expires_at, schemas.Unset]: ...
@@ -122,29 +116,35 @@ class DataExport(
     def get_item_oapg(self, name: typing_extensions.Literal["download_url"]) -> typing.Union[MetaOapg.properties.download_url, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["job_identfier"]) -> typing.Union[MetaOapg.properties.job_identfier, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["job_identfier", "status", "download_expires_at", "download_url", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["download_expires_at", "download_url", "job_identfier", "status", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        job_identfier: typing.Union[MetaOapg.properties.job_identfier, str, schemas.Unset] = schemas.unset,
-        status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         download_expires_at: typing.Union[MetaOapg.properties.download_expires_at, str, schemas.Unset] = schemas.unset,
         download_url: typing.Union[MetaOapg.properties.download_url, str, schemas.Unset] = schemas.unset,
+        job_identfier: typing.Union[MetaOapg.properties.job_identfier, str, schemas.Unset] = schemas.unset,
+        status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DataExport':
         return super().__new__(
             cls,
             *_args,
-            job_identfier=job_identfier,
-            status=status,
             download_expires_at=download_expires_at,
             download_url=download_url,
+            job_identfier=job_identfier,
+            status=status,
             _configuration=_configuration,
             **kwargs,
         )

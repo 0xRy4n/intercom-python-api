@@ -27,9 +27,9 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | The unique identifiers
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
+**email** | str,  | str,  | The contact&#x27;s email, retained by default if one is present. | [optional] 
 **id** | str,  | str,  | The unique identifier for the contact which is given by Intercom. | [optional] 
 **user_id** | str,  | str,  | A unique identifier for the contact which is given to Intercom, which will be represented as external_id. | [optional] 
-**email** | str,  | str,  | The contact&#x27;s email, retained by default if one is present. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 ### Composed Schemas (allOf/anyOf/oneOf/not)
@@ -65,9 +65,9 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | The unique identifiers
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
+**email** | str,  | str,  | The visitor&#x27;s email. | [optional] 
 **id** | str,  | str,  | The unique identifier for the contact which is given by Intercom. | [optional] 
 **user_id** | str,  | str,  | A unique identifier for the contact which is given to Intercom. | [optional] 
-**email** | str,  | str,  | The visitor&#x27;s email. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 ### Composed Schemas (allOf/anyOf/oneOf/not)

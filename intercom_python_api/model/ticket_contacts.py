@@ -40,22 +40,6 @@ class TicketContacts(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "contact.list": "CONTACT_LIST",
-                    }
-                
-                @schemas.classproperty
-                def CONTACT_LIST(cls):
-                    return cls("contact.list")
-            
-            
             class contacts(
                 schemas.ListSchema
             ):
@@ -72,6 +56,7 @@ class TicketContacts(
                         class MetaOapg:
                             
                             class properties:
+                                id = schemas.StrSchema
                                 
                                 
                                 class type(
@@ -93,52 +78,51 @@ class TicketContacts(
                                     @schemas.classproperty
                                     def USER(cls):
                                         return cls("user")
-                                id = schemas.StrSchema
                                 __annotations__ = {
-                                    "type": type,
                                     "id": id,
+                                    "type": type,
                                 }
-                        
-                        @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                         
                         @typing.overload
                         def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                         
                         @typing.overload
+                        def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                        
+                        @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                             return super().get_item_oapg(name)
                         
                     
                         def __new__(
                             cls,
                             *_args: typing.Union[dict, frozendict.frozendict, ],
-                            type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                             id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+                            type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                             _configuration: typing.Optional[schemas.Configuration] = None,
                             **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                         ) -> 'items':
                             return super().__new__(
                                 cls,
                                 *_args,
-                                type=type,
                                 id=id,
+                                type=type,
                                 _configuration=_configuration,
                                 **kwargs,
                             )
@@ -156,51 +140,67 @@ class TicketContacts(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "contact.list": "CONTACT_LIST",
+                    }
+                
+                @schemas.classproperty
+                def CONTACT_LIST(cls):
+                    return cls("contact.list")
             __annotations__ = {
-                "type": type,
                 "contacts": contacts,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["contacts"]) -> MetaOapg.properties.contacts: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "contacts", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["contacts", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["contacts"]) -> typing.Union[MetaOapg.properties.contacts, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["contacts"]) -> typing.Union[MetaOapg.properties.contacts, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "contacts", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["contacts", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         contacts: typing.Union[MetaOapg.properties.contacts, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'TicketContacts':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             contacts=contacts,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

@@ -41,37 +41,10 @@ class AdminWithApp(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            name = schemas.StrSchema
-            email = schemas.StrSchema
-            job_title = schemas.StrSchema
-            away_mode_enabled = schemas.BoolSchema
-            away_mode_reassign = schemas.BoolSchema
-            has_inbox_seat = schemas.BoolSchema
-            
-            
-            class team_ids(
-                schemas.ListSchema
-            ):
-            
-            
-                class MetaOapg:
-                    items = schemas.IntSchema
-            
-                def __new__(
-                    cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, decimal.Decimal, int, ]], typing.List[typing.Union[MetaOapg.items, decimal.Decimal, int, ]]],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'team_ids':
-                    return super().__new__(
-                        cls,
-                        _arg,
-                        _configuration=_configuration,
-                    )
-            
-                def __getitem__(self, i: int) -> MetaOapg.items:
-                    return super().__getitem__(i)
+        
+            @staticmethod
+            def app() -> typing.Type['App']:
+                return App
             
             
             class avatar(
@@ -82,7 +55,6 @@ class AdminWithApp(
                 class MetaOapg:
                     
                     class properties:
-                        type = schemas.StrSchema
                         
                         
                         class image_url(
@@ -107,54 +79,58 @@ class AdminWithApp(
                                     *_args,
                                     _configuration=_configuration,
                                 )
+                        type = schemas.StrSchema
                         __annotations__ = {
-                            "type": type,
                             "image_url": image_url,
+                            "type": type,
                         }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["image_url"]) -> MetaOapg.properties.image_url: ...
                 
                 @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
                 def __new__(
                     cls,
                     *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     image_url: typing.Union[MetaOapg.properties.image_url, None, str, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     _configuration: typing.Optional[schemas.Configuration] = None,
                     **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'avatar':
                     return super().__new__(
                         cls,
                         *_args,
-                        type=type,
                         image_url=image_url,
+                        type=type,
                         _configuration=_configuration,
                         **kwargs,
                     )
+            away_mode_enabled = schemas.BoolSchema
+            away_mode_reassign = schemas.BoolSchema
+            email = schemas.StrSchema
             
             
             class email_verified(
@@ -175,40 +151,55 @@ class AdminWithApp(
                         *_args,
                         _configuration=_configuration,
                     )
-        
-            @staticmethod
-            def app() -> typing.Type['App']:
-                return App
+            has_inbox_seat = schemas.BoolSchema
+            id = schemas.StrSchema
+            job_title = schemas.StrSchema
+            name = schemas.StrSchema
+            
+            
+            class team_ids(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    items = schemas.IntSchema
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, decimal.Decimal, int, ]], typing.List[typing.Union[MetaOapg.items, decimal.Decimal, int, ]]],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'team_ids':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
+            type = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "name": name,
-                "email": email,
-                "job_title": job_title,
+                "app": app,
+                "avatar": avatar,
                 "away_mode_enabled": away_mode_enabled,
                 "away_mode_reassign": away_mode_reassign,
-                "has_inbox_seat": has_inbox_seat,
-                "team_ids": team_ids,
-                "avatar": avatar,
+                "email": email,
                 "email_verified": email_verified,
-                "app": app,
+                "has_inbox_seat": has_inbox_seat,
+                "id": id,
+                "job_title": job_title,
+                "name": name,
+                "team_ids": team_ids,
+                "type": type,
             }
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["app"]) -> 'App': ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["job_title"]) -> MetaOapg.properties.job_title: ...
+    def __getitem__(self, name: typing_extensions.Literal["avatar"]) -> MetaOapg.properties.avatar: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["away_mode_enabled"]) -> MetaOapg.properties.away_mode_enabled: ...
@@ -217,42 +208,42 @@ class AdminWithApp(
     def __getitem__(self, name: typing_extensions.Literal["away_mode_reassign"]) -> MetaOapg.properties.away_mode_reassign: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["has_inbox_seat"]) -> MetaOapg.properties.has_inbox_seat: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["team_ids"]) -> MetaOapg.properties.team_ids: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["avatar"]) -> MetaOapg.properties.avatar: ...
+    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["email_verified"]) -> MetaOapg.properties.email_verified: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["app"]) -> 'App': ...
+    def __getitem__(self, name: typing_extensions.Literal["has_inbox_seat"]) -> MetaOapg.properties.has_inbox_seat: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["job_title"]) -> MetaOapg.properties.job_title: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["team_ids"]) -> MetaOapg.properties.team_ids: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", "email", "job_title", "away_mode_enabled", "away_mode_reassign", "has_inbox_seat", "team_ids", "avatar", "email_verified", "app", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["app", "avatar", "away_mode_enabled", "away_mode_reassign", "email", "email_verified", "has_inbox_seat", "id", "job_title", "name", "team_ids", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["app"]) -> typing.Union['App', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["job_title"]) -> typing.Union[MetaOapg.properties.job_title, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["away_mode_enabled"]) -> typing.Union[MetaOapg.properties.away_mode_enabled, schemas.Unset]: ...
@@ -261,60 +252,69 @@ class AdminWithApp(
     def get_item_oapg(self, name: typing_extensions.Literal["away_mode_reassign"]) -> typing.Union[MetaOapg.properties.away_mode_reassign, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["has_inbox_seat"]) -> typing.Union[MetaOapg.properties.has_inbox_seat, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["team_ids"]) -> typing.Union[MetaOapg.properties.team_ids, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["email_verified"]) -> typing.Union[MetaOapg.properties.email_verified, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["app"]) -> typing.Union['App', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["has_inbox_seat"]) -> typing.Union[MetaOapg.properties.has_inbox_seat, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["job_title"]) -> typing.Union[MetaOapg.properties.job_title, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["team_ids"]) -> typing.Union[MetaOapg.properties.team_ids, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", "email", "job_title", "away_mode_enabled", "away_mode_reassign", "has_inbox_seat", "team_ids", "avatar", "email_verified", "app", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["app", "avatar", "away_mode_enabled", "away_mode_reassign", "email", "email_verified", "has_inbox_seat", "id", "job_title", "name", "team_ids", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
-        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
-        job_title: typing.Union[MetaOapg.properties.job_title, str, schemas.Unset] = schemas.unset,
+        app: typing.Union['App', schemas.Unset] = schemas.unset,
+        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         away_mode_enabled: typing.Union[MetaOapg.properties.away_mode_enabled, bool, schemas.Unset] = schemas.unset,
         away_mode_reassign: typing.Union[MetaOapg.properties.away_mode_reassign, bool, schemas.Unset] = schemas.unset,
-        has_inbox_seat: typing.Union[MetaOapg.properties.has_inbox_seat, bool, schemas.Unset] = schemas.unset,
-        team_ids: typing.Union[MetaOapg.properties.team_ids, list, tuple, schemas.Unset] = schemas.unset,
-        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
         email_verified: typing.Union[MetaOapg.properties.email_verified, None, bool, schemas.Unset] = schemas.unset,
-        app: typing.Union['App', schemas.Unset] = schemas.unset,
+        has_inbox_seat: typing.Union[MetaOapg.properties.has_inbox_seat, bool, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+        job_title: typing.Union[MetaOapg.properties.job_title, str, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        team_ids: typing.Union[MetaOapg.properties.team_ids, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'AdminWithApp':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            name=name,
-            email=email,
-            job_title=job_title,
+            app=app,
+            avatar=avatar,
             away_mode_enabled=away_mode_enabled,
             away_mode_reassign=away_mode_reassign,
-            has_inbox_seat=has_inbox_seat,
-            team_ids=team_ids,
-            avatar=avatar,
+            email=email,
             email_verified=email_verified,
-            app=app,
+            has_inbox_seat=has_inbox_seat,
+            id=id,
+            job_title=job_title,
+            name=name,
+            team_ids=team_ids,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

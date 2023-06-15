@@ -38,19 +38,7 @@ class DataEventSummary(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def EVENT_SUMMARY(cls):
-                    return cls("event.summary")
             email = schemas.StrSchema
-            intercom_user_id = schemas.StrSchema
-            user_id = schemas.StrSchema
             
             
             class events(
@@ -77,78 +65,90 @@ class DataEventSummary(
             
                 def __getitem__(self, i: int) -> 'DataEventSummaryItem':
                     return super().__getitem__(i)
+            intercom_user_id = schemas.StrSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def EVENT_SUMMARY(cls):
+                    return cls("event.summary")
+            user_id = schemas.StrSchema
             __annotations__ = {
-                "type": type,
                 "email": email,
-                "intercom_user_id": intercom_user_id,
-                "user_id": user_id,
                 "events": events,
+                "intercom_user_id": intercom_user_id,
+                "type": type,
+                "user_id": user_id,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["events"]) -> MetaOapg.properties.events: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["events"]) -> MetaOapg.properties.events: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "email", "intercom_user_id", "user_id", "events", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["email", "events", "intercom_user_id", "type", "user_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> typing.Union[MetaOapg.properties.intercom_user_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["events"]) -> typing.Union[MetaOapg.properties.events, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> typing.Union[MetaOapg.properties.intercom_user_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "email", "intercom_user_id", "user_id", "events", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["email", "events", "intercom_user_id", "type", "user_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
-        intercom_user_id: typing.Union[MetaOapg.properties.intercom_user_id, str, schemas.Unset] = schemas.unset,
-        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         events: typing.Union[MetaOapg.properties.events, list, tuple, schemas.Unset] = schemas.unset,
+        intercom_user_id: typing.Union[MetaOapg.properties.intercom_user_id, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DataEventSummary':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             email=email,
-            intercom_user_id=intercom_user_id,
-            user_id=user_id,
             events=events,
+            intercom_user_id=intercom_user_id,
+            type=type,
+            user_id=user_id,
             _configuration=_configuration,
             **kwargs,
         )

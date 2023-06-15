@@ -42,23 +42,8 @@ class CreateMessageRequest(
     class MetaOapg:
         
         class properties:
-            
-            
-            class message_type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def IN_APP(cls):
-                    return cls("in_app")
-                
-                @schemas.classproperty
-                def EMAIL(cls):
-                    return cls("email")
-            subject = schemas.StrSchema
             body = schemas.StrSchema
-            template = schemas.StrSchema
+            create_conversation_without_contact_reply = schemas.BoolSchema
             
             
             class _from(
@@ -73,6 +58,7 @@ class CreateMessageRequest(
                     }
                     
                     class properties:
+                        id = schemas.IntSchema
                         
                         
                         class type(
@@ -83,39 +69,38 @@ class CreateMessageRequest(
                             @schemas.classproperty
                             def ADMIN(cls):
                                 return cls("admin")
-                        id = schemas.IntSchema
                         __annotations__ = {
-                            "type": type,
                             "id": id,
+                            "type": type,
                         }
                 
                 id: MetaOapg.properties.id
                 type: MetaOapg.properties.type
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
@@ -137,6 +122,22 @@ class CreateMessageRequest(
                     )
             
             
+            class message_type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def IN_APP(cls):
+                    return cls("in_app")
+                
+                @schemas.classproperty
+                def EMAIL(cls):
+                    return cls("email")
+            subject = schemas.StrSchema
+            template = schemas.StrSchema
+            
+            
             class to(
                 schemas.DictSchema
             ):
@@ -149,6 +150,7 @@ class CreateMessageRequest(
                     }
                     
                     class properties:
+                        id = schemas.StrSchema
                         
                         
                         class type(
@@ -163,39 +165,38 @@ class CreateMessageRequest(
                             @schemas.classproperty
                             def LEAD(cls):
                                 return cls("lead")
-                        id = schemas.StrSchema
                         __annotations__ = {
-                            "type": type,
                             "id": id,
+                            "type": type,
                         }
                 
                 id: MetaOapg.properties.id
                 type: MetaOapg.properties.type
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
@@ -215,15 +216,14 @@ class CreateMessageRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
-            create_conversation_without_contact_reply = schemas.BoolSchema
             __annotations__ = {
+                "body": body,
+                "create_conversation_without_contact_reply": create_conversation_without_contact_reply,
+                "from": _from,
                 "message_type": message_type,
                 "subject": subject,
-                "body": body,
                 "template": template,
-                "from": _from,
                 "to": to,
-                "create_conversation_without_contact_reply": create_conversation_without_contact_reply,
             }
         
         
@@ -311,33 +311,42 @@ class CreateMessageRequest(
 
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["create_conversation_without_contact_reply"]) -> MetaOapg.properties.create_conversation_without_contact_reply: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["subject"]) -> MetaOapg.properties.subject: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["template"]) -> MetaOapg.properties.template: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["to"]) -> MetaOapg.properties.to: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["create_conversation_without_contact_reply"]) -> MetaOapg.properties.create_conversation_without_contact_reply: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "subject", "body", "template", "from", "to", "create_conversation_without_contact_reply", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["body", "create_conversation_without_contact_reply", "from", "message_type", "subject", "template", "to", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["create_conversation_without_contact_reply"]) -> typing.Union[MetaOapg.properties.create_conversation_without_contact_reply, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["from"]) -> typing.Union[MetaOapg.properties._from, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> typing.Union[MetaOapg.properties.message_type, schemas.Unset]: ...
@@ -346,48 +355,39 @@ class CreateMessageRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["subject"]) -> typing.Union[MetaOapg.properties.subject, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["template"]) -> typing.Union[MetaOapg.properties.template, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["from"]) -> typing.Union[MetaOapg.properties._from, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["to"]) -> typing.Union[MetaOapg.properties.to, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["create_conversation_without_contact_reply"]) -> typing.Union[MetaOapg.properties.create_conversation_without_contact_reply, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "subject", "body", "template", "from", "to", "create_conversation_without_contact_reply", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["body", "create_conversation_without_contact_reply", "from", "message_type", "subject", "template", "to", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
+        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
+        create_conversation_without_contact_reply: typing.Union[MetaOapg.properties.create_conversation_without_contact_reply, bool, schemas.Unset] = schemas.unset,
         message_type: typing.Union[MetaOapg.properties.message_type, str, schemas.Unset] = schemas.unset,
         subject: typing.Union[MetaOapg.properties.subject, str, schemas.Unset] = schemas.unset,
-        body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
         template: typing.Union[MetaOapg.properties.template, str, schemas.Unset] = schemas.unset,
         to: typing.Union[MetaOapg.properties.to, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        create_conversation_without_contact_reply: typing.Union[MetaOapg.properties.create_conversation_without_contact_reply, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CreateMessageRequest':
         return super().__new__(
             cls,
             *_args,
+            body=body,
+            create_conversation_without_contact_reply=create_conversation_without_contact_reply,
             message_type=message_type,
             subject=subject,
-            body=body,
             template=template,
             to=to,
-            create_conversation_without_contact_reply=create_conversation_without_contact_reply,
             _configuration=_configuration,
             **kwargs,
         )

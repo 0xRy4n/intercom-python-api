@@ -42,7 +42,6 @@ class TagCompanyRequest(
         }
         
         class properties:
-            name = schemas.StrSchema
             
             
             class companies(
@@ -61,54 +60,54 @@ class TagCompanyRequest(
                         class MetaOapg:
                             
                             class properties:
-                                id = schemas.StrSchema
                                 company_id = schemas.StrSchema
+                                id = schemas.StrSchema
                                 __annotations__ = {
-                                    "id": id,
                                     "company_id": company_id,
+                                    "id": id,
                                 }
                     
-                        
-                        @typing.overload
-                        def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                         
                         @typing.overload
                         def __getitem__(self, name: typing_extensions.Literal["company_id"]) -> MetaOapg.properties.company_id: ...
                         
                         @typing.overload
+                        def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                        
+                        @typing.overload
                         def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                         
-                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "company_id", ], str]):
+                        def __getitem__(self, name: typing.Union[typing_extensions.Literal["company_id", "id", ], str]):
                             # dict_instance[name] accessor
                             return super().__getitem__(name)
                         
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["company_id"]) -> typing.Union[MetaOapg.properties.company_id, schemas.Unset]: ...
                         
                         @typing.overload
-                        def get_item_oapg(self, name: typing_extensions.Literal["company_id"]) -> typing.Union[MetaOapg.properties.company_id, schemas.Unset]: ...
+                        def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
                         
                         @typing.overload
                         def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                         
-                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "company_id", ], str]):
+                        def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["company_id", "id", ], str]):
                             return super().get_item_oapg(name)
                         
                     
                         def __new__(
                             cls,
                             *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-                            id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
                             company_id: typing.Union[MetaOapg.properties.company_id, str, schemas.Unset] = schemas.unset,
+                            id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
                             _configuration: typing.Optional[schemas.Configuration] = None,
                             **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                         ) -> 'items':
                             return super().__new__(
                                 cls,
                                 *_args,
-                                id=id,
                                 company_id=company_id,
+                                id=id,
                                 _configuration=_configuration,
                                 **kwargs,
                             )
@@ -126,38 +125,39 @@ class TagCompanyRequest(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            name = schemas.StrSchema
             __annotations__ = {
-                "name": name,
                 "companies": companies,
+                "name": name,
             }
     
     companies: MetaOapg.properties.companies
     name: MetaOapg.properties.name
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def __getitem__(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "companies", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["companies", "name", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "companies", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["companies", "name", ], str]):
         return super().get_item_oapg(name)
     
 

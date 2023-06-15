@@ -10,8 +10,8 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | A list of segments obj
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of the object | [optional] must be one of ["list", ] 
 **[data](#data)** | list, tuple,  | tuple,  | Segment objects associated with the contact. | [optional] 
+**type** | str,  | str,  | The type of the object | [optional] must be one of ["list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

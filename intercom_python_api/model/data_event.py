@@ -42,28 +42,11 @@ class DataEvent(
         }
         
         class properties:
-            event_name = schemas.StrSchema
             created_at = schemas.IntSchema
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "event": "EVENT",
-                    }
-                
-                @schemas.classproperty
-                def EVENT(cls):
-                    return cls("event")
-            user_id = schemas.StrSchema
+            event_name = schemas.StrSchema
+            email = schemas.StrSchema
             id = schemas.StrSchema
             intercom_user_id = schemas.StrSchema
-            email = schemas.StrSchema
             
             
             class metadata(
@@ -93,31 +76,45 @@ class DataEvent(
                         _configuration=_configuration,
                         **kwargs,
                     )
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "event": "EVENT",
+                    }
+                
+                @schemas.classproperty
+                def EVENT(cls):
+                    return cls("event")
+            user_id = schemas.StrSchema
             __annotations__ = {
-                "event_name": event_name,
                 "created_at": created_at,
-                "type": type,
-                "user_id": user_id,
+                "event_name": event_name,
+                "email": email,
                 "id": id,
                 "intercom_user_id": intercom_user_id,
-                "email": email,
                 "metadata": metadata,
+                "type": type,
+                "user_id": user_id,
             }
     
     created_at: MetaOapg.properties.created_at
     event_name: MetaOapg.properties.event_name
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
@@ -126,30 +123,30 @@ class DataEvent(
     def __getitem__(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+    def __getitem__(self, name: typing_extensions.Literal["metadata"]) -> MetaOapg.properties.metadata: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["metadata"]) -> MetaOapg.properties.metadata: ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["event_name", "created_at", "type", "user_id", "id", "intercom_user_id", "email", "metadata", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["created_at", "event_name", "email", "id", "intercom_user_id", "metadata", "type", "user_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
@@ -158,15 +155,18 @@ class DataEvent(
     def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> typing.Union[MetaOapg.properties.intercom_user_id, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["metadata"]) -> typing.Union[MetaOapg.properties.metadata, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["metadata"]) -> typing.Union[MetaOapg.properties.metadata, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["event_name", "created_at", "type", "user_id", "id", "intercom_user_id", "email", "metadata", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["created_at", "event_name", "email", "id", "intercom_user_id", "metadata", "type", "user_id", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -175,12 +175,12 @@ class DataEvent(
         *_args: typing.Union[dict, frozendict.frozendict, ],
         created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, ],
         event_name: typing.Union[MetaOapg.properties.event_name, str, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
+        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
         id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         intercom_user_id: typing.Union[MetaOapg.properties.intercom_user_id, str, schemas.Unset] = schemas.unset,
-        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
         metadata: typing.Union[MetaOapg.properties.metadata, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DataEvent':
@@ -189,12 +189,12 @@ class DataEvent(
             *_args,
             created_at=created_at,
             event_name=event_name,
-            type=type,
-            user_id=user_id,
+            email=email,
             id=id,
             intercom_user_id=intercom_user_id,
-            email=email,
             metadata=metadata,
+            type=type,
+            user_id=user_id,
             _configuration=_configuration,
             **kwargs,
         )

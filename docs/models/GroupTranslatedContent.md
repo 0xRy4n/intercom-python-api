@@ -10,7 +10,6 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | The T
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | None, str,  | NoneClass, str,  | The type of object - group_translated_content. | [optional] must be one of [None, "group_translated_content", ] 
 **ar** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **bg** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **bs** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
@@ -38,14 +37,15 @@ Key | Input Type | Accessed Type | Description | Notes
 **nl** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **pl** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **pt** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
+**pt-BR** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **ro** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **ru** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **sl** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **sr** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **sv** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **tr** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
+**type** | None, str,  | NoneClass, str,  | The type of object - group_translated_content. | [optional] must be one of [None, "group_translated_content", ] 
 **vi** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
-**pt-BR** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **zh-CN** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **zh-TW** | [**GroupContent**](GroupContent.md) | [**GroupContent**](GroupContent.md) |  | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]

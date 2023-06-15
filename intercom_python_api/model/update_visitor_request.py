@@ -39,9 +39,6 @@ class UpdateVisitorRequest(
     class MetaOapg:
         
         class properties:
-            id = schemas.StrSchema
-            user_id = schemas.StrSchema
-            name = schemas.StrSchema
             
             
             class custom_attributes(
@@ -71,11 +68,14 @@ class UpdateVisitorRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
+            id = schemas.StrSchema
+            name = schemas.StrSchema
+            user_id = schemas.StrSchema
             __annotations__ = {
-                "id": id,
-                "user_id": user_id,
-                "name": name,
                 "custom_attributes": custom_attributes,
+                "id": id,
+                "name": name,
+                "user_id": user_id,
             }
         
         
@@ -149,61 +149,61 @@ class UpdateVisitorRequest(
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
+    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "name", "custom_attributes", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["custom_attributes", "id", "name", "user_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "name", "custom_attributes", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["custom_attributes", "id", "name", "user_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'UpdateVisitorRequest':
         return super().__new__(
             cls,
             *_args,
-            id=id,
-            user_id=user_id,
-            name=name,
             custom_attributes=custom_attributes,
+            id=id,
+            name=name,
+            user_id=user_id,
             _configuration=_configuration,
             **kwargs,
         )

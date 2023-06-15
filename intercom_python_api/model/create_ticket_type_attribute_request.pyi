@@ -43,8 +43,6 @@ class CreateTicketTypeAttributeRequest(
         }
         
         class properties:
-            name = schemas.StrSchema
-            description = schemas.StrSchema
             
             
             class data_type(
@@ -79,24 +77,26 @@ class CreateTicketTypeAttributeRequest(
                 @schemas.classproperty
                 def FILES(cls):
                     return cls("files")
+            description = schemas.StrSchema
+            name = schemas.StrSchema
+            allow_multiple_values = schemas.BoolSchema
+            list_items = schemas.StrSchema
+            multiline = schemas.BoolSchema
             required_to_create = schemas.BoolSchema
             required_to_create_for_contacts = schemas.BoolSchema
             visible_on_create = schemas.BoolSchema
             visible_to_contacts = schemas.BoolSchema
-            multiline = schemas.BoolSchema
-            list_items = schemas.StrSchema
-            allow_multiple_values = schemas.BoolSchema
             __annotations__ = {
-                "name": name,
-                "description": description,
                 "data_type": data_type,
+                "description": description,
+                "name": name,
+                "allow_multiple_values": allow_multiple_values,
+                "list_items": list_items,
+                "multiline": multiline,
                 "required_to_create": required_to_create,
                 "required_to_create_for_contacts": required_to_create_for_contacts,
                 "visible_on_create": visible_on_create,
                 "visible_to_contacts": visible_to_contacts,
-                "multiline": multiline,
-                "list_items": list_items,
-                "allow_multiple_values": allow_multiple_values,
             }
     
     data_type: MetaOapg.properties.data_type
@@ -104,13 +104,22 @@ class CreateTicketTypeAttributeRequest(
     description: MetaOapg.properties.description
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["allow_multiple_values"]) -> MetaOapg.properties.allow_multiple_values: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["list_items"]) -> MetaOapg.properties.list_items: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["multiline"]) -> MetaOapg.properties.multiline: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["required_to_create"]) -> MetaOapg.properties.required_to_create: ...
@@ -125,30 +134,30 @@ class CreateTicketTypeAttributeRequest(
     def __getitem__(self, name: typing_extensions.Literal["visible_to_contacts"]) -> MetaOapg.properties.visible_to_contacts: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["multiline"]) -> MetaOapg.properties.multiline: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["list_items"]) -> MetaOapg.properties.list_items: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["allow_multiple_values"]) -> MetaOapg.properties.allow_multiple_values: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "description", "data_type", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", "multiline", "list_items", "allow_multiple_values", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["data_type", "description", "name", "allow_multiple_values", "list_items", "multiline", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["allow_multiple_values"]) -> typing.Union[MetaOapg.properties.allow_multiple_values, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["list_items"]) -> typing.Union[MetaOapg.properties.list_items, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["multiline"]) -> typing.Union[MetaOapg.properties.multiline, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["required_to_create"]) -> typing.Union[MetaOapg.properties.required_to_create, schemas.Unset]: ...
@@ -163,18 +172,9 @@ class CreateTicketTypeAttributeRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["visible_to_contacts"]) -> typing.Union[MetaOapg.properties.visible_to_contacts, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["multiline"]) -> typing.Union[MetaOapg.properties.multiline, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["list_items"]) -> typing.Union[MetaOapg.properties.list_items, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["allow_multiple_values"]) -> typing.Union[MetaOapg.properties.allow_multiple_values, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "description", "data_type", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", "multiline", "list_items", "allow_multiple_values", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["data_type", "description", "name", "allow_multiple_values", "list_items", "multiline", "required_to_create", "required_to_create_for_contacts", "visible_on_create", "visible_to_contacts", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -184,13 +184,13 @@ class CreateTicketTypeAttributeRequest(
         data_type: typing.Union[MetaOapg.properties.data_type, str, ],
         name: typing.Union[MetaOapg.properties.name, str, ],
         description: typing.Union[MetaOapg.properties.description, str, ],
+        allow_multiple_values: typing.Union[MetaOapg.properties.allow_multiple_values, bool, schemas.Unset] = schemas.unset,
+        list_items: typing.Union[MetaOapg.properties.list_items, str, schemas.Unset] = schemas.unset,
+        multiline: typing.Union[MetaOapg.properties.multiline, bool, schemas.Unset] = schemas.unset,
         required_to_create: typing.Union[MetaOapg.properties.required_to_create, bool, schemas.Unset] = schemas.unset,
         required_to_create_for_contacts: typing.Union[MetaOapg.properties.required_to_create_for_contacts, bool, schemas.Unset] = schemas.unset,
         visible_on_create: typing.Union[MetaOapg.properties.visible_on_create, bool, schemas.Unset] = schemas.unset,
         visible_to_contacts: typing.Union[MetaOapg.properties.visible_to_contacts, bool, schemas.Unset] = schemas.unset,
-        multiline: typing.Union[MetaOapg.properties.multiline, bool, schemas.Unset] = schemas.unset,
-        list_items: typing.Union[MetaOapg.properties.list_items, str, schemas.Unset] = schemas.unset,
-        allow_multiple_values: typing.Union[MetaOapg.properties.allow_multiple_values, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CreateTicketTypeAttributeRequest':
@@ -200,13 +200,13 @@ class CreateTicketTypeAttributeRequest(
             data_type=data_type,
             name=name,
             description=description,
+            allow_multiple_values=allow_multiple_values,
+            list_items=list_items,
+            multiline=multiline,
             required_to_create=required_to_create,
             required_to_create_for_contacts=required_to_create_for_contacts,
             visible_on_create=visible_on_create,
             visible_to_contacts=visible_to_contacts,
-            multiline=multiline,
-            list_items=list_items,
-            allow_multiple_values=allow_multiple_values,
             _configuration=_configuration,
             **kwargs,
         )

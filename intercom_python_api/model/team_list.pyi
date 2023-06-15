@@ -40,16 +40,6 @@ class TeamList(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def TEAM_LIST(cls):
-                    return cls("team.list")
-            
-            
             class teams(
                 schemas.ListSchema
             ):
@@ -74,51 +64,61 @@ class TeamList(
             
                 def __getitem__(self, i: int) -> 'Team':
                     return super().__getitem__(i)
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def TEAM_LIST(cls):
+                    return cls("team.list")
             __annotations__ = {
-                "type": type,
                 "teams": teams,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["teams"]) -> MetaOapg.properties.teams: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "teams", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["teams", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["teams"]) -> typing.Union[MetaOapg.properties.teams, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["teams"]) -> typing.Union[MetaOapg.properties.teams, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "teams", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["teams", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         teams: typing.Union[MetaOapg.properties.teams, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'TeamList':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             teams=teams,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

@@ -38,7 +38,6 @@ class TicketTypeList(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
             
             
             class ticket_types(
@@ -65,51 +64,52 @@ class TicketTypeList(
             
                 def __getitem__(self, i: int) -> 'TicketType':
                     return super().__getitem__(i)
+            type = schemas.StrSchema
             __annotations__ = {
-                "type": type,
                 "ticket_types": ticket_types,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ticket_types"]) -> MetaOapg.properties.ticket_types: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "ticket_types", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ticket_types", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["ticket_types"]) -> typing.Union[MetaOapg.properties.ticket_types, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ticket_types"]) -> typing.Union[MetaOapg.properties.ticket_types, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "ticket_types", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ticket_types", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         ticket_types: typing.Union[MetaOapg.properties.ticket_types, list, tuple, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'TicketTypeList':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             ticket_types=ticket_types,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

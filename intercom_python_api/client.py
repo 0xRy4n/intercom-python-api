@@ -13,5 +13,9 @@ class Intercom:
         self.raw_api_client = ApiClient(config)
 
         for value in tag_to_api.values():
-            instance = value(self.raw_api_client)
+            try:
+                instance = value(self.raw_api_client, skip_deserialization=True)
+            except TypeError:
+                instance = value(self.raw_api_client)
+                
             setattr(self, value.__name__, instance)

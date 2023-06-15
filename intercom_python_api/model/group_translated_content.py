@@ -41,42 +41,6 @@ class GroupTranslatedContent(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        schemas.NoneClass.NONE: "NONE",
-                        "group_translated_content": "GROUP_TRANSLATED_CONTENT",
-                    }
-                
-                @schemas.classproperty
-                def NONE(cls):
-                    return cls(None)
-                
-                @schemas.classproperty
-                def GROUP_TRANSLATED_CONTENT(cls):
-                    return cls("group_translated_content")
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'type':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
         
             @staticmethod
             def ar() -> typing.Type['GroupContent']:
@@ -187,6 +151,10 @@ class GroupTranslatedContent(
                 return GroupContent
         
             @staticmethod
+            def pt_br() -> typing.Type['GroupContent']:
+                return GroupContent
+        
+            @staticmethod
             def ro() -> typing.Type['GroupContent']:
                 return GroupContent
         
@@ -209,13 +177,45 @@ class GroupTranslatedContent(
             @staticmethod
             def tr() -> typing.Type['GroupContent']:
                 return GroupContent
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        schemas.NoneClass.NONE: "NONE",
+                        "group_translated_content": "GROUP_TRANSLATED_CONTENT",
+                    }
+                
+                @schemas.classproperty
+                def NONE(cls):
+                    return cls(None)
+                
+                @schemas.classproperty
+                def GROUP_TRANSLATED_CONTENT(cls):
+                    return cls("group_translated_content")
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'type':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
         
             @staticmethod
             def vi() -> typing.Type['GroupContent']:
-                return GroupContent
-        
-            @staticmethod
-            def pt_br() -> typing.Type['GroupContent']:
                 return GroupContent
         
             @staticmethod
@@ -226,7 +226,6 @@ class GroupTranslatedContent(
             def zh_tw() -> typing.Type['GroupContent']:
                 return GroupContent
             __annotations__ = {
-                "type": type,
                 "ar": ar,
                 "bg": bg,
                 "bs": bs,
@@ -254,21 +253,19 @@ class GroupTranslatedContent(
                 "nl": nl,
                 "pl": pl,
                 "pt": pt,
+                "pt-BR": pt_br,
                 "ro": ro,
                 "ru": ru,
                 "sl": sl,
                 "sr": sr,
                 "sv": sv,
                 "tr": tr,
+                "type": type,
                 "vi": vi,
-                "pt-BR": pt_br,
                 "zh-CN": zh_cn,
                 "zh-TW": zh_tw,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ar"]) -> 'GroupContent': ...
@@ -352,6 +349,9 @@ class GroupTranslatedContent(
     def __getitem__(self, name: typing_extensions.Literal["pt"]) -> 'GroupContent': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["pt-BR"]) -> 'GroupContent': ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ro"]) -> 'GroupContent': ...
     
     @typing.overload
@@ -370,10 +370,10 @@ class GroupTranslatedContent(
     def __getitem__(self, name: typing_extensions.Literal["tr"]) -> 'GroupContent': ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["vi"]) -> 'GroupContent': ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["pt-BR"]) -> 'GroupContent': ...
+    def __getitem__(self, name: typing_extensions.Literal["vi"]) -> 'GroupContent': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["zh-CN"]) -> 'GroupContent': ...
@@ -384,13 +384,10 @@ class GroupTranslatedContent(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "ro", "ru", "sl", "sr", "sv", "tr", "vi", "pt-BR", "zh-CN", "zh-TW", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "pt-BR", "ro", "ru", "sl", "sr", "sv", "tr", "type", "vi", "zh-CN", "zh-TW", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ar"]) -> typing.Union['GroupContent', schemas.Unset]: ...
@@ -474,6 +471,9 @@ class GroupTranslatedContent(
     def get_item_oapg(self, name: typing_extensions.Literal["pt"]) -> typing.Union['GroupContent', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["pt-BR"]) -> typing.Union['GroupContent', schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ro"]) -> typing.Union['GroupContent', schemas.Unset]: ...
     
     @typing.overload
@@ -492,10 +492,10 @@ class GroupTranslatedContent(
     def get_item_oapg(self, name: typing_extensions.Literal["tr"]) -> typing.Union['GroupContent', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["vi"]) -> typing.Union['GroupContent', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["pt-BR"]) -> typing.Union['GroupContent', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["vi"]) -> typing.Union['GroupContent', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["zh-CN"]) -> typing.Union['GroupContent', schemas.Unset]: ...
@@ -506,14 +506,13 @@ class GroupTranslatedContent(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "ro", "ru", "sl", "sr", "sv", "tr", "vi", "pt-BR", "zh-CN", "zh-TW", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "pt-BR", "ro", "ru", "sl", "sr", "sv", "tr", "type", "vi", "zh-CN", "zh-TW", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, None, str, schemas.Unset] = schemas.unset,
         ar: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
         bg: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
         bs: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
@@ -547,6 +546,7 @@ class GroupTranslatedContent(
         sr: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
         sv: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
         tr: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, None, str, schemas.Unset] = schemas.unset,
         vi: typing.Union['GroupContent', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -554,7 +554,6 @@ class GroupTranslatedContent(
         return super().__new__(
             cls,
             *_args,
-            type=type,
             ar=ar,
             bg=bg,
             bs=bs,
@@ -588,6 +587,7 @@ class GroupTranslatedContent(
             sr=sr,
             sv=sv,
             tr=tr,
+            type=type,
             vi=vi,
             _configuration=_configuration,
             **kwargs,

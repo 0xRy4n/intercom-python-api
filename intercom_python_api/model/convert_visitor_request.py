@@ -55,13 +55,13 @@ class ConvertVisitorRequest(
                 class MetaOapg:
                     
                     class properties:
+                        email = schemas.StrSchema
                         id = schemas.StrSchema
                         user_id = schemas.StrSchema
-                        email = schemas.StrSchema
                         __annotations__ = {
+                            "email": email,
                             "id": id,
                             "user_id": user_id,
-                            "email": email,
                         }
                     
                     
@@ -135,21 +135,24 @@ class ConvertVisitorRequest(
             
                 
                 @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+                
+                @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-                
-                @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "email", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["email", "id", "user_id", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
@@ -158,30 +161,27 @@ class ConvertVisitorRequest(
                 def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-                
-                @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "email", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["email", "id", "user_id", ], str]):
                     return super().get_item_oapg(name)
                 
             
                 def __new__(
                     cls,
                     *_args: typing.Union[dict, frozendict.frozendict, ],
+                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
                     id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
                     user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
-                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
                     _configuration: typing.Optional[schemas.Configuration] = None,
                     **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'user':
                     return super().__new__(
                         cls,
                         *_args,
+                        email=email,
                         id=id,
                         user_id=user_id,
-                        email=email,
                         _configuration=_configuration,
                         **kwargs,
                     )
@@ -196,13 +196,13 @@ class ConvertVisitorRequest(
                 class MetaOapg:
                     
                     class properties:
+                        email = schemas.StrSchema
                         id = schemas.StrSchema
                         user_id = schemas.StrSchema
-                        email = schemas.StrSchema
                         __annotations__ = {
+                            "email": email,
                             "id": id,
                             "user_id": user_id,
-                            "email": email,
                         }
                     
                     
@@ -304,21 +304,24 @@ class ConvertVisitorRequest(
             
                 
                 @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
+                
+                @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-                
-                @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "email", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["email", "id", "user_id", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
@@ -327,30 +330,27 @@ class ConvertVisitorRequest(
                 def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-                
-                @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "user_id", "email", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["email", "id", "user_id", ], str]):
                     return super().get_item_oapg(name)
                 
             
                 def __new__(
                     cls,
                     *_args: typing.Union[dict, frozendict.frozendict, ],
+                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
                     id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
                     user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
-                    email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
                     _configuration: typing.Optional[schemas.Configuration] = None,
                     **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'visitor':
                     return super().__new__(
                         cls,
                         *_args,
+                        email=email,
                         id=id,
                         user_id=user_id,
-                        email=email,
                         _configuration=_configuration,
                         **kwargs,
                     )

@@ -41,20 +41,6 @@ class ArticleTranslatedContent(
     class MetaOapg:
         
         class properties:
-            
-            
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def NONE(cls):
-                    return cls(None)
-                
-                @schemas.classproperty
-                def ARTICLE_TRANSLATED_CONTENT(cls):
-                    return cls("article_translated_content")
         
             @staticmethod
             def ar() -> typing.Type['ArticleContent']:
@@ -165,6 +151,10 @@ class ArticleTranslatedContent(
                 return ArticleContent
         
             @staticmethod
+            def pt_br() -> typing.Type['ArticleContent']:
+                return ArticleContent
+        
+            @staticmethod
             def ro() -> typing.Type['ArticleContent']:
                 return ArticleContent
         
@@ -187,13 +177,23 @@ class ArticleTranslatedContent(
             @staticmethod
             def tr() -> typing.Type['ArticleContent']:
                 return ArticleContent
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def NONE(cls):
+                    return cls(None)
+                
+                @schemas.classproperty
+                def ARTICLE_TRANSLATED_CONTENT(cls):
+                    return cls("article_translated_content")
         
             @staticmethod
             def vi() -> typing.Type['ArticleContent']:
-                return ArticleContent
-        
-            @staticmethod
-            def pt_br() -> typing.Type['ArticleContent']:
                 return ArticleContent
         
             @staticmethod
@@ -204,7 +204,6 @@ class ArticleTranslatedContent(
             def zh_tw() -> typing.Type['ArticleContent']:
                 return ArticleContent
             __annotations__ = {
-                "type": type,
                 "ar": ar,
                 "bg": bg,
                 "bs": bs,
@@ -232,21 +231,19 @@ class ArticleTranslatedContent(
                 "nl": nl,
                 "pl": pl,
                 "pt": pt,
+                "pt-BR": pt_br,
                 "ro": ro,
                 "ru": ru,
                 "sl": sl,
                 "sr": sr,
                 "sv": sv,
                 "tr": tr,
+                "type": type,
                 "vi": vi,
-                "pt-BR": pt_br,
                 "zh-CN": zh_cn,
                 "zh-TW": zh_tw,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ar"]) -> 'ArticleContent': ...
@@ -330,6 +327,9 @@ class ArticleTranslatedContent(
     def __getitem__(self, name: typing_extensions.Literal["pt"]) -> 'ArticleContent': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["pt-BR"]) -> 'ArticleContent': ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["ro"]) -> 'ArticleContent': ...
     
     @typing.overload
@@ -348,10 +348,10 @@ class ArticleTranslatedContent(
     def __getitem__(self, name: typing_extensions.Literal["tr"]) -> 'ArticleContent': ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["vi"]) -> 'ArticleContent': ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["pt-BR"]) -> 'ArticleContent': ...
+    def __getitem__(self, name: typing_extensions.Literal["vi"]) -> 'ArticleContent': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["zh-CN"]) -> 'ArticleContent': ...
@@ -362,13 +362,10 @@ class ArticleTranslatedContent(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "ro", "ru", "sl", "sr", "sv", "tr", "vi", "pt-BR", "zh-CN", "zh-TW", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "pt-BR", "ro", "ru", "sl", "sr", "sv", "tr", "type", "vi", "zh-CN", "zh-TW", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ar"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
@@ -452,6 +449,9 @@ class ArticleTranslatedContent(
     def get_item_oapg(self, name: typing_extensions.Literal["pt"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["pt-BR"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["ro"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
     
     @typing.overload
@@ -470,10 +470,10 @@ class ArticleTranslatedContent(
     def get_item_oapg(self, name: typing_extensions.Literal["tr"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["vi"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["pt-BR"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["vi"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["zh-CN"]) -> typing.Union['ArticleContent', schemas.Unset]: ...
@@ -484,14 +484,13 @@ class ArticleTranslatedContent(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "ro", "ru", "sl", "sr", "sv", "tr", "vi", "pt-BR", "zh-CN", "zh-TW", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ar", "bg", "bs", "ca", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "ja", "ko", "lt", "lv", "mn", "nb", "nl", "pl", "pt", "pt-BR", "ro", "ru", "sl", "sr", "sv", "tr", "type", "vi", "zh-CN", "zh-TW", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         ar: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
         bg: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
         bs: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
@@ -525,6 +524,7 @@ class ArticleTranslatedContent(
         sr: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
         sv: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
         tr: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         vi: typing.Union['ArticleContent', schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -532,7 +532,6 @@ class ArticleTranslatedContent(
         return super().__new__(
             cls,
             *_args,
-            type=type,
             ar=ar,
             bg=bg,
             bs=bs,
@@ -566,6 +565,7 @@ class ArticleTranslatedContent(
             sr=sr,
             sv=sv,
             tr=tr,
+            type=type,
             vi=vi,
             _configuration=_configuration,
             **kwargs,

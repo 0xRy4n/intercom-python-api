@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | A paginated list of no
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | String representing the object&#x27;s type. Always has the value &#x60;list&#x60;. | [optional] 
 **[data](#data)** | list, tuple,  | tuple,  | An array of notes. | [optional] 
-**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of notes. | [optional] 
 **pages** | [**CursorPages**](CursorPages.md) | [**CursorPages**](CursorPages.md) |  | [optional] 
+**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | A count of the total number of notes. | [optional] 
+**type** | str,  | str,  | String representing the object&#x27;s type. Always has the value &#x60;list&#x60;. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

@@ -41,25 +41,6 @@ class CreateDataAttributeRequest(
         }
         
         class properties:
-            name = schemas.StrSchema
-            
-            
-            class model(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def CONTACT(cls):
-                    return cls("contact")
-                
-                @schemas.classproperty
-                def COMPANY(cls):
-                    return cls("company")
-                
-                @schemas.classproperty
-                def CONVERSATION(cls):
-                    return cls("conversation")
             
             
             class data_type(
@@ -90,6 +71,25 @@ class CreateDataAttributeRequest(
                 @schemas.classproperty
                 def DATE(cls):
                     return cls("date")
+            
+            
+            class model(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def CONTACT(cls):
+                    return cls("contact")
+                
+                @schemas.classproperty
+                def COMPANY(cls):
+                    return cls("company")
+                
+                @schemas.classproperty
+                def CONVERSATION(cls):
+                    return cls("conversation")
+            name = schemas.StrSchema
             description = schemas.StrSchema
             
             
@@ -115,9 +115,9 @@ class CreateDataAttributeRequest(
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
             __annotations__ = {
-                "name": name,
-                "model": model,
                 "data_type": data_type,
+                "model": model,
+                "name": name,
                 "description": description,
                 "options": options,
             }
@@ -127,13 +127,13 @@ class CreateDataAttributeRequest(
     model: MetaOapg.properties.model
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["model"]) -> MetaOapg.properties.model: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
@@ -144,19 +144,19 @@ class CreateDataAttributeRequest(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "model", "data_type", "description", "options", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["data_type", "model", "name", "description", "options", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["model"]) -> MetaOapg.properties.model: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["data_type"]) -> MetaOapg.properties.data_type: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
@@ -167,7 +167,7 @@ class CreateDataAttributeRequest(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "model", "data_type", "description", "options", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["data_type", "model", "name", "description", "options", ], str]):
         return super().get_item_oapg(name)
     
 

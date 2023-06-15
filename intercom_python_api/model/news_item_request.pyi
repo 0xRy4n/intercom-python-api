@@ -42,23 +42,9 @@ class NewsItemRequest(
         }
         
         class properties:
-            title = schemas.StrSchema
             sender_id = schemas.IntSchema
+            title = schemas.StrSchema
             body = schemas.StrSchema
-            
-            
-            class state(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def DRAFT(cls):
-                    return cls("draft")
-                
-                @schemas.classproperty
-                def LIVE(cls):
-                    return cls("live")
             deliver_silently = schemas.BoolSchema
             
             
@@ -82,6 +68,32 @@ class NewsItemRequest(
                     )
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
+                    return super().__getitem__(i)
+            
+            
+            class newsfeed_assignments(
+                schemas.ListSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    @staticmethod
+                    def items() -> typing.Type['NewsfeedAssignment']:
+                        return NewsfeedAssignment
+            
+                def __new__(
+                    cls,
+                    _arg: typing.Union[typing.Tuple['NewsfeedAssignment'], typing.List['NewsfeedAssignment']],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'newsfeed_assignments':
+                    return super().__new__(
+                        cls,
+                        _arg,
+                        _configuration=_configuration,
+                    )
+            
+                def __getitem__(self, i: int) -> 'NewsfeedAssignment':
                     return super().__getitem__(i)
             
             
@@ -127,55 +139,40 @@ class NewsItemRequest(
                     return super().__getitem__(i)
             
             
-            class newsfeed_assignments(
-                schemas.ListSchema
+            class state(
+                schemas.EnumBase,
+                schemas.StrSchema
             ):
-            
-            
-                class MetaOapg:
-                    
-                    @staticmethod
-                    def items() -> typing.Type['NewsfeedAssignment']:
-                        return NewsfeedAssignment
-            
-                def __new__(
-                    cls,
-                    _arg: typing.Union[typing.Tuple['NewsfeedAssignment'], typing.List['NewsfeedAssignment']],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'newsfeed_assignments':
-                    return super().__new__(
-                        cls,
-                        _arg,
-                        _configuration=_configuration,
-                    )
-            
-                def __getitem__(self, i: int) -> 'NewsfeedAssignment':
-                    return super().__getitem__(i)
+                
+                @schemas.classproperty
+                def DRAFT(cls):
+                    return cls("draft")
+                
+                @schemas.classproperty
+                def LIVE(cls):
+                    return cls("live")
             __annotations__ = {
-                "title": title,
                 "sender_id": sender_id,
+                "title": title,
                 "body": body,
-                "state": state,
                 "deliver_silently": deliver_silently,
                 "labels": labels,
-                "reactions": reactions,
                 "newsfeed_assignments": newsfeed_assignments,
+                "reactions": reactions,
+                "state": state,
             }
     
     title: MetaOapg.properties.title
     sender_id: MetaOapg.properties.sender_id
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["sender_id"]) -> MetaOapg.properties.sender_id: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    def __getitem__(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["deliver_silently"]) -> MetaOapg.properties.deliver_silently: ...
@@ -184,30 +181,30 @@ class NewsItemRequest(
     def __getitem__(self, name: typing_extensions.Literal["labels"]) -> MetaOapg.properties.labels: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["newsfeed_assignments"]) -> MetaOapg.properties.newsfeed_assignments: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["reactions"]) -> MetaOapg.properties.reactions: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["newsfeed_assignments"]) -> MetaOapg.properties.newsfeed_assignments: ...
+    def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["title", "sender_id", "body", "state", "deliver_silently", "labels", "reactions", "newsfeed_assignments", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["sender_id", "title", "body", "deliver_silently", "labels", "newsfeed_assignments", "reactions", "state", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["sender_id"]) -> MetaOapg.properties.sender_id: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["title"]) -> MetaOapg.properties.title: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["state"]) -> typing.Union[MetaOapg.properties.state, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> typing.Union[MetaOapg.properties.body, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["deliver_silently"]) -> typing.Union[MetaOapg.properties.deliver_silently, schemas.Unset]: ...
@@ -216,15 +213,18 @@ class NewsItemRequest(
     def get_item_oapg(self, name: typing_extensions.Literal["labels"]) -> typing.Union[MetaOapg.properties.labels, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["newsfeed_assignments"]) -> typing.Union[MetaOapg.properties.newsfeed_assignments, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["reactions"]) -> typing.Union[MetaOapg.properties.reactions, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["newsfeed_assignments"]) -> typing.Union[MetaOapg.properties.newsfeed_assignments, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["state"]) -> typing.Union[MetaOapg.properties.state, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["title", "sender_id", "body", "state", "deliver_silently", "labels", "reactions", "newsfeed_assignments", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["sender_id", "title", "body", "deliver_silently", "labels", "newsfeed_assignments", "reactions", "state", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -234,11 +234,11 @@ class NewsItemRequest(
         title: typing.Union[MetaOapg.properties.title, str, ],
         sender_id: typing.Union[MetaOapg.properties.sender_id, decimal.Decimal, int, ],
         body: typing.Union[MetaOapg.properties.body, str, schemas.Unset] = schemas.unset,
-        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
         deliver_silently: typing.Union[MetaOapg.properties.deliver_silently, bool, schemas.Unset] = schemas.unset,
         labels: typing.Union[MetaOapg.properties.labels, list, tuple, schemas.Unset] = schemas.unset,
-        reactions: typing.Union[MetaOapg.properties.reactions, list, tuple, schemas.Unset] = schemas.unset,
         newsfeed_assignments: typing.Union[MetaOapg.properties.newsfeed_assignments, list, tuple, schemas.Unset] = schemas.unset,
+        reactions: typing.Union[MetaOapg.properties.reactions, list, tuple, schemas.Unset] = schemas.unset,
+        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'NewsItemRequest':
@@ -248,11 +248,11 @@ class NewsItemRequest(
             title=title,
             sender_id=sender_id,
             body=body,
-            state=state,
             deliver_silently=deliver_silently,
             labels=labels,
-            reactions=reactions,
             newsfeed_assignments=newsfeed_assignments,
+            reactions=reactions,
+            state=state,
             _configuration=_configuration,
             **kwargs,
         )

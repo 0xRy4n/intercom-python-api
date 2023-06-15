@@ -11,9 +11,9 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | An ob
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
 **[data](#data)** | list, tuple,  | tuple,  | This object represents the tags attached to a contact. | [optional] 
-**url** | str,  | str,  | url to get more tag resources for this contact | [optional] 
-**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | Int representing the total number of tags attached to this contact | [optional] 
 **has_more** | bool,  | BoolClass,  | Whether there&#x27;s more Addressable Objects to be viewed. If true, use the url to view all | [optional] 
+**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | Int representing the total number of tags attached to this contact | [optional] 
+**url** | str,  | str,  | url to get more tag resources for this contact | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # data

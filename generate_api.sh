@@ -10,4 +10,12 @@ if [ -z "$1" ]; then
     help
 fi
 
-openapi-generator-cli generate -g python -t templates -i $1 -o . --additional-properties=packageName=intercom_python_api,projectName=intercom-python-api,nonCompliantUseDiscriminatorIfCompositionFails=true,packageUrl=https://github.com/0xRy4n/intercom-python-api.git,packageVersion=$2,useNose=true --schema-mappings object=typing.Dict,array=typinDg.List --skip-validate-spec
+python3 correct_spec.py $1
+exit_code=$?
+
+if [ $exit_code -ne 0 ]; then
+    echo "Failed to correct spec."
+    exit $exit_code
+fi
+
+openapi-generator-cli generate -g python -t templates -i spec.yaml -o . --additional-properties=packageName=intercom_python_api,projectName=intercom-python-api,nonCompliantUseDiscriminatorIfCompositionFails=true,packageUrl=https://github.com/0xRy4n/intercom-python-api.git,packageVersion=$2,useNose=true --schema-mappings object=typing.Dict,array=typinDg.List --skip-validate-spec

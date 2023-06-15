@@ -10,8 +10,8 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | The l
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of the object - &#x60;admin.list&#x60;. | [optional] 
 **[teammates](#teammates)** | list, tuple,  | tuple,  | The list of teammates who participated in the conversation (wrote at least one conversation part). | [optional] 
+**type** | str,  | str,  | The type of the object - &#x60;admin.list&#x60;. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # teammates

@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | A list of Company Obje
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | The type of object | [optional] must be one of ["list", ] 
 **[companies](#companies)** | list, tuple,  | tuple,  | An array containing Company Objects | [optional] 
-**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | The total number of companies associated to this contact | [optional] 
 **pages** | [**PagesLink**](PagesLink.md) | [**PagesLink**](PagesLink.md) |  | [optional] 
+**total_count** | decimal.Decimal, int,  | decimal.Decimal,  | The total number of companies associated to this contact | [optional] 
+**type** | str,  | str,  | The type of object | [optional] must be one of ["list", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # companies

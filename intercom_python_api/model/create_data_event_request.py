@@ -37,11 +37,10 @@ class CreateDataEventRequest(
     class MetaOapg:
         
         class properties:
-            event_name = schemas.StrSchema
             created_at = schemas.IntSchema
-            user_id = schemas.StrSchema
-            id = schemas.StrSchema
             email = schemas.StrSchema
+            event_name = schemas.StrSchema
+            id = schemas.StrSchema
             
             
             class metadata(
@@ -71,13 +70,14 @@ class CreateDataEventRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
+            user_id = schemas.StrSchema
             __annotations__ = {
-                "event_name": event_name,
                 "created_at": created_at,
-                "user_id": user_id,
-                "id": id,
                 "email": email,
+                "event_name": event_name,
+                "id": id,
                 "metadata": metadata,
+                "user_id": user_id,
             }
         
         
@@ -191,77 +191,77 @@ class CreateDataEventRequest(
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["event_name"]) -> MetaOapg.properties.event_name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["metadata"]) -> MetaOapg.properties.metadata: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["event_name", "created_at", "user_id", "id", "email", "metadata", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["created_at", "email", "event_name", "id", "metadata", "user_id", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["event_name"]) -> typing.Union[MetaOapg.properties.event_name, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["event_name"]) -> typing.Union[MetaOapg.properties.event_name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["metadata"]) -> typing.Union[MetaOapg.properties.metadata, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["event_name", "created_at", "user_id", "id", "email", "metadata", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["created_at", "email", "event_name", "id", "metadata", "user_id", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        event_name: typing.Union[MetaOapg.properties.event_name, str, schemas.Unset] = schemas.unset,
         created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
+        event_name: typing.Union[MetaOapg.properties.event_name, str, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         metadata: typing.Union[MetaOapg.properties.metadata, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CreateDataEventRequest':
         return super().__new__(
             cls,
             *_args,
-            event_name=event_name,
             created_at=created_at,
-            user_id=user_id,
-            id=id,
             email=email,
+            event_name=event_name,
+            id=id,
             metadata=metadata,
+            user_id=user_id,
             _configuration=_configuration,
             **kwargs,
         )

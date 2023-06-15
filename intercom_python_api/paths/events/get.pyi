@@ -25,8 +25,8 @@ import frozendict  # noqa: F401
 
 from intercom_python_api import schemas  # noqa: F401
 
-from intercom_python_api.model.data_event_list import DataEventList
 from intercom_python_api.model.intercom_version import IntercomVersion
+from intercom_python_api.model.data_event_summary import DataEventSummary
 from intercom_python_api.model.error import Error
 
 # Query params
@@ -274,7 +274,44 @@ request_header_intercom_version = api_client.HeaderParameter(
     style=api_client.ParameterStyle.SIMPLE,
     schema=IntercomVersionSchema,
 )
-SchemaFor200ResponseBodyApplicationJson = DataEventList
+
+
+class SchemaFor200ResponseBodyApplicationJson(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        one_of_1 = schemas.DictSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def one_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                DataEventSummary,
+                cls.one_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'SchemaFor200ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *_args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass
@@ -293,7 +330,44 @@ _response_for_200 = api_client.OpenApiResponse(
             schema=SchemaFor200ResponseBodyApplicationJson),
     },
 )
-SchemaFor401ResponseBodyApplicationJson = Error
+
+
+class SchemaFor401ResponseBodyApplicationJson(
+    schemas.ComposedSchema,
+):
+
+
+    class MetaOapg:
+        one_of_1 = schemas.DictSchema
+        
+        @classmethod
+        @functools.lru_cache()
+        def one_of(cls):
+            # we need this here to make our import statements work
+            # we must store _composed_schemas in here so the code is only run
+            # when we invoke this method. If we kept this at the class
+            # level we would get an error because the class level
+            # code would be run when this module is imported, and these composed
+            # classes don't exist yet because their module has not finished
+            # loading
+            return [
+                Error,
+                cls.one_of_1,
+            ]
+
+
+    def __new__(
+        cls,
+        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+        _configuration: typing.Optional[schemas.Configuration] = None,
+        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+    ) -> 'SchemaFor401ResponseBodyApplicationJson':
+        return super().__new__(
+            cls,
+            *_args,
+            _configuration=_configuration,
+            **kwargs,
+        )
 
 
 @dataclass
@@ -319,7 +393,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _list_data_events_oapg(
+    def _lis_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -332,7 +406,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _list_data_events_oapg(
+    def _lis_data_events_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -343,7 +417,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _list_data_events_oapg(
+    def _lis_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -356,7 +430,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _list_data_events_oapg(
+    def _lis_data_events_oapg(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -432,11 +506,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class ListDataEvents(BaseApi):
+class LisDataEvents(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def list_data_events(
+    def lis_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -449,7 +523,7 @@ class ListDataEvents(BaseApi):
     ]: ...
 
     @typing.overload
-    def list_data_events(
+    def lis_data_events(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         query_params: RequestQueryParams = frozendict.frozendict(),
@@ -460,7 +534,7 @@ class ListDataEvents(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def list_data_events(
+    def lis_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -473,7 +547,7 @@ class ListDataEvents(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def list_data_events(
+    def lis_data_events(
         self,
         query_params: RequestQueryParams = frozendict.frozendict(),
         header_params: RequestHeaderParams = frozendict.frozendict(),
@@ -482,7 +556,7 @@ class ListDataEvents(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._list_data_events_oapg(
+        return self._lis_data_events_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,
@@ -542,7 +616,7 @@ class ApiForget(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._list_data_events_oapg(
+        return self._lis_data_events_oapg(
             query_params=query_params,
             header_params=header_params,
             accept_content_types=accept_content_types,

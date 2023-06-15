@@ -52,6 +52,32 @@ class ContactReplyConversationRequest(
                 class properties:
                     
                     
+                    class attachment_urls(
+                        schemas.ListSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            max_items = 5
+                            items = schemas.StrSchema
+                    
+                        def __new__(
+                            cls,
+                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'attachment_urls':
+                            return super().__new__(
+                                cls,
+                                _arg,
+                                _configuration=_configuration,
+                            )
+                    
+                        def __getitem__(self, i: int) -> MetaOapg.items:
+                            return super().__getitem__(i)
+                    body = schemas.StrSchema
+                    intercom_user_id = schemas.StrSchema
+                    
+                    
                     class message_type(
                         schemas.EnumBase,
                         schemas.StrSchema
@@ -82,38 +108,12 @@ class ContactReplyConversationRequest(
                         @schemas.classproperty
                         def USER(cls):
                             return cls("user")
-                    body = schemas.StrSchema
-                    intercom_user_id = schemas.StrSchema
-                    
-                    
-                    class attachment_urls(
-                        schemas.ListSchema
-                    ):
-                    
-                    
-                        class MetaOapg:
-                            max_items = 5
-                            items = schemas.StrSchema
-                    
-                        def __new__(
-                            cls,
-                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                            _configuration: typing.Optional[schemas.Configuration] = None,
-                        ) -> 'attachment_urls':
-                            return super().__new__(
-                                cls,
-                                _arg,
-                                _configuration=_configuration,
-                            )
-                    
-                        def __getitem__(self, i: int) -> MetaOapg.items:
-                            return super().__getitem__(i)
                     __annotations__ = {
-                        "message_type": message_type,
-                        "type": type,
+                        "attachment_urls": attachment_urls,
                         "body": body,
                         "intercom_user_id": intercom_user_id,
-                        "attachment_urls": attachment_urls,
+                        "message_type": message_type,
+                        "type": type,
                     }
             
             intercom_user_id: MetaOapg.properties.intercom_user_id
@@ -122,10 +122,7 @@ class ContactReplyConversationRequest(
             type: MetaOapg.properties.type
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
-            
-            @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
             
             @typing.overload
             def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -134,21 +131,21 @@ class ContactReplyConversationRequest(
             def __getitem__(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
+            def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
             def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
             
-            def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "intercom_user_id", "attachment_urls", ], str]):
+            def __getitem__(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "intercom_user_id", "message_type", "type", ], str]):
                 # dict_instance[name] accessor
                 return super().__getitem__(name)
             
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
-            
-            @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
             
             @typing.overload
             def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -157,12 +154,15 @@ class ContactReplyConversationRequest(
             def get_item_oapg(self, name: typing_extensions.Literal["intercom_user_id"]) -> MetaOapg.properties.intercom_user_id: ...
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
+            def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
             def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
             
-            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "intercom_user_id", "attachment_urls", ], str]):
+            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "intercom_user_id", "message_type", "type", ], str]):
                 return super().get_item_oapg(name)
             
         
@@ -206,6 +206,31 @@ class ContactReplyConversationRequest(
                 class properties:
                     
                     
+                    class attachment_urls(
+                        schemas.ListSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            max_items = 5
+                            items = schemas.StrSchema
+                    
+                        def __new__(
+                            cls,
+                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'attachment_urls':
+                            return super().__new__(
+                                cls,
+                                _arg,
+                                _configuration=_configuration,
+                            )
+                    
+                        def __getitem__(self, i: int) -> MetaOapg.items:
+                            return super().__getitem__(i)
+                    body = schemas.StrSchema
+                    
+                    
                     class message_type(
                         schemas.EnumBase,
                         schemas.StrSchema
@@ -236,38 +261,13 @@ class ContactReplyConversationRequest(
                         @schemas.classproperty
                         def USER(cls):
                             return cls("user")
-                    body = schemas.StrSchema
                     user_id = schemas.StrSchema
-                    
-                    
-                    class attachment_urls(
-                        schemas.ListSchema
-                    ):
-                    
-                    
-                        class MetaOapg:
-                            max_items = 5
-                            items = schemas.StrSchema
-                    
-                        def __new__(
-                            cls,
-                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                            _configuration: typing.Optional[schemas.Configuration] = None,
-                        ) -> 'attachment_urls':
-                            return super().__new__(
-                                cls,
-                                _arg,
-                                _configuration=_configuration,
-                            )
-                    
-                        def __getitem__(self, i: int) -> MetaOapg.items:
-                            return super().__getitem__(i)
                     __annotations__ = {
+                        "attachment_urls": attachment_urls,
+                        "body": body,
                         "message_type": message_type,
                         "type": type,
-                        "body": body,
                         "user_id": user_id,
-                        "attachment_urls": attachment_urls,
                     }
             
             user_id: MetaOapg.properties.user_id
@@ -276,27 +276,33 @@ class ContactReplyConversationRequest(
             type: MetaOapg.properties.type
             
             @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+            
+            @typing.overload
             def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
             
             @typing.overload
             def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
-            
-            @typing.overload
             def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
-            
-            @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
             
             @typing.overload
             def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
             
-            def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "user_id", "attachment_urls", ], str]):
+            def __getitem__(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "message_type", "type", "user_id", ], str]):
                 # dict_instance[name] accessor
                 return super().__getitem__(name)
             
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
             
             @typing.overload
             def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
@@ -305,18 +311,12 @@ class ContactReplyConversationRequest(
             def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
-            
-            @typing.overload
             def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
-            
-            @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
             
             @typing.overload
             def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
             
-            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "user_id", "attachment_urls", ], str]):
+            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "message_type", "type", "user_id", ], str]):
                 return super().get_item_oapg(name)
             
         
@@ -360,6 +360,32 @@ class ContactReplyConversationRequest(
                 class properties:
                     
                     
+                    class attachment_urls(
+                        schemas.ListSchema
+                    ):
+                    
+                    
+                        class MetaOapg:
+                            max_items = 5
+                            items = schemas.StrSchema
+                    
+                        def __new__(
+                            cls,
+                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                            _configuration: typing.Optional[schemas.Configuration] = None,
+                        ) -> 'attachment_urls':
+                            return super().__new__(
+                                cls,
+                                _arg,
+                                _configuration=_configuration,
+                            )
+                    
+                        def __getitem__(self, i: int) -> MetaOapg.items:
+                            return super().__getitem__(i)
+                    body = schemas.StrSchema
+                    email = schemas.StrSchema
+                    
+                    
                     class message_type(
                         schemas.EnumBase,
                         schemas.StrSchema
@@ -390,38 +416,12 @@ class ContactReplyConversationRequest(
                         @schemas.classproperty
                         def USER(cls):
                             return cls("user")
-                    body = schemas.StrSchema
-                    email = schemas.StrSchema
-                    
-                    
-                    class attachment_urls(
-                        schemas.ListSchema
-                    ):
-                    
-                    
-                        class MetaOapg:
-                            max_items = 5
-                            items = schemas.StrSchema
-                    
-                        def __new__(
-                            cls,
-                            _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                            _configuration: typing.Optional[schemas.Configuration] = None,
-                        ) -> 'attachment_urls':
-                            return super().__new__(
-                                cls,
-                                _arg,
-                                _configuration=_configuration,
-                            )
-                    
-                        def __getitem__(self, i: int) -> MetaOapg.items:
-                            return super().__getitem__(i)
                     __annotations__ = {
-                        "message_type": message_type,
-                        "type": type,
+                        "attachment_urls": attachment_urls,
                         "body": body,
                         "email": email,
-                        "attachment_urls": attachment_urls,
+                        "message_type": message_type,
+                        "type": type,
                     }
             
             message_type: MetaOapg.properties.message_type
@@ -430,10 +430,7 @@ class ContactReplyConversationRequest(
             email: MetaOapg.properties.email
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
-            
-            @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
             
             @typing.overload
             def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -442,21 +439,21 @@ class ContactReplyConversationRequest(
             def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
             
             @typing.overload
-            def __getitem__(self, name: typing_extensions.Literal["attachment_urls"]) -> MetaOapg.properties.attachment_urls: ...
+            def __getitem__(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+            
+            @typing.overload
+            def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
             def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
             
-            def __getitem__(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "email", "attachment_urls", ], str]):
+            def __getitem__(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "email", "message_type", "type", ], str]):
                 # dict_instance[name] accessor
                 return super().__getitem__(name)
             
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
-            
-            @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
             
             @typing.overload
             def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
@@ -465,12 +462,15 @@ class ContactReplyConversationRequest(
             def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
             
             @typing.overload
-            def get_item_oapg(self, name: typing_extensions.Literal["attachment_urls"]) -> typing.Union[MetaOapg.properties.attachment_urls, schemas.Unset]: ...
+            def get_item_oapg(self, name: typing_extensions.Literal["message_type"]) -> MetaOapg.properties.message_type: ...
+            
+            @typing.overload
+            def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
             
             @typing.overload
             def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
             
-            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["message_type", "type", "body", "email", "attachment_urls", ], str]):
+            def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["attachment_urls", "body", "email", "message_type", "type", ], str]):
                 return super().get_item_oapg(name)
             
         

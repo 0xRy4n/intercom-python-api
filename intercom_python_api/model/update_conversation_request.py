@@ -38,56 +38,56 @@ class UpdateConversationRequest(
     class MetaOapg:
         
         class properties:
-            read = schemas.BoolSchema
         
             @staticmethod
             def custom_attributes() -> typing.Type['CustomAttributes']:
                 return CustomAttributes
+            read = schemas.BoolSchema
             __annotations__ = {
-                "read": read,
                 "custom_attributes": custom_attributes,
+                "read": read,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["read"]) -> MetaOapg.properties.read: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> 'CustomAttributes': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["read"]) -> MetaOapg.properties.read: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["read", "custom_attributes", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["custom_attributes", "read", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["read"]) -> typing.Union[MetaOapg.properties.read, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union['CustomAttributes', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union['CustomAttributes', schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["read"]) -> typing.Union[MetaOapg.properties.read, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["read", "custom_attributes", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["custom_attributes", "read", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        read: typing.Union[MetaOapg.properties.read, bool, schemas.Unset] = schemas.unset,
         custom_attributes: typing.Union['CustomAttributes', schemas.Unset] = schemas.unset,
+        read: typing.Union[MetaOapg.properties.read, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'UpdateConversationRequest':
         return super().__new__(
             cls,
             *_args,
-            read=read,
             custom_attributes=custom_attributes,
+            read=read,
             _configuration=_configuration,
             **kwargs,
         )

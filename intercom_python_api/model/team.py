@@ -38,9 +38,6 @@ class Team(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            name = schemas.StrSchema
             
             
             class admin_ids(
@@ -68,22 +65,16 @@ class Team(
             @staticmethod
             def admin_priority_level() -> typing.Type['AdminPriorityLevel']:
                 return AdminPriorityLevel
+            id = schemas.StrSchema
+            name = schemas.StrSchema
+            type = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "name": name,
                 "admin_ids": admin_ids,
                 "admin_priority_level": admin_priority_level,
+                "id": id,
+                "name": name,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["admin_ids"]) -> MetaOapg.properties.admin_ids: ...
@@ -92,21 +83,21 @@ class Team(
     def __getitem__(self, name: typing_extensions.Literal["admin_priority_level"]) -> 'AdminPriorityLevel': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", "admin_ids", "admin_priority_level", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["admin_ids", "admin_priority_level", "id", "name", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["admin_ids"]) -> typing.Union[MetaOapg.properties.admin_ids, schemas.Unset]: ...
@@ -115,31 +106,40 @@ class Team(
     def get_item_oapg(self, name: typing_extensions.Literal["admin_priority_level"]) -> typing.Union['AdminPriorityLevel', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", "admin_ids", "admin_priority_level", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["admin_ids", "admin_priority_level", "id", "name", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         admin_ids: typing.Union[MetaOapg.properties.admin_ids, list, tuple, schemas.Unset] = schemas.unset,
         admin_priority_level: typing.Union['AdminPriorityLevel', schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Team':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            name=name,
             admin_ids=admin_ids,
             admin_priority_level=admin_priority_level,
+            id=id,
+            name=name,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

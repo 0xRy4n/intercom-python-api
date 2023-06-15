@@ -38,11 +38,6 @@ class ActivityLogList(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-        
-            @staticmethod
-            def pages() -> typing.Type['CursorPages']:
-                return CursorPages
             
             
             class activity_logs(
@@ -69,60 +64,65 @@ class ActivityLogList(
             
                 def __getitem__(self, i: int) -> 'ActivityLog':
                     return super().__getitem__(i)
+        
+            @staticmethod
+            def pages() -> typing.Type['CursorPages']:
+                return CursorPages
+            type = schemas.StrSchema
             __annotations__ = {
-                "type": type,
-                "pages": pages,
                 "activity_logs": activity_logs,
+                "pages": pages,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["pages"]) -> 'CursorPages': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["activity_logs"]) -> MetaOapg.properties.activity_logs: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["pages"]) -> 'CursorPages': ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "pages", "activity_logs", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["activity_logs", "pages", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["activity_logs"]) -> typing.Union[MetaOapg.properties.activity_logs, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union['CursorPages', schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["activity_logs"]) -> typing.Union[MetaOapg.properties.activity_logs, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "pages", "activity_logs", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["activity_logs", "pages", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        pages: typing.Union['CursorPages', schemas.Unset] = schemas.unset,
         activity_logs: typing.Union[MetaOapg.properties.activity_logs, list, tuple, schemas.Unset] = schemas.unset,
+        pages: typing.Union['CursorPages', schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ActivityLogList':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            pages=pages,
             activity_logs=activity_logs,
+            pages=pages,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

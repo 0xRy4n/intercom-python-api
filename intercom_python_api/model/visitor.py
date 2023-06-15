@@ -41,71 +41,8 @@ class Visitor(
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
-            id = schemas.StrSchema
-            user_id = schemas.StrSchema
             anonymous = schemas.BoolSchema
-            email = schemas.StrSchema
-            
-            
-            class phone(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'phone':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class name(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'name':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            
-            
-            class pseudonym(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'pseudonym':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
+            app_id = schemas.StrSchema
             
             
             class avatar(
@@ -116,7 +53,6 @@ class Visitor(
                 class MetaOapg:
                     
                     class properties:
-                        type = schemas.StrSchema
                         
                         
                         class image_url(
@@ -141,55 +77,55 @@ class Visitor(
                                     *_args,
                                     _configuration=_configuration,
                                 )
+                        type = schemas.StrSchema
                         __annotations__ = {
-                            "type": type,
                             "image_url": image_url,
+                            "type": type,
                         }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["image_url"]) -> MetaOapg.properties.image_url: ...
                 
                 @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["image_url"]) -> typing.Union[MetaOapg.properties.image_url, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "image_url", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["image_url", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
                 def __new__(
                     cls,
                     *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     image_url: typing.Union[MetaOapg.properties.image_url, None, str, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     _configuration: typing.Optional[schemas.Configuration] = None,
                     **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'avatar':
                     return super().__new__(
                         cls,
                         *_args,
-                        type=type,
                         image_url=image_url,
+                        type=type,
                         _configuration=_configuration,
                         **kwargs,
                     )
-            app_id = schemas.StrSchema
             
             
             class companies(
@@ -200,22 +136,6 @@ class Visitor(
                 class MetaOapg:
                     
                     class properties:
-                        
-                        
-                        class type(
-                            schemas.EnumBase,
-                            schemas.StrSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                enum_value_to_name = {
-                                    "company.list": "COMPANY_LIST",
-                                }
-                            
-                            @schemas.classproperty
-                            def COMPANY_LIST(cls):
-                                return cls("company.list")
                         
                         
                         class companies(
@@ -242,579 +162,71 @@ class Visitor(
                         
                             def __getitem__(self, i: int) -> 'Company':
                                 return super().__getitem__(i)
+                        
+                        
+                        class type(
+                            schemas.EnumBase,
+                            schemas.StrSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                enum_value_to_name = {
+                                    "company.list": "COMPANY_LIST",
+                                }
+                            
+                            @schemas.classproperty
+                            def COMPANY_LIST(cls):
+                                return cls("company.list")
                         __annotations__ = {
-                            "type": type,
                             "companies": companies,
+                            "type": type,
                         }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
                 
                 @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "companies", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["companies", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union[MetaOapg.properties.companies, schemas.Unset]: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union[MetaOapg.properties.companies, schemas.Unset]: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "companies", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["companies", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
                 def __new__(
                     cls,
                     *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     companies: typing.Union[MetaOapg.properties.companies, list, tuple, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
                     _configuration: typing.Optional[schemas.Configuration] = None,
                     **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
                 ) -> 'companies':
                     return super().__new__(
                         cls,
                         *_args,
-                        type=type,
                         companies=companies,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
-            
-            
-            class location_data(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        type = schemas.StrSchema
-                        city_name = schemas.StrSchema
-                        continent_code = schemas.StrSchema
-                        country_code = schemas.StrSchema
-                        country_name = schemas.StrSchema
-                        postal_code = schemas.StrSchema
-                        region_name = schemas.StrSchema
-                        timezone = schemas.StrSchema
-                        __annotations__ = {
-                            "type": type,
-                            "city_name": city_name,
-                            "continent_code": continent_code,
-                            "country_code": country_code,
-                            "country_name": country_name,
-                            "postal_code": postal_code,
-                            "region_name": region_name,
-                            "timezone": timezone,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["city_name"]) -> MetaOapg.properties.city_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["continent_code"]) -> MetaOapg.properties.continent_code: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["country_code"]) -> MetaOapg.properties.country_code: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["country_name"]) -> MetaOapg.properties.country_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["postal_code"]) -> MetaOapg.properties.postal_code: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["region_name"]) -> MetaOapg.properties.region_name: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["timezone"]) -> MetaOapg.properties.timezone: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "city_name", "continent_code", "country_code", "country_name", "postal_code", "region_name", "timezone", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["city_name"]) -> typing.Union[MetaOapg.properties.city_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["continent_code"]) -> typing.Union[MetaOapg.properties.continent_code, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["country_code"]) -> typing.Union[MetaOapg.properties.country_code, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["country_name"]) -> typing.Union[MetaOapg.properties.country_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["postal_code"]) -> typing.Union[MetaOapg.properties.postal_code, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["region_name"]) -> typing.Union[MetaOapg.properties.region_name, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["timezone"]) -> typing.Union[MetaOapg.properties.timezone, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "city_name", "continent_code", "country_code", "country_name", "postal_code", "region_name", "timezone", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    city_name: typing.Union[MetaOapg.properties.city_name, str, schemas.Unset] = schemas.unset,
-                    continent_code: typing.Union[MetaOapg.properties.continent_code, str, schemas.Unset] = schemas.unset,
-                    country_code: typing.Union[MetaOapg.properties.country_code, str, schemas.Unset] = schemas.unset,
-                    country_name: typing.Union[MetaOapg.properties.country_name, str, schemas.Unset] = schemas.unset,
-                    postal_code: typing.Union[MetaOapg.properties.postal_code, str, schemas.Unset] = schemas.unset,
-                    region_name: typing.Union[MetaOapg.properties.region_name, str, schemas.Unset] = schemas.unset,
-                    timezone: typing.Union[MetaOapg.properties.timezone, str, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'location_data':
-                    return super().__new__(
-                        cls,
-                        *_args,
                         type=type,
-                        city_name=city_name,
-                        continent_code=continent_code,
-                        country_code=country_code,
-                        country_name=country_name,
-                        postal_code=postal_code,
-                        region_name=region_name,
-                        timezone=timezone,
                         _configuration=_configuration,
                         **kwargs,
                     )
-            las_request_at = schemas.IntSchema
             created_at = schemas.IntSchema
-            remote_created_at = schemas.IntSchema
-            signed_up_at = schemas.IntSchema
-            updated_at = schemas.IntSchema
-            session_count = schemas.IntSchema
-            
-            
-            class social_profiles(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        
-                        
-                        class type(
-                            schemas.EnumBase,
-                            schemas.StrSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                enum_value_to_name = {
-                                    "social_profile.list": "SOCIAL_PROFILE_LIST",
-                                }
-                            
-                            @schemas.classproperty
-                            def SOCIAL_PROFILE_LIST(cls):
-                                return cls("social_profile.list")
-                        
-                        
-                        class social_profiles(
-                            schemas.ListSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                items = schemas.StrSchema
-                        
-                            def __new__(
-                                cls,
-                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                                _configuration: typing.Optional[schemas.Configuration] = None,
-                            ) -> 'social_profiles':
-                                return super().__new__(
-                                    cls,
-                                    _arg,
-                                    _configuration=_configuration,
-                                )
-                        
-                            def __getitem__(self, i: int) -> MetaOapg.items:
-                                return super().__getitem__(i)
-                        __annotations__ = {
-                            "type": type,
-                            "social_profiles": social_profiles,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["social_profiles"]) -> MetaOapg.properties.social_profiles: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "social_profiles", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["social_profiles"]) -> typing.Union[MetaOapg.properties.social_profiles, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "social_profiles", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    social_profiles: typing.Union[MetaOapg.properties.social_profiles, list, tuple, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'social_profiles':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        type=type,
-                        social_profiles=social_profiles,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
-            
-            
-            class owner_id(
-                schemas.StrBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneStrMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, str, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'owner_id':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
-            unsubscribed_from_emails = schemas.BoolSchema
-            marked_email_as_spam = schemas.BoolSchema
-            has_hard_bounced = schemas.BoolSchema
-            
-            
-            class tags(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        
-                        
-                        class type(
-                            schemas.EnumBase,
-                            schemas.StrSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                enum_value_to_name = {
-                                    "tag.list": "TAG_LIST",
-                                }
-                            
-                            @schemas.classproperty
-                            def TAG_LIST(cls):
-                                return cls("tag.list")
-                        
-                        
-                        class tags(
-                            schemas.ListSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                
-                                
-                                class items(
-                                    schemas.AnyTypeSchema,
-                                ):
-                                
-                                
-                                    class MetaOapg:
-                                        
-                                        class properties:
-                                            
-                                            
-                                            class type(
-                                                schemas.EnumBase,
-                                                schemas.StrSchema
-                                            ):
-                                            
-                                            
-                                                class MetaOapg:
-                                                    enum_value_to_name = {
-                                                        "tag": "TAG",
-                                                    }
-                                                
-                                                @schemas.classproperty
-                                                def TAG(cls):
-                                                    return cls("tag")
-                                            id = schemas.StrSchema
-                                            name = schemas.StrSchema
-                                            __annotations__ = {
-                                                "type": type,
-                                                "id": id,
-                                                "name": name,
-                                            }
-                                
-                                    
-                                    @typing.overload
-                                    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                                    
-                                    @typing.overload
-                                    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-                                    
-                                    @typing.overload
-                                    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-                                    
-                                    @typing.overload
-                                    def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                                    
-                                    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", ], str]):
-                                        # dict_instance[name] accessor
-                                        return super().__getitem__(name)
-                                    
-                                    
-                                    @typing.overload
-                                    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                                    
-                                    @typing.overload
-                                    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-                                    
-                                    @typing.overload
-                                    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-                                    
-                                    @typing.overload
-                                    def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                                    
-                                    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "name", ], str]):
-                                        return super().get_item_oapg(name)
-                                    
-                                
-                                    def __new__(
-                                        cls,
-                                        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
-                                        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                                        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-                                        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
-                                        _configuration: typing.Optional[schemas.Configuration] = None,
-                                        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                                    ) -> 'items':
-                                        return super().__new__(
-                                            cls,
-                                            *_args,
-                                            type=type,
-                                            id=id,
-                                            name=name,
-                                            _configuration=_configuration,
-                                            **kwargs,
-                                        )
-                        
-                            def __new__(
-                                cls,
-                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
-                                _configuration: typing.Optional[schemas.Configuration] = None,
-                            ) -> 'tags':
-                                return super().__new__(
-                                    cls,
-                                    _arg,
-                                    _configuration=_configuration,
-                                )
-                        
-                            def __getitem__(self, i: int) -> MetaOapg.items:
-                                return super().__getitem__(i)
-                        __annotations__ = {
-                            "type": type,
-                            "tags": tags,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["tags"]) -> MetaOapg.properties.tags: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "tags", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union[MetaOapg.properties.tags, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "tags", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    tags: typing.Union[MetaOapg.properties.tags, list, tuple, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'tags':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        type=type,
-                        tags=tags,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
-            
-            
-            class segments(
-                schemas.DictSchema
-            ):
-            
-            
-                class MetaOapg:
-                    
-                    class properties:
-                        
-                        
-                        class type(
-                            schemas.EnumBase,
-                            schemas.StrSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                enum_value_to_name = {
-                                    "segment.list": "SEGMENT_LIST",
-                                }
-                            
-                            @schemas.classproperty
-                            def SEGMENT_LIST(cls):
-                                return cls("segment.list")
-                        
-                        
-                        class segments(
-                            schemas.ListSchema
-                        ):
-                        
-                        
-                            class MetaOapg:
-                                items = schemas.StrSchema
-                        
-                            def __new__(
-                                cls,
-                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                                _configuration: typing.Optional[schemas.Configuration] = None,
-                            ) -> 'segments':
-                                return super().__new__(
-                                    cls,
-                                    _arg,
-                                    _configuration=_configuration,
-                                )
-                        
-                            def __getitem__(self, i: int) -> MetaOapg.items:
-                                return super().__getitem__(i)
-                        __annotations__ = {
-                            "type": type,
-                            "segments": segments,
-                        }
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-                
-                @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["segments"]) -> MetaOapg.properties.segments: ...
-                
-                @typing.overload
-                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
-                
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "segments", ], str]):
-                    # dict_instance[name] accessor
-                    return super().__getitem__(name)
-                
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["segments"]) -> typing.Union[MetaOapg.properties.segments, schemas.Unset]: ...
-                
-                @typing.overload
-                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
-                
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "segments", ], str]):
-                    return super().get_item_oapg(name)
-                
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[dict, frozendict.frozendict, ],
-                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-                    segments: typing.Union[MetaOapg.properties.segments, list, tuple, schemas.Unset] = schemas.unset,
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
-                ) -> 'segments':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        type=type,
-                        segments=segments,
-                        _configuration=_configuration,
-                        **kwargs,
-                    )
             
             
             class custom_attributes(
@@ -846,6 +258,231 @@ class Visitor(
                     )
             
             
+            class do_not_track(
+                schemas.BoolBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneBoolMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, bool, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'do_not_track':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            email = schemas.StrSchema
+            has_hard_bounced = schemas.BoolSchema
+            id = schemas.StrSchema
+            las_request_at = schemas.IntSchema
+            
+            
+            class location_data(
+                schemas.DictSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    class properties:
+                        city_name = schemas.StrSchema
+                        continent_code = schemas.StrSchema
+                        country_code = schemas.StrSchema
+                        country_name = schemas.StrSchema
+                        postal_code = schemas.StrSchema
+                        region_name = schemas.StrSchema
+                        timezone = schemas.StrSchema
+                        type = schemas.StrSchema
+                        __annotations__ = {
+                            "city_name": city_name,
+                            "continent_code": continent_code,
+                            "country_code": country_code,
+                            "country_name": country_name,
+                            "postal_code": postal_code,
+                            "region_name": region_name,
+                            "timezone": timezone,
+                            "type": type,
+                        }
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["city_name"]) -> MetaOapg.properties.city_name: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["continent_code"]) -> MetaOapg.properties.continent_code: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["country_code"]) -> MetaOapg.properties.country_code: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["country_name"]) -> MetaOapg.properties.country_name: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["postal_code"]) -> MetaOapg.properties.postal_code: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["region_name"]) -> MetaOapg.properties.region_name: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["timezone"]) -> MetaOapg.properties.timezone: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["city_name", "continent_code", "country_code", "country_name", "postal_code", "region_name", "timezone", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["city_name"]) -> typing.Union[MetaOapg.properties.city_name, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["continent_code"]) -> typing.Union[MetaOapg.properties.continent_code, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["country_code"]) -> typing.Union[MetaOapg.properties.country_code, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["country_name"]) -> typing.Union[MetaOapg.properties.country_name, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["postal_code"]) -> typing.Union[MetaOapg.properties.postal_code, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["region_name"]) -> typing.Union[MetaOapg.properties.region_name, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["timezone"]) -> typing.Union[MetaOapg.properties.timezone, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["city_name", "continent_code", "country_code", "country_name", "postal_code", "region_name", "timezone", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, ],
+                    city_name: typing.Union[MetaOapg.properties.city_name, str, schemas.Unset] = schemas.unset,
+                    continent_code: typing.Union[MetaOapg.properties.continent_code, str, schemas.Unset] = schemas.unset,
+                    country_code: typing.Union[MetaOapg.properties.country_code, str, schemas.Unset] = schemas.unset,
+                    country_name: typing.Union[MetaOapg.properties.country_name, str, schemas.Unset] = schemas.unset,
+                    postal_code: typing.Union[MetaOapg.properties.postal_code, str, schemas.Unset] = schemas.unset,
+                    region_name: typing.Union[MetaOapg.properties.region_name, str, schemas.Unset] = schemas.unset,
+                    timezone: typing.Union[MetaOapg.properties.timezone, str, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'location_data':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        city_name=city_name,
+                        continent_code=continent_code,
+                        country_code=country_code,
+                        country_name=country_name,
+                        postal_code=postal_code,
+                        region_name=region_name,
+                        timezone=timezone,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            marked_email_as_spam = schemas.BoolSchema
+            
+            
+            class name(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'name':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class owner_id(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'owner_id':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class phone(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'phone':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
+            class pseudonym(
+                schemas.StrBase,
+                schemas.NoneBase,
+                schemas.Schema,
+                schemas.NoneStrMixin
+            ):
+            
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[None, str, ],
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                ) -> 'pseudonym':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        _configuration=_configuration,
+                    )
+            
+            
             class referrer(
                 schemas.StrBase,
                 schemas.NoneBase,
@@ -864,6 +501,389 @@ class Visitor(
                         *_args,
                         _configuration=_configuration,
                     )
+            remote_created_at = schemas.IntSchema
+            
+            
+            class segments(
+                schemas.DictSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    class properties:
+                        
+                        
+                        class segments(
+                            schemas.ListSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                items = schemas.StrSchema
+                        
+                            def __new__(
+                                cls,
+                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                                _configuration: typing.Optional[schemas.Configuration] = None,
+                            ) -> 'segments':
+                                return super().__new__(
+                                    cls,
+                                    _arg,
+                                    _configuration=_configuration,
+                                )
+                        
+                            def __getitem__(self, i: int) -> MetaOapg.items:
+                                return super().__getitem__(i)
+                        
+                        
+                        class type(
+                            schemas.EnumBase,
+                            schemas.StrSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                enum_value_to_name = {
+                                    "segment.list": "SEGMENT_LIST",
+                                }
+                            
+                            @schemas.classproperty
+                            def SEGMENT_LIST(cls):
+                                return cls("segment.list")
+                        __annotations__ = {
+                            "segments": segments,
+                            "type": type,
+                        }
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["segments"]) -> MetaOapg.properties.segments: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["segments", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["segments"]) -> typing.Union[MetaOapg.properties.segments, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["segments", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, ],
+                    segments: typing.Union[MetaOapg.properties.segments, list, tuple, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'segments':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        segments=segments,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            session_count = schemas.IntSchema
+            signed_up_at = schemas.IntSchema
+            
+            
+            class social_profiles(
+                schemas.DictSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    class properties:
+                        
+                        
+                        class social_profiles(
+                            schemas.ListSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                items = schemas.StrSchema
+                        
+                            def __new__(
+                                cls,
+                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
+                                _configuration: typing.Optional[schemas.Configuration] = None,
+                            ) -> 'social_profiles':
+                                return super().__new__(
+                                    cls,
+                                    _arg,
+                                    _configuration=_configuration,
+                                )
+                        
+                            def __getitem__(self, i: int) -> MetaOapg.items:
+                                return super().__getitem__(i)
+                        
+                        
+                        class type(
+                            schemas.EnumBase,
+                            schemas.StrSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                enum_value_to_name = {
+                                    "social_profile.list": "SOCIAL_PROFILE_LIST",
+                                }
+                            
+                            @schemas.classproperty
+                            def SOCIAL_PROFILE_LIST(cls):
+                                return cls("social_profile.list")
+                        __annotations__ = {
+                            "social_profiles": social_profiles,
+                            "type": type,
+                        }
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["social_profiles"]) -> MetaOapg.properties.social_profiles: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["social_profiles", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["social_profiles"]) -> typing.Union[MetaOapg.properties.social_profiles, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["social_profiles", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, ],
+                    social_profiles: typing.Union[MetaOapg.properties.social_profiles, list, tuple, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'social_profiles':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        social_profiles=social_profiles,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            
+            
+            class tags(
+                schemas.DictSchema
+            ):
+            
+            
+                class MetaOapg:
+                    
+                    class properties:
+                        
+                        
+                        class tags(
+                            schemas.ListSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                
+                                
+                                class items(
+                                    schemas.AnyTypeSchema,
+                                ):
+                                
+                                
+                                    class MetaOapg:
+                                        
+                                        class properties:
+                                            id = schemas.StrSchema
+                                            name = schemas.StrSchema
+                                            
+                                            
+                                            class type(
+                                                schemas.EnumBase,
+                                                schemas.StrSchema
+                                            ):
+                                            
+                                            
+                                                class MetaOapg:
+                                                    enum_value_to_name = {
+                                                        "tag": "TAG",
+                                                    }
+                                                
+                                                @schemas.classproperty
+                                                def TAG(cls):
+                                                    return cls("tag")
+                                            __annotations__ = {
+                                                "id": id,
+                                                "name": name,
+                                                "type": type,
+                                            }
+                                
+                                    
+                                    @typing.overload
+                                    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                                    
+                                    @typing.overload
+                                    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+                                    
+                                    @typing.overload
+                                    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                                    
+                                    @typing.overload
+                                    def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                                    
+                                    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "name", "type", ], str]):
+                                        # dict_instance[name] accessor
+                                        return super().__getitem__(name)
+                                    
+                                    
+                                    @typing.overload
+                                    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+                                    
+                                    @typing.overload
+                                    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+                                    
+                                    @typing.overload
+                                    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                                    
+                                    @typing.overload
+                                    def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                                    
+                                    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "name", "type", ], str]):
+                                        return super().get_item_oapg(name)
+                                    
+                                
+                                    def __new__(
+                                        cls,
+                                        *_args: typing.Union[dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ],
+                                        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+                                        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+                                        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                                        _configuration: typing.Optional[schemas.Configuration] = None,
+                                        **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                                    ) -> 'items':
+                                        return super().__new__(
+                                            cls,
+                                            *_args,
+                                            id=id,
+                                            name=name,
+                                            type=type,
+                                            _configuration=_configuration,
+                                            **kwargs,
+                                        )
+                        
+                            def __new__(
+                                cls,
+                                _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]], typing.List[typing.Union[MetaOapg.items, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, bool, None, list, tuple, bytes, io.FileIO, io.BufferedReader, ]]],
+                                _configuration: typing.Optional[schemas.Configuration] = None,
+                            ) -> 'tags':
+                                return super().__new__(
+                                    cls,
+                                    _arg,
+                                    _configuration=_configuration,
+                                )
+                        
+                            def __getitem__(self, i: int) -> MetaOapg.items:
+                                return super().__getitem__(i)
+                        
+                        
+                        class type(
+                            schemas.EnumBase,
+                            schemas.StrSchema
+                        ):
+                        
+                        
+                            class MetaOapg:
+                                enum_value_to_name = {
+                                    "tag.list": "TAG_LIST",
+                                }
+                            
+                            @schemas.classproperty
+                            def TAG_LIST(cls):
+                                return cls("tag.list")
+                        __annotations__ = {
+                            "tags": tags,
+                            "type": type,
+                        }
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["tags"]) -> MetaOapg.properties.tags: ...
+                
+                @typing.overload
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                
+                @typing.overload
+                def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
+                
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["tags", "type", ], str]):
+                    # dict_instance[name] accessor
+                    return super().__getitem__(name)
+                
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union[MetaOapg.properties.tags, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+                
+                @typing.overload
+                def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
+                
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["tags", "type", ], str]):
+                    return super().get_item_oapg(name)
+                
+            
+                def __new__(
+                    cls,
+                    *_args: typing.Union[dict, frozendict.frozendict, ],
+                    tags: typing.Union[MetaOapg.properties.tags, list, tuple, schemas.Unset] = schemas.unset,
+                    type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+                    _configuration: typing.Optional[schemas.Configuration] = None,
+                    **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
+                ) -> 'tags':
+                    return super().__new__(
+                        cls,
+                        *_args,
+                        tags=tags,
+                        type=type,
+                        _configuration=_configuration,
+                        **kwargs,
+                    )
+            type = schemas.StrSchema
+            unsubscribed_from_emails = schemas.BoolSchema
+            updated_at = schemas.IntSchema
+            user_id = schemas.StrSchema
             
             
             class utm_campaign(
@@ -964,143 +984,126 @@ class Visitor(
                         *_args,
                         _configuration=_configuration,
                     )
-            
-            
-            class do_not_track(
-                schemas.BoolBase,
-                schemas.NoneBase,
-                schemas.Schema,
-                schemas.NoneBoolMixin
-            ):
-            
-            
-                def __new__(
-                    cls,
-                    *_args: typing.Union[None, bool, ],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'do_not_track':
-                    return super().__new__(
-                        cls,
-                        *_args,
-                        _configuration=_configuration,
-                    )
             __annotations__ = {
-                "type": type,
-                "id": id,
-                "user_id": user_id,
                 "anonymous": anonymous,
-                "email": email,
-                "phone": phone,
-                "name": name,
-                "pseudonym": pseudonym,
-                "avatar": avatar,
                 "app_id": app_id,
+                "avatar": avatar,
                 "companies": companies,
-                "location_data": location_data,
-                "las_request_at": las_request_at,
                 "created_at": created_at,
-                "remote_created_at": remote_created_at,
-                "signed_up_at": signed_up_at,
-                "updated_at": updated_at,
-                "session_count": session_count,
-                "social_profiles": social_profiles,
-                "owner_id": owner_id,
-                "unsubscribed_from_emails": unsubscribed_from_emails,
-                "marked_email_as_spam": marked_email_as_spam,
-                "has_hard_bounced": has_hard_bounced,
-                "tags": tags,
-                "segments": segments,
                 "custom_attributes": custom_attributes,
+                "do_not_track": do_not_track,
+                "email": email,
+                "has_hard_bounced": has_hard_bounced,
+                "id": id,
+                "las_request_at": las_request_at,
+                "location_data": location_data,
+                "marked_email_as_spam": marked_email_as_spam,
+                "name": name,
+                "owner_id": owner_id,
+                "phone": phone,
+                "pseudonym": pseudonym,
                 "referrer": referrer,
+                "remote_created_at": remote_created_at,
+                "segments": segments,
+                "session_count": session_count,
+                "signed_up_at": signed_up_at,
+                "social_profiles": social_profiles,
+                "tags": tags,
+                "type": type,
+                "unsubscribed_from_emails": unsubscribed_from_emails,
+                "updated_at": updated_at,
+                "user_id": user_id,
                 "utm_campaign": utm_campaign,
                 "utm_content": utm_content,
                 "utm_medium": utm_medium,
                 "utm_source": utm_source,
                 "utm_term": utm_term,
-                "do_not_track": do_not_track,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["anonymous"]) -> MetaOapg.properties.anonymous: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["phone"]) -> MetaOapg.properties.phone: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["pseudonym"]) -> MetaOapg.properties.pseudonym: ...
+    def __getitem__(self, name: typing_extensions.Literal["app_id"]) -> MetaOapg.properties.app_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["avatar"]) -> MetaOapg.properties.avatar: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["app_id"]) -> MetaOapg.properties.app_id: ...
-    
-    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["location_data"]) -> MetaOapg.properties.location_data: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["las_request_at"]) -> MetaOapg.properties.las_request_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["created_at"]) -> MetaOapg.properties.created_at: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["remote_created_at"]) -> MetaOapg.properties.remote_created_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["signed_up_at"]) -> MetaOapg.properties.signed_up_at: ...
+    def __getitem__(self, name: typing_extensions.Literal["do_not_track"]) -> MetaOapg.properties.do_not_track: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["session_count"]) -> MetaOapg.properties.session_count: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["social_profiles"]) -> MetaOapg.properties.social_profiles: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["owner_id"]) -> MetaOapg.properties.owner_id: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> MetaOapg.properties.unsubscribed_from_emails: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> MetaOapg.properties.marked_email_as_spam: ...
+    def __getitem__(self, name: typing_extensions.Literal["email"]) -> MetaOapg.properties.email: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["has_hard_bounced"]) -> MetaOapg.properties.has_hard_bounced: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["tags"]) -> MetaOapg.properties.tags: ...
+    def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["las_request_at"]) -> MetaOapg.properties.las_request_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["location_data"]) -> MetaOapg.properties.location_data: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> MetaOapg.properties.marked_email_as_spam: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["owner_id"]) -> MetaOapg.properties.owner_id: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["phone"]) -> MetaOapg.properties.phone: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["pseudonym"]) -> MetaOapg.properties.pseudonym: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["referrer"]) -> MetaOapg.properties.referrer: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["remote_created_at"]) -> MetaOapg.properties.remote_created_at: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["segments"]) -> MetaOapg.properties.segments: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["custom_attributes"]) -> MetaOapg.properties.custom_attributes: ...
+    def __getitem__(self, name: typing_extensions.Literal["session_count"]) -> MetaOapg.properties.session_count: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["referrer"]) -> MetaOapg.properties.referrer: ...
+    def __getitem__(self, name: typing_extensions.Literal["signed_up_at"]) -> MetaOapg.properties.signed_up_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["social_profiles"]) -> MetaOapg.properties.social_profiles: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["tags"]) -> MetaOapg.properties.tags: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> MetaOapg.properties.unsubscribed_from_emails: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["updated_at"]) -> MetaOapg.properties.updated_at: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["user_id"]) -> MetaOapg.properties.user_id: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["utm_campaign"]) -> MetaOapg.properties.utm_campaign: ...
@@ -1118,96 +1121,96 @@ class Visitor(
     def __getitem__(self, name: typing_extensions.Literal["utm_term"]) -> MetaOapg.properties.utm_term: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["do_not_track"]) -> MetaOapg.properties.do_not_track: ...
-    
-    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", "user_id", "anonymous", "email", "phone", "name", "pseudonym", "avatar", "app_id", "companies", "location_data", "las_request_at", "created_at", "remote_created_at", "signed_up_at", "updated_at", "session_count", "social_profiles", "owner_id", "unsubscribed_from_emails", "marked_email_as_spam", "has_hard_bounced", "tags", "segments", "custom_attributes", "referrer", "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term", "do_not_track", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["anonymous", "app_id", "avatar", "companies", "created_at", "custom_attributes", "do_not_track", "email", "has_hard_bounced", "id", "las_request_at", "location_data", "marked_email_as_spam", "name", "owner_id", "phone", "pseudonym", "referrer", "remote_created_at", "segments", "session_count", "signed_up_at", "social_profiles", "tags", "type", "unsubscribed_from_emails", "updated_at", "user_id", "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["anonymous"]) -> typing.Union[MetaOapg.properties.anonymous, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["phone"]) -> typing.Union[MetaOapg.properties.phone, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["pseudonym"]) -> typing.Union[MetaOapg.properties.pseudonym, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["app_id"]) -> typing.Union[MetaOapg.properties.app_id, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["avatar"]) -> typing.Union[MetaOapg.properties.avatar, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union[MetaOapg.properties.companies, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["location_data"]) -> typing.Union[MetaOapg.properties.location_data, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["las_request_at"]) -> typing.Union[MetaOapg.properties.las_request_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["created_at"]) -> typing.Union[MetaOapg.properties.created_at, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["remote_created_at"]) -> typing.Union[MetaOapg.properties.remote_created_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["signed_up_at"]) -> typing.Union[MetaOapg.properties.signed_up_at, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["do_not_track"]) -> typing.Union[MetaOapg.properties.do_not_track, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["session_count"]) -> typing.Union[MetaOapg.properties.session_count, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["social_profiles"]) -> typing.Union[MetaOapg.properties.social_profiles, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["owner_id"]) -> typing.Union[MetaOapg.properties.owner_id, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> typing.Union[MetaOapg.properties.unsubscribed_from_emails, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> typing.Union[MetaOapg.properties.marked_email_as_spam, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["email"]) -> typing.Union[MetaOapg.properties.email, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["has_hard_bounced"]) -> typing.Union[MetaOapg.properties.has_hard_bounced, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union[MetaOapg.properties.tags, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> typing.Union[MetaOapg.properties.id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["las_request_at"]) -> typing.Union[MetaOapg.properties.las_request_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["location_data"]) -> typing.Union[MetaOapg.properties.location_data, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["marked_email_as_spam"]) -> typing.Union[MetaOapg.properties.marked_email_as_spam, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["owner_id"]) -> typing.Union[MetaOapg.properties.owner_id, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["phone"]) -> typing.Union[MetaOapg.properties.phone, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["pseudonym"]) -> typing.Union[MetaOapg.properties.pseudonym, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["referrer"]) -> typing.Union[MetaOapg.properties.referrer, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["remote_created_at"]) -> typing.Union[MetaOapg.properties.remote_created_at, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["segments"]) -> typing.Union[MetaOapg.properties.segments, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["custom_attributes"]) -> typing.Union[MetaOapg.properties.custom_attributes, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["session_count"]) -> typing.Union[MetaOapg.properties.session_count, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["referrer"]) -> typing.Union[MetaOapg.properties.referrer, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["signed_up_at"]) -> typing.Union[MetaOapg.properties.signed_up_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["social_profiles"]) -> typing.Union[MetaOapg.properties.social_profiles, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["tags"]) -> typing.Union[MetaOapg.properties.tags, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["unsubscribed_from_emails"]) -> typing.Union[MetaOapg.properties.unsubscribed_from_emails, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["updated_at"]) -> typing.Union[MetaOapg.properties.updated_at, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["user_id"]) -> typing.Union[MetaOapg.properties.user_id, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["utm_campaign"]) -> typing.Union[MetaOapg.properties.utm_campaign, schemas.Unset]: ...
@@ -1225,90 +1228,87 @@ class Visitor(
     def get_item_oapg(self, name: typing_extensions.Literal["utm_term"]) -> typing.Union[MetaOapg.properties.utm_term, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["do_not_track"]) -> typing.Union[MetaOapg.properties.do_not_track, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", "user_id", "anonymous", "email", "phone", "name", "pseudonym", "avatar", "app_id", "companies", "location_data", "las_request_at", "created_at", "remote_created_at", "signed_up_at", "updated_at", "session_count", "social_profiles", "owner_id", "unsubscribed_from_emails", "marked_email_as_spam", "has_hard_bounced", "tags", "segments", "custom_attributes", "referrer", "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term", "do_not_track", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["anonymous", "app_id", "avatar", "companies", "created_at", "custom_attributes", "do_not_track", "email", "has_hard_bounced", "id", "las_request_at", "location_data", "marked_email_as_spam", "name", "owner_id", "phone", "pseudonym", "referrer", "remote_created_at", "segments", "session_count", "signed_up_at", "social_profiles", "tags", "type", "unsubscribed_from_emails", "updated_at", "user_id", "utm_campaign", "utm_content", "utm_medium", "utm_source", "utm_term", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
-        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         anonymous: typing.Union[MetaOapg.properties.anonymous, bool, schemas.Unset] = schemas.unset,
-        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
-        phone: typing.Union[MetaOapg.properties.phone, None, str, schemas.Unset] = schemas.unset,
-        name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
-        pseudonym: typing.Union[MetaOapg.properties.pseudonym, None, str, schemas.Unset] = schemas.unset,
-        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         app_id: typing.Union[MetaOapg.properties.app_id, str, schemas.Unset] = schemas.unset,
+        avatar: typing.Union[MetaOapg.properties.avatar, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         companies: typing.Union[MetaOapg.properties.companies, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        location_data: typing.Union[MetaOapg.properties.location_data, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        las_request_at: typing.Union[MetaOapg.properties.las_request_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         created_at: typing.Union[MetaOapg.properties.created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        remote_created_at: typing.Union[MetaOapg.properties.remote_created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        signed_up_at: typing.Union[MetaOapg.properties.signed_up_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        session_count: typing.Union[MetaOapg.properties.session_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
-        social_profiles: typing.Union[MetaOapg.properties.social_profiles, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        owner_id: typing.Union[MetaOapg.properties.owner_id, None, str, schemas.Unset] = schemas.unset,
-        unsubscribed_from_emails: typing.Union[MetaOapg.properties.unsubscribed_from_emails, bool, schemas.Unset] = schemas.unset,
-        marked_email_as_spam: typing.Union[MetaOapg.properties.marked_email_as_spam, bool, schemas.Unset] = schemas.unset,
-        has_hard_bounced: typing.Union[MetaOapg.properties.has_hard_bounced, bool, schemas.Unset] = schemas.unset,
-        tags: typing.Union[MetaOapg.properties.tags, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        segments: typing.Union[MetaOapg.properties.segments, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         custom_attributes: typing.Union[MetaOapg.properties.custom_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        do_not_track: typing.Union[MetaOapg.properties.do_not_track, None, bool, schemas.Unset] = schemas.unset,
+        email: typing.Union[MetaOapg.properties.email, str, schemas.Unset] = schemas.unset,
+        has_hard_bounced: typing.Union[MetaOapg.properties.has_hard_bounced, bool, schemas.Unset] = schemas.unset,
+        id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
+        las_request_at: typing.Union[MetaOapg.properties.las_request_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        location_data: typing.Union[MetaOapg.properties.location_data, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        marked_email_as_spam: typing.Union[MetaOapg.properties.marked_email_as_spam, bool, schemas.Unset] = schemas.unset,
+        name: typing.Union[MetaOapg.properties.name, None, str, schemas.Unset] = schemas.unset,
+        owner_id: typing.Union[MetaOapg.properties.owner_id, None, str, schemas.Unset] = schemas.unset,
+        phone: typing.Union[MetaOapg.properties.phone, None, str, schemas.Unset] = schemas.unset,
+        pseudonym: typing.Union[MetaOapg.properties.pseudonym, None, str, schemas.Unset] = schemas.unset,
         referrer: typing.Union[MetaOapg.properties.referrer, None, str, schemas.Unset] = schemas.unset,
+        remote_created_at: typing.Union[MetaOapg.properties.remote_created_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        segments: typing.Union[MetaOapg.properties.segments, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        session_count: typing.Union[MetaOapg.properties.session_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        signed_up_at: typing.Union[MetaOapg.properties.signed_up_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        social_profiles: typing.Union[MetaOapg.properties.social_profiles, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        tags: typing.Union[MetaOapg.properties.tags, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
+        unsubscribed_from_emails: typing.Union[MetaOapg.properties.unsubscribed_from_emails, bool, schemas.Unset] = schemas.unset,
+        updated_at: typing.Union[MetaOapg.properties.updated_at, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        user_id: typing.Union[MetaOapg.properties.user_id, str, schemas.Unset] = schemas.unset,
         utm_campaign: typing.Union[MetaOapg.properties.utm_campaign, None, str, schemas.Unset] = schemas.unset,
         utm_content: typing.Union[MetaOapg.properties.utm_content, None, str, schemas.Unset] = schemas.unset,
         utm_medium: typing.Union[MetaOapg.properties.utm_medium, None, str, schemas.Unset] = schemas.unset,
         utm_source: typing.Union[MetaOapg.properties.utm_source, None, str, schemas.Unset] = schemas.unset,
         utm_term: typing.Union[MetaOapg.properties.utm_term, None, str, schemas.Unset] = schemas.unset,
-        do_not_track: typing.Union[MetaOapg.properties.do_not_track, None, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'Visitor':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            id=id,
-            user_id=user_id,
             anonymous=anonymous,
-            email=email,
-            phone=phone,
-            name=name,
-            pseudonym=pseudonym,
-            avatar=avatar,
             app_id=app_id,
+            avatar=avatar,
             companies=companies,
-            location_data=location_data,
-            las_request_at=las_request_at,
             created_at=created_at,
-            remote_created_at=remote_created_at,
-            signed_up_at=signed_up_at,
-            updated_at=updated_at,
-            session_count=session_count,
-            social_profiles=social_profiles,
-            owner_id=owner_id,
-            unsubscribed_from_emails=unsubscribed_from_emails,
-            marked_email_as_spam=marked_email_as_spam,
-            has_hard_bounced=has_hard_bounced,
-            tags=tags,
-            segments=segments,
             custom_attributes=custom_attributes,
+            do_not_track=do_not_track,
+            email=email,
+            has_hard_bounced=has_hard_bounced,
+            id=id,
+            las_request_at=las_request_at,
+            location_data=location_data,
+            marked_email_as_spam=marked_email_as_spam,
+            name=name,
+            owner_id=owner_id,
+            phone=phone,
+            pseudonym=pseudonym,
             referrer=referrer,
+            remote_created_at=remote_created_at,
+            segments=segments,
+            session_count=session_count,
+            signed_up_at=signed_up_at,
+            social_profiles=social_profiles,
+            tags=tags,
+            type=type,
+            unsubscribed_from_emails=unsubscribed_from_emails,
+            updated_at=updated_at,
+            user_id=user_id,
             utm_campaign=utm_campaign,
             utm_content=utm_content,
             utm_medium=utm_medium,
             utm_source=utm_source,
             utm_term=utm_term,
-            do_not_track=do_not_track,
             _configuration=_configuration,
             **kwargs,
         )

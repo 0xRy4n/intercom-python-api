@@ -42,6 +42,7 @@ class CreateConversationRequest(
         }
         
         class properties:
+            body = schemas.StrSchema
             
             
             class _from(
@@ -56,6 +57,12 @@ class CreateConversationRequest(
                     }
                     
                     class properties:
+                        
+                        
+                        class id(
+                            schemas.UUIDSchema
+                        ):
+                            pass
                         
                         
                         class type(
@@ -74,44 +81,38 @@ class CreateConversationRequest(
                             @schemas.classproperty
                             def CONTACT(cls):
                                 return cls("contact")
-                        
-                        
-                        class id(
-                            schemas.UUIDSchema
-                        ):
-                            pass
                         __annotations__ = {
-                            "type": type,
                             "id": id,
+                            "type": type,
                         }
                 
                 id: MetaOapg.properties.id
                 type: MetaOapg.properties.type
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def __getitem__(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
                 
-                def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     # dict_instance[name] accessor
                     return super().__getitem__(name)
                 
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
                 
                 @typing.overload
-                def get_item_oapg(self, name: typing_extensions.Literal["id"]) -> MetaOapg.properties.id: ...
+                def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
                 
                 @typing.overload
                 def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
                 
-                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "id", ], str]):
+                def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "type", ], str]):
                     return super().get_item_oapg(name)
                 
             
@@ -131,38 +132,37 @@ class CreateConversationRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
-            body = schemas.StrSchema
             __annotations__ = {
-                "from": _from,
                 "body": body,
+                "from": _from,
             }
     
     body: MetaOapg.properties.body
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
+    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    def __getitem__(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["from", "body", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["body", "from", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["body"]) -> MetaOapg.properties.body: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["from"]) -> MetaOapg.properties._from: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["from", "body", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["body", "from", ], str]):
         return super().get_item_oapg(name)
     
 

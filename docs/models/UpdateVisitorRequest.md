@@ -10,10 +10,10 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  | Update an existing vis
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**id** | str,  | str,  | A unique identified for the visitor which is given by Intercom. | [optional] 
-**user_id** | str,  | str,  | A unique identified for the visitor which is given by you. | [optional] 
-**name** | str,  | str,  | The visitor&#x27;s name. | [optional] 
 **[custom_attributes](#custom_attributes)** | dict, frozendict.frozendict,  | frozendict.frozendict,  | The custom attributes which are set for the visitor. | [optional] 
+**id** | str,  | str,  | A unique identified for the visitor which is given by Intercom. | [optional] 
+**name** | str,  | str,  | The visitor&#x27;s name. | [optional] 
+**user_id** | str,  | str,  | A unique identified for the visitor which is given by you. | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 # custom_attributes

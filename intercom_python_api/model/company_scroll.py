@@ -43,22 +43,6 @@ class CompanyScroll(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "list": "LIST",
-                    }
-                
-                @schemas.classproperty
-                def LIST(cls):
-                    return cls("list")
-            
-            
             class data(
                 schemas.ListSchema
             ):
@@ -87,6 +71,7 @@ class CompanyScroll(
             @staticmethod
             def pages() -> typing.Type['CursorPages']:
                 return CursorPages
+            scroll_param = schemas.StrSchema
             
             
             class total_count(
@@ -107,18 +92,30 @@ class CompanyScroll(
                         *_args,
                         _configuration=_configuration,
                     )
-            scroll_param = schemas.StrSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "list": "LIST",
+                    }
+                
+                @schemas.classproperty
+                def LIST(cls):
+                    return cls("list")
             __annotations__ = {
-                "type": type,
                 "data": data,
                 "pages": pages,
-                "total_count": total_count,
                 "scroll_param": scroll_param,
+                "total_count": total_count,
+                "type": type,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
@@ -127,21 +124,21 @@ class CompanyScroll(
     def __getitem__(self, name: typing_extensions.Literal["pages"]) -> 'CursorPages': ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["scroll_param"]) -> MetaOapg.properties.scroll_param: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["scroll_param"]) -> MetaOapg.properties.scroll_param: ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "data", "pages", "total_count", "scroll_param", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["data", "pages", "scroll_param", "total_count", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union[MetaOapg.properties.data, schemas.Unset]: ...
@@ -150,37 +147,40 @@ class CompanyScroll(
     def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union['CursorPages', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["scroll_param"]) -> typing.Union[MetaOapg.properties.scroll_param, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["scroll_param"]) -> typing.Union[MetaOapg.properties.scroll_param, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "data", "pages", "total_count", "scroll_param", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["data", "pages", "scroll_param", "total_count", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         data: typing.Union[MetaOapg.properties.data, list, tuple, schemas.Unset] = schemas.unset,
         pages: typing.Union['CursorPages', schemas.Unset] = schemas.unset,
-        total_count: typing.Union[MetaOapg.properties.total_count, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         scroll_param: typing.Union[MetaOapg.properties.scroll_param, str, schemas.Unset] = schemas.unset,
+        total_count: typing.Union[MetaOapg.properties.total_count, None, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CompanyScroll':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             data=data,
             pages=pages,
-            total_count=total_count,
             scroll_param=scroll_param,
+            total_count=total_count,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

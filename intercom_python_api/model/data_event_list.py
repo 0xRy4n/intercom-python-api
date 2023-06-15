@@ -40,22 +40,6 @@ class DataEventList(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-            
-            
-                class MetaOapg:
-                    enum_value_to_name = {
-                        "event.list": "EVENT_LIST",
-                    }
-                
-                @schemas.classproperty
-                def EVENT_LIST(cls):
-                    return cls("event.list")
-            
-            
             class events(
                 schemas.ListSchema
             ):
@@ -140,14 +124,27 @@ class DataEventList(
                         _configuration=_configuration,
                         **kwargs,
                     )
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "event.list": "EVENT_LIST",
+                    }
+                
+                @schemas.classproperty
+                def EVENT_LIST(cls):
+                    return cls("event.list")
             __annotations__ = {
-                "type": type,
                 "events": events,
                 "pages": pages,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["events"]) -> MetaOapg.properties.events: ...
@@ -156,15 +153,15 @@ class DataEventList(
     def __getitem__(self, name: typing_extensions.Literal["pages"]) -> MetaOapg.properties.pages: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "events", "pages", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["events", "pages", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["events"]) -> typing.Union[MetaOapg.properties.events, schemas.Unset]: ...
@@ -173,27 +170,30 @@ class DataEventList(
     def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union[MetaOapg.properties.pages, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "events", "pages", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["events", "pages", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         events: typing.Union[MetaOapg.properties.events, list, tuple, schemas.Unset] = schemas.unset,
         pages: typing.Union[MetaOapg.properties.pages, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'DataEventList':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             events=events,
             pages=pages,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

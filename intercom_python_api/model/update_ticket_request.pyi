@@ -38,25 +38,6 @@ class UpdateTicketRequest(
     class MetaOapg:
         
         class properties:
-            ticket_attributes = schemas.DictSchema
-            
-            
-            class state(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def IN_PROGRESS(cls):
-                    return cls("in_progress")
-                
-                @schemas.classproperty
-                def WAITING_ON_CUSTOMER(cls):
-                    return cls("waiting_on_customer")
-                
-                @schemas.classproperty
-                def RESOLVED(cls):
-                    return cls("resolved")
             
             
             class assignment(
@@ -117,60 +98,79 @@ class UpdateTicketRequest(
                         _configuration=_configuration,
                         **kwargs,
                     )
+            
+            
+            class state(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def IN_PROGRESS(cls):
+                    return cls("in_progress")
+                
+                @schemas.classproperty
+                def WAITING_ON_CUSTOMER(cls):
+                    return cls("waiting_on_customer")
+                
+                @schemas.classproperty
+                def RESOLVED(cls):
+                    return cls("resolved")
+            ticket_attributes = schemas.DictSchema
             __annotations__ = {
-                "ticket_attributes": ticket_attributes,
-                "state": state,
                 "assignment": assignment,
+                "state": state,
+                "ticket_attributes": ticket_attributes,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["ticket_attributes"]) -> MetaOapg.properties.ticket_attributes: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["assignment"]) -> MetaOapg.properties.assignment: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["state"]) -> MetaOapg.properties.state: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["ticket_attributes"]) -> MetaOapg.properties.ticket_attributes: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["ticket_attributes", "state", "assignment", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["assignment", "state", "ticket_attributes", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["ticket_attributes"]) -> typing.Union[MetaOapg.properties.ticket_attributes, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["assignment"]) -> typing.Union[MetaOapg.properties.assignment, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["state"]) -> typing.Union[MetaOapg.properties.state, schemas.Unset]: ...
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["assignment"]) -> typing.Union[MetaOapg.properties.assignment, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["ticket_attributes"]) -> typing.Union[MetaOapg.properties.ticket_attributes, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["ticket_attributes", "state", "assignment", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["assignment", "state", "ticket_attributes", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        ticket_attributes: typing.Union[MetaOapg.properties.ticket_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
-        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
         assignment: typing.Union[MetaOapg.properties.assignment, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
+        state: typing.Union[MetaOapg.properties.state, str, schemas.Unset] = schemas.unset,
+        ticket_attributes: typing.Union[MetaOapg.properties.ticket_attributes, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'UpdateTicketRequest':
         return super().__new__(
             cls,
             *_args,
-            ticket_attributes=ticket_attributes,
-            state=state,
             assignment=assignment,
+            state=state,
+            ticket_attributes=ticket_attributes,
             _configuration=_configuration,
             **kwargs,
         )

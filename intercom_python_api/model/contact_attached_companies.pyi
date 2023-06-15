@@ -40,16 +40,6 @@ class ContactAttachedCompanies(
         class properties:
             
             
-            class type(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def LIST(cls):
-                    return cls("list")
-            
-            
             class companies(
                 schemas.ListSchema
             ):
@@ -74,74 +64,84 @@ class ContactAttachedCompanies(
             
                 def __getitem__(self, i: int) -> 'Company':
                     return super().__getitem__(i)
-            total_count = schemas.IntSchema
         
             @staticmethod
             def pages() -> typing.Type['PagesLink']:
                 return PagesLink
+            total_count = schemas.IntSchema
+            
+            
+            class type(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def LIST(cls):
+                    return cls("list")
             __annotations__ = {
-                "type": type,
                 "companies": companies,
-                "total_count": total_count,
                 "pages": pages,
+                "total_count": total_count,
+                "type": type,
             }
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["companies"]) -> MetaOapg.properties.companies: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["pages"]) -> 'PagesLink': ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["total_count"]) -> MetaOapg.properties.total_count: ...
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["pages"]) -> 'PagesLink': ...
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "companies", "total_count", "pages", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["companies", "pages", "total_count", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
-    
-    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["companies"]) -> typing.Union[MetaOapg.properties.companies, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["pages"]) -> typing.Union['PagesLink', schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["total_count"]) -> typing.Union[MetaOapg.properties.total_count, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "companies", "total_count", "pages", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["companies", "pages", "total_count", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         companies: typing.Union[MetaOapg.properties.companies, list, tuple, schemas.Unset] = schemas.unset,
-        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         pages: typing.Union['PagesLink', schemas.Unset] = schemas.unset,
+        total_count: typing.Union[MetaOapg.properties.total_count, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'ContactAttachedCompanies':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             companies=companies,
-            total_count=total_count,
             pages=pages,
+            total_count=total_count,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

@@ -43,6 +43,13 @@ A "cursor" or pointer is used to keep track of the current position in the resul
     class MetaOapg:
         
         class properties:
+        
+            @staticmethod
+            def next() -> typing.Type['StartingAfterPaging']:
+                return StartingAfterPaging
+            page = schemas.IntSchema
+            per_page = schemas.IntSchema
+            total_pages = schemas.IntSchema
             
             
             class type(
@@ -59,30 +66,20 @@ A "cursor" or pointer is used to keep track of the current position in the resul
                 @schemas.classproperty
                 def PAGES(cls):
                     return cls("pages")
-            page = schemas.IntSchema
-        
-            @staticmethod
-            def next() -> typing.Type['StartingAfterPaging']:
-                return StartingAfterPaging
-            per_page = schemas.IntSchema
-            total_pages = schemas.IntSchema
             __annotations__ = {
-                "type": type,
-                "page": page,
                 "next": next,
+                "page": page,
                 "per_page": per_page,
                 "total_pages": total_pages,
+                "type": type,
             }
 
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    def __getitem__(self, name: typing_extensions.Literal["next"]) -> 'StartingAfterPaging': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["page"]) -> MetaOapg.properties.page: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["next"]) -> 'StartingAfterPaging': ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["per_page"]) -> MetaOapg.properties.per_page: ...
@@ -91,21 +88,21 @@ A "cursor" or pointer is used to keep track of the current position in the resul
     def __getitem__(self, name: typing_extensions.Literal["total_pages"]) -> MetaOapg.properties.total_pages: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "page", "next", "per_page", "total_pages", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["next", "page", "per_page", "total_pages", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["next"]) -> typing.Union['StartingAfterPaging', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["page"]) -> typing.Union[MetaOapg.properties.page, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["next"]) -> typing.Union['StartingAfterPaging', schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["per_page"]) -> typing.Union[MetaOapg.properties.per_page, schemas.Unset]: ...
@@ -114,31 +111,34 @@ A "cursor" or pointer is used to keep track of the current position in the resul
     def get_item_oapg(self, name: typing_extensions.Literal["total_pages"]) -> typing.Union[MetaOapg.properties.total_pages, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "page", "next", "per_page", "total_pages", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["next", "page", "per_page", "total_pages", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
-        page: typing.Union[MetaOapg.properties.page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         next: typing.Union['StartingAfterPaging', schemas.Unset] = schemas.unset,
+        page: typing.Union[MetaOapg.properties.page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         per_page: typing.Union[MetaOapg.properties.per_page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         total_pages: typing.Union[MetaOapg.properties.total_pages, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'CursorPages':
         return super().__new__(
             cls,
             *_args,
-            type=type,
-            page=page,
             next=next,
+            page=page,
             per_page=per_page,
             total_pages=total_pages,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )

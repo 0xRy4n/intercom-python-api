@@ -10,11 +10,11 @@ dict, frozendict.frozendict, None,  | frozendict.frozendict, NoneClass,  | Curso
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**type** | str,  | str,  | the type of object &#x60;pages&#x60;. | [optional] must be one of ["pages", ] 
-**page** | decimal.Decimal, int,  | decimal.Decimal,  | The current page | [optional] 
 **next** | [**StartingAfterPaging**](StartingAfterPaging.md) | [**StartingAfterPaging**](StartingAfterPaging.md) |  | [optional] 
+**page** | decimal.Decimal, int,  | decimal.Decimal,  | The current page | [optional] 
 **per_page** | decimal.Decimal, int,  | decimal.Decimal,  | Number of results per page | [optional] 
 **total_pages** | decimal.Decimal, int,  | decimal.Decimal,  | Total number of pages | [optional] 
+**type** | str,  | str,  | the type of object &#x60;pages&#x60;. | [optional] must be one of ["pages", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

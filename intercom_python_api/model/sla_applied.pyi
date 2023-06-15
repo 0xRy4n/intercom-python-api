@@ -43,7 +43,6 @@ Important: if there are any canceled sla_events for the conversation - meaning a
     class MetaOapg:
         
         class properties:
-            type = schemas.StrSchema
             sla_name = schemas.StrSchema
             
             
@@ -67,15 +66,13 @@ Important: if there are any canceled sla_events for the conversation - meaning a
                 @schemas.classproperty
                 def ACTIVE(cls):
                     return cls("active")
+            type = schemas.StrSchema
             __annotations__ = {
-                "type": type,
                 "sla_name": sla_name,
                 "sla_status": sla_status,
+                "type": type,
             }
 
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["sla_name"]) -> MetaOapg.properties.sla_name: ...
@@ -84,15 +81,15 @@ Important: if there are any canceled sla_events for the conversation - meaning a
     def __getitem__(self, name: typing_extensions.Literal["sla_status"]) -> MetaOapg.properties.sla_status: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["type"]) -> MetaOapg.properties.type: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["type", "sla_name", "sla_status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["sla_name", "sla_status", "type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["sla_name"]) -> typing.Union[MetaOapg.properties.sla_name, schemas.Unset]: ...
@@ -101,27 +98,30 @@ Important: if there are any canceled sla_events for the conversation - meaning a
     def get_item_oapg(self, name: typing_extensions.Literal["sla_status"]) -> typing.Union[MetaOapg.properties.sla_status, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["type"]) -> typing.Union[MetaOapg.properties.type, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["type", "sla_name", "sla_status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["sla_name", "sla_status", "type", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, None, ],
-        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         sla_name: typing.Union[MetaOapg.properties.sla_name, str, schemas.Unset] = schemas.unset,
         sla_status: typing.Union[MetaOapg.properties.sla_status, str, schemas.Unset] = schemas.unset,
+        type: typing.Union[MetaOapg.properties.type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SlaApplied':
         return super().__new__(
             cls,
             *_args,
-            type=type,
             sla_name=sla_name,
             sla_status=sla_status,
+            type=type,
             _configuration=_configuration,
             **kwargs,
         )
