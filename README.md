@@ -1,7 +1,7 @@
-<div style="width=100%;background-color:#FFAF00;color:black;text-align:center">
+{% note %}
 <h1>This package is deprecated and will no longer undergo development. Due to issues with the OpenAPI Specification of Intercom, it is difficult to generate a working client via code generation.</h1>
 <h2>It has been succeeded by https://github.com/0xRy4n/intercom-python-sdk</h2>
-</div>
+{% endnote %}
 
 # Intercom Python API
 <p style="text-align:center">
